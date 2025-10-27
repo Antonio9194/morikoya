@@ -1,0 +1,27 @@
+<% room_c = rooms.where(room_type: "C").first%>
+<% other_rooms = rooms.where.not(room_type: "C") %>
+<% if room_c.present? && other_rooms.any?%>
+  <!--Show room C first-->
+  <div class="my-3">
+    <h5 class="badge rounded-pill bg-success fs-4 my-3">This room fits your group perfectly!</h5>
+    <%= render "rooms/room_c", room_c: room_c %>
+  </div>
+  <!--Show other rooms-->
+  <div class="my-3">
+    <h5 class="badge rounded-pill bg-success fs-4 my-3">Just in case you want separated rooms!</h5>
+    <%= render "rooms/other_rooms", other_rooms: other_rooms %>
+  </div>
+<% end %>
+<% if room_c.present? && other_rooms.empty? %>
+  <!--Show room C only-->
+  <h5 class="badge rounded-pill bg-success fs-4 my-3">This room fits your group perfectly!</h5>
+  <%= render "rooms/room_c", room_c: room_c %>
+<% end %>
+<% if room_c.nil? && other_rooms.count > 1 %>
+  <!--Show other rooms-->
+  <h5 class="badge rounded-pill bg-success fs-4 my-3">Choose at least two rooms for your group!</h5>
+  <%= render "rooms/other_rooms", other_rooms: other_rooms %>
+<% end %>
+<% if room_c.nil? && other_rooms.count <= 1 %>
+  <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">Sorry we are booked out!</h5>
+<% end %>
