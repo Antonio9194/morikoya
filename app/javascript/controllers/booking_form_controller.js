@@ -37,11 +37,9 @@ export default class extends Controller {
     const today = new Date().toISOString().split("T")[0];
 
     // prevent selecting past dates
-    if (date < today) {
-      return;
-    }
+    if (date < today) return;
 
-    // clear highlights if 2 dates already selected
+    // if two dates are already selected, start a fresh selection
     if (this.datesSelected.length >= 2) {
       this.datesSelected = [];
       this.checkInValueTarget.textContent = "";
@@ -49,20 +47,16 @@ export default class extends Controller {
       this.checkInInputTarget.value = "";
       this.checkOutInputTarget.value = "";
 
-      // remove all highlights
       this.calendarTarget
         .querySelectorAll(".selected-date, .in-range")
-        .forEach((el) => {
-          el.classList.remove("selected-date", "in-range");
-        });
+        .forEach((el) => el.classList.remove("selected-date", "in-range"));
     }
 
-    // add new selection
+    // add new pick
     this.datesSelected.push(date);
 
-    // if first pick, set check-in
+    // first pick -> mark as tentative check-in
     if (this.datesSelected.length === 1) {
-      // ensure only the clicked element is marked
       this.calendarTarget
         .querySelectorAll(".selected-date")
         .forEach((el) => el.classList.remove("selected-date"));
@@ -75,13 +69,25 @@ export default class extends Controller {
       return;
     }
 
-    // second pick: determine ordered start/end and update UI accordingly
+    // second pick -> finalize start/end (prevent same-day selection)
     if (this.datesSelected.length === 2) {
-      const [start, end] = this.datesSelected.slice().sort();
-      // store ordered selection
+      const first = this.datesSelected[0];
+      const second = this.datesSelected[1];
+
+      // prevent check-in and check-out being the same day
+      if (first === second) {
+        // keep only the first selection and ignore the second click
+        this.datesSelected = [first];
+        return;
+      }
+
+      // order start/end reliably (ISO dates compare lexically)
+      const [start, end] =
+        first.localeCompare(second) <= 0 ? [first, second] : [second, first];
+
       this.datesSelected = [start, end];
 
-      // set inputs/labels to ordered values (so check-in is always earlier)
+      // update inputs/labels
       this.checkInValueTarget.textContent = start;
       this.checkInInputTarget.value = start;
       this.checkOutValueTarget.textContent = end;
@@ -90,9 +96,7 @@ export default class extends Controller {
       // clear previous highlights then mark endpoints + range
       this.calendarTarget
         .querySelectorAll(".selected-date, .in-range")
-        .forEach((el) => {
-          el.classList.remove("selected-date", "in-range");
-        });
+        .forEach((el) => el.classList.remove("selected-date", "in-range"));
 
       this.calendarTarget.querySelectorAll("[data-day]").forEach((el) => {
         const d = el.dataset.day;
@@ -103,7 +107,7 @@ export default class extends Controller {
         }
       });
 
-      // close after 2nd pick
+      // close after 2nd valid pick
       this.calendarTarget.classList.add("d-none");
     }
   }
