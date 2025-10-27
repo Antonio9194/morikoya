@@ -2,7 +2,7 @@
   <div class="row g-4">
     <!-- Messages  -->
     <div class="col-md-4">
-      <div class="card shadow-sm rounded-4 h-100">
+      <div class="card shadow border-light rounded-4 h-100">
         <div class="card-body p-4">
           <h5 class="card-title mb-4">Messages</h5>
           <% if current_user.contact_messages.any? %>
@@ -22,19 +22,33 @@
         </div>
       </div>
     </div>
-    <!-- User Card + Bookings -->
+    <!-- User Card + Avatar -->
     <div class="col-md-8">
-      <!-- User Card -->
-      <div class="card shadow-sm rounded-4 text-center mb-4">
-        <div class="card-body p-5">
-          <div class="mb-3">
-            <div class="rounded-circle bg-primary bg-opacity-10 d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-              <h2 class="text-primary mb-0"><%= current_user.first_name.first.upcase %></h2>
+      <div class="row g-3 mb-4">
+        <!-- User Card -->
+        <div class="col-md-9">
+          <div class="card shadow border-light rounded-4 text-center h-100">
+            <div class="card-body p-5">
+              <h4 class="mb-2"><%= current_user.first_name %></h4>
+              <p class="text-muted mb-0">Member since</p>
+              <p class="text-muted"><%= current_user.created_at.strftime("%B %Y") %></p>
             </div>
           </div>
-          <h4 class="mb-2"><%= current_user.first_name %></h4>
-          <p class="text-muted mb-0">Member since</p>
-          <p class="text-muted"><%= current_user.created_at.strftime("%B %Y") %></p>
+        </div>
+        <!-- Avatar -->
+        <div class="col-md-3">
+          <div class="d-flex justify-content-center align-items-center h-100 shadow rounded-4">
+            <div class="rounded-circle bg-primary bg-opacity-10 d-inline-flex align-items-center justify-content-center cursor-pointer" style="width: 80px; height: 80px;" data-bs-toggle="dropdown" aria-expanded="false">
+              <h2 class="text-primary mb-0"><%= current_user.first_name.first.upcase %></h2>
+            </div>
+            <!-- Dropdown menu placeholder for later -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
         </div>
       </div>
       <!-- Bookings Section -->
@@ -44,7 +58,7 @@
           <div class="row g-4">
             <% current_user.bookings.each do |booking| %>
               <div class="col-12 col-lg-6">
-                <div class="card shadow-sm rounded-4 h-100">
+                <div class="card shadow border-light rounded-4 h-100">
                   <div class="card-body p-4">
                     <h6 class="card-title mb-3"><%= booking.room.name %></h6>
                     <div class="mb-2">
