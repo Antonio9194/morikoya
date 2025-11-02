@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   min-height: 70vh;
   margin-top: 0;
 }
 
 .contact-form {
-  width: 70%;
+  width: 85%;
   margin-top: 40px;
 }
 
@@ -18,3 +18,6 @@
   border-radius: 50px;
 }
 
+#text-center {
+  align-self: center;
+}
