@@ -1,3 +1,9 @@
+<% if current_user.present? && current_user.admin? %>
+  <h6>Welcome back <%= current_user.first_name %> </h6>
+  
+
+<% else %>
+
 <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
 <div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh;">
   <div>
@@ -52,3 +58,4 @@
       <%= render "guests" %>
     <% end %>
   </div>
+<% end %>
