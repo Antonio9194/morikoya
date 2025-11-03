@@ -32,7 +32,7 @@
           FAQs
         <% end %>
       </li>
-      <% if user_signed_in? %>
+      <% if user_signed_in? && current_user.guest? %>
         <li class="nav-item">
           <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
             <%= image_tag "guestDashboard.png", style: "width: 20px; height: 20px;", class: "me-1" %>
