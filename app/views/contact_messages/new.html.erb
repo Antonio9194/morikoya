@@ -1,10 +1,6 @@
 <div class="container my-3">
   <div class="row">
-    <div class="map col-12 col-md-6 col-lg-5" style="height: 80vh;"
-      data-controller="map"
-      data-map-marker-value='{"lat": 35.715929690607304, "lng": 139.7913157845523}'
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+    <%= render "pages/map" %>
     <div class="contactus col-12 col-md-6 col-lg-7">
       <% if current_user.present? %>
         <h4 id="text-center"> Welcome back <%= current_user.first_name %>!</h4>
