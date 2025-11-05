@@ -10,8 +10,15 @@
     <%= javascript_importmap_tags %>
     <script src="https://js.stripe.com/v3/"></script>
   </head>
-  <body><%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-    <%= yield %>
+  <body>
+    <main>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+      <%= yield %>
+      <div class="push"></div>
+    </main>
+    <footer>
+      <%= render "shared/footer" %>
+    </footer>
   </body>
 </html>
