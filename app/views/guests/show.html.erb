@@ -64,10 +64,53 @@
       </div>
       <!-- Bookings Section -->
       <div>
-        <h5 class="mb-4">Your Bookings</h5>
-        <% if current_user.bookings.present? %>
+        <%
+          confirmed_bookings = current_user.bookings.confirmed
+          ongoing_bookings = confirmed_bookings.ongoing.order(start_date: :asc)
+          past_bookings = confirmed_bookings.past.order(end_date: :desc)
+        %>
+        <!-- Ongoing Bookings -->
+        <% if ongoing_bookings.any? %>
+          <h5 class="mb-3">
+            <i class="bi bi-circle-fill text-success me-2" style="font-size: 0.6rem;"></i>
+            Current Stay
+          </h5>
+          <div class="row g-4 mb-5">
+            <% ongoing_bookings.each do |booking| %>
+              <div class="col-12 col-lg-6">
+                <div class="card shadow border-success border-2 rounded-4 h-100">
+                  <div class="card-body p-4">
+                    <h6 class="card-title mb-3"><%= booking.room.name %></h6>
+                    <div class="mb-2">
+                      <small class="text-muted d-block">Check-in</small>
+                      <strong><%= booking.start_date.strftime("%d %b, %Y") %></strong>
+                    </div>
+                    <div class="mb-3">
+                      <small class="text-muted d-block">Check-out</small>
+                      <strong><%= booking.end_date.strftime("%d %b, %Y") %></strong>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge bg-success rounded-pill">
+                        <i class="bi bi-check-circle me-1"></i> Ongoing
+                      </span>
+                      <span class="badge bg-<%= booking.payment_status == 'paid' ? 'success' : 'secondary' %> rounded-pill">
+                        <%= booking.payment_status.capitalize %>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <!-- Past Bookings -->
+        <% if past_bookings.any? %>
+          <h5 class="mb-3">
+            <i class="bi bi-clock-history me-2"></i>
+            Past Stays
+          </h5>
           <div class="row g-4">
-            <% current_user.bookings.each do |booking| %>
+            <% past_bookings.each do |booking| %>
               <div class="col-12 col-lg-6">
                 <div class="card shadow border-light rounded-4 h-100">
                   <div class="card-body p-4">
@@ -81,8 +124,8 @@
                       <strong><%= booking.end_date.strftime("%d %b, %Y") %></strong>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
-                      <span class="badge bg-<%= booking.status == 'confirmed' ? 'success' : 'warning' %> rounded-pill">
-                        <%= booking.status.capitalize %>
+                      <span class="badge bg-secondary rounded-pill">
+                        <i class="bi bi-check2 me-1"></i> Completed
                       </span>
                       <span class="badge bg-<%= booking.payment_status == 'paid' ? 'success' : 'secondary' %> rounded-pill">
                         <%= booking.payment_status.capitalize %>
@@ -93,10 +136,14 @@
               </div>
             <% end %>
           </div>
-        <% else %>
+        <% end %>
+        <!-- No Confirmed Bookings -->
+        <% if ongoing_bookings.empty? && past_bookings.empty? %>
           <div class="card shadow-sm rounded-4">
             <div class="card-body p-5 text-center">
-              <p class="text-muted mb-0">No bookings yet...</p>
+              <i class="bi bi-calendar-x text-muted mb-3" style="font-size: 3rem;"></i>
+              <p class="text-muted mb-0">No confirmed bookings yet...</p>
+              <%= link_to "Browse Rooms", rooms_path, class: "btn btn-primary mt-3" if defined?(rooms_path) %>
             </div>
           </div>
         <% end %>
