@@ -1,5 +1,5 @@
 class ContactMessagesController < ApplicationController
-   skip_before_action :authenticate_user!, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: %i[new create]
 
   def new
     @contact_message = ContactMessage.new
@@ -7,14 +7,10 @@ class ContactMessagesController < ApplicationController
 
   def create
     @contact_message = ContactMessage.new(contact_message_params)
-    
-    if current_user.present?
-      @contact_message.user_id = current_user.id
-    end
 
+    @contact_message.user_id = current_user.id if current_user.present?
 
-
-    if @contact_message.save 
+    if @contact_message.save
       ContactMailer.new_message(@contact_message).deliver_now
       if current_user.present?
         redirect_to guest_path(current_user), notice: "Message sent successfully!"
@@ -28,6 +24,7 @@ class ContactMessagesController < ApplicationController
   end
 
   private
+
   def contact_message_params
     params.require(:contact_message).permit(:name, :email, :message)
   end

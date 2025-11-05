@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_room, only: [:show]
   def index
     @rooms = Room.all
@@ -21,10 +21,11 @@ class RoomsController < ApplicationController
       room_capacity = @rooms.map(&:capacity).sum
       @rooms = room_capacity >= search_params[:guests].to_i ? @rooms : []
     end
-    if @rooms.empty?
-      redirect_to root_path, alert: "No rooms available for your dates"
-    end
+    return unless @rooms.empty?
+
+    redirect_to root_path, alert: "No rooms available for your dates"
   end
+
   def show
     @booking = Booking.new
   end

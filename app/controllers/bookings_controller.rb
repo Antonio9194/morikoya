@@ -8,9 +8,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    unless current_user
-      redirect_to new_user_session_path, alert: "You must be signed in to make a booking!"
-    end
+    redirect_to new_user_session_path, alert: "You must be signed in to make a booking!" unless current_user
 
     if params[:booking][:start_date].blank?
       redirect_to room_path(@room), alert: "Please select a date before booking"
@@ -40,10 +38,10 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.find(params[:id])
 
     # Redirect if not paid yet
-    unless @booking.payment_status == 'paid'
-      redirect_to new_payment_path(booking_id: @booking.id),
-                  alert: 'Please complete payment first.'
-    end
+    return if @booking.payment_status == 'paid'
+
+    redirect_to new_payment_path(booking_id: @booking.id),
+                alert: 'Please complete payment first.'
   end
 
   def cancel

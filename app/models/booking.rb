@@ -16,21 +16,21 @@ class Booking < ApplicationRecord
   scope :upcoming, -> { where("start_date >= ?", Date.today) }
 
   def start_date_cannot_be_in_the_past
-    if start_date.present? && start_date < Date.today
-      errors.add(:start_date, "can't be in the past")
-    end
+    return unless start_date.present? && start_date < Date.today
+
+    errors.add(:start_date, "can't be in the past")
   end
 
   def end_date_cannot_be_in_the_past
-    if end_date.present? && end_date < Date.today
-      errors.add(:end_date, "can't be in the past")
-    end
+    return unless end_date.present? && end_date < Date.today
+
+    errors.add(:end_date, "can't be in the past")
   end
 
   def plan_date_cannot_be_reverse
-    if start_date.present? && end_date.present? && end_date < start_date
-      errors.add(:end_date, "can't be before starting date")
-    end
+    return unless start_date.present? && end_date.present? && end_date < start_date
+
+    errors.add(:end_date, "can't be before starting date")
   end
 
   def number_of_nights
@@ -42,9 +42,9 @@ class Booking < ApplicationRecord
   private
 
   def calculate_total_price
-    if room && start_date && end_date
-      nights = number_of_nights
-      self.total_price_cents = room.price_per_night * nights
-    end
+    return unless room && start_date && end_date
+
+    nights = number_of_nights
+    self.total_price_cents = room.price_per_night * nights
   end
 end

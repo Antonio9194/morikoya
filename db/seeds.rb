@@ -1,6 +1,6 @@
-require "faker"
+require 'faker'
 
-puts "Seeding database..."
+puts 'Seeding database...'
 
 # Wipe everything first
 Booking.destroy_all
@@ -9,29 +9,29 @@ Room.destroy_all
 User.destroy_all
 
 User.create!(
-  email: "anto.vinciguerra@hotmail.it",
-  password: "password",
-  role: "admin",
-  first_name: "Antonio",
-  last_name: "Vinciguerra"
+  email: 'anto.vinciguerra@hotmail.it',
+  password: 'password',
+  role: 'admin',
+  first_name: 'Antonio',
+  last_name: 'Vinciguerra'
 )
 
 User.create!(
-  email: "anto.vinciguerra@hotmail.com",
-  password: "password",
-  role: "guest",
-  first_name: "Antonio",
-  last_name: "Vinciguerra"
+  email: 'anto.vinciguerra@hotmail.com',
+  password: 'password',
+  role: 'guest',
+  first_name: 'Antonio',
+  last_name: 'Vinciguerra'
 )
 
-puts "Created Antonio’s account"
+puts 'Created Antonio’s account'
 
 # Create 20 guest users
 guests = 20.times.map do
   User.create!(
     email: Faker::Internet.unique.email,
-    password: "password123",
-    role: "guest",
+    password: 'password123',
+    role: 'guest',
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name
   )
@@ -43,15 +43,15 @@ puts "Created #{User.count} users"
 6.times do |i|
   Room.create!(
     name: "Room A-#{i + 1}",
-    room_type: "A",
-    description: "A bunk bed, a double bed and a sofa bed, all inside one room.",
+    room_type: 'A',
+    description: 'A bunk bed, a double bed and a sofa bed, all inside one room.',
     price_per_night: 80,
     size: 20,
     bunk: 1,
     double: 1,
     sofa_bed: 1,
     capacity: 6,
-    amenities: "WiFi, Air conditioning, TV, Bathroom"
+    amenities: 'WiFi, Air conditioning, TV, Bathroom'
   )
 end
 
@@ -59,23 +59,23 @@ end
 7.times do |i|
   Room.create!(
     name: "Room B-#{i + 1}",
-    room_type: "B",
-    description: "A cozy room with all the basics you need.",
+    room_type: 'B',
+    description: 'A cozy room with all the basics you need.',
     price_per_night: 80,
     size: 20,
     bunk: 1,
     semi_double: 1,
     sofa_bed: 1,
     capacity: 6,
-    amenities: "WiFi, Air conditioning, TV, Bathroom"
+    amenities: 'WiFi, Air conditioning, TV, Bathroom'
   )
 end
 
 # Create 1 type C rooms
 Room.create!(
-  name: "Presidential Suite",
-  room_type: "C",
-  description: "Luxury suite with panoramic view, jacuzzi, and extra comfort.",
+  name: 'Presidential Suite',
+  room_type: 'C',
+  description: 'Luxury suite with panoramic view, jacuzzi, and extra comfort.',
   price_per_night: 250,
   size: 50,
   single: 2,
@@ -83,7 +83,7 @@ Room.create!(
   wide_double: 1,
   sofa_bed: 1,
   capacity: 8,
-  amenities: "WiFi, Air conditioning, TV, Jacuzzi, Balcony, Minibar"
+  amenities: 'WiFi, Air conditioning, TV, Jacuzzi, Balcony, Minibar'
 )
 
 puts "Created #{Room.count} rooms"
@@ -116,4 +116,4 @@ puts "Created #{ContactMessage.count} contact messages"
 end
 
 puts "Created #{Booking.count} bookings"
-puts "Done seeding!"
+puts 'Done seeding!'
