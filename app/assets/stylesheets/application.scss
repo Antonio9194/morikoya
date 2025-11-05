@@ -15,10 +15,14 @@
 @import "components/contactus";
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 main {
-  min-height: 100vh;
-  margin-bottom: -5rem;
+  flex-grow: 1;
 }
 footer {
   height: 5rem;
@@ -27,8 +31,4 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.push {
-  height: 5rem;
 }
