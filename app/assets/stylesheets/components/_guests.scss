@@ -1,7 +1,7 @@
 #guests-container {
   margin-top: 20px;
   margin-left: 650px;
-  width: 300px !important; 
+  width: 300px !important;
   height: 100px;
   background-color: white;
   border-radius: 50px;
@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .guests-modal {
@@ -52,7 +52,7 @@
 
 .guests-counter button:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .guests-counter span {
@@ -61,4 +61,45 @@
   color: #333;
   text-align: center;
   min-width: 25px;
+}
+
+// Expandable Avatar Card
+.avatar-card-expandable {
+  background: white;
+  transition: all 0.3s ease;
+
+  .avatar-toggle-label {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+  }
+
+  // default is hidden
+  .avatar-menu-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  // expand when checked
+  .avatar-toggle-input:checked ~ .avatar-menu-content {
+    max-height: 300px;
+  }
+
+  // highlight label when checked
+  .avatar-toggle-input:checked ~ .avatar-toggle-label {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+}
+
+// hover background light effect for menu items
+.hover-bg-light {
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
 }
