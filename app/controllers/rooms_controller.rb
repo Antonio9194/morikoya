@@ -9,7 +9,7 @@ class RoomsController < ApplicationController
       check_out = Date.parse(search_params[:check_out])
 
       # Find rooms that have overlapping bookings
-      booked_room_ids = Booking.where("start_date < ? AND end_date > ?", check_out, check_in).pluck(:room_id)
+      booked_room_ids = Booking.where('start_date < ? AND end_date > ?', check_out, check_in).pluck(:room_id)
 
       # Exclude those rooms
       @rooms = @rooms.where.not(id: booked_room_ids)
@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
     end
     return unless @rooms.empty?
 
-    redirect_to root_path, alert: "No rooms available for your dates"
+    redirect_to root_path, alert: 'No rooms available for your dates'
   end
 
   def show
