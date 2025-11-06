@@ -1,7 +1,7 @@
 <%= link_to 'https://maps.app.goo.gl/iVDYXgq9ZvJWrhEv6', target: :_blank, class: "text-decoration-none" do %>
   <h6 id="address">〒111-0035 Tokyo, Taito-ku, Nishiasakusa 3-20-13</h6>
 <% end %>
-<div class="map col-12 col-md-6 col-lg-5"
+<div class="map"
   data-controller="map"
   data-map-marker-value='{"lat": 35.715929690607304, "lng": 139.7913157845523}'
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
