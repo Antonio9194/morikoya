@@ -9,8 +9,8 @@ Room.destroy_all
 User.destroy_all
 
 User.create!(
-  email: 'anto.vinciguerra@hotmail.it',
-  password: 'password',
+  email: 'antoniov@morikoyahotel.com',
+  password: 'marvelous',
   role: 'admin',
   first_name: 'Antonio',
   last_name: 'Vinciguerra'
