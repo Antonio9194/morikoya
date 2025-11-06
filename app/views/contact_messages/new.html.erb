@@ -1,20 +1,18 @@
 <div class="container my-3">
-  <div class="row">
-    <%= render "pages/map" %>
-    <div class="contactus col-12 col-md-6 col-lg-7">
-      <% if current_user.present? %>
-        <h4 id="text-center"> Welcome back <%= current_user.first_name %>!</h4>
-      <% else %>
-        <h4 id="text-center"> Leave us a message!</h4>
+  <div class="contactus">
+    <% if current_user.present? %>
+      <h4 id="text-center"> Welcome back <%= current_user.first_name %>!</h4>
+    <% else %>
+      <h4 id="text-center"> Leave us a message!</h4>
+    <% end %>
+    <div class="contact-form">
+      <%= simple_form_for @contact_message do |f| %>
+        <%= f.input :name, label: "Full Name", input_html: { value: current_user&.first_name } %>
+        <%= f.input :email, label: "Email", input_html: { value: current_user&.email } %>
+        <%= f.input :message, as: :text, label: "Message" %>
+        <%= f.button :submit, "Send" %>
       <% end %>
-      <div class="contact-form">
-        <%= simple_form_for @contact_message do |f| %>
-          <%= f.input :name, label: "Full Name", input_html: { value: current_user&.first_name } %>
-          <%= f.input :email, label: "Email", input_html: { value: current_user&.email } %>
-          <%= f.input :message, as: :text, label: "Message" %>
-          <%= f.button :submit, "Send" %>
-        <% end %>
-      </div>
     </div>
+    <%= render "pages/map" %>
   </div>
 </div>
