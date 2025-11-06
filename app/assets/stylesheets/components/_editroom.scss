@@ -1,13 +1,13 @@
-.contactus {
+.roomedit {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
+  min-height: 80vh;
   margin-top: 0;
 }
 
-.contact-form {
+.roomedit form {
   width: 70%;
   background-color: #fff;
   padding: 40px;
@@ -15,16 +15,21 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
+.roomedit input[type="text"],
+.roomedit input[type="number"],
+.roomedit textarea {
   border-radius: 50px;
 }
 
-.contactus .btn {
+.roomedit h5 {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.roomedit .btn {
   border: 1px solid black;
   border-radius: 30px;
   padding: 10px 30px;
   font-weight: bold;
 }
-

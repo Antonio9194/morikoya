@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_room, only: [:show]
   def index
-    @rooms = Room.all
+    @rooms = Room.order(created_at: :asc)
 
     if search_params[:check_in].present? && search_params[:check_out].present?
       check_in = Date.parse(search_params[:check_in])

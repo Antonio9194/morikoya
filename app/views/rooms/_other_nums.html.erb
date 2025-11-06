@@ -41,7 +41,9 @@
               <p class="mb-0"><%= room.amenities %></p>
             </div>
           </div>
-          <%= render "edit_delete", room: room %>
+          <% if current_user.present? && current_user.admin? %>
+            <%= render "edit_delete", room: room %>
+          <% end %>
         </div>
       <% end %>
     </div>

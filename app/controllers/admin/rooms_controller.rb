@@ -11,19 +11,24 @@ module Admin
     end
 
     def edit
+      @room = Room.find(params[:id])
     end
 
     def update
       if @room.update(room_params)
-        redirect_to admin_rooms_path, notice: 'Room updated successfully.'
+        redirect_to rooms_path, notice: 'Room updated successfully.'
       else
         render :edit, status: :unprocessable_entity
       end
     end
 
     def destroy
-      @room.destroy
-      redirect_to admin_rooms_path, notice: 'Room deleted successfully.'
+      if @room.bookings.present?
+        redirect_to rooms_path, alert: 'Cannot delete room with active bookings!'
+      else
+        @room.destroy
+        redirect_to rooms_path, notice: 'Room deleted successfully.'
+      end
     end
 
     private
