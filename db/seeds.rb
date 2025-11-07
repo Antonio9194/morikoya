@@ -110,8 +110,8 @@ puts "Created #{ContactMessage.count} contact messages"
     room: Room.all.sample,
     start_date: start_date,
     end_date: end_date,
-    status: %w[pending confirmed cancelled].sample,
-    payment_status: %w[pending paid refunded].sample
+    status: 'confirmed',
+    payment_status: 'paid'
   )
 end
 
