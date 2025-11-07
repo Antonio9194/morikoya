@@ -1,9 +1,10 @@
 .map {
-  height: 78vh;
+  height: 50vh;
+  max-width: 80%;
+  margin: 40px 0;
+  border-radius: 20px;
+}
 
   #address {
-    position: fixed;
-    bottom: 5vh;
-    z-index: 999;
+    margin-top: 48px;
   }
-}

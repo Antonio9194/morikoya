@@ -13,6 +13,7 @@
 @import "components/guests";
 @import "pages/index";
 @import "components/contactus";
+@import "components/editroom";
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 
 body {
@@ -32,3 +33,4 @@ footer {
   flex-direction: column;
   justify-content: center;
 }
+
