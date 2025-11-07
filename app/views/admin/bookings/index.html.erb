@@ -1,7 +1,14 @@
-<% @rooms.each do |room| %>
-  <h3><%= room.name %></h3>
-  <div
-    data-controller="calendar"
-    data-calendar-bookings-value="<%= room.bookings.to_json(only: [:start_date, :end_date, :title]) %>">
-  </div>
-<% end %>
+<div class="rooms-container">
+  <% @rooms.each do |room| %>
+    <div class="room-calendar">
+      <h3><%= room.name %></h3>
+      <div
+        class="calendar"
+        data-controller="calendar"
+        data-calendar-events-value="<%= room.bookings.map { |b|
+          { title: "#{b.user.first_name} #{b.user.last_name}", start: b.start_date, end: b.end_date }
+        }.to_json %>"
+      ></div>
+    </div>
+  <% end %>
+</div>

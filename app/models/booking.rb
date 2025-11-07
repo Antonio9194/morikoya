@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :room
+  has_many :bookings
 
   validates :start_date, :end_date, presence: true
   # TO-DO: Add validation for payment later (if needed)
@@ -13,7 +14,7 @@ class Booking < ApplicationRecord
   # Calculate total price before validation (so it's ready for payment)
   before_validation :calculate_total_price, on: :create
 
-  scope :upcoming, -> { where("start_date >= ?", Date.today) }
+  scope :upcoming, -> { where('start_date >= ?', Date.today) }
 
   def start_date_cannot_be_in_the_past
     return unless start_date.present? && start_date < Date.today
