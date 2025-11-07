@@ -1,6 +1,6 @@
 class Admin::BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @rooms = Room.order(created_at: :asc).includes(:bookings)
   end
 
   def show
