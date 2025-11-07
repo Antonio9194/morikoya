@@ -1,0 +1,18 @@
+<div class="modal fade" id="bookingModal-<%= booking.id %>" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Booking for <%= booking.user.first_name %> <%= booking.user.last_name %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Room: <%= booking.room.name %></p>
+        <p>Start date: <%= booking.start_date %></p>
+        <p>End date: <%= booking.end_date %></p>
+        <p>Status: <%= booking.status %></p>
+        <p>Total: <%= number_to_currency(booking.total_price_cents / 100.0) %></p>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

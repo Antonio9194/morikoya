@@ -5,10 +5,13 @@
       <div
         class="calendar"
         data-controller="calendar"
-        data-calendar-events-value="<%= room.bookings.map { |b|
-          { title: "#{b.user.first_name} #{b.user.last_name}", start: b.start_date, end: b.end_date }
+        data-calendar-events-value="<%= room.bookings.where(status: 'confirmed').map { |b|
+          { title: "#{b.user.first_name} #{b.user.last_name}", start: b.start_date, end: b.end_date, id: b.id }
         }.to_json %>"
       ></div>
+      <% room.bookings.each do |booking| %>
+        <%= render "show", booking: booking %>
+      <% end %>
     </div>
   <% end %>
 </div>

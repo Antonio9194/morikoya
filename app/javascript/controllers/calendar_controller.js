@@ -14,7 +14,15 @@ export default class extends Controller {
     const calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: "dayGridMonth",
       editable: false,
-      events: events
+      events: events,
+      eventClick: (info) => {
+        const bookingId = info.event.id
+        const modal = document.getElementById(`bookingModal-${bookingId}`)
+        if (modal) {
+          const bsModal = new bootstrap.Modal(modal, { backdrop: false })
+          bsModal.show()
+        }
+      }
     })
 
     calendar.render()
