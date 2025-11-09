@@ -1,10 +1,13 @@
 .map {
   height: 50vh;
   max-width: 80%;
-  margin: 40px 0;
+  margin: auto;
+  margin-top: calc(22px + 1.275rem + 0.3vw - 0.15rem - 10px);
   border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
   #address {
-    margin-top: 48px;
+    padding-top: 10px;
+    font-size: 0.85rem;
   }
