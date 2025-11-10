@@ -30,7 +30,10 @@ export default class extends Controller {
 
     // Add Turbo navigation listener (internal navigation via Turbo)
     this.turboBeforeVisitHandler = this.handleTurboBeforeVisit.bind(this);
-    document.addEventListener("turbo:before-visit", this.turboBeforeVisitHandler);
+    document.addEventListener(
+      "turbo:before-visit",
+      this.turboBeforeVisitHandler
+    );
 
     // Initialize Stripe with publishable key
     this.stripe = Stripe(this.publishableKeyValue);
@@ -68,9 +71,12 @@ export default class extends Controller {
 
     // Remove beforeunload listener
     window.removeEventListener("beforeunload", this.beforeUnloadHandler);
-    
+
     // Remove Turbo navigation listener
-    document.removeEventListener("turbo:before-visit", this.turboBeforeVisitHandler);
+    document.removeEventListener(
+      "turbo:before-visit",
+      this.turboBeforeVisitHandler
+    );
 
     // If payment wasn't completed, cancel the booking
     if (!this.paymentCompleted) {
@@ -94,7 +100,11 @@ export default class extends Controller {
   handleTurboBeforeVisit(event) {
     // Intercept Turbo navigation and show confirmation
     if (!this.paymentCompleted) {
-      if (!confirm("Are you sure you want to leave? Your booking will be cancelled.")) {
+      if (
+        !confirm(
+          "Are you sure you want to leave? Your booking will be cancelled."
+        )
+      ) {
         event.preventDefault();
       }
     }
