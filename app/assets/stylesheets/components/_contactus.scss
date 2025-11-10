@@ -7,14 +7,17 @@
 }
 
 .welcome-text {
-  position: relative;
-  left: -4rem;
+  display: block;
+  width: 80%;
+  margin-top: 12px;
+  margin-bottom: 0px;
 }
 
 .contact-form {
+  display: block;
   width: 80%;
   height: 50vh;
-  margin-top: 22px;
+  margin-top: 20px;
   background-color: #fff;
   padding: 22px;
   border-radius: 20px;
@@ -32,4 +35,17 @@
   border-radius: 30px;
   padding: 10px 30px;
   font-weight: bold;
+}
+
+@media (max-width: 991px) {
+  .contact-form {
+    display: block;
+    width: 80%;
+    height: 50vh;
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 22px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
 }
