@@ -22,6 +22,13 @@ export default class extends Controller {
           const bsModal = new bootstrap.Modal(modal, { backdrop: false });
           bsModal.show();
         }
+
+        const deleteModal = document.getElementById(
+          `deleteBookingModal-${bookingId}`
+        );
+        if (deleteModal) {
+          new bootstrap.Modal(deleteModal, { backdrop: false });
+        }
       },
     });
 
