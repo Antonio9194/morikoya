@@ -48,9 +48,15 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.find(params[:id])
     if @booking.status == 'pending'
       @booking.update(status: 'cancelled')
-      redirect_to room_path(@booking.room), notice: "Booking cancelled and returned to room page."
+      respond_to do |format|
+        format.html { redirect_to room_path(@booking.room), notice: "Booking cancelled and returned to room page." }
+        format.json { render json: { success: true }, status: :ok }
+      end
     else
-      redirect_to confirmation_booking_path(@booking), alert: "Only pending bookings can be cancelled."
+      respond_to do |format|
+        format.html { redirect_to confirmation_booking_path(@booking), alert: "Only pending bookings can be cancelled." }
+        format.json { render json: { error: "Only pending bookings can be cancelled." }, status: :unprocessable_entity }
+      end
     end
   end
 

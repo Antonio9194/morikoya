@@ -21,6 +21,17 @@ export default class extends Controller {
   connect() {
     console.log("Stripe Payment controller connected!");
 
+    // Track if payment was successful
+    this.paymentCompleted = false;
+
+    // Add beforeunload listener to warn users (external navigation)
+    this.beforeUnloadHandler = this.handleBeforeUnload.bind(this);
+    window.addEventListener("beforeunload", this.beforeUnloadHandler);
+
+    // Add Turbo navigation listener (internal navigation via Turbo)
+    this.turboBeforeVisitHandler = this.handleTurboBeforeVisit.bind(this);
+    document.addEventListener("turbo:before-visit", this.turboBeforeVisitHandler);
+
     // Initialize Stripe with publishable key
     this.stripe = Stripe(this.publishableKeyValue);
 
@@ -55,8 +66,55 @@ export default class extends Controller {
   disconnect() {
     console.log("Stripe Payment controller disconnected");
 
+    // Remove beforeunload listener
+    window.removeEventListener("beforeunload", this.beforeUnloadHandler);
+    
+    // Remove Turbo navigation listener
+    document.removeEventListener("turbo:before-visit", this.turboBeforeVisitHandler);
+
+    // If payment wasn't completed, cancel the booking
+    if (!this.paymentCompleted) {
+      this.cancelBooking();
+    }
+
     if (this.card) {
       this.card.unmount();
+    }
+  }
+
+  handleBeforeUnload(event) {
+    // Only show warning if payment hasn't been completed
+    if (!this.paymentCompleted) {
+      event.preventDefault();
+      event.returnValue = ""; // Chrome requires returnValue to be set
+      return ""; // For older browsers
+    }
+  }
+
+  handleTurboBeforeVisit(event) {
+    // Intercept Turbo navigation and show confirmation
+    if (!this.paymentCompleted) {
+      if (!confirm("Are you sure you want to leave? Your booking will be cancelled.")) {
+        event.preventDefault();
+      }
+    }
+  }
+
+  async cancelBooking() {
+    try {
+      const response = await fetch(`/bookings/${this.bookingIdValue}/cancel`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-Token": this.getCsrfToken(),
+        },
+      });
+
+      if (response.ok) {
+        console.log("Booking cancelled successfully");
+      }
+    } catch (error) {
+      console.error("Failed to cancel booking:", error);
     }
   }
 
@@ -113,6 +171,8 @@ export default class extends Controller {
         this.setLoadingState(false);
       } else if (result.success) {
         console.log("Payment successful! Redirecting...");
+        // Mark payment as completed so booking won't be cancelled
+        this.paymentCompleted = true;
         window.location.href = result.redirect_url;
       }
     } catch (error) {
