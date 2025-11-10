@@ -12,6 +12,9 @@
       <% room.bookings.each do |booking| %>
         <%= render "show", booking: booking %>
       <% end %>
+      <% room.bookings.each do |booking| %>
+        <%= render "delete_bookings", booking: booking %>
+      <% end %>
     </div>
   <% end %>
 </div>

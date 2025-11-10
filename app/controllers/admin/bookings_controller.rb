@@ -8,5 +8,11 @@ class Admin::BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.destroy
+      redirect_to admin_bookings_path
+    else
+      redirect_to admin_bookings_path, alert: 'Something went wrong...'
+    end
   end
 end
