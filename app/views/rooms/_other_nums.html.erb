@@ -1,51 +1,110 @@
-<div class="row gy-4 room-card">
-  <% rooms.each do |room| %>
-    <div class="col-12 col-md-6 col-lg-4">
-      <%= link_to room_path(room), class: "text-decoration-none", style: "color: black;" do %>
-        <div class="card h-100 shadow bg-body rounded-5" style="overflow: hidden;">
-          <div class="room-image text-center">
-            <%= render "rooms/carousel", room: room%>
-          </div>
-          <div class="room-name text-center">
-            <h4 class="mt-3 mx-2 mb-0"><strong><%= room.name %></strong></h4>
-          </div>
-          <div class="room-info col-12 col-md-12 col-lg-12 mt-3 mb-2 px-3">
-            <div class="description mb-3">
-              <p class="text-center mb-0"><%= room.description %></p>
-            </div>
-            <% unless room.room_type == "C" %>
-              <div class="row mb-3">
-                <div class="col-3 d-flex justify-content-start align-items-center pe-0">
-                  <%= image_tag("money.png", class: "me-2",
-                            style: "width: 20px;", alt: "Price icon") %>
-                  <p class="mb-0">¥<%=  number_with_delimiter(room.price_per_night) %></p>
+<% if current_user.present? && current_user.admin? %>
+  <div class="row gy-4 room-card">
+    <% rooms.each do |room| %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow bg-body rounded-5 d-flex flex-column" style="overflow: hidden;">
+          <!-- MAIN CLICKABLE AREA -->
+          <%= link_to room_path(room), class: "text-decoration-none text-black flex-grow-1" do %>
+            <div class="card-body">
+              <!-- Room carousel/image -->
+              <div class="room-image text-center">
+                <%= render "rooms/carousel", room: room %>
+              </div>
+              <!-- Room name -->
+              <div class="room-name text-center">
+                <h4 class="mt-3 mx-2 mb-0"><strong><%= room.name %></strong></h4>
+              </div>
+              <!-- Room info -->
+              <div class="room-info px-3 mt-3 mb-2">
+                <div class="description mb-3">
+                  <p class="text-center mb-0"><%= room.description %></p>
                 </div>
-                <div class="col-4 d-flex justify-content-center align-items-center px-0">
-                  <%= image_tag("capacity.png", class: "me-2",
-                              style: "width: 20px;", alt: "Capacity icon") %>
-                  <p class="mb-0"><%= room.capacity %> guests</p>
-                </div>
-                <div class="col-5 d-flex justify-content-center align-items-center px-0">
-                  <%= image_tag("sofa-bed.png", class: "me-2",
-                            style: "width: 20px;", alt: "Sofa bed icon") %>
-                  <p class="mb-0"><%= room.sofa_bed %> <%= room.sofa_bed == 1 ? "sofa bed" : "sofa bed".pluralize%></p>
+                <% unless room.room_type == "C" %>
+                  <div class="row mb-3">
+                    <div class="col-3 d-flex justify-content-start align-items-center pe-0">
+                      <%= image_tag("money.png", class: "me-2", style: "width: 20px;", alt: "Price icon") %>
+                      <p class="mb-0">¥<%= number_with_delimiter(room.price_per_night) %></p>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center align-items-center px-0">
+                      <%= image_tag("capacity.png", class: "me-2", style: "width: 20px;", alt: "Capacity icon") %>
+                      <p class="mb-0"><%= room.capacity %> guests</p>
+                    </div>
+                    <div class="col-5 d-flex justify-content-center align-items-center px-0">
+                      <%= image_tag("sofa-bed.png", class: "me-2", style: "width: 20px;", alt: "Sofa bed icon") %>
+                      <p class="mb-0"><%= room.sofa_bed %> <%= room.sofa_bed == 1 ? "sofa bed" : "sofa bed".pluralize %></p>
+                    </div>
+                  </div>
+                <% end %>
+                <!-- Render beds -->
+                <%= render "rooms/beds", room: room %>
+                <!-- Amenities -->
+                <div class="d-flex align-items-start mb-3">
+                  <%= image_tag("tv.png", class: "me-2", style: "width: 20px;", alt: "TV icon") %>
+                  <p class="mb-0"><%= room.amenities %></p>
                 </div>
               </div>
-            <% end %>
-            <!--Render beds depending on bed types-->
-            <%= render "rooms/beds", room: room %>
-            <!---->
-            <div class="d-flex align-items-start mb-3">
-              <%= image_tag("tv.png", class: "me-2",
-                            style: "width: 20px;", alt: "TV icon") %>
-              <p class="mb-0"><%= room.amenities %></p>
             </div>
-          </div>
+          <% end %>
+          <!-- ADMIN BUTTONS AT BOTTOM -->
           <% if current_user.present? && current_user.admin? %>
-            <%= render "edit_delete", room: room %>
+            <div class="p-2 mt-auto">
+              <%= render "edit_delete", room: room %>
+            </div>
           <% end %>
         </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="row gy-4 room-card">
+    <% rooms.each do |room| %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <%= link_to room_path(room), class: "text-decoration-none", style: "color: black;" do %>
+          <div class="card h-100 shadow bg-body rounded-5" style="overflow: hidden;">
+            <div class="room-image text-center">
+              <%= render "rooms/carousel", room: room%>
+            </div>
+            <div class="room-name text-center">
+              <h4 class="mt-3 mx-2 mb-0"><strong><%= room.name %></strong></h4>
+            </div>
+            <div class="room-info col-12 col-md-12 col-lg-12 mt-3 mb-2 px-3">
+              <div class="description mb-3">
+                <p class="text-center mb-0"><%= room.description %></p>
+              </div>
+              <% unless room.room_type == "C" %>
+                <div class="row mb-3">
+                  <div class="col-3 d-flex justify-content-start align-items-center pe-0">
+                    <%= image_tag("money.png", class: "me-2",
+                            style: "width: 20px;", alt: "Price icon") %>
+                    <p class="mb-0">¥<%=  number_with_delimiter(room.price_per_night) %></p>
+                  </div>
+                  <div class="col-4 d-flex justify-content-center align-items-center px-0">
+                    <%= image_tag("capacity.png", class: "me-2",
+                              style: "width: 20px;", alt: "Capacity icon") %>
+                    <p class="mb-0"><%= room.capacity %> guests</p>
+                  </div>
+                  <div class="col-5 d-flex justify-content-center align-items-center px-0">
+                    <%= image_tag("sofa-bed.png", class: "me-2",
+                            style: "width: 20px;", alt: "Sofa bed icon") %>
+                    <p class="mb-0"><%= room.sofa_bed %> <%= room.sofa_bed == 1 ? "sofa bed" : "sofa bed".pluralize%></p>
+                  </div>
+                </div>
+              <% end %>
+              <!--Render beds depending on bed types-->
+              <%= render "rooms/beds", room: room %>
+              <!---->
+              <div class="d-flex align-items-start mb-3">
+                <%= image_tag("tv.png", class: "me-2",
+                            style: "width: 20px;", alt: "TV icon") %>
+                <p class="mb-0"><%= room.amenities %></p>
+              </div>
+            </div>
+            <% if current_user.present? && current_user.admin? %>
+              <%= render "edit_delete", room: room %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

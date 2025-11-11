@@ -7,10 +7,10 @@
       </div>
       <div class="modal-body">
         <p>Room: <%= booking.room.name %></p>
-        <p>Start date: <%= booking.start_date %></p>
-        <p>End date: <%= booking.end_date %></p>
-        <p>Status: <%= booking.status %></p>
-        <p>Total: <%= number_with_delimiter(booking.total_price_cents) %></p>
+        <p>Start Date: <%= booking.start_date.strftime("%B %d, %Y") %></p>
+        <p>End Date: <%= booking.end_date.strftime("%B %d, %Y") %></p>
+        <p>Status: <%= booking.status.capitalize %></p>
+        <p>Total: <%= number_to_currency(booking.total_price_cents, unit: "¥", precision: 0) %></p>
         <div>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <!-- Delete trigger -->
