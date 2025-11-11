@@ -12,8 +12,10 @@ export default class extends Controller {
     const events = JSON.parse(this.eventsValue || "[]");
 
     const calendar = new FullCalendar.Calendar(calendarEl, {
+      themeSystem: "bootstrap5",
       initialView: "dayGridMonth",
       editable: false,
+      selectable: true,
       events: events,
       eventClick: (info) => {
         const bookingId = info.event.id;
