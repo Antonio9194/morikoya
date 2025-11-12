@@ -50,7 +50,7 @@ puts "Created #{User.count} users"
     bunk: 1,
     double: 1,
     sofa_bed: 1,
-    capacity: 6,
+    capacity: 5,
     amenities: 'WiFi, Air conditioning, TV, Bathroom'
   )
 end
