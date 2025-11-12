@@ -2,14 +2,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
-  min-height: 50vh;
+  align-items: center;
   margin-top: 0;
 }
 
+.welcome-text {
+  display: block;
+  width: 80%;
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
 .contact-form {
-  max-width: 80%;
-  margin-top: 22px;
+  display: block;
+  width: 80%;
+  height: 50vh;
+  margin-top: 20px;
   background-color: #fff;
   padding: 22px;
   border-radius: 20px;
@@ -29,3 +37,28 @@
   font-weight: bold;
 }
 
+@media (max-width: 767px) {
+  .contact-form {
+    display: block;
+    width: 80%;
+    height: 50vh;
+    margin-top: 24px;
+    background-color: #fff;
+    padding: 22px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .contact-form {
+    display: block;
+    width: 80%;
+    height: 50vh;
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 22px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
