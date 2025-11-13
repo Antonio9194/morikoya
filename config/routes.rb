@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   # Payments
   resources :payments, only: [:new, :create]
 
-  # 'Guests' booking
+  # Guest dashboard
+  resource :profile, only: [:update], controller: 'guests'
+  get 'dashboard', to: 'guests#show', as: :guest_dashboard
+
+  # 'Guests' booking (keeping for backward compatibility)
   resources :guests, only: [:show, :update] do
     resources :bookings, only: [:index, :show]
   end
