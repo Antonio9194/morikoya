@@ -1,12 +1,14 @@
 require 'faker'
 
-puts 'Seeding database...'
+puts 'Starting reboot...'
 
 # Wipe everything first
 Booking.destroy_all
 ContactMessage.destroy_all
 Room.destroy_all
 User.destroy_all
+
+puts 'Destroying database...'
 
 User.create!(
   email: 'antoniov@morikoyahotel.com',
@@ -102,17 +104,31 @@ puts "Created #{ContactMessage.count} contact messages"
 
 # Create 30 bookings
 30.times do
-  start_date = Faker::Date.forward(days: rand(5..30))
-  end_date   = start_date + rand(2..7).days
+  room = Room.all.sample
 
-  Booking.create!(
-    user: guests.sample,
-    room: Room.all.sample,
-    start_date: start_date,
-    end_date: end_date,
-    status: 'confirmed',
-    payment_status: 'paid'
-  )
+  loop do
+    start_date = Faker::Date.forward(days: rand(5..30))
+    end_date   = start_date + rand(2..7).days
+
+    # check if this room already has a booking that overlaps
+    overlap = Booking.exists?(
+      room: room,
+      start_date: ..end_date,
+      end_date: start_date..
+    )
+
+    next if overlap
+
+    Booking.create!(
+      user: guests.sample,
+      room: room,
+      start_date: start_date,
+      end_date: end_date,
+      status: 'confirmed',
+      payment_status: 'paid'
+    )
+    break
+  end
 end
 
 puts "Created #{Booking.count} bookings"

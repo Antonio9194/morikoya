@@ -1,7 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :room
-  has_many :bookings
 
   validates :start_date, :end_date, presence: true
   # TO-DO: Add validation for payment later (if needed)
