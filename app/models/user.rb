@@ -11,4 +11,5 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :phone_number, format: { with: /\A[+]?[\d\s\-()]+\z/, message: "invalid format" }, allow_blank: true
 end
