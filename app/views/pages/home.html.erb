@@ -1,14 +1,14 @@
 <% if current_user.present? && current_user.admin? %>
   <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
-  <div class="d-flex flex-column justify-content-center align-items-center" style="height: 50vh;">
+  <div class="d-flex flex-column justify-content-center align-items-center">
     <div>
       <h1 class="minakoya" style="color: white; font-size: 5rem;">MorikoYa</h1>
       <hr class="line-above">
       <p style="color: white;">Welcome back <%= current_user.first_name %></p>
     </div>
-    <!--Daily summary-->
     <!-- Daily summary -->
     <div class="container">
+      <h6>Next Arrivals: <%= @next_checkins.count %> </h6>
       <div class="row font-weight-bold mb-2">
         <div class="col">Room</div>
         <div class="col">Date</div>
