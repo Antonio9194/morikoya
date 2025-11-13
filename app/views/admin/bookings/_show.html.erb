@@ -1,0 +1,27 @@
+<div class="modal fade" id="bookingModal-<%= booking.id %>" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Booking for <%= booking.user.first_name %> <%= booking.user.last_name %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Room: <%= booking.room.name %></p>
+        <p>Start Date: <%= booking.start_date.strftime("%B %d, %Y") %></p>
+        <p>End Date: <%= booking.end_date.strftime("%B %d, %Y") %></p>
+        <p>Status: <%= booking.status.capitalize %></p>
+        <p>Total: <%= number_to_currency(booking.total_price_cents, unit: "¥", precision: 0) %></p>
+        <div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- Delete trigger -->
+          <button type="button"
+          class="btn btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteBookingModal-<%= booking.id %>">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
