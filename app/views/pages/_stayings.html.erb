@@ -1,12 +1,12 @@
 <div class="row font-weight-bold mb-2">
-  <div class="col">Room</div>
-  <div class="col">Date</div>
-  <div class="col">Guest</div>
+  <div class="col"><strong>Room</strong></div>
+  <div class="col"><strong>Check-Out</strong></div>
+  <div class="col"><strong>Guest</strong></div>
 </div>
 <% @stayings.each do |staying| %>
   <div class="row mb-1">
     <div class="col"><%= staying.room.name %></div>
-    <div class="col"><%= staying.start_date.strftime('%d %b') %></div>
+    <div class="col"><%= staying.end_date.strftime('%d %b') %></div>
     <div class="col"><%= staying.user.first_name %> <%= staying.user.last_name %></div>
   </div>
 <% end %>
