@@ -1,27 +1,12 @@
-<div class="container">
-  <div class="row header">
-    <div class="col">
-      <h6>Next Arrivals (<%= @arrivals.count %>) </h6>
-    </div>
-    <div class="col">
-      <h6>Next Departures (<%= @departures.count %>) </h6>
-    </div>
-    <div class="col">
-      <h6>Currently Staying (<%= @arrivals.count %>) </h6>
-    </div>
-  </div>
-  <div class="row font-weight-bold mb-2">
-    <div class="col">Room</div>
-    <div class="col">Date</div>
-    <div class="col">Guest</div>
-  </div>
-  <% @arrivals.each do |arrival| %>
-    <div class="row mb-1">
-      <div class="col"><%= arrival.room.name %></div>
-      <div class="col"> <%= arrival.start_date.strftime('%d %b') %></div>
-      <div class="col">
-        <%= arrival.user.first_name %> <%= arrival.user.last_name %>
-      </div>
-    </div>
-  <% end %>
+<div class="row font-weight-bold mb-2">
+  <div class="col">Room</div>
+  <div class="col">Date</div>
+  <div class="col">Guest</div>
 </div>
+<% @arrivals.each do |arrival| %>
+  <div class="row mb-1">
+    <div class="col"><%= arrival.room.name %></div>
+    <div class="col"><%= arrival.start_date.strftime('%d %b') %></div>
+    <div class="col"><%= arrival.user.first_name %> <%= arrival.user.last_name %></div>
+  </div>
+<% end %>
