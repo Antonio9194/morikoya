@@ -7,23 +7,7 @@
       <p style="color: white;">Welcome back <%= current_user.first_name %></p>
     </div>
     <!-- Daily summary -->
-    <div class="container">
-      <h6>Next Arrivals: <%= @next_checkins.count %> </h6>
-      <div class="row font-weight-bold mb-2">
-        <div class="col">Room</div>
-        <div class="col">Date</div>
-        <div class="col">Guest</div>
-      </div>
-      <% @next_checkins.each do |checkin| %>
-        <div class="row mb-1">
-          <div class="col"><%= checkin.room.name %></div>
-          <div class="col"> <%= checkin.start_date.strftime('%d %b') %></div>
-          <div class="col">
-            <%= checkin.user.first_name %> <%= checkin.user.last_name %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <%= render 'arrivals' %>
   <% else %>
     <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
     <div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh;">
