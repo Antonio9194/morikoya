@@ -258,12 +258,11 @@
     </div>
   </div>
 </div>
-
 <!-- Profile Modal -->
-<div class="modal fade" 
-     id="profileModal" 
-     tabindex="-1" 
-     aria-labelledby="profileModalLabel" 
+<div class="modal fade"
+     id="profileModal"
+     tabindex="-1"
+     aria-labelledby="profileModalLabel"
      aria-hidden="true"
      data-bs-backdrop="true"
      data-bs-keyboard="true"
@@ -278,10 +277,10 @@
       </div>
       <div class="modal-body p-4">
         <div data-profile-form-target="alerts"></div>
-        <%= form_with model: current_user, 
-                      url: guest_path(current_user), 
-                      method: :patch, 
-                      data: { 
+        <%= form_with model: current_user,
+                      url: guest_path(current_user),
+                      method: :patch,
+                      data: {
                         turbo: false,
                         profile_form_target: "form",
                         action: "submit->profile-form#submit"
@@ -293,7 +292,6 @@
               <%= current_user.first_name %>
             </div>
           </div>
-          
           <!-- Last Name (Read-only) -->
           <div class="mb-3">
             <%= f.label :last_name, "Last Name", class: "form-label text-muted small" %>
@@ -301,7 +299,6 @@
               <%= current_user.last_name %>
             </div>
           </div>
-          
           <!-- Email (Editable) -->
           <div class="mb-3">
             <%= f.label :email, "Email Address", class: "form-label text-muted small" %>
@@ -310,16 +307,14 @@
               <i class="bi bi-info-circle me-1"></i>You can update your email address
             </div>
           </div>
-          
           <!-- Phone Number (Editable) -->
           <div class="mb-4">
             <%= f.label :phone_number, "Phone Number", class: "form-label text-muted small" %>
             <%= f.telephone_field :phone_number, class: "form-control", placeholder: "+81 90-1234-5678" %>
             <div class="form-text">
-              <i class="bi bi-info-circle me-1"></i>Optional. Include country code for international numbers
+              <i class="bi bi-info-circle me-1"></i>Include country code for international numbers
             </div>
           </div>
-          
           <div class="d-grid gap-2">
             <%= f.submit "Update Profile", class: "btn btn-primary", data: { disable_with: "Updating..." } %>
           </div>
@@ -328,4 +323,3 @@
     </div>
   </div>
 </div>
-

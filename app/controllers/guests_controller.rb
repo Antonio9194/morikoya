@@ -9,9 +9,9 @@ class GuestsController < ApplicationController
     if @user.update(user_params)
       # Optionally: Send confirmation email if email changed
       # UserMailer.email_changed_notification(@user).deliver_later if @user.email_previously_changed?
-      
-      render json: { 
-        success: true, 
+
+      render json: {
+        success: true,
         message: 'Profile updated successfully',
         user: {
           email: @user.email,
@@ -19,9 +19,9 @@ class GuestsController < ApplicationController
         }
       }
     else
-      render json: { 
-        success: false, 
-        errors: @user.errors.full_messages 
+      render json: {
+        success: false,
+        errors: @user.errors.full_messages
       }, status: :unprocessable_entity
     end
   end
