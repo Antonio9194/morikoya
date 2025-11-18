@@ -66,8 +66,7 @@
         <div class="card-body">
           <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room) do |f| %>
             <%= f.input :start_date, as: :string, label: "Specify the blackout duration",
-              input_html: { data: {controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates, default_value: "#{@check_in} to #{@check_out}"} } %>
-            <%# <%= f.input :end_date, as: :date, html5: true, input_html: { min: Date.today } %>
+              input_html: { data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates },  value: [@check_in, @check_out].all? ? "#{@check_in} to #{@check_out}" : "" } %>
             <%= f.button :submit, "Book this room", class: "btn btn-primary w-100 rounded-4" %>
           <% end %>
         </div>
