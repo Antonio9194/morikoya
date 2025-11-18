@@ -1,0 +1,27 @@
+<div class="tab-pane fade <%= 'show active' if is_active %>"
+     id="<%= tab_id %>"
+     role="tabpanel"
+     aria-labelledby="<%= tab_id %>-tab">
+  <% if bookings.any? %>
+    <div class="row g-4">
+      <% bookings.each do |booking| %>
+        <div class="col-12 col-lg-6">
+          <%= render "guests/booking_card", 
+                     booking: booking, 
+                     border_color: border_color,
+                     badge_color: badge_color,
+                     icon: icon,
+                     status_text: status_text %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="card shadow-sm rounded-4">
+      <div class="card-body p-5 text-center">
+        <i class="bi bi-<%= empty_icon %> text-muted mb-3" style="font-size: 3rem;"></i>
+        <p class="text-muted mb-0"><%= empty_message %></p>
+        <%= link_to "Browse Rooms", rooms_path, class: "btn btn-primary mt-3" if show_browse_button && defined?(rooms_path) %>
+      </div>
+    </div>
+  <% end %>
+</div>
