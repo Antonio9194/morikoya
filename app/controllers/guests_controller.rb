@@ -7,22 +7,24 @@ class GuestsController < ApplicationController
 
   def update
     if @user.update(user_params)
-      # Optionally: Send confirmation email if email changed
-      # UserMailer.email_changed_notification(@user).deliver_later if @user.email_previously_changed?
-
-      render json: {
-        success: true,
-        message: 'Profile updated successfully',
-        user: {
-          email: @user.email,
-          phone_number: @user.phone_number
-        }
-      }
+      respond_to do |format|
+        format.turbo_stream do
+          flash.now[:notice] = 'Profile updated successfully'
+          render turbo_stream: [
+            turbo_stream.update("profile_alerts", partial: "shared/flash_alert", locals: { type: "success", message: "Profile updated successfully" }),
+            turbo_stream.update("user_email_display", plain: @user.email),
+            turbo_stream.update("user_phone_display", plain: @user.phone_number || "Not provided")
+          ]
+        end
+        format.html { redirect_to guest_path(@user), notice: 'Profile updated successfully' }
+      end
     else
-      render json: {
-        success: false,
-        errors: @user.errors.full_messages
-      }, status: :unprocessable_entity
+      respond_to do |format|
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.update("profile_form", partial: "guests/profile_form", locals: { user: @user })
+        end
+        format.html { render :show, status: :unprocessable_entity }
+      end
     end
   end
 
