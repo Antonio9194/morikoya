@@ -1,0 +1,75 @@
+<div class="modal fade"
+     id="billingModal"
+     tabindex="-1"
+     aria-labelledby="billingModalLabel"
+     aria-hidden="true"
+     data-bs-backdrop="true"
+     data-bs-keyboard="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4 p-0">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title" id="billingModalLabel">
+          <i class="bi bi-receipt me-2"></i>Billing History
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <% paid_bookings = user.bookings.where(payment_status: 'paid').order(created_at: :desc) %>
+        <% if paid_bookings.any? %>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Transaction ID</th>
+                  <th scope="col">Room</th>
+                  <th scope="col">Issue Date</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% paid_bookings.each do |booking| %>
+                  <tr>
+                    <td>
+                      <small class="text-muted font-monospace">
+                        <%= booking.stripe_payment_intent_id ? booking.stripe_payment_intent_id.truncate(20) : "N/A" %>
+                      </small>
+                    </td>
+                    <td>
+                      <strong><%= booking.room.name %></strong>
+                      <br>
+                      <small class="text-muted">
+                        <%= booking.start_date.strftime("%d %b") %> - <%= booking.end_date.strftime("%d %b, %Y") %>
+                      </small>
+                    </td>
+                    <td><%= booking.created_at.strftime("%d %b, %Y") %></td>
+                    <td>
+                      <strong>¥<%= number_with_delimiter(booking.total_price_cents / 100) %></strong>
+                    </td>
+                    <td>
+                      <span class="badge bg-success rounded-pill">
+                        <i class="bi bi-check-circle me-1"></i>
+                        <%= booking.payment_status.capitalize %>
+                      </span>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-4 p-3 bg-light rounded">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-muted">Total Payments:</span>
+              <strong class="fs-5">¥<%= number_with_delimiter(paid_bookings.sum(:total_price_cents) / 100) %></strong>
+            </div>
+          </div>
+        <% else %>
+          <div class="text-center py-5">
+            <i class="bi bi-receipt text-muted mb-3" style="font-size: 3rem;"></i>
+            <p class="text-muted mb-0">No payment history yet...</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
