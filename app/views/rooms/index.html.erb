@@ -1,25 +1,4 @@
 <div class="container my-3">
-  <!--For testing-->
-  <% if @booked_room_ids&.empty? %>
-    <p>All room available</p>
-  <% else %>
-    <p>Booked rooms</p>
-    <% @booked_room_ids&.each do |id| %>
-      <%= Room.all.find(id).name %>
-    <% end %>
-  <% end %>
-  <% if @rooms.empty? %>
-    <p>No room available</p>
-  <% else %>
-    <p>Availble rooms</p>
-    <% @rooms.each do |room| %>
-      <%= room.name %>
-    <% end %>
-  <% end %>
-  <!--End testing-->
-  <div class="my-3">
-    <h4>From <%= @check_in %> to <%= @check_out %> for <%= @guest_num %></h4>
-  </div>
   <% if @guest_num.present? && @guest_num > 8 %>
     <% if @rooms.count > 1 %>
       <h5 class="badge rounded-pill bg-success fs-4 my-3">Choose at least two rooms for your group!</h5>
