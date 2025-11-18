@@ -13,7 +13,7 @@ class Booking < ApplicationRecord
   # Calculate total price before validation (so it's ready for payment)
   before_validation :calculate_total_price, on: :create
 
-  scope :upcoming, -> { where("start_date >= ?", Date.today) }
+  scope :upcoming, -> { where('start_date >= ?', Date.today) }
 
   def start_date_cannot_be_in_the_past
     return unless start_date.present? && start_date < Date.today

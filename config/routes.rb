@@ -24,8 +24,11 @@ Rails.application.routes.draw do
 
   # Admin only
   namespace :admin do
+    get 'bookings/index'
+    get 'bookings/show'
+    get 'bookings/destroy'
     resources :rooms
-    resources :bookings, only: %i[index show]
+    resources :bookings, only: %i[index show destroy]
     resources :contact_messages, only: %i[index show destroy]
   end
 

@@ -1,0 +1,12 @@
+<div class="row font-weight-bold mb-2">
+  <div class="col"><strong>Room</strong></div>
+  <div class="col"><strong>Check-Out</strong></div>
+  <div class="col"><strong>Guest</strong></div>
+</div>
+<% @departures.each do |departure| %>
+  <div class="row mb-1">
+    <div class="col"><%= departure.room.name %></div>
+    <div class="col"><%= departure.end_date.strftime('%d %b') %></div>
+    <div class="col"><%= departure.user.first_name %> <%= departure.user.last_name %></div>
+  </div>
+<% end %>
