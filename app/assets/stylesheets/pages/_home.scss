@@ -137,3 +137,23 @@ button {
   padding: 0.8rem;
   white-space: nowrap;
 }
+
+.search {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid red;
+  border-radius: 1rem;
+  margin-top: 0.6rem;
+  padding: 0;
+}
+
+.stay, .dates {
+  border-right: 2px solid red;
+  margin: 0;
+  padding: 0.6rem;
+}
+
+.guests {
+  margin: 0;
+  padding: 0.6rem;
+}
+

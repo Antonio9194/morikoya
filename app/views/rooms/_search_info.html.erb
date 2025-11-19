@@ -1,1 +1,7 @@
-<p>hello, this is phuong, smell my pussy</p>
+<div class="row search">
+  <div class="col-12 col-md-6 col-lg-4 stay">Your stay</div>
+  <div class="col-12 col-md-6 col-lg-4 dates">
+    <%= @check_in.strftime('%d %b') %> - <%= @check_out.strftime('%d %b') %>
+  </div>
+  <div class="col-12 col-md-6 col-lg-4 guests"><%= @guest_num %></div>
+</div>
