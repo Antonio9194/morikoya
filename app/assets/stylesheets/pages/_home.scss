@@ -146,14 +146,17 @@ button {
   padding: 0;
 }
 
-.stay, .dates {
-  border-right: 2px solid red;
+.dates, .guests{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
   margin: 0;
   padding: 0.6rem;
 }
 
-.guests {
-  margin: 0;
-  padding: 0.6rem;
+.dates {
+  border-right: 2px solid red;
 }
+
 
