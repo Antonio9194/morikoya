@@ -44,6 +44,22 @@ class Booking < ApplicationRecord
     (end_date - start_date).to_i
   end
 
+  def stripe_receipt_url
+    return nil unless stripe_payment_intent_id && payment_status == 'paid'
+
+    begin
+      payment_intent = Stripe::PaymentIntent.retrieve(stripe_payment_intent_id)
+      charge_id = payment_intent.latest_charge
+      return nil unless charge_id
+
+      charge = Stripe::Charge.retrieve(charge_id)
+      charge.receipt_url
+    rescue Stripe::StripeError => e
+      Rails.logger.error "Failed to retrieve Stripe receipt: #{e.message}"
+      nil
+    end
+  end
+
   private
 
   def calculate_total_price

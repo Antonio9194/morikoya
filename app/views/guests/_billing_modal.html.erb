@@ -25,6 +25,7 @@
                   <th scope="col">Issue Date</th>
                   <th scope="col">Amount</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Receipt</th>
                 </tr>
               </thead>
               <tbody>
@@ -51,6 +52,15 @@
                         <i class="bi bi-check-circle me-1"></i>
                         <%= booking.payment_status.capitalize %>
                       </span>
+                    </td>
+                    <td>
+                      <% if booking.stripe_receipt_url %>
+                        <%= link_to booking.stripe_receipt_url, target: "_blank", class: "btn btn-sm btn-outline-primary" do %>
+                          <i class="bi bi-download me-1"></i>Download
+                        <% end %>
+                      <% else %>
+                        <span class="text-muted small">N/A</span>
+                      <% end %>
                     </td>
                   </tr>
                 <% end %>
