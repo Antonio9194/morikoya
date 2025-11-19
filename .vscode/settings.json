@@ -1,0 +1,30 @@
+{
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.rulers": [80],
+
+  "files.exclude": {
+    "**/tmp": true,
+    "**/log": true,
+    "**/node_modules": true,
+    "**/vendor/bundle": true,
+    "**/.bundle": true,
+    "**/coverage": true,
+    "**/storage": true
+  },
+
+  "search.exclude": {
+    "**/tmp": true,
+    "**/log": true,
+    "**/node_modules": true,
+    "**/vendor": true
+  },
+
+  "ruby.useLanguageServer": true
+  ,
+  "[erb]": {
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
+    "editor.formatOnSave": true
+  }
+}

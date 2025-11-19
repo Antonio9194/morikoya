@@ -33,3 +33,25 @@
     cursor: pointer;
   }
 }
+
+// Admin Booking Modals
+#deleteBookingModal,
+#bookingModal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .modal-content {
+    background: white;
+    margin: 100px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+  }
+}

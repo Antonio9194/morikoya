@@ -1,24 +1,27 @@
 <div class="container my-3">
+  <% if @guest_num.present? && @guest_num > 8 %>
+    <% if @rooms.count > 1 %>
+      <h5 class="badge rounded-pill bg-success fs-4 my-3">Choose at least two rooms for your group!</h5>
+      <%= render "rooms/other_nums", rooms: @rooms %>
+    <% else %>
+      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">Sorry we are booked out!</h5>
+    <% end %>
+  <% end %>
   <% if @guest_num.present? && @guest_num == 8 %>
     <%= render "rooms/seven_eight", rooms: @rooms %>
   <% end %>
   <% if @guest_num.present? && @guest_num == 7 %>
     <%= render "rooms/seven_eight", rooms: @rooms %>
   <% end %>
-  <% if @guest_num.present? && @guest_num <= 6 %>
+  <% if @guest_num.present? && @guest_num == 6 %>
+    <%= render "rooms/six", rooms: @rooms %>
+  <% end %>
+  <% if @guest_num.present? && @guest_num <= 5 %>
     <% if @rooms.count > 1 %>
       <h5 class="badge rounded-pill bg-success fs-4 my-3">Choose at least one room for your group!</h5>
       <%= render "rooms/other_nums", rooms: @rooms %>
     <% elsif @rooms.count == 1 %>
       <h5 class="badge rounded-pill bg-success fs-4 my-3">We only have one room left!</h5>
-      <%= render "rooms/other_nums", rooms: @rooms %>
-    <% else %>
-      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">Sorry we are booked out!</h5>
-    <% end %>
-  <% end %>
-  <% if @guest_num.present? && @guest_num > 8 %>
-    <% if @rooms.count > 1 %>
-      <h5 class="badge rounded-pill bg-success fs-4 my-3">Choose at least two rooms for your group!</h5>
       <%= render "rooms/other_nums", rooms: @rooms %>
     <% else %>
       <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">Sorry we are booked out!</h5>

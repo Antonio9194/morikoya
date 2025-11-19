@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-between px-2 mt-2 mb-3">
+  <%= link_to "Edit",
+      edit_admin_room_path(room),
+      class: "btn fw-bold rounded-4 flex-fill mx-1",
+      style: "color: black; border: 1px solid black; border-radius: 8px;" %>
+  <%= link_to "Delete",
+      admin_room_path(room),
+      data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+      class: "btn fw-bold rounded-4 flex-fill mx-1",
+      style: "color: black; border: 1px solid black; border-radius: 8px;" %>
+</div>

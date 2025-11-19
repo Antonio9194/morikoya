@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Rooms & bookings (guest side)
-  resources :rooms, only: [:index, :show] do
-    resources :bookings, only: [:new, :create]
+  resources :rooms, only: %i[index show] do
+    resources :bookings, only: %i[new create]
   end
 
   # Bookings with confirmation page
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   # Payments
-  resources :payments, only: [:new, :create]
+  resources :payments, only: %i[new create]
 
   # Guest dashboard
   resource :profile, only: [:update], controller: 'guests'
@@ -26,19 +26,21 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :show]
   end
 
-
   # Admin only
   namespace :admin do
+    get 'bookings/index'
+    get 'bookings/show'
+    get 'bookings/destroy'
     resources :rooms
-    resources :bookings, only: [:index, :show]
-    resources :contact_messages, only: [:index, :show, :destroy]
+    resources :bookings, only: %i[index show destroy]
+    resources :contact_messages, only: %i[index show destroy]
   end
 
   # Contact messages (guest side)
-  resources :contact_messages, only: [:new, :create]
+  resources :contact_messages, only: %i[new create]
 
-  get "about_us", to: "pages#about_us"
-  get "faqs", to: "pages#faqs"
+  get 'about_us', to: 'pages#about_us'
+  get 'faqs', to: 'pages#faqs'
 
-  root "pages#home"
+  root 'pages#home'
 end

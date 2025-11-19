@@ -4,8 +4,8 @@ class ContactMailer < ApplicationMailer
   def new_message(contact_message)
     @contact_message = contact_message
     mail(
-      from: ENV['GMAIL_USER'],         
-      reply_to: @contact_message.email,   
+      from: ENV.fetch('GMAIL_USER', nil),
+      reply_to: @contact_message.email,
       subject: "New Message from #{@contact_message.name}",
       body: <<~BODY
         Name: #{@contact_message.name}

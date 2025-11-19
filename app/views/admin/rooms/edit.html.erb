@@ -1,0 +1,20 @@
+<div class="roomedit mt-3">
+  <%= simple_form_for [:admin, @room] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price_per_night, label: "Price per night (¥)" %>
+    <%= f.input :size, label: "Room size (m²)" %>
+    <%= f.input :capacity, label: "Max guests" %>
+    <%= f.input :amenities, as: :text %>
+    <h5>Beds</h5>
+    <div class="row">
+      <div class="col-md-4"><%= f.input :bunk %></div>
+      <div class="col-md-4"><%= f.input :single %></div>
+      <div class="col-md-4"><%= f.input :semi_double %></div>
+      <div class="col-md-4"><%= f.input :double %></div>
+      <div class="col-md-4"><%= f.input :sofa_bed %></div>
+      <div class="col-md-4"><%= f.input :wide_double %></div>
+    </div>
+    <%= f.button :submit, class: "btnno mt-3" %>
+  <% end %>
+</div>

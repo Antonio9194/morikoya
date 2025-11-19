@@ -1,18 +1,19 @@
 class RoomsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_room, only: [:show]
   def index
-    @rooms = Room.all
+    @rooms = Room.order(created_at: :asc)
 
     if search_params[:check_in].present? && search_params[:check_out].present?
-      check_in = Date.parse(search_params[:check_in])
-      check_out = Date.parse(search_params[:check_out])
+      @check_in = Date.parse(search_params[:check_in])
+      @check_out = Date.parse(search_params[:check_out])
 
       # Find rooms that have overlapping bookings
-      booked_room_ids = Booking.where("start_date < ? AND end_date > ?", check_out, check_in).pluck(:room_id)
+      @booked_room_ids = Booking.where('start_date < ? AND end_date > ?', @check_out,
+                                       @check_in).where.not(status: 'cancelled').pluck(:room_id)
 
       # Exclude those rooms
-      @rooms = @rooms.where.not(id: booked_room_ids)
+      @rooms = @rooms.where.not(id: @booked_room_ids)
     end
 
     # Guest count
@@ -21,10 +22,11 @@ class RoomsController < ApplicationController
       room_capacity = @rooms.map(&:capacity).sum
       @rooms = room_capacity >= search_params[:guests].to_i ? @rooms : []
     end
-    if @rooms.empty?
-      redirect_to root_path, alert: "No rooms available for your dates"
-    end
+    return unless @rooms.empty?
+
+    redirect_to root_path, alert: 'No rooms available for your dates'
   end
+
   def show
     @booking = Booking.new
   end
