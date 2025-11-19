@@ -4,7 +4,6 @@
   past_bookings = confirmed_bookings.past.order(end_date: :desc)
   future_bookings = confirmed_bookings.future.order(start_date: :asc)
 %>
-
 <% if ongoing_bookings.any? || past_bookings.any? || future_bookings.any? %>
   <!-- Bootstrap Tabs Navigation -->
   <ul class="nav nav-tabs mb-4" id="bookingsTabs" role="tablist">
@@ -57,7 +56,6 @@
       </button>
     </li>
   </ul>
-
   <!-- Tab Content -->
   <div class="tab-content" id="bookingsTabContent">
     <%= render "guests/bookings_tab",
@@ -71,7 +69,6 @@
                empty_icon: "calendar-event",
                empty_message: "No upcoming bookings...",
                show_browse_button: true %>
-
     <%= render "guests/bookings_tab",
                tab_id: "current",
                bookings: ongoing_bookings,
@@ -83,7 +80,6 @@
                empty_icon: "circle",
                empty_message: "No current stays...",
                show_browse_button: false %>
-
     <%= render "guests/bookings_tab",
                tab_id: "past",
                bookings: past_bookings,

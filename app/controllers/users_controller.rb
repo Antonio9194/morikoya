@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   def update
     # Only allow users to update their own profile
     if current_user.update_with_password(user_params)
-      render json: { 
-        success: true, 
+      render json: {
+        success: true,
         message: 'Profile updated successfully',
         user: {
           email: current_user.email,
@@ -13,9 +13,9 @@ class UsersController < ApplicationController
         }
       }
     else
-      render json: { 
-        success: false, 
-        errors: current_user.errors.full_messages 
+      render json: {
+        success: false,
+        errors: current_user.errors.full_messages
       }, status: :unprocessable_entity
     end
   end
