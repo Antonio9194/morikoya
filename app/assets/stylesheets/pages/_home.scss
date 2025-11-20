@@ -138,25 +138,3 @@ button {
   white-space: nowrap;
 }
 
-.search {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid red;
-  border-radius: 1rem;
-  margin-top: 0.6rem;
-  padding: 0;
-}
-
-.dates, .guests{
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  text-align: center;
-  margin: 0;
-  padding: 0.6rem;
-}
-
-.dates {
-  border-right: 2px solid red;
-}
-
-
