@@ -6,6 +6,7 @@
       <h5 class="badge rounded-pill bg-success fs-4 my-3">Choose at least two rooms for your group!</h5>
       <%= render "rooms/other_nums", rooms: @rooms %>
     <% else %>
+      <%= render "search_info", rooms: @rooms %>
       <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">Sorry we are booked out!</h5>
     <% end %>
   <% end %>
