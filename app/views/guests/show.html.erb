@@ -1,9 +1,26 @@
-<div style="display: flex; flex-direction: column; justify-content: center; align-items:center">
-  <% if current_user.present?%>
-    <% current_user.contact_messages.each do |message| %>
-      <div>
-        <%= message.message%>
+<div class="container my-5">
+  <div class="row g-4">
+    <!-- Messages Section -->
+    <div class="col-md-4">
+      <%= render "guests/messages_card", user: current_user %>
+    </div>
+    <!-- User Info & Bookings Section -->
+    <div class="col-md-8">
+      <!-- User Card + Avatar -->
+      <div class="row g-3 mb-4">
+        <div class="col-md-9">
+          <%= render "guests/user_info_card", user: current_user %>
+        </div>
+        <div class="col-md-3">
+          <%= render "guests/avatar_menu", user: current_user %>
+        </div>
       </div>
-    <% end %>
-  <% end %>
+      <!-- Bookings Section -->
+      <%= render "guests/bookings_section", user: current_user %>
+    </div>
+  </div>
 </div>
+<!-- Profile Modal -->
+<%= render "guests/profile_modal", user: current_user %>
+<!-- Billing History Modal -->
+<%= render "guests/billing_modal", user: current_user %>

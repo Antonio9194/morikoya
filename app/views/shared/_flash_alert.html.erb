@@ -1,0 +1,14 @@
+<div class="alert alert-<%= type == 'success' ? 'success' : 'danger' %> alert-dismissible fade show" role="alert">
+  <i class="bi bi-<%= type == 'success' ? 'check-circle' : 'exclamation-triangle' %> me-2"></i>
+  <%= message %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<script>
+  // Auto close modal after 2 seconds if successfully saved
+  <% if type == 'success' %>
+    setTimeout(() => {
+      const modal = bootstrap.Modal.getInstance(document.getElementById('profileModal'));
+      if (modal) modal.hide();
+    }, 2000);
+  <% end %>
+</script>
