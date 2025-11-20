@@ -8,7 +8,7 @@
       <div class="text">
         <div class="label">Check-In</div>
         <div class="value" data-booking-form-target="checkInValue">
-          <%= @check_in.strftime('%d %b %Y') %>
+          <%= @check_in&.strftime('%d %b %Y') %>
           <%= params.dig(:search, :check_in) %>
         </div>
       </div>
@@ -21,7 +21,7 @@
       <div class="text">
         <div class="label">Check-Out</div>
         <div class="value" data-booking-form-target="checkOutValue">
-          <%= @check_out.strftime('%d %b %Y') %>
+          <%= @check_out&.strftime('%d %b %Y') %>
           <%= params.dig(:search, :check_out) %>
         </div>
       </div>
