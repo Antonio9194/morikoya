@@ -99,6 +99,7 @@
                 <p class="mb-0"><%= room.amenities %></p>
               </div>
             </div>
+            <!--Renders the admin view with-->
             <% if current_user.present? && current_user.admin? %>
               <%= render "edit_delete", room: room %>
             <% end %>
