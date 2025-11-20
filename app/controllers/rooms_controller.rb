@@ -33,7 +33,7 @@ class RoomsController < ApplicationController
 
     @check_in = params[:check_in]
     @check_out = params[:check_out]
-    @guest = params[:guest]
+    @guest_num = params[:guests].to_i
   end
 
   private

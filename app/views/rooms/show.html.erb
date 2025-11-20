@@ -57,18 +57,36 @@
         </div>
       </div>
     </div>
-    <!-- Booking calendar -->
+    <!-- Booking calendar + Show searched date range in date input field -->
     <div class="col-lg-4">
       <div class="card position-sticky rounded-5 shadow-sm" style="top: 20px; overflow: hidden">
         <div class="card-header">
           <h5 class="mb-0">Make a booking</h5>
         </div>
-        <div class="card-body">
-          <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room) do |f| %>
-            <%= f.input :start_date, as: :string, label: "Specify the blackout duration",
-              input_html: { data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates },  value: [@check_in, @check_out].all? ? "#{@check_in} to #{@check_out}" : "" } %>
-            <%= f.button :submit, "Book this room", class: "btn btn-primary w-100 rounded-4" %>
-          <% end %>
+        <div class="card-body" data-controller="retrieve-dates">
+          <div class="booking-form">
+            <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room) do |f| %>
+              <%= f.input :start_date,
+                as: :string, label: "Specify the blackout duration",
+                input_html: {
+                  data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates, action: "input->retrieve_dates#update", retrieve_dates_target: "chosenDates" },
+                  value: [@check_in, @check_out].all? ? "#{@check_in} to #{@check_out}" : "" } %>
+              <%= f.button :submit, "Book this room", class: "btn btn-primary w-100 rounded-4" %>
+            <% end %>
+          </div>
+          <hr style="height: 2px;">
+          <div class="tentative-booking-info">
+            <div class="row">
+              <% if @guest_num.present? %>
+                <div class="guest-num col-7">
+                  <p class="card-text">Number of guests:</p>
+                </div>
+                <div class="guest-num col-5">
+                  <p class="card-text text-end"><%= @guest_num %> <%= @guest_num > 1 ? "person".pluralize : "person" %></p>
+                </div>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -80,8 +98,6 @@
         <div class="card-body text-center">
           <h2 class="card-title">Why Book With Us?</h2>
           <p class="card-text">Experience unparalleled comfort and luxury in our meticulously designed rooms. Whether you're here for business or leisure, our amenities and services are tailored to meet your every need. Book now to enjoy exclusive offers and a memorable stay!</p>
-          <p><%= @check_in %></p>
-          <p><%= @check_out %></p>
         </div>
       </div>
     </div>
