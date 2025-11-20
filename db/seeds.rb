@@ -12,6 +12,7 @@ puts 'Destroying database...'
 
 User.create!(
   email: 'antoniov@morikoyahotel.com',
+  phone_number: '123-1234-12345',
   password: 'marvelous',
   role: 'admin',
   first_name: 'Antonio',
@@ -20,6 +21,7 @@ User.create!(
 
 User.create!(
   email: 'anto.vinciguerra@hotmail.com',
+  phone_number: '123-1234-12345',
   password: 'password',
   role: 'guest',
   first_name: 'Antonio',
@@ -32,6 +34,7 @@ puts 'Created Antonio’s account'
 guests = 20.times.map do
   User.create!(
     email: Faker::Internet.unique.email,
+    phone_number: '123-1234-12345',
     password: 'password123',
     role: 'guest',
     first_name: Faker::Name.first_name,
