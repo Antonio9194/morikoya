@@ -55,6 +55,9 @@
               <div class="label">Check-In</div>
               <div class="value" data-booking-form-target="checkInValue">
                 <%= params.dig(:search, :check_in) %>
+                <% if @check_in.present? %>
+                  <%= @check_in.strftime('%d %b %Y') %>
+                <% end %>
               </div>
             </div>
           </div>
