@@ -1,0 +1,33 @@
+<%= simple_form_for user, url: guest_path(user), method: :patch do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <!-- First Name (Read-only) -->
+  <div class="mb-3">
+    <%= f.label :first_name, "First Name", class: "form-label text-muted small" %>
+    <div class="form-control bg-light" style="cursor: not-allowed;">
+      <%= user.first_name %>
+    </div>
+  </div>
+  <!-- Last Name (Read-only) -->
+  <div class="mb-3">
+    <%= f.label :last_name, "Last Name", class: "form-label text-muted small" %>
+    <div class="form-control bg-light" style="cursor: not-allowed;">
+      <%= user.last_name %>
+    </div>
+  </div>
+  <%= f.input :email,
+              label: "Email Address",
+              label_html: { class: "form-label text-muted small" },
+              input_html: { class: "form-control", placeholder: "your@email.com" },
+              hint: '<i class="bi bi-info-circle me-1"></i>You can update your email address'.html_safe,
+              wrapper_html: { class: "mb-3" } %>
+  <%= f.input :phone_number,
+              label: "Phone Number",
+              label_html: { class: "form-label text-muted small" },
+              input_html: { class: "form-control", placeholder: "+81 90-1234-5678" },
+              hint: '<i class="bi bi-info-circle me-1"></i>Include country code for international numbers'.html_safe,
+              wrapper_html: { class: "mb-4" } %>
+  <div class="d-grid gap-2">
+    <%= f.button :submit, "Update Profile", class: "btn btn-primary" %>
+  </div>
+<% end %>

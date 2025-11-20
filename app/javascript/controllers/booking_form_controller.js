@@ -31,6 +31,16 @@ export default class extends Controller {
     });
   }
 
+  // added logic in stimulus controller to change the date format shown in the checkin and checkout values update which refers to the search bars in homepage and rooms
+  formatDate(dateString) {
+    const d = new Date(dateString);
+    return d.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+  }
+
   updateValue(event) {
     const date = event.currentTarget.dataset.day;
     const clickedEl = event.currentTarget;
@@ -88,9 +98,9 @@ export default class extends Controller {
       this.datesSelected = [start, end];
 
       // update inputs/labels
-      this.checkInValueTarget.textContent = start;
+      this.checkInValueTarget.textContent = this.formatDate(start);
       this.checkInInputTarget.value = start;
-      this.checkOutValueTarget.textContent = end;
+      this.checkOutValueTarget.textContent = this.formatDate(end);
       this.checkOutInputTarget.value = end;
 
       // clear previous highlights then mark endpoints + range

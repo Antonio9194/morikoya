@@ -1,7 +1,7 @@
 #guests-container {
   margin-top: 20px;
   margin-left: 650px;
-  width: 300px !important; 
+  width: 300px !important;
   height: 100px;
   background-color: white;
   border-radius: 50px;
@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .guests-modal {
@@ -52,7 +52,7 @@
 
 .guests-counter button:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .guests-counter span {
@@ -61,4 +61,22 @@
   color: #333;
   text-align: center;
   min-width: 25px;
+}
+
+// hover background light effect for menu items
+.hover-bg-light {
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+}
+
+// Fix Bootstrap modal z-index issue
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+
+.modal {
+  z-index: 1050 !important;
 }
