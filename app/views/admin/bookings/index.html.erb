@@ -1,0 +1,20 @@
+<div class="rooms-container">
+  <% @rooms.each do |room| %>
+    <div class="room-calendar" style="border-radius: 20px;">
+      <h3><%= room.name %></h3>
+      <div
+        class="calendar"
+        data-controller="calendar"
+        data-calendar-events-value="<%= room.bookings.where(status: 'confirmed').map { |b|
+          { title: "#{b.user.first_name} #{b.user.last_name}", start: b.start_date, end: b.end_date, id: b.id }
+        }.to_json %>"
+      ></div>
+      <% room.bookings.each do |booking| %>
+        <%= render "show", booking: booking %>
+      <% end %>
+      <% room.bookings.each do |booking| %>
+        <%= render "delete_bookings", booking: booking %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

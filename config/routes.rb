@@ -17,15 +17,22 @@ Rails.application.routes.draw do
   # Payments
   resources :payments, only: %i[new create]
 
-  # 'Guests' booking
-  resources :guests, only: [:show] do
-    resources :bookings, only: %i[index show]
+  # Guest dashboard
+  resource :profile, only: [:update], controller: 'guests'
+  get 'dashboard', to: 'guests#show', as: :guest_dashboard
+
+  # 'Guests' booking (keeping for backward compatibility)
+  resources :guests, only: [:show, :update] do
+    resources :bookings, only: [:index, :show]
   end
 
   # Admin only
   namespace :admin do
+    get 'bookings/index'
+    get 'bookings/show'
+    get 'bookings/destroy'
     resources :rooms
-    resources :bookings, only: %i[index show]
+    resources :bookings, only: %i[index show destroy]
     resources :contact_messages, only: %i[index show destroy]
   end
 

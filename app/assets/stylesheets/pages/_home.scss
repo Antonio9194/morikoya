@@ -25,7 +25,7 @@
   align-items: center;
   padding: 12px 12px;
   gap: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .search-item {
@@ -75,28 +75,39 @@
   cursor: pointer;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
+.daily-summary {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 1rem;
+  width: 800px;
+  max-width: 1200px;
 }
 
-.modal-content {
-  background: white;
-  margin: 100px auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 12px;
+.font-weight-bold {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 20px;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
 
-.close {
-  float: right;
-  font-size: 1.5rem;
-  cursor: pointer;
+.row {
+  padding: 0.5rem 0;
+  border-bottom: 2px solid white;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.col {
+  font-size: 0.95rem;
+}
+
+button {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 0.8rem;
+  white-space: nowrap;
 }

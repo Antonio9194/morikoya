@@ -13,7 +13,12 @@ class Booking < ApplicationRecord
   # Calculate total price before validation (so it's ready for payment)
   before_validation :calculate_total_price, on: :create
 
+  # Scopes for filtering bookings
   scope :upcoming, -> { where("start_date >= ?", Date.today) }
+  scope :confirmed, -> { where(status: 'confirmed') }
+  scope :ongoing, -> { where("start_date <= ? AND end_date >= ?", Date.today, Date.today) }
+  scope :past, -> { where("end_date < ?", Date.today) }
+  scope :future, -> { where("start_date > ?", Date.today) }
 
   def start_date_cannot_be_in_the_past
     return unless start_date.present? && start_date < Date.today
@@ -37,6 +42,22 @@ class Booking < ApplicationRecord
     return 0 if start_date.nil? || end_date.nil?
 
     (end_date - start_date).to_i
+  end
+
+  def stripe_receipt_url
+    return nil unless stripe_payment_intent_id && payment_status == 'paid'
+
+    begin
+      payment_intent = Stripe::PaymentIntent.retrieve(stripe_payment_intent_id)
+      charge_id = payment_intent.latest_charge
+      return nil unless charge_id
+
+      charge = Stripe::Charge.retrieve(charge_id)
+      charge.receipt_url
+    rescue Stripe::StripeError => e
+      Rails.logger.error "Failed to retrieve Stripe receipt: #{e.message}"
+      nil
+    end
   end
 
   private

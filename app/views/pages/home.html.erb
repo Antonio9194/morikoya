@@ -1,10 +1,40 @@
 <% if current_user.present? && current_user.admin? %>
   <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
-  <div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh;">
+  <div class="d-flex flex-column justify-content-center align-items-center">
     <div>
       <h1 class="minakoya" style="color: white; font-size: 5rem;">MorikoYa</h1>
       <hr class="line-above">
       <p style="color: white;">Welcome back <%= current_user.first_name %></p>
+    </div>
+    <!-- Daily summary -->
+    <div class="daily-summary" data-controller="admin-dashboard">
+      <div class="row header">
+        <div class="col">
+          <button data-action="click->admin-dashboard#showArrivals">
+            Next Arrivals (<%= @arrivals&.count || 0 %>)
+          </button>
+        </div>
+        <div class="col">
+          <button data-action="click->admin-dashboard#showDepartures">
+            Next Departures (<%= @departures&.count || 0 %>)
+          </button>
+        </div>
+        <div class="col">
+          <button data-action="click->admin-dashboard#showStayings">
+            Currently Staying (<%= @stayings&.count || 0 %>)
+          </button>
+        </div>
+      </div>
+      <!-- PARTIALS -->
+      <div data-admin-dashboard-target="arrivals">
+        <%= render 'arrivals' %>
+      </div>
+      <div data-admin-dashboard-target="departures" style="display: none;">
+        <%= render 'departures' %>
+      </div>
+      <div data-admin-dashboard-target="stayings" style="display: none;">
+        <%= render 'stayings' %>
+      </div>
     </div>
   <% else %>
     <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
