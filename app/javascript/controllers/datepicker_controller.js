@@ -1,20 +1,19 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 import flatpickr from "flatpickr";
 
 // Connects to data-controller="datepicker"
 export default class extends Controller {
   static values = {
-    currentBookings: Array
-  }
+    currentBookings: Array,
+  };
   connect() {
-    console.log(this.element)
-    const now = new Date()
+    console.log(this.element);
+    const now = new Date();
     flatpickr(this.element, {
       dateFormat: "Y-m-d",
       mode: "range",
       minDate: "today",
-      disable: this.currentBookingsValue
-    })
+      disable: this.currentBookingsValue,
+    });
   }
-
 }
