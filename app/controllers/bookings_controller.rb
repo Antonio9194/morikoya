@@ -50,7 +50,7 @@ class BookingsController < ApplicationController
       @booking.update(status: 'cancelled')
       respond_to do |format|
         format.html { redirect_to room_path(@booking.room), notice: "Booking cancelled and returned to room page." }
-        format.json { render json: { success: true }, status: :ok }
+        format.json { render json: { success: true, room_id: @booking.room_id }, status: :ok }
       end
     else
       respond_to do |format|

@@ -122,6 +122,11 @@ export default class extends Controller {
 
       if (response.ok) {
         console.log("Booking cancelled successfully");
+        const result = await response.json();
+        // Redirect to room page with a full page reload to force the refresh to update the calendar
+        if (result.room_id) {
+          window.location.href = `/rooms/${result.room_id}`;
+        }
       }
     } catch (error) {
       console.error("Failed to cancel booking:", error);
