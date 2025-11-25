@@ -55,10 +55,5 @@
                               style: "width: 20px;", alt: "Double bed icon") %>
       <p class="mb-0"><%= room.double %> <%= room.double == 1 ? "double bed" : "double bed".pluralize%></p>
     </div>
-    <div class="col-6 d-flex justify-content-start align-items-center px-0">
-      <%= image_tag("wide-double.png", class: "me-2",
-                              style: "width: 20px;", alt: "Wide double bed icon") %>
-      <p class="mb-0"><%= room.wide_double %> <%= room.wide_double == 1 ? "wide double bed" : "wide double bed".pluralize%></p>
-    </div>
   </div>
 <% end %>
