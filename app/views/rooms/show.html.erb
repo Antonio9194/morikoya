@@ -63,14 +63,15 @@
         <div class="card-header">
           <h5 class="mb-0">Make a booking</h5>
         </div>
-        <div class="card-body" data-controller="retrieve-dates">
+        <div class="card-body">
           <div class="booking-form">
             <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room) do |f| %>
               <%= f.input :start_date,
                 as: :string, label: "Specify the booking duration",
                 input_html: {
-                  data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates, action: "input->retrieve_dates#update", retrieve_dates_target: "chosenDates" },
-                  value: [@check_in, @check_out].all? ? "#{@check_in&.to_datetime.strftime('%d %b %Y')} - #{@check_out&.to_datetime.strftime('%d %b %Y')}" : "" } %>
+                  class: "chosen-dates",
+                  data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates, datepicker_target: "input" },
+                  value: [@check_in, @check_out].all? ? "#{@check_in} - #{@check_out}" : "" } %>
               <%= f.button :submit, "Book this room", class: "btn btn-primary w-100 rounded-4" %>
             <% end %>
           </div>
@@ -85,6 +86,14 @@
                   <p class="card-text text-end"><%= @guest_num %> <%= @guest_num > 1 ? "person".pluralize : "person" %></p>
                 </div>
               <% end %>
+            </div>
+            <div class="row">
+              <div class="guest-num col-7">
+                <p class="card-text">Number of nights:</p>
+              </div>
+              <div class="guest-num col-5">
+                <p class="card-text text-end"  data-controller="retrieve-dates" data-retrieve-dates-datepicker-outlet=".chosen-dates" data-retrieve-dates-target="datesDestination" ></p>
+              </div>
             </div>
           </div>
         </div>
