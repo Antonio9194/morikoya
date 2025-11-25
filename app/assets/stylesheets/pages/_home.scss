@@ -92,12 +92,14 @@
   margin: 0.5rem;
 }
 
-.row {
+.arrivals, .departures, .stayings {
   padding: 0.5rem 0;
   border-bottom: 2px solid white;
 }
 
-.row:last-child {
+.arrivals:last-child,
+.departures:last-child,
+.stayings:last-child {
   border-bottom: none;
 }
 
