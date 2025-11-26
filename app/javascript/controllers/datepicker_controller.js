@@ -26,7 +26,7 @@ export default class extends Controller {
         rangeSeparator: " - "
       },
       // "onChange" is the Flatpickr configuration option, fires every time the user picks or changes dates
-      // When Flatpickr calls back a function, it will lose the Stimulus controller's "this" context.
+      // When passing the function to Flatpickr, it will lose the Stimulus controller's "this" context.
       // "bind(this)"" permanently attaches the correct "this"
       onChange: this.update.bind(this)
     })

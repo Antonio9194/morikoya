@@ -77,24 +77,48 @@
           </div>
           <hr style="height: 2px;">
           <div class="tentative-booking-info">
-            <div class="row">
-              <% if @guest_num.present? %>
-                <div class="guest-num col-7">
+            <!--Guests Num-->
+            <% if @guest_num.present? %>
+              <div class="row guest-num">
+                <div class="title col-8">
                   <p class="card-text">Number of guests:</p>
                 </div>
-                <div class="guest-num col-5">
+                <div class="value col-4">
                   <p class="card-text text-end"><%= @guest_num %> <%= @guest_num > 1 ? "person".pluralize : "person" %></p>
                 </div>
-              <% end %>
-            </div>
-            <div class="row">
-              <div class="guest-num col-7">
+              </div>
+            <% end %>
+            <!--Nights Num-->
+            <div class="row night-num" data-controller="retrieve-dates" data-retrieve-dates-datepicker-outlet=".chosen-dates">
+              <div class="title col-8">
                 <p class="card-text">Number of nights:</p>
               </div>
-              <div class="guest-num col-5">
-                <p class="card-text text-end"  data-controller="retrieve-dates" data-retrieve-dates-datepicker-outlet=".chosen-dates" data-retrieve-dates-target="datesDestination" ></p>
+              <div class="value col-4">
+                <p class="card-text text-end" data-retrieve-dates-target="nightsNumDestination"></p>
               </div>
             </div>
+            <!--Calculate and display Total Price-->
+            <div data-controller="total-price-display" data-total-price-display-datepicker-outlet=".chosen-dates">
+              <!--Price Per Night-->
+              <div class="row price-per-night">
+                <div class="title col-8">
+                  <p class="card-text">Price per night:</p>
+                </div>
+                <div class="value col-4">
+                  <p class="card-text text-end" data-total-price-display-target="pricePerNight">¥<%= number_with_delimiter(@room.price_per_night) %></p>
+                </div>
+              </div>
+              <!--Total Price-->
+              <div class="row total-price">
+                <div class="title col-8">
+                  <p class="card-text">Total price:</p>
+                </div>
+                <div class="value col-4">
+                  <p class="card-text text-end" data-total-price-display-target="totalPrice"></p>
+                </div>
+              </div>
+            </div>
+            <!--End of Calculate and display Total Price-->
           </div>
         </div>
       </div>
