@@ -23,7 +23,8 @@ export default class extends Controller {
 
   // --- mark past days ---
   markPastDays() {
-    const today = new Date().toISOString().split("T")[0];
+    // this should adjust the date based on each person time zone
+    const today = new Date().toLocaleDateString("en-CA");
     this.calendarTarget.querySelectorAll("[data-day]").forEach((el) => {
       if (el.dataset.day < today) {
         el.classList.add("past"); // add class for styling
@@ -44,7 +45,8 @@ export default class extends Controller {
   updateValue(event) {
     const date = event.currentTarget.dataset.day;
     const clickedEl = event.currentTarget;
-    const today = new Date().toISOString().split("T")[0];
+    // this should adjust the date based on each person time zone
+    const today = new Date().toLocaleDateString("en-CA");
 
     // prevent selecting past dates
     if (date < today) return;
