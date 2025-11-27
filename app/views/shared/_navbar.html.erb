@@ -4,7 +4,7 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png", style: "width: 140px; height:60px;" %>
     <% end %>
-    <!-- Center: Rooms → FAQs -->
+    <!-- Center: Nav Links -->
     <ul class="navbar-nav d-flex flex-row gap-4">
       <% if user_signed_in? && current_user.admin? %>
         <li class="nav-item">
