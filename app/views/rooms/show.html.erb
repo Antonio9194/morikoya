@@ -70,7 +70,7 @@
                 as: :string, label: "Specify the booking duration",
                 input_html: {
                   class: "chosen-dates",
-                  data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates, datepicker_target: "input" },
+                  data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates },
                   value: [@check_in, @check_out].all? ? "#{@check_in} - #{@check_out}" : "" } %>
               <%= f.button :submit, "Book this room", class: "btn btn-primary w-100 rounded-4" %>
             <% end %>
@@ -88,7 +88,7 @@
                 </div>
               </div>
             <% end %>
-            <!--Nights Num-->
+            <!--Nights Num Retrieving using Stimulus Outlet-->
             <div class="row night-num" data-controller="retrieve-dates" data-retrieve-dates-datepicker-outlet=".chosen-dates">
               <div class="title col-8">
                 <p class="card-text">Number of nights:</p>
@@ -97,7 +97,7 @@
                 <p class="card-text text-end" data-retrieve-dates-target="nightsNumDestination"></p>
               </div>
             </div>
-            <!--Calculate and display Total Price-->
+            <!--Calculate and display Total Price - Retrieving using Stimulus Outlet-->
             <div data-controller="total-price-display" data-total-price-display-datepicker-outlet=".chosen-dates">
               <!--Price Per Night-->
               <div class="row price-per-night">

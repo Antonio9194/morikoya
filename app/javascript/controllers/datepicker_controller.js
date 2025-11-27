@@ -6,7 +6,6 @@ export default class extends Controller {
   static values = {
     currentBookings: Array
   }
-  static targets = ["input"]
 
   connect() {
     console.log(this.element);
