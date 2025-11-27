@@ -37,7 +37,7 @@ export default class extends Controller {
     //using regex to parse the integer from price per night
     const pricePerNight = parseInt(this.pricePerNightTarget.textContent.replace(/\D/g, ""), 10);
 
-    this.totalPriceTarget.textContent = `¥${nights * pricePerNight}`;
+    this.totalPriceTarget.textContent = `¥${Intl.NumberFormat('en-US').format(nights * pricePerNight)}`;
 
     if (nights > 0 && this.element.classList.contains("d-none")) {
       this.element.classList.remove("d-none");
@@ -52,7 +52,7 @@ export default class extends Controller {
       //using regex to parse the integer from price per night
       const pricePerNight = parseInt(this.pricePerNightTarget.textContent.replace(/\D/g, ""), 10);
 
-      this.totalPriceTarget.textContent = `¥${nights * pricePerNight}`;
+      this.totalPriceTarget.textContent = `¥${Intl.NumberFormat('en-US').format(nights * pricePerNight)}`;
 
       if (nights === 0) {
         this.element.classList.add("d-none");
