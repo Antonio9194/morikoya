@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
       return
     end
 
-    dates_range = params[:booking][:start_date].split(' to ')
+    dates_range = params[:booking][:start_date].split(' - ')
     @booking = Booking.new(
       start_date: dates_range.first,
       end_date: dates_range.last,
