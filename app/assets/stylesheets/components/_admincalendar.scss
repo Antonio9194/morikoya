@@ -1,3 +1,21 @@
 .rooms-container {
   min-height: 80vh;
+  margin-top: 40px;
 }
+
+.calendar {
+  height: 90%;
+}
+
+.fc-prev-button, .fc-next-button, .fc-today-button, .fc-today-button:disabled {
+  background-color: #D4213D !important;
+  border-radius: 20px;
+  color: white;
+  border: #D4213D;
+}
+
+.fc-event-title-container {
+  background-color: #D4213D;
+}
+
+
