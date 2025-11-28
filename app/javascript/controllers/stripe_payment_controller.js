@@ -111,6 +111,7 @@ export default class extends Controller {
   }
 
   async cancelBooking() {
+    console.log("cancelBooking() called - attempting to cancel booking ID:", this.bookingIdValue);
     try {
       const response = await fetch(`/bookings/${this.bookingIdValue}/cancel`, {
         method: "PATCH",
@@ -120,16 +121,23 @@ export default class extends Controller {
         },
       });
 
+      console.log("Cancel booking response status:", response.status);
+      
       if (response.ok) {
-        console.log("Booking cancelled successfully");
         const result = await response.json();
+        console.log("Booking cancelled successfully. Server response:", result);
+        // Wait a bit to ensure the database transaction commits
+        await new Promise(resolve => setTimeout(resolve, 100));
         // Redirect to room page with a full page reload to force the refresh to update the calendar
         if (result.room_id) {
+          console.log("Redirecting to room page:", `/rooms/${result.room_id}`);
           window.location.href = `/rooms/${result.room_id}`;
         }
+      } else {
+        console.error("Failed to cancel booking. Response not OK:", response.statusText);
       }
     } catch (error) {
-      console.error("Failed to cancel booking:", error);
+      console.error("Failed to cancel booking - exception caught:", error);
     }
   }
 

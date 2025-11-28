@@ -29,6 +29,7 @@ class RoomsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @room.bookings.reload
   end
 
   private

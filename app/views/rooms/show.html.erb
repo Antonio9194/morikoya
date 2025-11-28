@@ -1,4 +1,7 @@
-<div class="container my-5">
+<div class="container my-5" data-turbo-cache="false">
+  <!-- DEBUG INFO -->
+  <p>Page loaded at: <%= Time.now.strftime("%H:%M:%S.%L") %> | Booked dates count: <%= @room.booked_dates.length %> | Booked dates: <%= @room.booked_dates.inspect %></p>
+  <!-- END DEBUG INFO -->
   <!-- Carousel with room photos -->
   <div id="roomCarousel" class="carousel slide carousel-fade mb-4 rounded" data-bs-ride="carousel">
     <div class="carousel-inner rounded-5">
