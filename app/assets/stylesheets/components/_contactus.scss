@@ -31,10 +31,12 @@
 }
 
 .contactus .btn {
-  border: 1px solid black;
-  border-radius: 30px;
-  padding: 10px 30px;
-  font-weight: bold;
+  background-color: #D4213D !important;
+  color: #FFFFFF !important;
+  border-radius: 20px !important;
+  padding: 0.8rem !important;
+  white-space: nowrap !important;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
