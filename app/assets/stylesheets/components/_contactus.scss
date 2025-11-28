@@ -31,12 +31,17 @@
 }
 
 .contactus .btn {
-  background-color: #D4213D !important;
-  color: #FFFFFF !important;
+  background-color: #E28A96 !important;
+  border: #D4213D;
   border-radius: 30px !important;
   padding: 0.6rem !important;
   white-space: nowrap !important;
   width: 100%;
+}
+
+.contactus .btn:hover {
+  background-color: #D4213D !important;
+  color: #FFFFFF !important;
 }
 
 @media (max-width: 767px) {
