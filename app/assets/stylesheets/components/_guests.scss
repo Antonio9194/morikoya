@@ -80,3 +80,54 @@
 .modal {
   z-index: 1050 !important;
 }
+
+// Bookings sections
+.browserooms {
+  background-color: #E28A96 !important;
+  border: #D4213D;
+  border-radius: 30px !important;
+  padding: 0.6rem !important;
+  white-space: nowrap !important;
+  width: 50%;
+}
+
+.browserooms:hover {
+  background-color: #D4213D !important;
+  color: #FFFFFF !important;
+}
+
+.bookingscard:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #D4213D !important;
+  border-radius: 10px !important;
+}
+ // Avatar
+.rounded-circle {
+  background-color: #E28A96 !important;
+}
+
+.avatarcard:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #D4213D !important;
+  border-radius: 10px !important;
+}
+
+.topline:hover {
+  border-color: #D4213D !important;
+}
+
+//User card
+.usercard:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #D4213D !important;
+  border-radius: 10px !important;
+}
+
+//Messages card
+.messagescard:hover, .message {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #D4213D !important;
+  border-radius: 10px !important;
+}
+
+

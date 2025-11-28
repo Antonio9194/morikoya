@@ -1,9 +1,24 @@
-<div class="row">
-  <div class="logo col-2 d-flex justify-content-center align-items-center">
-    <%= image_tag "logo.png", style: "width: 90px; height: 60px; border-radius: 10px;" %>
-  </div>
-  <div class="col-6 d-flex justify-content-start align-items-center">
-    <ul class="navbar-nav d-flex flex-row gap-4">
+<div class="container-fluid d-flex justify-content-between align-items-center">
+  <!-- Left: Logo -->
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "logo.png", style: "width: 140px; height:60px;" %>
+  <% end %>
+  <!-- Center: Nav Links -->
+  <ul class="navbar-nav d-flex flex-row gap-4">
+    <% if user_signed_in? && current_user.admin? %>
+      <li class="nav-item">
+        <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
+          <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+          Rooms
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to admin_bookings_path, class: "nav-link d-flex align-items-center" do %>
+          <%= image_tag "bookings.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+          Bookings
+        <% end %>
+      </li>
+    <% else %>
       <li class="nav-item">
         <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
           <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
@@ -18,28 +33,28 @@
       </li>
       <li class="nav-item">
         <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
-          <%= image_tag "about.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+          <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1" %>
           About Us
         <% end %>
       </li>
       <li class="nav-item">
         <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
-          <%= image_tag "faq.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+          <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1" %>
           FAQs
         <% end %>
       </li>
       <% if user_signed_in? && current_user.guest? %>
         <li class="nav-item">
           <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
-            <%= image_tag "guestDashboard.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+            <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1" %>
             Dashboard
           <% end %>
         </li>
       <% end %>
-    </ul>
-    <div class="separate-line"></div>
-  </div>
-  <div class="col-3", style="margin: auto 0;">
+    <% end %>
+    <!-- Right: Social -->
+  </ul>
+  <div class="d-flex flex-column align-items-start">
     <div class="d-flex align-items-center">
       <%= image_tag "telephone.png", style: "width: 20px; height: 20px;", class: "me-1" %>
       <p class="mb-0">(xxx) xxxx-xxxx</p>

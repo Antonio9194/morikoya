@@ -22,7 +22,7 @@
     <div class="col-lg-8">
       <div class="card mb-4 rounded-5 shadow-sm">
         <div class="card-body">
-          <h1 class="card-title"><%= @room.name %></h1>
+          <h2 class="card-title"><%= @room.name %></h2>
           <p class="card-text text-muted"><%= @room.description %></p>
           <div class="row">
             <div class="col-md-4">
@@ -72,7 +72,7 @@
                   class: "chosen-dates",
                   data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates },
                   value: [@check_in, @check_out].all? ? "#{@check_in} - #{@check_out}" : "" } %>
-              <%= f.button :submit, "Book this room", class: "btn btn-primary w-100 rounded-4" %>
+              <%= f.button :submit, "Book this room", class: "btn" %>
             <% end %>
           </div>
           <hr style="height: 2px;">
@@ -136,3 +136,6 @@
     </div>
   </div>
 </div>
+<footer>
+  <%= render "shared/footer_rooms" %>
+</footer>
