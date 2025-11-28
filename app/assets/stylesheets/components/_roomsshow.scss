@@ -7,6 +7,21 @@
   width: 100%;
 }
 
+.booking-form .btn {
+  background-color: #E28A96 !important;
+  border: #D4213D;
+  color: #1E1E1E;
+  border-radius: 20px !important;
+  padding: 0.8rem !important;
+  white-space: nowrap !important;
+  width: 100%;
+}
+
+.booking-form .btn:hover {
+  background-color: #D4213D !important;
+  color: #FFFFFF !important;
+}
+
 .form-control {
   border-radius: 20px;
   padding: 0.8rem;
