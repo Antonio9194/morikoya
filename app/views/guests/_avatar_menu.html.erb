@@ -1,13 +1,13 @@
-<div class="card shadow border-light rounded-4 overflow-hidden h-100">
+<div class="avatarcard card shadow border-light rounded-4 overflow-hidden h-100">
   <div class="card-body p-3 d-flex flex-column align-items-center">
     <div class="rounded-circle bg-primary bg-opacity-10 d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-      <h2 class="text-primary mb-0"><%= user.first_name.first.upcase %></h2>
+      <h2 class="muted mb-0"><%= user.first_name.first.upcase %></h2>
     </div>
     <div class="w-100 border-top pt-3">
-      <a href="#" class="d-block text-decoration-none text-dark py-2 px-3 rounded hover-bg-light" data-bs-toggle="modal" data-bs-target="#profileModal">
+      <a href="#" class="d-block text-decoration-none text-dark py-2 px-3 rounded" data-bs-toggle="modal" data-bs-target="#profileModal">
         <i class="bi bi-person me-1"></i> Profile info
       </a>
-      <a href="#" class="d-block text-decoration-none text-dark py-2 px-3 rounded hover-bg-light" data-bs-toggle="modal" data-bs-target="#billingModal">
+      <a href="#" class="d-block text-decoration-none text-dark py-2 px-3 rounded" data-bs-toggle="modal" data-bs-target="#billingModal">
         <i class="bi bi-receipt me-1"></i> Billing History
       </a>
     </div>

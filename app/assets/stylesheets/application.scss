@@ -28,7 +28,11 @@ body {
 }
 
 .muted {
-  color: #6B6B6B;;
+  color: #6B6B6B !important;
+}
+
+.muted:hover {
+  color: #FFFFFF !important;
 }
 
 main {
@@ -59,11 +63,6 @@ h2, h3, p{
 h4, h5, h6 {
   color: darkgray !important;
 }
-
-button, .btn {
-}
-
-
 
 a {
   color: #1E1E1E !important;
