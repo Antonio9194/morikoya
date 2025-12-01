@@ -3,7 +3,11 @@
     <h3>Guests</h3>
     <div class="guests-counter">
       <button type="button" data-action="click->guests#decrease">-</button>
-      <span data-guests-target="count">1</span>
+      <% if guest_num.present? %>
+        <span data-guests-target="guestsParam"><%= guest_num %></span>
+      <% else %>
+        <span data-guests-target="count">1</span>
+      <% end %>
       <button type="button" data-action="click->guests#increase">+</button>
     </div>
   </div>

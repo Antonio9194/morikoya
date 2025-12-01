@@ -88,7 +88,8 @@
           <%= submit_tag "Search", class: "search-btn" %>
         </div>
         <%= render "calendar" %>
-        <%= render "guests" %>
+        <!--"guest_num: @guest_num" is here so that there is no "undefined" error when rendering the partial-->
+        <%= render "guests", guest_num: @guest_num %>
       <% end %>
     </div>
   <% end %>

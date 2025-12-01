@@ -23,7 +23,8 @@ export default class extends Controller {
 
   // --- mark past days ---
   markPastDays() {
-    const today = new Date().toISOString().split("T")[0];
+    // this should adjust the date based on each person time zone
+    const today = new Date().toLocaleDateString("en-CA");
     this.calendarTarget.querySelectorAll("[data-day]").forEach((el) => {
       if (el.dataset.day < today) {
         el.classList.add("past"); // add class for styling
@@ -31,10 +32,21 @@ export default class extends Controller {
     });
   }
 
+  // added logic in stimulus controller to change the date format shown in the checkin and checkout values update which refers to the search bars in homepage and rooms
+  formatDate(dateString) {
+    const d = new Date(dateString);
+    return d.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+  }
+
   updateValue(event) {
     const date = event.currentTarget.dataset.day;
     const clickedEl = event.currentTarget;
-    const today = new Date().toISOString().split("T")[0];
+    // this should adjust the date based on each person time zone
+    const today = new Date().toLocaleDateString("en-CA");
 
     // prevent selecting past dates
     if (date < today) return;
@@ -88,9 +100,9 @@ export default class extends Controller {
       this.datesSelected = [start, end];
 
       // update inputs/labels
-      this.checkInValueTarget.textContent = start;
+      this.checkInValueTarget.textContent = this.formatDate(start);
       this.checkInInputTarget.value = start;
-      this.checkOutValueTarget.textContent = end;
+      this.checkOutValueTarget.textContent = this.formatDate(end);
       this.checkOutInputTarget.value = end;
 
       // clear previous highlights then mark endpoints + range

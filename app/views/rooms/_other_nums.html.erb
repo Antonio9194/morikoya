@@ -4,7 +4,7 @@
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card h-100 shadow bg-body rounded-5 d-flex flex-column" style="overflow: hidden;">
           <!-- MAIN CLICKABLE AREA -->
-          <%= link_to room_path(room), class: "text-decoration-none text-black flex-grow-1" do %>
+          <%= link_to room_path(room, check_in: @check_in, check_out: @check_out, guests: @guest_num), class: "text-decoration-none text-black flex-grow-1" do %>
             <div class="card-body">
               <!-- Room carousel/image -->
               <div class="room-image text-center">
@@ -59,7 +59,8 @@
   <div class="row gy-4 room-card">
     <% rooms.each do |room| %>
       <div class="col-12 col-md-6 col-lg-4">
-        <%= link_to room_path(room), class: "text-decoration-none", style: "color: black;" do %>
+        <!--rendering check_in, check_out, guest_num from search params in #index method of room and pass them with the link_to helper as params when linking to each room-->
+        <%= link_to room_path(room, check_in: @check_in, check_out: @check_out, guests: @guest_num, check_in: @check_in, check_out: @check_out, guests: @guest_num), class: "text-decoration-none", style: "color: black;" do %>
           <div class="card h-100 shadow bg-body rounded-5" style="overflow: hidden;">
             <div class="room-image text-center">
               <%= render "rooms/carousel", room: room%>
@@ -99,6 +100,7 @@
                 <p class="mb-0"><%= room.amenities %></p>
               </div>
             </div>
+            <!--Renders the admin view with-->
             <% if current_user.present? && current_user.admin? %>
               <%= render "edit_delete", room: room %>
             <% end %>

@@ -8,14 +8,14 @@ class BookingsController < ApplicationController
   end
 
   def create
-    redirect_to new_user_session_path, alert: "You must be signed in to make a booking!" unless current_user
+    redirect_to new_user_session_path, alert: 'You must be signed in to make a booking!' unless current_user
 
     if params[:booking][:start_date].blank?
-      redirect_to room_path(@room), alert: "Please select a date before booking"
+      redirect_to room_path(@room), alert: 'Please select a date before booking'
       return
     end
 
-    dates_range = params[:booking][:start_date].split(" to ")
+    dates_range = params[:booking][:start_date].split(' - ')
     @booking = Booking.new(
       start_date: dates_range.first,
       end_date: dates_range.last,
@@ -26,10 +26,10 @@ class BookingsController < ApplicationController
     if @booking.save
       # Redirect to payment page instead of guest page
       redirect_to new_payment_path(booking_id: @booking.id),
-                  notice: "Booking created! Please complete payment."
+                  notice: 'Booking created! Please complete payment.'
     else
       redirect_to room_path(@room),
-                  alert: "Failed to make a booking. Please try again!",
+                  alert: 'Failed to make a booking. Please try again!',
                   status: :unprocessable_entity
     end
   end

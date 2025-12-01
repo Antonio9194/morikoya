@@ -69,7 +69,7 @@
   padding: 12px 25px;
   border-radius: 50px;
   border: none;
-  background-color: #ff3b3b;
+  background-color: #D4213D;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -92,12 +92,14 @@
   margin: 0.5rem;
 }
 
-.row {
+.arrivals, .departures, .stayings {
   padding: 0.5rem 0;
   border-bottom: 2px solid white;
 }
 
-.row:last-child {
+.arrivals:last-child,
+.departures:last-child,
+.stayings:last-child {
   border-bottom: none;
 }
 
@@ -111,3 +113,4 @@ button {
   padding: 0.8rem;
   white-space: nowrap;
 }
+

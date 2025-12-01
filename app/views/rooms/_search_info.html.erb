@@ -1,0 +1,49 @@
+<%= form_with url: rooms_path, method: :get, class: "form d-flex flex-column", data: { controller: "booking-form guests" } do %>
+  <div class="d-flex justify-content-between align-items-center search-bar">
+    <!-- Check-In -->
+    <div class="search-item" id="check-in-btn" data-action="click->booking-form#open" data-type="check_in">
+      <div class="icon-circle">
+        <%= image_tag "checkinout.png" %>
+      </div>
+      <div class="text">
+        <div class="label">Check-In</div>
+        <div class="value" data-booking-form-target="checkInValue">
+          <%= @check_in&.strftime('%d %b %Y') %>
+          <%= params.dig(:search, :check_in) %>
+        </div>
+      </div>
+    </div>
+    <!-- Check-Out -->
+    <div class="search-item" id="check-out-btn" data-action="click->booking-form#open" data-type="check_out">
+      <div class="icon-circle">
+        <%= image_tag "checkinout.png" %>
+      </div>
+      <div class="text">
+        <div class="label">Check-Out</div>
+        <div class="value" data-booking-form-target="checkOutValue">
+          <%= @check_out&.strftime('%d %b %Y') %>
+          <%= params.dig(:search, :check_out) %>
+        </div>
+      </div>
+    </div>
+    <%= hidden_field_tag :check_in, params.dig(:search, :check_in), data: { booking_form_target: "checkInInput" } %>
+    <%= hidden_field_tag :check_out, params.dig(:search, :check_out), data: { booking_form_target: "checkOutInput" } %>
+    <!-- Guests -->
+    <div class="search-item" id="guests-btn" data-action="click->guests#open" >
+      <div class="icon-circle">
+        <%= image_tag "guests.png" %>
+      </div>
+      <div class="text">
+        <div class="label">Guests</div>
+        <div class="value" data-guests-target="guestsValue">
+          <%= @guest_num %>
+          <%= params.dig(:search, :guests)%>
+        </div>
+      </div>
+    </div>
+    <%= hidden_field_tag :guests, params.dig(:search, :guests), data: {guests_target: "guestsInput"} %>
+    <%= submit_tag "Search", class: "search-btn" %>
+  </div>
+  <%= render "pages/calendar", pages: @rooms %>
+  <%= render "pages/guests", pages: @rooms, guest_num: @guest_num %>
+<% end %>

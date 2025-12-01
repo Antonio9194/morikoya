@@ -4,7 +4,7 @@
   <div class="col"><strong>Guest</strong></div>
 </div>
 <% @arrivals.each do |arrival| %>
-  <div class="row mb-1">
+  <div class="row arrivals mb-1">
     <div class="col"><%= arrival.room.name %></div>
     <div class="col"><%= arrival.start_date.strftime('%d %b') %></div>
     <div class="col"><%= arrival.user.first_name %> <%= arrival.user.last_name %></div>
