@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     member do
       get 'confirmation'
       patch 'cancel'
+      post 'cancel'  # For AJAX and sendBeacon
     end
   end
 

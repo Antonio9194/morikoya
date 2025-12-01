@@ -48,9 +48,19 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.find(params[:id])
     if @booking.status == 'pending'
       @booking.update(status: 'cancelled')
-      redirect_to room_path(@booking.room), notice: 'Booking cancelled and returned to room page.'
+      
+      # Handle AJAX requests differently
+      respond_to do |format|
+        format.html { redirect_to room_path(@booking.room), notice: 'Booking cancelled and returned to room page.' }
+        format.json { head :ok }
+        format.any { head :ok }  # For sendBeacon requests
+      end
     else
-      redirect_to confirmation_booking_path(@booking), alert: 'Only pending bookings can be cancelled.'
+      respond_to do |format|
+        format.html { redirect_to confirmation_booking_path(@booking), alert: 'Only pending bookings can be cancelled.' }
+        format.json { head :unprocessable_entity }
+        format.any { head :unprocessable_entity }
+      end
     end
   end
 
