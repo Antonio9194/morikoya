@@ -130,4 +130,24 @@
   border-radius: 10px !important;
 }
 
+//Upcoming reservations card
+.upcomingbookingcard:hover {
+ background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #D4213D !important;
+  border-radius: 10px !important;
+}
 
+//Download
+.download {
+  background-color: #E28A96 !important;
+  border: #D4213D;
+  border-radius: 30px !important;
+  padding: 0.6rem !important;
+  white-space: nowrap !important;
+  width: 100%;
+}
+
+.download:hover {
+  background-color: #D4213D !important;
+  color: #FFFFFF !important;
+}
