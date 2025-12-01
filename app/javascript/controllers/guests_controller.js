@@ -1,45 +1,52 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["numberOfGuests", "count", "guestsParam", "guestsValue", "guestsInput"]
+  static targets = [
+    "numberOfGuests",
+    "count",
+    "guestsParam",
+    "guestsValue",
+    "guestsInput",
+  ];
 
   connect() {
     if (this.hasGuestsParamTarget) {
-      this.guestCount = parseInt(this.guestsParamTarget.textContent, 10)
-      this.updateDisplay()
+      this.guestCount = parseInt(this.guestsParamTarget.textContent, 10);
+      this.updateDisplay();
     } else {
-      this.guestCount = parseInt(this.guestsInputTarget.value || 1, 10)
-      this.updateDisplay()
+      this.guestCount = parseInt(this.guestsInputTarget.value || 1, 10);
+      this.updateDisplay();
     }
-    return this.guestCount
+    return this.guestCount;
   }
 
   open() {
-    this.numberOfGuestsTarget.classList.toggle("d-none")
+    this.numberOfGuestsTarget.classList.toggle("d-none");
+    this.guestsValueTarget.classList.remove("visually-hidden");
   }
 
   increase() {
-    this.guestCount++
-    this.updateDisplay()
+    this.guestCount++;
+    this.updateDisplay();
   }
 
   decrease() {
-    if (this.guestCount > 1) this.guestCount--
-    this.updateDisplay()
+    if (this.guestCount > 1) this.guestCount--;
+    this.updateDisplay();
   }
 
   updateDisplay() {
     if (this.hasCountTarget) {
-      this.countTarget.textContent = this.guestCount
+      this.countTarget.textContent = this.guestCount;
     }
     if (this.hasGuestsParamTarget) {
-      this.guestsParamTarget.textContent = this.guestCount
+      this.guestsParamTarget.textContent = this.guestCount;
     }
     if (this.hasGuestsValueTarget) {
-      this.guestsValueTarget.textContent = this.guestCount
+      this.guestsValueTarget.textContent = this.guestCount;
     }
     if (this.hasGuestsInputTarget) {
-      this.guestsInputTarget.value = this.guestCount
+      this.guestsInputTarget.value = this.guestCount;
     }
   }
 }
