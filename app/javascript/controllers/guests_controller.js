@@ -22,7 +22,7 @@ export default class extends Controller {
 
   open() {
     this.numberOfGuestsTarget.classList.toggle("d-none");
-    this.guestsValueTarget.classList.remove("visually-hidden");
+    this.guestsValueTarget.classList.remove("d-none");
   }
 
   increase() {
