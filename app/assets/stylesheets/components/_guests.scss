@@ -137,6 +137,12 @@
   border-radius: 10px !important;
 }
 
+.currentbookingcard:hover {
+ background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #D4213D !important;
+  border-radius: 10px !important;
+}
+
 //Download
 .download {
   background-color: #E28A96 !important;
@@ -151,3 +157,11 @@
   background-color: #D4213D !important;
   color: #FFFFFF !important;
 }
+
+//Reservations status
+.menutabs {
+  border-radius: 30px !important;
+  margin-bottom: 20px !important;
+}
+
+
