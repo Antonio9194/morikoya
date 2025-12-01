@@ -1,4 +1,7 @@
-<div class="container my-5">
+<div class="container my-5" data-turbo-cache="false">
+  <!-- DEBUG INFO -->
+  <p>Page loaded at: <%= Time.now.strftime("%H:%M:%S.%L") %> | Booked dates count: <%= @room.booked_dates.length %> | Booked dates: <%= @room.booked_dates.inspect %></p>
+  <!-- END DEBUG INFO -->
   <!-- Carousel with room photos -->
   <div id="roomCarousel" class="carousel slide carousel-fade mb-4 rounded" data-bs-ride="carousel">
     <div class="carousel-inner rounded-5">
@@ -22,7 +25,7 @@
     <div class="col-lg-8">
       <div class="card mb-4 rounded-5 shadow-sm">
         <div class="card-body">
-          <h2 class="card-title"><%= @room.name %></h2>
+          <h1 class="card-title"><%= @room.name %></h1>
           <p class="card-text text-muted"><%= @room.description %></p>
           <div class="row">
             <div class="col-md-4">
@@ -42,7 +45,7 @@
         </div>
       </div>
       <!-- List of amenities -->
-      <div class="card rounded-5 shadow-sm" style="overflow: hidden">
+      <div class="card mb-4 rounded-5 shadow-sm" style="overflow: hidden">
         <div class="card-header">
           <h5 class="mb-0">Amenities</h5>
         </div>
@@ -57,69 +60,19 @@
         </div>
       </div>
     </div>
-    <!-- Booking calendar + Show searched date range in date input field -->
+    <!-- Booking calendar -->
     <div class="col-lg-4">
-      <div class="card position-sticky rounded-5 shadow-sm h-100" style="top: 20px; overflow: hidden">
+      <div class="card position-sticky rounded-5 shadow-sm" style="top: 20px; overflow: hidden">
         <div class="card-header">
           <h5 class="mb-0">Make a booking</h5>
         </div>
         <div class="card-body">
-          <div class="booking-form">
-            <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room) do |f| %>
-              <%= f.input :start_date,
-                as: :string, label: "Specify the booking duration",
-                input_html: {
-                  class: "chosen-dates",
-                  data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates },
-                  value: [@check_in, @check_out].all? ? "#{@check_in} - #{@check_out}" : "" } %>
-              <%= f.button :submit, "Book this room", class: "btn" %>
-            <% end %>
-          </div>
-          <hr style="height: 2px;">
-          <div class="tentative-booking-info">
-            <!--Guests Num-->
-            <% if @guest_num.present? %>
-              <div class="row guest-num">
-                <div class="title col-8">
-                  <p class="card-text">Number of guests:</p>
-                </div>
-                <div class="value col-4">
-                  <p class="card-text text-end"><%= @guest_num %> <%= @guest_num > 1 ? "person".pluralize : "person" %></p>
-                </div>
-              </div>
-            <% end %>
-            <!--Nights Num Retrieving using Stimulus Outlet-->
-            <div class="row night-num" data-controller="retrieve-dates" data-retrieve-dates-datepicker-outlet=".chosen-dates">
-              <div class="title col-8">
-                <p class="card-text">Number of nights:</p>
-              </div>
-              <div class="value col-4">
-                <p class="card-text text-end" data-retrieve-dates-target="nightsNumDestination"></p>
-              </div>
-            </div>
-            <!--Calculate and display Total Price - Retrieving using Stimulus Outlet-->
-            <div data-controller="total-price-display" data-total-price-display-datepicker-outlet=".chosen-dates">
-              <!--Price Per Night-->
-              <div class="row price-per-night">
-                <div class="title col-8">
-                  <p class="card-text">Price per night:</p>
-                </div>
-                <div class="value col-4">
-                  <p class="card-text text-end" data-total-price-display-target="pricePerNight">¥<%= number_with_delimiter(@room.price_per_night) %></p>
-                </div>
-              </div>
-              <!--Total Price-->
-              <div class="row total-price">
-                <div class="title col-8">
-                  <p class="card-text">Total price:</p>
-                </div>
-                <div class="value col-4">
-                  <p class="card-text text-end" data-total-price-display-target="totalPrice"></p>
-                </div>
-              </div>
-            </div>
-            <!--End of Calculate and display Total Price-->
-          </div>
+          <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room) do |f| %>
+            <%= f.input :start_date, as: :string, label: "Specify the blackout duration",
+              input_html: { data: {controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates} } %>
+            <%# <%= f.input :end_date, as: :date, html5: true, input_html: { min: Date.today } %>
+            <%= f.button :submit, "Book this room", class: "btn btn-primary w-100 rounded-4" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -136,6 +89,3 @@
     </div>
   </div>
 </div>
-<footer>
-  <%= render "shared/footer_rooms" %>
-</footer>
