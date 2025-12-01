@@ -21,6 +21,20 @@ export default class extends Controller {
   connect() {
     console.log("Stripe Payment controller connected!");
 
+    // Track if payment was successful
+    this.paymentCompleted = false;
+
+    // Add beforeunload listener to warn users (external navigation)
+    this.beforeUnloadHandler = this.handleBeforeUnload.bind(this);
+    window.addEventListener("beforeunload", this.beforeUnloadHandler);
+
+    // Add Turbo navigation listener (internal navigation via Turbo)
+    this.turboBeforeVisitHandler = this.handleTurboBeforeVisit.bind(this);
+    document.addEventListener(
+      "turbo:before-visit",
+      this.turboBeforeVisitHandler
+    );
+
     // Initialize Stripe with publishable key
     this.stripe = Stripe(this.publishableKeyValue);
 
@@ -55,8 +69,75 @@ export default class extends Controller {
   disconnect() {
     console.log("Stripe Payment controller disconnected");
 
+    // Remove beforeunload listener
+    window.removeEventListener("beforeunload", this.beforeUnloadHandler);
+
+    // Remove Turbo navigation listener
+    document.removeEventListener(
+      "turbo:before-visit",
+      this.turboBeforeVisitHandler
+    );
+
+    // If payment wasn't completed, cancel the booking
+    if (!this.paymentCompleted) {
+      this.cancelBooking();
+    }
+
     if (this.card) {
       this.card.unmount();
+    }
+  }
+
+  handleBeforeUnload(event) {
+    // Only show warning if payment hasn't been completed
+    if (!this.paymentCompleted) {
+      event.preventDefault();
+      event.returnValue = ""; // Chrome requires returnValue to be set
+      return ""; // For older browsers
+    }
+  }
+
+  handleTurboBeforeVisit(event) {
+    // Intercept Turbo navigation and show confirmation
+    if (!this.paymentCompleted) {
+      if (
+        !confirm(
+          "Are you sure you want to leave? Your booking will be cancelled."
+        )
+      ) {
+        event.preventDefault();
+      }
+    }
+  }
+
+  async cancelBooking() {
+    console.log("cancelBooking() called - attempting to cancel booking ID:", this.bookingIdValue);
+    try {
+      const response = await fetch(`/bookings/${this.bookingIdValue}/cancel`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-Token": this.getCsrfToken(),
+        },
+      });
+
+      console.log("Cancel booking response status:", response.status);
+      
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Booking cancelled successfully. Server response:", result);
+        // Wait a bit to ensure the database transaction commits
+        await new Promise(resolve => setTimeout(resolve, 100));
+        // Redirect to room page with a full page reload to force the refresh to update the calendar
+        if (result.room_id) {
+          console.log("Redirecting to room page:", `/rooms/${result.room_id}`);
+          window.location.href = `/rooms/${result.room_id}`;
+        }
+      } else {
+        console.error("Failed to cancel booking. Response not OK:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Failed to cancel booking - exception caught:", error);
     }
   }
 
@@ -113,6 +194,8 @@ export default class extends Controller {
         this.setLoadingState(false);
       } else if (result.success) {
         console.log("Payment successful! Redirecting...");
+        // Mark payment as completed so booking won't be cancelled
+        this.paymentCompleted = true;
         window.location.href = result.redirect_url;
       }
     } catch (error) {

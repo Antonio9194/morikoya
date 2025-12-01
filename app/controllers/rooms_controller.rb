@@ -29,11 +29,7 @@ class RoomsController < ApplicationController
 
   def show
     @booking = Booking.new
-    return unless search_params[:check_in].present? && search_params[:check_out].present?
-
-    @check_in = params[:check_in]
-    @check_out = params[:check_out]
-    @guest_num = params[:guests].to_i
+    @room.bookings.reload
   end
 
   private
