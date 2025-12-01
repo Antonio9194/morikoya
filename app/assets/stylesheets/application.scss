@@ -64,6 +64,14 @@ h4, h5, h6 {
   color: darkgray !important;
 }
 
+a {
+  color: #1E1E1E !important;
+}
+
+a:hover {
+  color: #D4213D !important;
+}
+
 li:hover {
   filter: invert(25%) sepia(90%) saturate(5000%) hue-rotate(0deg);
 }

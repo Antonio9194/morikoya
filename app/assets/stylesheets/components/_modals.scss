@@ -18,6 +18,21 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
+
+  .updateprofile {
+  background-color: #E28A96 !important;
+  border: #D4213D;
+  color: #1E1E1E;
+  border-radius: 30px !important;
+  padding: 0.6rem !important;
+  white-space: nowrap !important;
+  width: 100%;
+}
+
+.updateprofile:hover {
+  background-color: #D4213D !important;
+  color: #FFFFFF !important;
+}
 }
 
 // Billing History Modal
