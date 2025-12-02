@@ -107,14 +107,32 @@ puts "Created #{ContactMessage.count} contact messages"
 # Pick a specific room or random
 antonio_room = Room.all.sample
 
-Booking.create!(
-  user: guest_antonio,       # This is Antonio the guest
-  room: antonio_room,
-  start_date: Date.new(2025, 12, 2),
-  end_date: Date.new(2025, 12, 5),
-  status: 'confirmed',
-  payment_status: 'paid'
-)
+# Booking.create!(
+#   user: guest_antonio,       # This is Antonio upcoming booking
+#   room: antonio_room,
+#   start_date: Date.new(2025, 12, 20),
+#   end_date: Date.new(2025, 12, 25),
+#   status: 'confirmed',
+#   payment_status: 'paid'
+# )
+
+# Booking.create!(
+#   user: guest_antonio,       # This is Antonio current booking
+#   room: antonio_room,
+#   start_date: Date.new(2025, 12, 2),
+#   end_date: Date.new(2025, 12, 5),
+#   status: 'confirmed',
+#   payment_status: 'paid'
+# )
+
+# Booking.create!(
+#   user: guest_antonio,       # This is Antonio past booking
+#   room: antonio_room,
+#   start_date: Date.new(2025, 11, 2),
+#   end_date: Date.new(2025, 11, 5),
+#   status: 'confirmed',
+#   payment_status: 'paid'
+# )
 
 puts "Created Antonio's booking in room #{antonio_room.name}"
 
