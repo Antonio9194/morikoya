@@ -26,13 +26,13 @@
           </li>
           <li class="nav-item">
             <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1" %>
+              <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size" %>
               About Us
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1" %>
+              <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
               FAQs
             <% end %>
           </li>
@@ -60,7 +60,7 @@
           </li>
           <li class="nav-item pwa-visible">
             <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1" %>
+              <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
               Logout
             <% end %>
           </li>
@@ -82,25 +82,25 @@
           </li>
           <li class="nav-item">
             <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1" %>
+              <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size" %>
               About Us
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1" %>
+              <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
               FAQs
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1" %>
+              <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size" %>
               Dashboard
             <% end %>
           </li>
           <li class="nav-item pwa-visible">
             <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1" %>
+              <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
               Logout
             <% end %>
           </li>
@@ -113,7 +113,7 @@
       <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link d-flex align-items-center" do %>
-            <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1" %>
+            <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
             Logout
           <% end %>
         </li>
