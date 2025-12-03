@@ -1,70 +1,124 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon">
+  <div class="container-fluid">
     <!-- Left: Home -->
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png", style: "width: 140px; height:60px;" %>
+      <%= image_tag "logo.png", style: "width: 140px; height:60px;", alt: "Minakoya Logo" %>
     <% end %>
     <!-- Center: Nav Links -->
-    <ul class="navfoot navbar-nav d-flex flex-row gap-4">
-      <% if user_signed_in? && current_user.admin? %>
-        <li class="nav-item">
-          <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
-            <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-            Rooms
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to admin_bookings_path, class: "nav-link d-flex align-items-center" do %>
-            <%= image_tag "bookings.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-            Bookings
-          <% end %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
-            <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-            Rooms
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
-            <%= image_tag "contact.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-            Contact Us
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
-            <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1" %>
-            About Us
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
-            <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1" %>
-            FAQs
-          <% end %>
-        </li>
-        <% if user_signed_in? && current_user.guest? %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarExternalContent" aria-controls="navbarExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarExternalContent">
+      <ul class="navbar-nav">
+        <!--Navbar content when user is not signed in-->
+        <% unless user_signed_in? %>
           <li class="nav-item">
-            <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1" %>
-              Dashboard
+            <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+              Rooms
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "contact.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+              Contact Us
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size" %>
+              About Us
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
+              FAQs
+            <% end %>
+          </li>
+          <li class="nav-item pwa-visible">
+            <%= link_to new_user_session_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "login.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+              Login
             <% end %>
           </li>
         <% end %>
-      <% end %>
-    </ul>
+        <!---->
+        <!--When user is signed in and is admin-->
+        <% if user_signed_in? && current_user.admin? %>
+          <li class="nav-item">
+            <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+              Rooms
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to admin_bookings_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "bookings.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+              Bookings
+            <% end %>
+          </li>
+          <li class="nav-item pwa-visible">
+            <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
+              Logout
+            <% end %>
+          </li>
+        <% end %>
+        <!---->
+        <!---When user is signed-in and is a guest-->
+        <% if user_signed_in? && current_user.guest? %>
+          <li class="nav-item">
+            <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+              Rooms
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "contact.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+              Contact Us
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size" %>
+              About Us
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
+              FAQs
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size" %>
+              Dashboard
+            <% end %>
+          </li>
+          <li class="nav-item pwa-visible">
+            <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link d-flex align-items-center" do %>
+              <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
+              Logout
+            <% end %>
+          </li>
+        <% end %>
+        <!---->
+      </ul>
+    </div>
     <!-- Right: Login / Logout -->
-    <ul class="navbar-nav">
+    <ul class="navbar-nav browser-visible">
       <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link d-flex align-items-center" do %>
-            <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1" %>
+            <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
             Logout
           <% end %>
         </li>
       <% else %>
-        <li class="nav-item">
+        <li class="nav-item ">
           <%= link_to new_user_session_path, class: "nav-link d-flex align-items-center" do %>
             <%= image_tag "login.png", style: "width: 20px; height: 20px;", class: "me-1" %>
             Login
