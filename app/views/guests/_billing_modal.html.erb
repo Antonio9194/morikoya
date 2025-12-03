@@ -48,14 +48,14 @@
                       <strong>¥<%= number_with_delimiter(booking.total_price_cents) %></strong>
                     </td>
                     <td>
-                      <span class="badge bg-success rounded-pill">
+                      <span class="badge">
                         <i class="bi bi-check-circle me-1"></i>
                         <%= booking.payment_status.capitalize %>
                       </span>
                     </td>
                     <td>
                       <% if booking.stripe_receipt_url %>
-                        <%= link_to booking.stripe_receipt_url, target: "_blank", class: "btn btn-sm btn-outline-primary" do %>
+                        <%= link_to booking.stripe_receipt_url, target: "_blank", class: "download btn btn-sm " do %>
                           <i class="bi bi-download me-1"></i>Download
                         <% end %>
                       <% else %>

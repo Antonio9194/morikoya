@@ -8,9 +8,10 @@ ContactMessage.destroy_all
 Room.destroy_all
 User.destroy_all
 
-puts 'Destroying database...'
+puts 'Destroyed database...'
 
-User.create!(
+# --- Create Admin and Guest Antonio ---
+admin_antonio = User.create!(
   email: 'antoniov@morikoyahotel.com',
   phone_number: '123-1234-12345',
   password: 'marvelous',
@@ -19,7 +20,7 @@ User.create!(
   last_name: 'Vinciguerra'
 )
 
-User.create!(
+guest_antonio = User.create!(
   email: 'anto.vinciguerra@hotmail.com',
   phone_number: '123-1234-12345',
   password: 'password',
@@ -28,9 +29,9 @@ User.create!(
   last_name: 'Vinciguerra'
 )
 
-puts 'Created Antonio’s account'
+puts 'Created Antonio’s accounts'
 
-# Create 20 guest users
+# --- Create 20 guest users ---
 guests = 20.times.map do
   User.create!(
     email: Faker::Internet.unique.email,
@@ -44,7 +45,7 @@ end
 
 puts "Created #{User.count} users"
 
-# Create 6 type A rooms
+# --- Create Rooms ---
 6.times do |i|
   Room.create!(
     name: "Room A-#{i + 1}",
@@ -60,7 +61,6 @@ puts "Created #{User.count} users"
   )
 end
 
-# Create 7 type B rooms
 7.times do |i|
   Room.create!(
     name: "Room B-#{i + 1}",
@@ -76,7 +76,6 @@ end
   )
 end
 
-# Create 1 type C rooms
 Room.create!(
   name: 'Presidential Suite',
   room_type: 'C',
@@ -92,11 +91,11 @@ Room.create!(
 
 puts "Created #{Room.count} rooms"
 
-# Create 40 contact messages
+# --- Create Contact Messages ---
 40.times do
   ContactMessage.create!(
     name: Faker::Name.name,
-    email: Faker::Internet.email,
+    email: Faker::Internet.unique.email,
     message: Faker::Lorem.paragraph(sentence_count: 3),
     user: guests.sample
   )
@@ -104,7 +103,40 @@ end
 
 puts "Created #{ContactMessage.count} contact messages"
 
-# Create 30 bookings
+# --- Create Antonio's Booking ---
+# Pick a specific room or random
+antonio_room = Room.all.sample
+
+Booking.create!(
+  user: guest_antonio,       # This is Antonio upcoming booking
+  room: antonio_room,
+  start_date: Date.new(2025, 12, 20),
+  end_date: Date.new(2025, 12, 25),
+  status: 'confirmed',
+  payment_status: 'paid'
+)
+
+Booking.create!(
+  user: guest_antonio,       # This is Antonio current booking
+  room: antonio_room,
+  start_date: Date.new(2025, 12, 2),
+  end_date: Date.new(2025, 12, 5),
+  status: 'confirmed',
+  payment_status: 'paid'
+)
+
+Booking.create!(
+  user: guest_antonio,       # This is Antonio past booking
+  room: antonio_room,
+  start_date: Date.new(2025, 11, 2),
+  end_date: Date.new(2025, 11, 5),
+  status: 'confirmed',
+  payment_status: 'paid'
+)
+
+puts "Created Antonio's booking in room #{antonio_room.name}"
+
+# --- Create 30 Random Bookings ---
 30.times do
   room = Room.all.sample
 
@@ -112,11 +144,8 @@ puts "Created #{ContactMessage.count} contact messages"
     start_date = Faker::Date.forward(days: rand(5..30))
     end_date   = start_date + rand(2..7).days
 
-    # check if this room already has a booking that overlaps
     overlap = Booking.exists?(
-      room: room,
-      start_date: ..end_date,
-      end_date: start_date..
+      ["room_id = ? AND start_date < ? AND end_date > ?", room.id, end_date, start_date]
     )
 
     next if overlap

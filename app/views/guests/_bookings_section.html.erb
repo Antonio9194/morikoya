@@ -8,7 +8,7 @@
   <!-- Bootstrap Tabs Navigation -->
   <ul class="nav nav-tabs mb-4" id="bookingsTabs" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link <%= 'active' if future_bookings.any? %>"
+      <button class="menutabs nav-link <%= 'active' if future_bookings.any? %>"
               id="upcoming-tab"
               data-bs-toggle="tab"
               data-bs-target="#upcoming"
@@ -19,12 +19,12 @@
         <i class="bi bi-calendar-event me-2"></i>
         Upcoming
         <% if future_bookings.any? %>
-          <span class="badge bg-info ms-2"><%= future_bookings.count %></span>
+          <span class="badge ms-2"><%= future_bookings.count %></span>
         <% end %>
       </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link <%= 'active' if ongoing_bookings.any? && future_bookings.empty? %>"
+      <button class="menutabs nav-link <%= 'active' if ongoing_bookings.any? && future_bookings.empty? %>"
               id="current-tab"
               data-bs-toggle="tab"
               data-bs-target="#current"
@@ -35,12 +35,12 @@
         <i class="bi bi-circle-fill text-success me-2" style="font-size: 0.6rem;"></i>
         Current
         <% if ongoing_bookings.any? %>
-          <span class="badge bg-success ms-2"><%= ongoing_bookings.count %></span>
+          <span class="badge ms-2"><%= ongoing_bookings.count %></span>
         <% end %>
       </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link <%= 'active' if past_bookings.any? && ongoing_bookings.empty? && future_bookings.empty? %>"
+      <button class="menutabs nav-link <%= 'active' if past_bookings.any? && ongoing_bookings.empty? && future_bookings.empty? %>"
               id="past-tab"
               data-bs-toggle="tab"
               data-bs-target="#past"
@@ -51,7 +51,7 @@
         <i class="bi bi-clock-history me-2"></i>
         Past
         <% if past_bookings.any? %>
-          <span class="badge bg-secondary ms-2"><%= past_bookings.count %></span>
+          <span class="badge ms-2"><%= past_bookings.count %></span>
         <% end %>
       </button>
     </li>

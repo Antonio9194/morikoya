@@ -4,7 +4,7 @@
     <%= image_tag "logo.png", style: "width: 140px; height:60px;" %>
   <% end %>
   <!-- Center: Nav Links -->
-  <ul class="navbar-nav d-flex flex-row gap-4">
+  <ul class=" navfoot navbar-nav d-flex flex-row gap-4">
     <% if user_signed_in? && current_user.admin? %>
       <li class="nav-item">
         <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
