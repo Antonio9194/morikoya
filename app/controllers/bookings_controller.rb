@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
     if @booking.save
       # Redirect to payment page instead of guest page
       redirect_to new_payment_path(booking_id: @booking.id),
-                  notice: 'Booking created! Please complete payment.'
+                  notice: 'Please complete payment.'
     else
       redirect_to room_path(@room),
                   alert: 'Failed to make a booking. Please try again!',

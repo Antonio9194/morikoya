@@ -3,12 +3,12 @@
   <div class="row justify-content-center">
     <div class="col-lg-8">
       <!-- Payment Card -->
-      <div class="card shadow-sm"
+      <div class="paymentcontainer card shadow-sm"
            data-controller="stripe-payment"
            data-stripe-payment-publishable-key-value="<%= Rails.configuration.stripe[:publishable_key] %>"
            data-stripe-payment-booking-id-value="<%= @booking.id %>">
         <!-- Card Header -->
-        <div class="card-header bg-primary text-white">
+        <div class="paymentcard card-header bg-primary text-white">
           <h3 class="mb-0">
             <i class="fas fa-credit-card me-2"></i>
             Complete Your Payment
@@ -17,7 +17,7 @@
         <!-- Card Body -->
         <div class="card-body p-4">
           <!-- Booking Summary Section -->
-          <div class="alert alert-light border">
+          <div class="bookingsummary alert-light border">
             <h5 class="alert-heading mb-3">
               <i class="fas fa-receipt me-2"></i>
               Booking Summary
@@ -84,7 +84,7 @@
             <div class="d-grid mb-3">
               <%= f.button :button,
                            type: "submit",
-                           class: "btn btn-primary btn-lg",
+                           class: "paymentsubmit btn btn-primary btn-lg",
                            data: { stripe_payment_target: "submitButton" } do %>
                 <span data-stripe-payment-target="buttonText">
                   <i class="fas fa-lock me-2"></i>
