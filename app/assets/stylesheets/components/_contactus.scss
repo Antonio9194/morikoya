@@ -33,11 +33,12 @@
 .contact-form textarea {
   resize: none;
   max-width: 100%;
+  height: 100px;
 }
 
 .contactus .btn {
-  background-color: #E28A96 !important;
-  border: #D4213D;
+  background-color: #e28a96 !important;
+  border: #d4213d;
   border-radius: 30px !important;
   padding: 0.6rem !important;
   white-space: nowrap !important;
@@ -45,8 +46,8 @@
 }
 
 .contactus .btn:hover {
-  background-color: #D4213D !important;
-  color: #FFFFFF !important;
+  background-color: #d4213d !important;
+  color: #ffffff !important;
 }
 
 @media (max-width: 767px) {
