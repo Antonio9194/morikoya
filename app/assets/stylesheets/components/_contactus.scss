@@ -24,9 +24,13 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.form-control:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
+.contact-form input[type="email"] {
   border-radius: 50px;
 }
 
@@ -34,6 +38,7 @@
   resize: none;
   max-width: 100%;
   height: 14vh;
+  border-radius: 35px;
 }
 
 .contactus .btn {
