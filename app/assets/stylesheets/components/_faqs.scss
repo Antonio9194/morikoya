@@ -4,6 +4,14 @@
   align-items: center;
 }
 
+.faqbody h3 {
+  margin-bottom: 3rem;
+}
+
+.faqbody h3:hover {
+  color: #D4213D !important;
+}
+
 .faqbody h5 {
   color: #1E1E1E !important;
 }
@@ -15,7 +23,7 @@
 }
 
 .faqbody {
-  padding: 0.8rem;
+  padding: 2rem;
   margin: 2rem;
   border-radius: 30px;
   border: 1px solid white;
@@ -43,5 +51,10 @@
 }
 
 .faqanswer h6 {
-  color: #E28A96 !important;
+  color: #D4213D !important;
 }
+
+.faqbody a {
+  text-decoration: none;
+}
+

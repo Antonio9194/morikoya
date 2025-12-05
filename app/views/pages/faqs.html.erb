@@ -1,35 +1,25 @@
 <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
-
 <div class="faqcontainer">
   <div class="faqbody" data-controller="faq">
-
-    <!-- ============================
-         Reservation & Check-in
-    ============================= -->
+    <!--Reservation & Check-in-->
     <div>
-      <h3>Reservation & Check in</h3>
-
+      <h3 class="muted">Reservation & Check in</h3>
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>What are the check-in and check-out times?</h5>
         <h5 class="plus">+</h5>
       </div>
       <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Check in starts at 15:00 and Check out is at 11:00.</h6>
+        <h6>Check-in starts from 15:00 & Check-out is until 11:00.</h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Can I request early check-in or early check-out?</h5>
         <h5 class="plus">+</h5>
       </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Early check-in depends on availability; if possible, we will be happy to accommodate it for you.</h6>
-        <h6>Early check-out is always available.</h6>
+      <div class="faqanswer twolines d-none" data-faq-target="answer">
+        <h6>Early check-in depends on availability, if possible we will accomodate it for you, while early check-out is always available.</h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Do you accept walk-in reservations?</h5>
         <h5 class="plus">+</h5>
@@ -37,19 +27,15 @@
       <div class="faqanswer d-none" data-faq-target="answer">
         <h6>Walk-ins are accepted depending on room availability on the same day.</h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>What is your cancellation policy?</h5>
         <h5 class="plus">+</h5>
       </div>
       <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Cancellations are free until a certain period before arrival. After that, charges may apply.</h6>
+        <h6>You may cancel free of charge only within 3 hours of making the reservation. After this period, standard cancellation fees will apply.</h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>What payment methods do you accept?</h5>
         <h5 class="plus">+</h5>
@@ -57,39 +43,30 @@
       <div class="faqanswer d-none" data-faq-target="answer">
         <h6>We accept major credit cards, cash, and selected digital payment methods.</h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Is there a deposit required?</h5>
         <h5 class="plus">+</h5>
       </div>
       <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>No deposit is required.</h6>
+        <h6>Deposit is not required.</h6>
       </div>
     </div>
-
     <hr>
-
-    <!-- ============================
-         Rooms & Amenities
-    ============================= -->
+    <!--Rooms & Amenities-->
     <div>
-      <h3>Rooms & Amenities</h3>
-
+      <h3 class="muted">Rooms & Amenities</h3>
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>What amenities are included?</h5>
         <h5 class="plus">+</h5>
       </div>
       <div class="faqanswer d-none" data-faq-target="answer">
         <h6>
-          Bathroom amenities including towels, shampoo, body wash, and more are provided. 
+          Bathroom amenities including towels, shampoo, body wash, and more are provided.
           For specifics, feel free to check the <%= link_to "rooms", rooms_path %>.
         </h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Is Wi-Fi available?</h5>
         <h5 class="plus">+</h5>
@@ -97,9 +74,7 @@
       <div class="faqanswer d-none" data-faq-target="answer">
         <h6>Yes, free high-speed Wi-Fi is available throughout the hotel.</h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Are toiletries replenished daily?</h5>
         <h5 class="plus">+</h5>
@@ -108,15 +83,10 @@
         <h6>Yes, housekeeping will replenish them during your stay.</h6>
       </div>
     </div>
-
     <hr>
-
-    <!-- ============================
-         Facilities
-    ============================= -->
+    <!--Facilities-->
     <div>
-      <h3>Facilities</h3>
-
+      <h3 class="muted">Facilities</h3>
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Do you have a laundry area?</h5>
         <h5 class="plus">+</h5>
@@ -124,9 +94,7 @@
       <div class="faqanswer d-none" data-faq-target="answer">
         <h6>Yes, every apartment has a washer-dryer.</h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Is luggage storage available?</h5>
         <h5 class="plus">+</h5>
@@ -134,9 +102,7 @@
       <div class="faqanswer d-none" data-faq-target="answer">
         <h6>Luggage storage is available before check-in and after check-out.</h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Do you have parking?</h5>
         <h5 class="plus">+</h5>
@@ -145,25 +111,18 @@
         <h6>We do not have private parking, but nearby paid parking options are available.</h6>
       </div>
     </div>
-
     <hr>
-
-    <!-- ============================
-         Policies
-    ============================= -->
+    <!--Policies-->
     <div>
-      <h3>Policies</h3>
-
+      <h3 class="muted">Policies</h3>
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Are pets allowed?</h5>
         <h5 class="plus">+</h5>
       </div>
       <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Unfortunately, pets are not allowed.</h6>
+        <h6>Pets are not allowed.</h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Is smoking permitted?</h5>
         <h5 class="plus">+</h5>
@@ -171,9 +130,7 @@
       <div class="faqanswer d-none" data-faq-target="answer">
         <h6>The hotel is fully non-smoking.</h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Do you allow children?</h5>
         <h5 class="plus">+</h5>
@@ -182,28 +139,21 @@
         <h6>Children are welcome.</h6>
       </div>
     </div>
-
     <hr>
-
-    <!-- ============================
-         Access & Location
-    ============================= -->
+    <!--Access & Location-->
     <div>
-      <h3>Access & Location</h3>
-
+      <h3 class="muted">Access & Location</h3>
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>How do I get to the hotel?</h5>
         <h5 class="plus">+</h5>
       </div>
       <div class="faqanswer d-none" data-faq-target="answer">
         <h6>
-          We are located near Asakusa Station, with easy access via subway and bus.
-          Please refer to our <%= link_to "map", new_contact_message_path %>.
+          We are located near Asakusa Station & Tawaramachi Station, with easy access via subway and bus. <br>
+          Please refer to our <%= link_to "map", new_contact_message_path %> for the exact address or contact us via this <%= link_to "form", new_contact_message_path  %> for specific instructions.
         </h6>
       </div>
-
       <hr>
-
       <div class="faqquestion" data-action="click->faq#toggle">
         <h5>Do you offer airport pickup?</h5>
         <h5 class="plus">+</h5>
@@ -211,233 +161,10 @@
       <div class="faqanswer d-none" data-faq-target="answer">
         <h6>Airport pickup is not provided, but we can guide you on the best route.</h6>
       </div>
-
       <hr>
-
     </div>
-
-  </div>
-</div><%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
-
-<div class="faqcontainer">
-  <div class="faqbody" data-controller="faq">
-
-    <!-- ============================
-         Reservation & Check-in
-    ============================= -->
-    <div>
-      <h3>Reservation & Check in</h3>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>What are the check-in and check-out times?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Check in starts at 15:00 and Check out is at 11:00.</h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Can I request early check-in or early check-out?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Early check-in depends on availability; if possible, we will be happy to accommodate it for you.</h6>
-        <h6>Early check-out is always available.</h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Do you accept walk-in reservations?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Walk-ins are accepted depending on room availability on the same day.</h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>What is your cancellation policy?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Cancellations are free until a certain period before arrival. After that, charges may apply.</h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>What payment methods do you accept?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>We accept major credit cards, cash, and selected digital payment methods.</h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Is there a deposit required?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>No deposit is required.</h6>
-      </div>
-    </div>
-
-    <hr>
-
-    <!-- ============================
-         Rooms & Amenities
-    ============================= -->
-    <div>
-      <h3>Rooms & Amenities</h3>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>What amenities are included?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>
-          Bathroom amenities including towels, shampoo, body wash, and more are provided. 
-          For specifics, feel free to check the <%= link_to "rooms", rooms_path %>.
-        </h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Is Wi-Fi available?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Yes, free high-speed Wi-Fi is available throughout the hotel.</h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Are toiletries replenished daily?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Yes, housekeeping will replenish them during your stay.</h6>
-      </div>
-    </div>
-
-    <hr>
-
-    <!-- ============================
-         Facilities
-    ============================= -->
-    <div>
-      <h3>Facilities</h3>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Do you have a laundry area?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Yes, every apartment has a washer-dryer.</h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Is luggage storage available?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Luggage storage is available before check-in and after check-out.</h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Do you have parking?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>We do not have private parking, but nearby paid parking options are available.</h6>
-      </div>
-    </div>
-
-    <hr>
-
-    <!-- ============================
-         Policies
-    ============================= -->
-    <div>
-      <h3>Policies</h3>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Are pets allowed?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Unfortunately, pets are not allowed.</h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Is smoking permitted?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>The hotel is fully non-smoking.</h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Do you allow children?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Children are welcome.</h6>
-      </div>
-    </div>
-
-    <hr>
-
-    <!-- ============================
-         Access & Location
-    ============================= -->
-    <div>
-      <h3>Access & Location</h3>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>How do I get to the hotel?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>
-          We are located near Asakusa Station, with easy access via subway and bus.
-          Please refer to our <%= link_to "map", new_contact_message_path %> for precise location.
-        </h6>
-      </div>
-
-      <hr>
-
-      <div class="faqquestion" data-action="click->faq#toggle">
-        <h5>Do you offer airport pickup?</h5>
-        <h5 class="plus">+</h5>
-      </div>
-      <div class="faqanswer d-none" data-faq-target="answer">
-        <h6>Airport pickup is not provided, but we can guide you on the best route.</h6>
-      </div>
-
-      <hr>
-
-    </div>
-
   </div>
 </div>
-
 <footer>
   <%= render "shared/footer_rooms" %>
 </footer>
