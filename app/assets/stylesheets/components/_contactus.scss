@@ -30,6 +30,11 @@
   border-radius: 50px;
 }
 
+.contact-form textarea {
+  resize: none;
+  max-width: 100%;
+}
+
 .contactus .btn {
   background-color: #E28A96 !important;
   border: #D4213D;
