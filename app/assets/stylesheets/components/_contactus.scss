@@ -31,8 +31,9 @@
 }
 
 .contact-form textarea {
-  resize: none;
+  resize: vertical;
   max-width: 100%;
+  max-height: 25vh;
   height: 100px;
 }
 
