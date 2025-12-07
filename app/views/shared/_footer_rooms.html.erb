@@ -1,4 +1,4 @@
-<div class="navbar bg-body-tertiary">
+<div class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <!-- Left: Logo -->
     <%= link_to root_path, class: "navbar-brand" do %>
@@ -85,7 +85,7 @@
           <% if user_signed_in? && current_user.admin? %>
             <li class="nav-item">
               <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
-                <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+                <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1"%>
                 Rooms
               <% end %>
             </li>
@@ -98,13 +98,13 @@
           <% else %>
             <li class="nav-item">
               <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
-                <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+                <%= image_tag "rooms.png", style: "width: 16px; height: 16px; margin: 0 5px 0 3px"%>
                 Rooms
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
-                <%= image_tag "contact.png", style: "width: 20px; height: 20px;", class: "me-1" %>
+                <%= image_tag "contact.png", style: "width: 16px; height: 16px; margin: 0 5px 0 2px"%>
                 Contact Us
               <% end %>
             </li>
