@@ -110,20 +110,20 @@
             </li>
             <li class="nav-item">
               <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
-                <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size" %>
+                <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
                 About Us
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
-                <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size" %>
+                <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size-20" %>
                 FAQs
               <% end %>
             </li>
             <% if user_signed_in? && current_user.guest? %>
               <li class="nav-item">
                 <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
-                  <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size" %>
+                  <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
                   Dashboard
                 <% end %>
               </li>
