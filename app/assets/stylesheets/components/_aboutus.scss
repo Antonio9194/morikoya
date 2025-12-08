@@ -1,3 +1,4 @@
+//Morikoya intro & Map
 .about-info {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 2rem;
@@ -5,7 +6,7 @@
   border-radius: 30px;
   border: 1px solid white;
   background-color: rgba(255, 255, 255, 0.9);
-  width: 43%;
+  width: 44%;
 }
 .mapcontent {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -14,10 +15,10 @@
   border-radius: 30px;
   border: 1px solid white;
   background-color: rgba(255, 255, 255, 0.9);
-  width: 45%;
+  width: 44%;
 }
 
-.title-block {
+.title-block, .access-block h3 {
   color: #E28A96 !important;
   display: block;
   font-size: 2.3rem;
@@ -27,13 +28,43 @@
   margin-bottom: 1.5rem;
 }
 
-.title-block:hover {
+.title-block:hover, .access-block h3:hover, .subway-block h4:hover, .airport-block h4:hover, .bus-block h4:hover, .sightseeing-block h4:hover, .taxi-block h4:hover {
   color: #D4213D !important;
 }
 
-.main-block p {
+.morikoya-block p {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border-radius: 30px;
   background-color: white;
   padding: 1rem;
 }
+
+//Transportation & Access
+.access-block {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 93%;
+}
+
+// .subway-background, .airport-background, .bus-background, .sightseeing-background, .taxi-background {
+//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+//   padding: 2rem;
+//   margin: 2rem;
+//   border-radius: 30px;
+//   border: 1px solid white;
+//   background-color: white;
+//   width: 93%;
+// }
+
+.subway-block h4, .airport-block h4, .bus-block h4, .sightseeing-block h4, .taxi-block h4 {
+  color: #E28A96 !important;
+}
+
+.subway-block h6, .airport-block h6, .bus-block h6, .sightseeing-block h6, .taxi-block h6 {
+  color: #1E1E1E !important;
+}
+
