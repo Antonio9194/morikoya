@@ -1,20 +1,20 @@
 .map {
   display: block;
-  height: 40vh;
+  min-height: 40vh;
   width: 80%;
-  margin: auto;
-  margin-top: calc(22px + 1.275rem + 0.3vw - 0.15rem - 32px);
+  margin-top: 20px;
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 #address {
   display: block;
-  font-size: 0.85rem;
   width: 80%;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 1.5rem;
+  margin-top: 12px;
+  margin-bottom: 0px;
+  white-space: nowrap;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 767px) {
@@ -31,8 +31,7 @@
 
 @media (max-width: 991px) {
   .map {
-    display: block;
-    height: 50vh;
+    min-height: 40vh;
     width: 80%;
     margin: auto;
     margin-top: calc(22px + 1.275rem + 0.3vw - 0.15rem - 16px);
