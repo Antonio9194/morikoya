@@ -1,7 +1,7 @@
 .map {
   display: block;
-  height: 40vh;
-  width: 80%;
+  height: 55vh;
+  width: 90%;
   margin: auto;
   margin-top: calc(22px + 1.275rem + 0.3vw - 0.15rem - 32px);
   border-radius: 20px;
@@ -9,12 +9,17 @@
 }
 
 #address {
+  color: #E28A96 !important;
   display: block;
   font-size: 0.85rem;
   width: 80%;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 1.5rem;
+}
+
+#address:hover {
+  color: #D4213D !important;
 }
 
 @media (max-width: 767px) {
