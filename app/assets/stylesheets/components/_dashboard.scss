@@ -1,0 +1,24 @@
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .dashboard-link {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .user-info-card {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .message-section-expand {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .message-section-toggle {
+    display: none;
+  }
+}

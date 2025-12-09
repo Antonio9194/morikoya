@@ -1,19 +1,23 @@
 <div class="container my-5">
   <div class="row g-4">
-    <!-- Messages Section -->
-    <div class="col-md-4">
+    <!-- Messages Section Expanded-->
+    <div class="message-section-expand col-md-4">
       <%= render "guests/messages_card", user: current_user %>
     </div>
     <!-- User Info & Bookings Section -->
-    <div class="col-md-8">
+    <div class="col-xs-12 col-sm-12 col-md-8">
       <!-- User Card + Avatar -->
       <div class="row g-3 mb-4">
-        <div class="col-md-9">
+        <div class="user-info-card col-xs-0 col-sm-0 col-md-0 col-md-8 col-lg-8 col-xl-9 col-xxl-9">
           <%= render "guests/user_info_card", user: current_user %>
         </div>
-        <div class="col-md-3">
+        <div class="avatar-menu col-xs-12 col-sm-12 col-md-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
           <%= render "guests/avatar_menu", user: current_user %>
         </div>
+      </div>
+      <!-- Messages Section Toggle-->
+      <div class="message-section-toggle mb-4">
+        <%= render "guests/messages_card_toggle", user: current_user %>
       </div>
       <!-- Bookings Section -->
       <%= render "guests/bookings_section", user: current_user %>
