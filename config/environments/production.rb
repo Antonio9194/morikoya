@@ -69,7 +69,8 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
-  # config.active_job.queue_adapter = :resque
+  # For production, use async adapter (or upgrade to Sidekiq/Resque for better reliability)
+  config.active_job.queue_adapter = :async
   # config.active_job.queue_name_prefix = "minakoya_production"
 
   config.action_mailer.perform_caching = false
@@ -87,7 +88,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  
+
   config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',

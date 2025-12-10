@@ -24,6 +24,9 @@ class BookingsController < ApplicationController
     )
 
     if @booking.save
+      # Schedule auto-cancellation after 30 minutes if payment not completed
+      CancelUnpaidBookingJob.set(wait: 30.minutes).perform_later(@booking.id)
+      
       # Redirect to payment page instead of guest page
       redirect_to new_payment_path(booking_id: @booking.id),
                   notice: 'Please complete payment.'
