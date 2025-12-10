@@ -8,6 +8,7 @@
   background-color: rgba(255, 255, 255, 0.9);
   width: 45%;
 }
+
 .mapcontent {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 2rem;
@@ -18,7 +19,7 @@
   width: 45%;
 }
 
-.title-block, .access-block h3, .attractions-block h3 {
+.title-block, .access-block h3, .attractions-block h3, .food-block h3 {
   color: #D4213D !important;
   display: block;
   font-size: 2.3rem;
@@ -46,6 +47,17 @@
   width: 95%;
 }
 
+.food-block {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 45%;
+}
+
+
 // .subway-background, .airport-background, .bus-background, .sightseeing-background, .taxi-background {
 //   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 //   padding: 2rem;
@@ -56,11 +68,34 @@
 //   width: 93%;
 // }
 
-.subway-block h4, .airport-block h4, .bus-block h4, .sightseeing-block h4, .taxi-block h4, .hotspots-block h4 {
+.subway-block h4, .airport-block h4, .bus-block h4, .sightseeing-block h4, .taxi-block h4, .hotspots-block h4, .restaurants-block h4, .cafes-block h4 {
   color: #E28A96 !important;
   margin-top: 1.4rem;
   text-align: left;
   padding-left: 4rem;
+}
+
+.subway-block h5, .airport-block h5, .bus-block h5, .sightseeing-block h5, .taxi-block h5, .hotspots-block h5, .restaurants-block h5, .cafes-block h5 {
+  color: #1E1E1E !important;
+  margin-bottom: 0,8rem;
+  line-height: 1.55;
+  text-align: left;
+  padding-left: 10rem;
+}
+
+ .restaurants-block h4, .cafes-block h4 {
+  color: #E28A96 !important;
+  margin-top: 1.4rem;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+  .restaurants-block h5, .cafes-block h5 {
+  color: #1E1E1E !important;
+  margin-bottom: 0,8rem;
+  line-height: 1.55;
+  text-align: left;
+  padding-left: 3rem;
 }
 
 .aboutus-description {
@@ -69,15 +104,8 @@
   padding-left: 4rem;
 }
 
-.subway-block h5, .airport-block h5, .bus-block h5, .sightseeing-block h5, .taxi-block h5, .hotspots-block h5 {
-  color: #1E1E1E !important;
-  margin-bottom: 0,8rem;
-  line-height: 1.55;
-  text-align: left;
-  padding-left: 10rem;
-}
 
-.subway-block hr, .airport-block hr, .bus-block hr, .sightseeing-block hr, .taxi-block hr, .hotspots-block hr {
+.subway-block hr, .airport-block hr, .bus-block hr, .sightseeing-block hr, .taxi-block hr, .hotspots-block hr, .restaurants-block hr, .cafes-block hr {
   margin: 1rem auto;
   width: 90%;
   border: 1px solid #D4213D;
