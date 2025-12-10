@@ -9,6 +9,19 @@
   width: 45%;
 }
 
+
+.morikoya-block p {
+  background-color: #ffffff;
+  padding: 1.4rem 1.6rem;
+  border-radius: 20px;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.07),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+  border: 1px solid rgba(240, 240, 240, 0.9);
+}
+
 .mapcontent {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 2rem;
@@ -27,13 +40,6 @@
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 1.5rem;
-}
-
-.morikoya-block p {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-radius: 30px;
-  background-color: white;
-  padding: 1rem;
 }
 
 //Transportation & Access
