@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
     if @booking.save
       # Schedule auto-cancellation after 30 minutes if payment not completed
       CancelUnpaidBookingJob.set(wait: 30.minutes).perform_later(@booking.id)
-      
+
       # Redirect to payment page instead of guest page
       redirect_to new_payment_path(booking_id: @booking.id),
                   notice: 'Please complete payment.'
@@ -51,7 +51,7 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.find(params[:id])
     if @booking.status == 'pending'
       @booking.update(status: 'cancelled')
-      
+
       # Handle AJAX requests differently
       respond_to do |format|
         format.html { redirect_to room_path(@booking.room), notice: 'Booking cancelled and returned to room page.' }
