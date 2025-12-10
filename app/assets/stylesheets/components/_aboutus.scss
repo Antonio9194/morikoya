@@ -19,7 +19,7 @@
   width: 45%;
 }
 
-.title-block, .access-block h3, .attractions-block h3, .food-block h3 {
+.title-block, .access-block h3, .attractions-block h3, .food-block h3, .shopping-block h3 {
   color: #D4213D !important;
   display: block;
   font-size: 2.3rem;
@@ -37,7 +37,7 @@
 }
 
 //Transportation & Access
-.access-block, .attractions-block {
+.access-block, .attractions-block, .shopping-block {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   margin: 2rem;
@@ -68,14 +68,14 @@
 //   width: 93%;
 // }
 
-.subway-block h4, .airport-block h4, .bus-block h4, .sightseeing-block h4, .taxi-block h4, .hotspots-block h4, .restaurants-block h4, .cafes-block h4 {
+.subway-block h4, .airport-block h4, .bus-block h4, .sightseeing-block h4, .taxi-block h4, .attractions-block h4, .shopping-block h4 {
   color: #E28A96 !important;
   margin-top: 1.4rem;
   text-align: left;
   padding-left: 4rem;
 }
 
-.subway-block h5, .airport-block h5, .bus-block h5, .sightseeing-block h5, .taxi-block h5, .hotspots-block h5, .restaurants-block h5, .cafes-block h5 {
+.subway-block h5, .airport-block h5, .bus-block h5, .sightseeing-block h5, .taxi-block h5, .attractions-block h5, .shopping-block h5 {
   color: #1E1E1E !important;
   margin-bottom: 0,8rem;
   line-height: 1.55;
@@ -90,6 +90,7 @@
   padding-left: 1.5rem;
 }
 
+   //Food blocks
   .restaurants-block h5, .cafes-block h5 {
   color: #1E1E1E !important;
   margin-bottom: 0,8rem;
@@ -99,13 +100,13 @@
 }
 
 .aboutus-description {
-  margin-top: 1.4rem;
-  text-align: left;
-  padding-left: 4rem;
+  margin-top: 1.4rem !important;
+  text-align: left !important;
+  padding-left: 4rem !important;
 }
 
 
-.subway-block hr, .airport-block hr, .bus-block hr, .sightseeing-block hr, .taxi-block hr, .hotspots-block hr, .restaurants-block hr, .cafes-block hr {
+.subway-block hr, .airport-block hr, .bus-block hr, .sightseeing-block hr, .taxi-block hr, .attractions-block hr, .restaurants-block hr, .cafes-block hr, .shopping-block hr {
   margin: 1rem auto;
   width: 90%;
   border: 1px solid #D4213D;
