@@ -50,35 +50,13 @@ export default class extends Controller {
     this.card.on("change", (event) => {
       this.displayCardErrors(event);
     });
-
-    // Track if payment was completed successfully
-    this.paymentCompleted = false;
-
-    // Add beforeunload listener to warn when leaving page
-    this.beforeUnloadHandler = this.handleBeforeUnload.bind(this);
-    window.addEventListener("beforeunload", this.beforeUnloadHandler);
-
-    // Add Turbo navigation listener for internal navigation
-    this.turboBeforeVisitHandler = this.handleTurboBeforeVisit.bind(this);
-    document.addEventListener("turbo:before-visit", this.turboBeforeVisitHandler);
   }
 
   disconnect() {
     console.log("Stripe Payment controller disconnected");
-    console.log("Payment completed status:", this.paymentCompleted);
 
     if (this.card) {
       this.card.unmount();
-    }
-
-    // Remove event listeners
-    window.removeEventListener("beforeunload", this.beforeUnloadHandler);
-    document.removeEventListener("turbo:before-visit", this.turboBeforeVisitHandler);
-
-    // Cancel booking if payment wasn't completed
-    if (!this.paymentCompleted) {
-      console.log("Payment not completed, cancelling booking...");
-      this.cancelBooking();
     }
   }
 
@@ -135,7 +113,6 @@ export default class extends Controller {
         this.setLoadingState(false);
       } else if (result.success) {
         console.log("Payment successful! Redirecting...");
-        this.paymentCompleted = true;
         window.location.href = result.redirect_url;
       }
     } catch (error) {
@@ -172,59 +149,5 @@ export default class extends Controller {
   getCsrfToken() {
     const token = document.querySelector('[name="csrf-token"]');
     return token ? token.content : "";
-  }
-
-  // Handle browser close/refresh warning
-  handleBeforeUnload(event) {
-    console.log("beforeunload event triggered, payment completed:", this.paymentCompleted);
-    if (!this.paymentCompleted) {
-      event.preventDefault();
-      event.returnValue = ""; // Required for Chrome
-    }
-  }
-
-  // Handle internal navigation (Turbo navigation)
-  handleTurboBeforeVisit(event) {
-    console.log("turbo:before-visit event triggered, payment completed:", this.paymentCompleted);
-    if (!this.paymentCompleted) {
-      const confirmed = confirm(
-        "You haven't completed your payment yet. If you leave this page, your booking will be cancelled. Are you sure you want to leave?"
-      );
-      if (!confirmed) {
-        event.preventDefault();
-      }
-    }
-  }
-
-  // Cancel the booking via AJAX
-  cancelBooking() {
-    console.log("Cancelling booking:", this.bookingIdValue);
-    const cancelUrl = `/bookings/${this.bookingIdValue}/cancel`;
-    const csrfToken = this.getCsrfToken();
-
-    // Use sendBeacon for reliable delivery even when page is closing
-    // sendBeacon only supports POST method
-    const formData = new FormData();
-    formData.append('authenticity_token', csrfToken);
-
-    if (navigator.sendBeacon) {
-      console.log("Using sendBeacon to cancel booking");
-      // sendBeacon sends as POST automatically
-      const success = navigator.sendBeacon(cancelUrl, formData);
-      console.log("sendBeacon result:", success);
-    } else {
-      // Fallback to fetch with keepalive
-      console.log("Using fetch to cancel booking");
-      fetch(cancelUrl, {
-        method: "POST",
-        headers: {
-          "X-CSRF-Token": csrfToken,
-        },
-        body: formData,
-        keepalive: true,
-      }).catch((error) => {
-        console.error("Error cancelling booking:", error);
-      });
-    }
   }
 }
