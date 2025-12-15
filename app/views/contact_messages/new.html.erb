@@ -1,5 +1,7 @@
-<div class="container d-flex align-items-center" style="min-height: calc(100vh - 120px);">
-  <div class="row justify-content-between align-items-center gx-5 gy-3 w-100">
+<%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
+
+<div class="container" style="margin-top: 3rem; margin-bottom: 2rem">
+  <div class="row">
     <div class="contactus col-sm-12 col-md-6 col-lg-6">
       <% if current_user.present? %>
         <h5 class="welcome-text"> Welcome back <%= current_user.first_name %>!</h5>
@@ -15,7 +17,8 @@
         <% end %>
       </div>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-6">
+
+    <div class="mapcontent col-sm-12 col-md-6 col-lg-6">
       <%= render "pages/map" %>
     </div>
   </div>

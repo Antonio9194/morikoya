@@ -21,7 +21,12 @@
 @import "components/bookinginfomodal";
 @import "components/deletebookingmodal";
 @import "components/faqs";
+@import "components/aboutus";
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+
+.container {
+  max-width: 1400px;
+}
 
 body {
   display: flex;

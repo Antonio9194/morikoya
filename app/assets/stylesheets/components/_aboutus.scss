@@ -1,0 +1,114 @@
+//Morikoya intro & Map
+.about-info {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 45%;
+}
+
+
+.morikoya-block p {
+  background-color: #ffffff;
+  padding: 1.4rem 1.6rem;
+  border-radius: 20px;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.07),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+  border: 1px solid rgba(240, 240, 240, 0.9);
+}
+
+.mapcontent {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 45%;
+}
+
+.title-block, .access-block h3, .attractions-block h3, .food-block h3, .shopping-block h3, .culture-block h3 {
+  color: #D4213D !important;
+  display: block;
+  font-size: 2.3rem;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 1.5rem;
+}
+
+.access-block, .attractions-block, .shopping-block, .culture-block, .food-block {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 94.5%;
+}
+
+.subway-block h4, .airport-block h4, .bus-block h4, .sightseeing-block h4, .taxi-block h4, .attractions-block h4, .shopping-block h4, .culture-block h4, .food-block h4 {
+  color: #E28A96 !important;
+  margin-top: 1.4rem;
+  text-align: left;
+  padding-left: 4rem;
+}
+
+.subway-block h5, .airport-block h5, .bus-block h5, .sightseeing-block h5, .taxi-block h5, .attractions-block h5, .shopping-block h5, .culture-block h5, .food-block h5 {
+  color: #1E1E1E !important;
+  margin-bottom: 0,8rem;
+  line-height: 1.55;
+  text-align: left;
+  padding-left: 10rem;
+}
+
+.aboutus-description {
+  margin-top: 1.4rem !important;
+  text-align: left !important;
+  padding-left: 4rem !important;
+}
+
+
+.subway-block hr, .airport-block hr, .bus-block hr, .sightseeing-block hr, .taxi-block hr, .attractions-block hr, .restaurants-block hr, .cafes-block hr, .shopping-block hr, .culture-block hr {
+  margin: 1rem auto;
+  width: 90%;
+  border: 1px solid #D4213D;
+}
+
+.navigation-aboutus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 1rem 1.3rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 96.1%;
+}
+
+.inner-navigation-aboutus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-access-block, .nav-attractions-block, .nav-shopping-block, .nav-culture-block, .nav-food-block {
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
