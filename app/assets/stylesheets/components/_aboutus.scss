@@ -52,17 +52,6 @@
   width: 95%;
 }
 
-
-// .subway-background, .airport-background, .bus-background, .sightseeing-background, .taxi-background {
-//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-//   padding: 2rem;
-//   margin: 2rem;
-//   border-radius: 30px;
-//   border: 1px solid white;
-//   background-color: white;
-//   width: 93%;
-// }
-
 .subway-block h4, .airport-block h4, .bus-block h4, .sightseeing-block h4, .taxi-block h4, .attractions-block h4, .shopping-block h4, .culture-block h4, .food-block h4 {
   color: #E28A96 !important;
   margin-top: 1.4rem;
@@ -89,4 +78,37 @@
   margin: 1rem auto;
   width: 90%;
   border: 1px solid #D4213D;
+}
+
+.navigation-aboutus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 1rem 1.3rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 96.5%;
+}
+
+.inner-navigation-aboutus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-access-block, .nav-attractions-block, .nav-shopping-block, .nav-culture-block, .nav-food-block {
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
 }
