@@ -32,27 +32,26 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #FFFFFF;
-  color: #1E1E1E;
+  background-color: #ffffff;
+  color: #1e1e1e;
 }
 
 .muted {
-  color: #6B6B6B !important;
+  color: #6b6b6b !important;
 }
 
 .muted:hover {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
 }
 
 main {
   flex-grow: 1;
 }
 
-
 footer {
   height: 5rem;
   background-color: white;
-  color: #1E1E1E;
+  color: #1e1e1e;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -62,33 +61,29 @@ footer {
 }
 
 h1 {
-  color: #D4213D !important;
+  color: #d4213d !important;
 }
 
-h2, h3, p{
-  color: #1E1E1E !important;
+h2,
+h3,
+p {
+  color: #1e1e1e !important;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   color: darkgray !important;
 }
 
 a {
-  color: #1E1E1E !important;
+  color: #1e1e1e !important;
 }
 
-a:hover {
-  color: #D4213D !important;
+.navfoot a:hover {
+  color: #1e1e1e !important;
 }
 
 .navfoot li {
-  color: #1E1E1E !important;
+  color: #1e1e1e !important;
 }
-
-.navfoot li:hover {
-  filter: invert(25%) sepia(90%) saturate(5000%) hue-rotate(0deg);
-}
-
-
-
-
