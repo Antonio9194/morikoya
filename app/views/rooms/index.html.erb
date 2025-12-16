@@ -1,9 +1,9 @@
-<div class="container my-3">
+<div class="container-fluid my-3 rooms-page-wrapper">
   <% if @guest_num.present? && @guest_num > 8 %>
     <!--Render search dates-->
     <% if @rooms.count > 1 %>
       <%= render "search_info", rooms: @rooms %>
-      <h5 class="badge rounded-pill bg-success fs-4 my-3">Choose at least two rooms for your group!</h5>
+      <h5 class="searchresult">Choose at least two rooms for your group!</h5>
       <%= render "rooms/other_nums", rooms: @rooms %>
     <% else %>
       <%= render "search_info", rooms: @rooms %>
@@ -25,11 +25,11 @@
   <% if @guest_num.present? && @guest_num <= 5 %>
     <% if @rooms.count > 1 %>
       <%= render "search_info", rooms: @rooms %>
-      <h5 class="badge rounded-pill bg-success fs-4 my-3">Choose at least one room for your group!</h5>
+      <h5 class="searchresult">Choose at least one room for your group!</h5>
       <%= render "rooms/other_nums", rooms: @rooms %>
     <% elsif @rooms.count == 1 %>
       <%= render "search_info", rooms: @rooms %>
-      <h5 class="badge rounded-pill bg-success fs-4 my-3">We only have one room left!</h5>
+      <h5 class="searchresult">We only have one room left!</h5>
       <%= render "rooms/other_nums", rooms: @rooms %>
     <% else %>
       <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">Sorry we are booked out!</h5>

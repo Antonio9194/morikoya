@@ -114,3 +114,243 @@ button {
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-item {
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50px;
+  background-color: #f7f3f0;
+  width: 90%;
+}
+
+.search-btn {
+  width: 90%;
+}
+
+/* Modal overlay */
+  #calendar-container {
+  position: relative;
+  width: 90%;
+  margin: 1rem auto 0;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+#guests-container {
+   position: relative;
+  width: 90%;
+  margin: 1rem auto 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+  .calendar-header {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 12px 12px 0 0;
+  }
+
+
+.calendar-grid {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+  .month-block {
+    width: 100% !important;
+    padding: 0.5rem !important;
+  }
+
+  .month-block h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .weekdays {
+    font-size: 0.7rem;
+  }
+
+  .days-grid {
+    font-size: 0.8rem;
+  }
+
+  .day {
+    padding: 6px !important;
+  }
+}
+
+@media (max-width: 425px) {
+
+  .search-item {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .icon-circle {
+    width: 30px;
+    height: 30px;
+    margin-right: 6px;
+  }
+
+  .icon-circle img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .text .label {
+    font-size: 0.65rem;
+  }
+
+  .text .value {
+    font-size: 0.8rem;
+  }
+
+  .search-btn {
+    min-height: 46px;
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  #calendar-container,
+  #guests-container {
+    width: 96%;
+    margin-top: 0.4rem;
+    padding: 0;
+    border-radius: 30px;
+  }
+
+  .calendar-header {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .month-block h4 {
+    font-size: 0.85rem;
+  }
+
+  .weekdays {
+    font-size: 0.65rem;
+  }
+
+  .days-grid {
+    font-size: 0.5rem;
+    gap: 2px;
+  }
+
+  .day {
+    padding: 3px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+    #calendar-container, #guests-container {
+  position: relative;
+  width: 90%;
+  margin: 1rem auto 0;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+}
+
+@media (max-width: 1440px) {
+    #calendar-container, #guests-container {
+  position: relative;
+  width: 90%;
+  margin: 1rem auto 0;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+}
+
+@media (min-width: 2560px) {
+  .search-bar {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    gap: 32px;
+    padding: 20px 32px;
+  }
+
+  .search-item {
+    min-width: 260px;
+    padding: 16px 24px;
+  }
+
+  .icon-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .icon-circle img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .text .label {
+    font-size: 1rem;
+  }
+
+  .text .value {
+    font-size: 1.1rem;
+  }
+
+  .search-btn {
+    min-width: 260px;
+    min-height: 68px;
+    font-size: 1.05rem;
+  }
+
+  #calendar-container,
+  #guests-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 1800px;
+    margin: 2.5rem auto 0;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    z-index: 1;
+  }
+
+  .calendar-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .calendar-grid {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .month-block {
+    width: 33.333%;
+    padding: 1.2rem;
+  }
+
+  .month-block h4 {
+    font-size: 1.3rem;
+  }
+
+  .weekdays {
+    font-size: 0.9rem;
+  }
+
+  .days-grid {
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .day {
+    padding: 12px;
+  }
+}
