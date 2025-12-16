@@ -9,7 +9,6 @@
         <div class="label">Check-In</div>
         <div class="value" data-booking-form-target="checkInValue">
           <%= @check_in&.strftime('%d %b %Y') %>
-          <%= params.dig(:search, :check_in) %>
         </div>
       </div>
     </div>
@@ -22,12 +21,11 @@
         <div class="label">Check-Out</div>
         <div class="value" data-booking-form-target="checkOutValue">
           <%= @check_out&.strftime('%d %b %Y') %>
-          <%= params.dig(:search, :check_out) %>
         </div>
       </div>
     </div>
-    <%= hidden_field_tag :check_in, params.dig(:search, :check_in), data: { booking_form_target: "checkInInput" } %>
-    <%= hidden_field_tag :check_out, params.dig(:search, :check_out), data: { booking_form_target: "checkOutInput" } %>
+    <%= hidden_field_tag :check_in, params[:check_in], data: { booking_form_target: "checkInInput" } %>
+    <%= hidden_field_tag :check_out, params[:check_out], data: { booking_form_target: "checkOutInput" } %>
     <!-- Guests -->
     <div class="search-item" id="guests-btn" data-action="click->guests#open" >
       <div class="icon-circle">
@@ -36,12 +34,11 @@
       <div class="text">
         <div class="label">Guests</div>
         <div class="value" data-guests-target="guestsValue">
-          <%= @guest_num %>
-          <%= params.dig(:search, :guests)%>
+          <%= @guest_num if @guest_num.present? %>
         </div>
       </div>
     </div>
-    <%= hidden_field_tag :guests, params.dig(:search, :guests), data: {guests_target: "guestsInput"} %>
+    <%= hidden_field_tag :guests, params[:guests], data: {guests_target: "guestsInput"} %>
     <%= submit_tag "Search", class: "search-btn" %>
   </div>
   <%= render "pages/calendar", pages: @rooms %>
