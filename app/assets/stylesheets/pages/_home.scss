@@ -189,7 +189,7 @@ button {
 @media (max-width: 425px) {
 
   .search-item {
-    padding: 6px 10px;
+    padding: 1rem;
     width: 100%;
   }
 
@@ -271,65 +271,60 @@ button {
 }
 
 @media (min-width: 2560px) {
-
-  /* Search bar stays horizontal but gets breathing room */
   .search-bar {
-    max-width: 1400px;
+    width: 100%;
+    max-width: 2000px;
     margin: 0 auto;
-    gap: 24px;
-    padding: 18px 24px;
+    gap: 32px;
+    padding: 20px 32px;
   }
 
   .search-item {
-    min-width: 220px;
-    padding: 14px 20px;
+    min-width: 260px;
+    padding: 16px 24px;
   }
 
   .icon-circle {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
   }
 
   .icon-circle img {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
   }
 
   .text .label {
-    font-size: 0.9rem;
-  }
-
-  .text .value {
-    font-size: 1.05rem;
-  }
-
-  .search-btn {
-    min-width: 220px;
-    min-height: 64px;
     font-size: 1rem;
   }
 
-  /* Calendar & Guests – INLINE, NOT MODAL */
+  .text .value {
+    font-size: 1.1rem;
+  }
+
+  .search-btn {
+    min-width: 260px;
+    min-height: 68px;
+    font-size: 1.05rem;
+  }
+
   #calendar-container,
   #guests-container {
     position: relative;
     top: auto;
     left: auto;
     transform: none;
-
     width: 100%;
-    max-width: 1200px;
-    margin: 2rem auto 0;
-
+    max-width: 1800px;
+    margin: 2.5rem auto 0;
     background: white;
     border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     z-index: 1;
   }
 
   .calendar-header {
-    padding: 0.75rem 1.25rem;
+    padding: 1rem 1.5rem;
   }
 
   .calendar-grid {
@@ -338,24 +333,24 @@ button {
   }
 
   .month-block {
-    width: 50%; /* two months side by side */
-    padding: 1rem;
+    width: 33.333%;
+    padding: 1.2rem;
   }
 
   .month-block h4 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .weekdays {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .days-grid {
-    font-size: 0.95rem;
-    gap: 6px;
+    font-size: 1rem;
+    gap: 8px;
   }
 
   .day {
-    padding: 10px;
+    padding: 12px;
   }
 }

@@ -4,27 +4,27 @@
 <!--Show room C first-->
 <% if room_c.present? %>
   <div class="my-3">
-    <h5 class="badge rounded-pill bg-success fs-4 my-3">This room fits your group perfectly!</h5>
+    <h5 class="searchresult">This room fits your group perfectly!</h5>
     <%= render "rooms/room_c", room_c: room_c %>
   </div>
 <% end %>
 <!--Show room B-->
 <% if rooms_b.any? %>
   <div class="my-3">
-    <h5 class="badge rounded-pill bg-success fs-4 my-3">Choose at least one room for your group!</h5>
+    <h5 class="searchresult">Choose at least one room for your group!</h5>
     <%= render "rooms/other_rooms", other_rooms: rooms_b %>
   </div>
 <% end %>
 <!--Show room A-->
 <% if rooms_a.count > 1 %>
   <div class="my-3">
-    <h5 class="badge rounded-pill bg-success fs-4 my-3">Just in case you want separated rooms!</h5>
+    <h5 class="searchresult">Just in case you want separated rooms!</h5>
     <%= render "rooms/other_rooms", other_rooms: rooms_a %>
   </div>
 <% end %>
 <!--Case when only room A is available-->
 <% if room_c.nil? && rooms_b.empty? && rooms_a.count > 1 %>
-  <h5 class="badge rounded-pill bg-success fs-4 my-3">Choose at least two rooms for your group!</h5>
+  <h5 class="searchresult"> two rooms for your group!</h5>
   <%= render "rooms/other_rooms", other_rooms: rooms_a %>
 <% end %>
 <!--Case when no room is available (or available room is too small)-->
