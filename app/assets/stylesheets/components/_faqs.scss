@@ -1,11 +1,27 @@
 .faqcontainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.faqcontainer > .faqbody:first-child {
+  grid-column: 1 / -1;
+}
+
+
+.faqbody {
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .faqbody h3 {
   margin: 3rem;
+  color: #D4213D !important;
 }
 
 .faqbody h3:hover {
@@ -18,18 +34,8 @@
 
 .faqcontainer hr {
   border: 1px solid #D4213D;
-  width: 90%;
+  width: 85%;
   margin: 1rem auto;
-}
-
-.faqbody {
-  padding: 2rem;
-  margin: 2rem;
-  border-radius: 30px;
-  border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 80%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .faqquestion {
@@ -58,3 +64,53 @@
   text-decoration: none;
 }
 
+.faq-block {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navigation-faq {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 1rem 2rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 95.3%;
+}
+
+.inner-navigation-faq {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-reservation-block, .nav-roomamenities-block, .nav-facilities-block, .nav-policies-block, .nav-accesslocation-block {
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+@media (min-width: 2560px) {
+
+  .faq-page-wrapper {
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+}
