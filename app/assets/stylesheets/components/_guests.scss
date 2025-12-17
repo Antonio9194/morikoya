@@ -106,10 +106,14 @@
   background-color: #E28A96 !important;
 }
 
+.avatarcard {
+  border-radius: 30px !important;
+}
+
 .avatarcard:hover {
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #D4213D !important;
-  border-radius: 10px !important;
+  border-radius: 30px !important;
 }
 
 .topline:hover {
@@ -117,31 +121,39 @@
 }
 
 //User card
+
+.usercard {
+  border-radius: 30px !important;
+}
+
 .usercard:hover {
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #D4213D !important;
-  border-radius: 10px !important;
+  border-radius: 30px !important;
 }
 
 //Messages card
+
+.messagescard {
+  border-radius: 30px !important;
+}
 .messagescard:hover, .message {
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #D4213D !important;
-  border-radius: 10px !important;
+  border-radius: 30px !important;
 }
 
 //Upcoming reservations card
-.upcomingbookingcard:hover {
- background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
-  border-radius: 10px !important;
+.bookingcard {
+  border-radius: 30px !important;
 }
 
-.currentbookingcard:hover {
+.bookingcard:hover {
  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #D4213D !important;
-  border-radius: 10px !important;
+  border-radius: 30px !important;
 }
+
 
 //Download
 .download {
