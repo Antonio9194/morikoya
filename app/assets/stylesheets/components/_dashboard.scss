@@ -15,11 +15,19 @@
   .message-section-expand {
     display: none;
   }
+  .dashboard-page-wrapper {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
 }
 
 @media (min-width: 768px) {
   .message-section-toggle {
     display: none;
+  }
+  .dashboard-page-wrapper {
+    padding-left: 0.8rem;
+   padding-right: 0.8rem;
   }
 }
 
