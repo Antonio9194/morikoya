@@ -61,3 +61,15 @@
   background-color: #d4213d !important;
   color: #ffffff !important;
 }
+
+@media (max-width: 767px) {
+
+  .contactus {
+    width: 100%;
+  }
+
+  .contactus-page-wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
