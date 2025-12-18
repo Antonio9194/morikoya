@@ -1,7 +1,7 @@
-.contactus {
+.contactus, .mapcontent {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 2rem;
-  margin: 2rem auto;
+  margin: auto;
   border-radius: 30px;
   border: 1px solid white;
   background-color: rgba(255, 255, 255, 0.9);
@@ -26,8 +26,8 @@
   display: block;
   width: 100%;
   background-color: #fff;
-  padding: 22px;
-  border-radius: 20px;
+  padding: 1rem;
+  border-radius: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -64,12 +64,111 @@
 
 @media (max-width: 767px) {
 
-  .contactus {
+  .contactus-page-wrapper {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .contactus, .mapcontent {
     width: 100%;
   }
 
-  .contactus-page-wrapper {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .contactus {
+    margin-bottom: 2rem;
   }
+  
+}
+
+@media (min-width: 768px) {
+  
+  .map {
+  display: block;
+  height: 64vh;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#address {
+  color: #D4213D !important;
+  display: block;
+  font-size: 1.4rem;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2rem;
+}
+}
+
+@media (min-width: 817px) {
+
+   .contactus-page-wrapper {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  
+  .map {
+  display: block;
+  height: 64vh;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#address {
+  color: #D4213D !important;
+  display: block;
+  font-size: 1.4rem;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 3.5rem;
+}
+}
+
+@media (min-width: 1440px) {
+
+    .contactus-page-wrapper {
+  width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .contactus, .mapcontent {
+  width: 48%;
+ }
+
+  .welcome-text {
+    margin-bottom: 4.4rem;
+  }
+
+  .map {
+    height: 63vh;
+  }
+
+  #address {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 2560px) {
+
+  .contactus-page-wrapper {
+  width: 2400px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .welcome-text {
+  margin-bottom: 2.2rem;
+ }
+
+ .contact-form {
+  height: 64vh;
+ }
+
+ .contact-form textarea {
+  resize: none;
+  width: 100%;
+  height: 35vh;
+  border-radius: 35px;
+}
 }
