@@ -3,6 +3,19 @@
   padding-right: 1rem;
 }
 
+.aboutus-description {
+  margin-left: 4.3rem;
+}
+
+.access-block, .attractions-block, .food-block, .shopping-block, .culture-block {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
 .navigation-aboutus {
   display: flex;
   flex-direction: row;
@@ -104,12 +117,15 @@
   border: 1px solid #D4213D;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .about-top {
     flex-direction: column;
   }
-}
 
+  .navigation-aboutus {
+    display: none;
+  }
+}
 
 @media (min-width: 1440px) {
   .abouts-page-wrapper {
@@ -135,5 +151,18 @@
     padding: 2rem;
     border-radius: 30px;
   }
-}
 
+  .access-block h4, .attractions-block h4, .food-block h4, .shopping-block h4, .culture-block h4 {
+    margin-left: 6rem;
+  }
+
+    .access-block h5, .attractions-block h5, .food-block h5, .shopping-block h5, .culture-block h5 {
+    margin-left: 6rem;
+  }
+
+      .access-block p, .attractions-block p, .food-block p, .shopping-block p, .culture-block p {
+    margin-left: 10rem;
+  }
+  
+  
+}
