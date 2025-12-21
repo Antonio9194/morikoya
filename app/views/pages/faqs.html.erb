@@ -1,9 +1,9 @@
 <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
-<div class="faq-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
+<div class="container-fluid faq-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
   <div class="navigation-faq">
     <%= render "pages/navfaq" %>
   </div>
-  <div class="faqcontainer">
+  
     <!--Reservation & Check-in-->
     <div id="reservation" class="faqbody" data-controller="faq">
       <%= render "pages/reservationsfaq" %>
@@ -24,7 +24,6 @@
     <div id="accesslocation" class="faqbody" data-controller="faq">
       <%= render "pages/accessandlocation" %>
     </div>
-  </div>
 </div>
 <footer>
   <%= render "shared/footer_rooms" %>

@@ -1,25 +1,24 @@
 <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
 
-<div class="container" style="margin-top: 3rem; margin-bottom: 2rem">
-  <div class="row">
-    <div class="contactus col-sm-12 col-md-6 col-lg-6">
-      <% if current_user.present? %>
-        <h5 class="welcome-text"> Welcome back <%= current_user.first_name %>!</h5>
-      <% else %>
-        <h5 class="welcome-text"> Leave us a message!</h5>
-      <% end %>
-      <div class="contact-form">
-        <%= simple_form_for @contact_message do |f| %>
-          <%= f.input :name, label: "Full Name", input_html: { value: current_user&.first_name } %>
-          <%= f.input :email, label: "Email", input_html: { value: current_user&.email } %>
-          <%= f.input :message, as: :text, label: "Message" %>
-          <%= f.button :submit, "Send" %>
-        <% end %>
-      </div>
-    </div>
+<div class="container-fluid contactus-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
+  <div class="contactus">
+    <% if current_user.present? %>
+      <h5 class="welcome-text"> Welcome back <%= current_user.first_name %>!</h5>
+    <% else %>
+      <h5 class="welcome-text"> Leave us a message!</h5>
+    <% end %>
 
-    <div class="mapcontent col-sm-12 col-md-6 col-lg-6">
-      <%= render "pages/map" %>
+    <div class="contact-form">
+      <%= simple_form_for @contact_message do |f| %>
+        <%= f.input :name, label: "Full Name", input_html: { value: current_user&.first_name } %>
+        <%= f.input :email, label: "Email", input_html: { value: current_user&.email } %>
+        <%= f.input :message, as: :text, label: "Message" %>
+        <%= f.button :submit, "Send" %>
+      <% end %>
     </div>
+  </div>
+
+  <div class="mapcontent">
+    <%= render "pages/map" %>
   </div>
 </div>
