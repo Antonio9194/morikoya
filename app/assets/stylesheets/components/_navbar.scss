@@ -13,12 +13,12 @@
   width: 40px;
 }
 
-.nav-link {
+.navbar-lewagon .nav-link {
   position: relative;
   display: inline-block;
 }
 
-.nav-link::after {
+.navbar-lewagon .nav-link::after {
   content: "";
   position: absolute;
   width: 0;
@@ -29,7 +29,7 @@
   transition: width 0.3s ease-in-out;
 }
 
-.nav-link:hover::after {
+.navbar-lewagon .nav-link:hover::after {
   width: 100%;
 }
 
