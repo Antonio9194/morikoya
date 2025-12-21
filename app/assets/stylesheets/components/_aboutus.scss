@@ -117,13 +117,75 @@
   border: 1px solid #D4213D;
 }
 
-@media (max-width: 768px) {
-  .about-top {
-    flex-direction: column;
+@media (min-width: 325px) and (max-width: 767px) {
+    .navigation-aboutus {
+    display: none;
   }
 
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .access-block, .attractions-block, .food-block, .shopping-block, .culture-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0.3rem;
+  }
+
+  .access-block h4, .attractions-block h4, .food-block h4, .shopping-block h4, .culture-block h4 {
+  margin: 0;
+  padding: 0.3rem;
+  }
+
+   .access-block h5, .attractions-block h5, .food-block h5, .shopping-block h5, .culture-block h5 {
+  margin: 0;
+  padding: 0.3rem;
+  }
+
+  .aboutus-description {
+    margin: 0;
+    padding: 0.3rem;
+  }
+
+    .about-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
   .navigation-aboutus {
     display: none;
+  }
+
+     .access-block h4, .attractions-block h4, .food-block h4, .shopping-block h4, .culture-block h4 {
+  margin-right: 4rem;
+  }
+
+    .access-block h5, .attractions-block h5, .food-block h5, .shopping-block h5, .culture-block h5 {
+  margin-right: 4rem;
+  }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+   .inner-navigation-aboutus {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+}
+
+  .access-block h5, .attractions-block h5, .food-block h5, .shopping-block h5, .culture-block h5 {
+  margin-right: 6rem;
   }
 }
 
