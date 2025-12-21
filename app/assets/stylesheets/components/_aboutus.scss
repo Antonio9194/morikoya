@@ -122,13 +122,6 @@
     display: none;
   }
 
-  .container-fluid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
   .access-block, .attractions-block, .food-block, .shopping-block, .culture-block {
     display: flex;
     flex-direction: column;
