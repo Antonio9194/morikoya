@@ -13,6 +13,26 @@
   width: 40px;
 }
 
+.navbar-lewagon .nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar-lewagon .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #d4213d;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-lewagon .nav-link:hover::after {
+  width: 100%;
+}
+
 @media (min-width: 993px) {
   .pwa-visible {
     display: none;
@@ -20,7 +40,9 @@
   .navbar-nav {
     gap: 1.5rem;
   }
-  .rooms-icon, .contact-icon, .login-icon {
+  .rooms-icon,
+  .contact-icon,
+  .login-icon {
     margin: 0 5px 0 0px;
   }
 }
@@ -40,7 +62,8 @@
   .rooms-icon {
     margin: 0 5px 0 3px;
   }
-  .contact-icon, .login-icon {
+  .contact-icon,
+  .login-icon {
     margin: 0 5px 0 2px;
   }
 }
