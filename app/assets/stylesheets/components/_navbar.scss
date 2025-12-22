@@ -13,12 +13,14 @@
   width: 40px;
 }
 
-.navbar-lewagon .nav-link {
+.navbar-lewagon .nav-link,
+.navfoot .nav-link {
   position: relative;
   display: inline-block;
 }
 
-.navbar-lewagon .nav-link::after {
+.navbar-lewagon .nav-link::after,
+.navfoot .nav-link::after {
   content: "";
   position: absolute;
   width: 0;
@@ -29,7 +31,8 @@
   transition: width 0.3s ease-in-out;
 }
 
-.navbar-lewagon .nav-link:hover::after {
+.navbar-lewagon .nav-link:hover::after,
+.navfoot .nav-link:hover::after {
   width: 100%;
 }
 
