@@ -1,3 +1,5 @@
+@import "home_typography";
+
 .background-video {
   position: fixed;
   top: 0;
@@ -20,59 +22,87 @@
 .search-bar {
   min-width: 90%;
   background: white;
-  border-radius: 50px;
+  border-radius: 2px; // Sharp, architectural look
   display: flex;
   align-items: center;
-  padding: 12px 12px;
-  gap: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0; // Reset padding to let items fill
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba($moss-green, 0.1);
+  overflow: hidden; // For the button to fit perfectly
 }
 
 .search-item {
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 50px;
-  background-color: #f7f3f0; /* light beige like Cloud9 */
-  min-width: 150px;
+  padding: 1.5rem 2rem;
+  background-color: white;
+  flex-grow: 1;
+  border-right: 1px solid rgba($moss-green, 0.1);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $washi-cream;
+  }
 }
 
 .icon-circle {
   width: 40px;
   height: 40px;
-  background-color: #e6dcd4; /* circle behind icon */
-  border-radius: 50%;
+  background-color: transparent; // Removed the circle
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 15px;
+  
+  i, svg, img {
+    color: $moss-green; // Brand color for icons
+    font-size: 1.2rem;
+  }
 }
 
 .icon-circle img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  filter: sepia(1) hue-rotate(60deg) saturate(0.5); // Hack to tint images if they are SVGs/PNGs
 }
 
 .text .label {
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba($sumi-black, 0.6);
+  display: block;
+  margin-bottom: 4px;
 }
 
 .text .value {
-  font-size: 1rem;
+  font-family: $headers-font;
+  font-size: 1.1rem;
+  color: $sumi-black;
 }
 
 .search-btn {
-  min-width: 190px;
-  min-height: 60px;
-  padding: 12px 25px;
-  border-radius: 50px;
+  min-width: 200px;
+  height: 100%; // Fill height
+  align-self: stretch; // Stretch to fill container
+  padding: 0 3rem;
+  border-radius: 0; // Sharp
   border: none;
-  background-color: #D4213D;
-  color: white;
-  font-weight: bold;
+  background-color: $lacquer-red;
+  color: $washi-cream;
+  font-family: $body-font;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken($lacquer-red, 10%);
+    color: white;
+  }
 }
 
 .daily-summary {

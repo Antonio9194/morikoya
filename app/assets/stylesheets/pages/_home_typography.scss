@@ -1,0 +1,27 @@
+
+// Hero Typography
+.minakoya {
+  font-family: $headers-font;
+  color: $washi-cream;
+  font-size: 5rem;
+  font-weight: 400; // Mincho looks better lighter
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-family: $body-font;
+  color: $washi-cream;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.line-above {
+  border-top: 1px solid $lacquer-red;
+  opacity: 0.8;
+  width: 60%;
+  margin: 1rem auto;
+}

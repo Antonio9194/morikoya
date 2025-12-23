@@ -1,8 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-  border-bottom: 1px solid rgba(212, 33, 61, 0.6);
-  box-shadow: 0 2px 6px rgba(212, 33, 61, 0.25);
+  background: $washi-cream;
+  border-bottom: 1px solid rgba($moss-green, 0.1);
+  box-shadow: 0 2px 15px rgba($sumi-black, 0.05);
+  padding: 1rem 2rem; // More breathing room
+  transition: all 0.3s ease;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,13 +12,23 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  height: 50px; // Fixed height, auto width
+  width: auto;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .navbar-lewagon .nav-link,
 .navfoot .nav-link {
+  font-family: $headers-font; // Elegant serif
+  font-size: 1.1rem;
+  color: $moss-green !important; // Force brand color
   position: relative;
   display: inline-block;
+  padding: 0.5rem 1rem;
+  letter-spacing: 0.05em;
 }
 
 .navbar-lewagon .nav-link::after,
@@ -25,15 +37,16 @@
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #d4213d;
+  bottom: 5px; // Slightly raised
+  left: 50%; // Start from center
+  transform: translateX(-50%);
+  background-color: $lacquer-red;
   transition: width 0.3s ease-in-out;
 }
 
 .navbar-lewagon .nav-link:hover::after,
 .navfoot .nav-link:hover::after {
-  width: 100%;
+  width: 80%; // Don't go full width, looks more elegant
 }
 
 @media (min-width: 993px) {
@@ -41,12 +54,13 @@
     display: none;
   }
   .navbar-nav {
-    gap: 1.5rem;
+    gap: 2rem; // More space between items
   }
   .rooms-icon,
   .contact-icon,
   .login-icon {
-    margin: 0 5px 0 0px;
+    margin: 0 8px 0 0px;
+    color: $lacquer-red; // Red icons
   }
 }
 
