@@ -8,6 +8,11 @@
   text-shadow: 0 4px 12px rgba(0,0,0,0.3);
   letter-spacing: 0.15em;
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 3rem; // Smaller on mobile
+    letter-spacing: 0.1em;
+  }
 }
 
 .hero-subtitle {
@@ -17,6 +22,11 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+  }
 }
 
 .line-above {

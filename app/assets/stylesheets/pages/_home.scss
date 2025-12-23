@@ -29,6 +29,17 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba($moss-green, 0.1);
   overflow: hidden; // For the button to fit perfectly
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    min-width: 95%;
+    border-radius: 8px; // Slightly softer on mobile
+    overflow: visible; // Allow shadows to breathe
+    background: transparent; // Container is transparent
+    box-shadow: none; // Remove container shadow
+    border: none;
+    gap: 10px; // Space between stacked items
+  }
 }
 
 .search-item {
@@ -43,6 +54,14 @@
 
   &:hover {
     background-color: $washi-cream;
+  }
+
+  @media (max-width: 992px) {
+    width: 100%; // Full width
+    border-right: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 1.2rem;
   }
 }
 
@@ -103,6 +122,13 @@
     background-color: darken($lacquer-red, 10%);
     color: white;
   }
+
+  @media (max-width: 992px) {
+    width: 100%;
+    height: 60px; // Fixed height for mobile button
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba($lacquer-red, 0.3);
+  }
 }
 
 .daily-summary {
@@ -145,21 +171,7 @@ button {
 }
 
 @media (max-width: 768px) {
-  .search-bar {
-    flex-direction: column;
-  }
 
-  .search-item {
-  cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 50px;
-  background-color: #f7f3f0;
-  width: 90%;
-}
-
-.search-btn {
-  width: 90%;
-}
 
 /* Modal overlay */
   #calendar-container {
