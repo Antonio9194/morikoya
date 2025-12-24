@@ -26,7 +26,7 @@
   padding: 0.8rem;
   border: 1px solid rgba($moss-green, 0.2);
   font-family: $body-font;
-  
+
   &:focus {
     border-color: $moss-green;
     box-shadow: 0 0 0 0.2rem rgba($moss-green, 0.25);
@@ -34,65 +34,62 @@
 }
 
 // Flatpickr range
-.startRange, .endRange {
+.startRange,
+.endRange {
   background-color: $lacquer-red !important;
   border-color: $lacquer-red !important;
 }
 
-.flatpickr-day.selected, 
-.flatpickr-day.startRange, 
-.flatpickr-day.endRange, 
-.flatpickr-day.selected.inRange, 
-.flatpickr-day.startRange.inRange, 
-.flatpickr-day.endRange.inRange, 
-.flatpickr-day.selected:focus, 
-.flatpickr-day.startRange:focus, 
-.flatpickr-day.endRange:focus, 
-.flatpickr-day.selected:hover, 
-.flatpickr-day.startRange:hover, 
-.flatpickr-day.endRange:hover, 
-.flatpickr-day.selected.prevMonthDay, 
-.flatpickr-day.startRange.prevMonthDay, 
-.flatpickr-day.endRange.prevMonthDay, 
-.flatpickr-day.selected.nextMonthDay, 
-.flatpickr-day.startRange.nextMonthDay, 
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
 .flatpickr-day.endRange.nextMonthDay {
   background-color: $lacquer-red !important;
   border-color: $lacquer-red !important;
 }
 
-
 @media (max-width: 768px) {
- .paymentblock {
-  margin-top: 1.4rem;
- }
+  .paymentblock {
+    margin-top: 1.4rem;
+  }
 }
 
 @media (min-width: 1024px) {
-
   .page-wrapper {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
- }
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (min-width: 1440px) {
-
   .page-wrapper {
-  max-width: 1340px;
-  margin-left: auto;
-  margin-right: auto;
- }
+    max-width: 1340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (min-width: 2560px) {
-
   .page-wrapper {
-  max-width: 2400px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    max-width: 2400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   #roomCarousel img {
     height: 600px;
