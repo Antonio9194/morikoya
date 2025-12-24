@@ -5,12 +5,12 @@
 
 .paymentcard {
     border-radius: 30px 30px 0 0 !important;
-    background-color: #E28A96 !important;
+    background-color: $lacquer-red !important;
 }
 
   .paymentsubmit {
-  background-color: #E28A96 !important;
-  border: #D4213D;
+  background-color: $lacquer-red !important;
+  border: $lacquer-red;
   color: #1E1E1E;
   border-radius: 30px !important;
   padding: 0.6rem !important;
@@ -19,7 +19,7 @@
 }
 
 .paymentsubmit:hover {
-  background-color: #D4213D !important;
+  background-color: $lacquer-red !important;
   color: #FFFFFF !important;
 }
 
@@ -28,7 +28,7 @@
     border-radius: 30px;
 }
 .paymentsuccess .card-header {
-    background-color: #E28A96;
+    background-color: $lacquer-red;
     border-radius: 30px 30px 0 0;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .badge {
-    background-color: #E28A96;
+    background-color: $lacquer-red;
     border-radius: 30px;
 }
 
@@ -58,8 +58,8 @@ color: #1E1E1E !important;
 
 //Back to home button
   .backtohome {
-  background-color: #E28A96 !important;
-  border: #D4213D;
+  background-color: $lacquer-red !important;
+  border: $lacquer-red;
   color: #1E1E1E;
   border-radius: 30px !important;
   padding: 0.6rem !important;
@@ -68,7 +68,7 @@ color: #1E1E1E !important;
 }
 
 .backtohome:hover {
-  background-color: #D4213D !important;
+  background-color: $lacquer-red !important;
   color: #FFFFFF !important;
 }
 

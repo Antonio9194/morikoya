@@ -83,8 +83,8 @@
 
 // Bookings sections
 .browserooms {
-  background-color: #E28A96 !important;
-  border: #D4213D;
+  background-color: $lacquer-red !important;
+  border: $lacquer-red;
   border-radius: 30px !important;
   padding: 0.6rem !important;
   white-space: nowrap !important;
@@ -92,18 +92,18 @@
 }
 
 .browserooms:hover {
-  background-color: #D4213D !important;
+  background-color: $lacquer-red !important;
   color: #FFFFFF !important;
 }
 
 .bookingscard:hover {
   background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
+  border: 1px solid $lacquer-red !important;
   border-radius: 10px !important;
 }
  // Avatar
 .rounded-circle {
-  background-color: #E28A96 !important;
+  background-color: $lacquer-red !important;
 }
 
 .avatarcard {
@@ -112,12 +112,12 @@
 
 .avatarcard:hover {
   background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
+  border: 1px solid $lacquer-red !important;
   border-radius: 30px !important;
 }
 
 .topline:hover {
-  border-color: #D4213D !important;
+  border-color: $lacquer-red !important;
 }
 
 //User card
@@ -128,7 +128,7 @@
 
 .usercard:hover {
   background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
+  border: 1px solid $lacquer-red !important;
   border-radius: 30px !important;
 }
 
@@ -139,7 +139,7 @@
 }
 .messagescard:hover, .message {
   background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
+  border: 1px solid $lacquer-red !important;
   border-radius: 30px !important;
 }
 
@@ -150,15 +150,15 @@
 
 .bookingcard:hover {
  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
+  border: 1px solid $lacquer-red !important;
   border-radius: 30px !important;
 }
 
 
 //Download
 .download {
-  background-color: #E28A96 !important;
-  border: #D4213D;
+  background-color: $lacquer-red !important;
+  border: $lacquer-red;
   border-radius: 30px !important;
   padding: 0.6rem !important;
   white-space: nowrap !important;
@@ -166,7 +166,7 @@
 }
 
 .download:hover {
-  background-color: #D4213D !important;
+  background-color: $lacquer-red !important;
   color: #FFFFFF !important;
 }
 

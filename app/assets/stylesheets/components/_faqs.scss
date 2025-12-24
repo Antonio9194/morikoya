@@ -10,11 +10,11 @@
 
 .faqbody h3 {
   margin: 3rem;
-  color: #D4213D !important;
+  color: $lacquer-red !important;
 }
 
 .faqbody h3:hover {
-  color: #D4213D !important;
+  color: $lacquer-red !important;
 }
 
 .faqbody h5 {
@@ -30,7 +30,7 @@
 }
 
 .faqquestion .plus:hover {
-  color: #D4213D !important;
+  color: $lacquer-red !important;
 }
 
 .faqanswer {
@@ -40,7 +40,7 @@
 }
 
 .faqanswer h6 {
-  color: #D4213D !important;
+  color: $lacquer-red !important;
   width: 80%;
 }
 
@@ -116,7 +116,7 @@
   .faqbody h3 {
     padding: 1rem;
     margin: 1rem;
-    color: #D4213D !important;
+    color: $lacquer-red !important;
 }
 }
 

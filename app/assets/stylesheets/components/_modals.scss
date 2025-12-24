@@ -20,8 +20,8 @@
   }
 
   .updateprofile {
-  background-color: #E28A96 !important;
-  border: #D4213D;
+  background-color: $lacquer-red !important;
+  border: $lacquer-red;
   color: #1E1E1E;
   border-radius: 30px !important;
   padding: 0.6rem !important;
@@ -30,7 +30,7 @@
 }
 
 .updateprofile:hover {
-  background-color: #D4213D !important;
+  background-color: $lacquer-red !important;
   color: #FFFFFF !important;
 }
 }

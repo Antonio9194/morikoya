@@ -72,7 +72,7 @@
 
 .title-block,
 .about-section h3 {
-  color: #D4213D !important;
+  color: $lacquer-red !important;
   font-size: 2.3rem;
   width: 80%;
   margin: 0 auto 1.5rem;
@@ -100,7 +100,7 @@
 }
 
 .about-section h4 {
-  color: #E28A96 !important;
+  color: $lacquer-red !important;
   margin-top: 1.4rem;
   padding-left: 4rem;
 }
@@ -114,7 +114,7 @@
 .about-section hr {
   margin: 1rem auto;
   width: 90%;
-  border: 1px solid #D4213D;
+  border: 1px solid $lacquer-red;
 }
 
 @media (min-width: 325px) and (max-width: 767px) {

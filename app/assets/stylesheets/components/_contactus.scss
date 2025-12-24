@@ -15,7 +15,7 @@
 }
 
 .welcome-text {
-  color: #E28A96 !important;
+  color: $lacquer-red !important;
   display: block;
   font-size: 2.3rem;
   width: 80%;
@@ -25,7 +25,7 @@
 }
 
 .welcome-text:hover {
-  color: #d4213d !important;
+  color: $lacquer-red !important;
 }
 
 .contact-form {
@@ -55,8 +55,8 @@
 }
 
 .contactus .btn {
-  background-color: #e28a96 !important;
-  border: #d4213d;
+  background-color: $lacquer-red !important;
+  border: $lacquer-red;
   border-radius: 30px !important;
   padding: 0.6rem !important;
   white-space: nowrap !important;
@@ -64,7 +64,7 @@
 }
 
 .contactus .btn:hover {
-  background-color: #d4213d !important;
+  background-color: $lacquer-red !important;
   color: #ffffff !important;
 }
 
