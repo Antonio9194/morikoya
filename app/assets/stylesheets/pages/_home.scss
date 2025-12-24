@@ -60,7 +60,7 @@
     width: 100%; // Full width
     border-right: none;
     border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 1.2rem;
   }
 }
@@ -73,8 +73,10 @@
   justify-content: center;
   align-items: center;
   margin-right: 15px;
-  
-  i, svg, img {
+
+  i,
+  svg,
+  img {
     color: $moss-green; // Brand color for icons
     font-size: 1.2rem;
   }
@@ -117,7 +119,7 @@
   letter-spacing: 0.15em;
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background-color: darken($lacquer-red, 10%);
     color: white;
@@ -148,7 +150,9 @@
   margin: 0.5rem;
 }
 
-.arrivals, .departures, .stayings {
+.arrivals,
+.departures,
+.stayings {
   padding: 0.5rem 0;
   border-bottom: 2px solid white;
 }
@@ -171,27 +175,24 @@ button {
 }
 
 @media (max-width: 768px) {
-
-
-/* Modal overlay */
+  /* Modal overlay */
   #calendar-container {
-  position: relative;
-  width: 90%;
-  margin: 1rem auto 0;
-  background: white;
-  border-radius: 30px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+    position: relative;
+    width: 90%;
+    margin: 1rem auto 0;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
 
-#guests-container {
-   position: relative;
-  width: 90%;
-  margin: 1rem auto 0;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
+  #guests-container {
+    position: relative;
+    width: 90%;
+    margin: 1rem auto 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
 
   .calendar-header {
     background: white;
@@ -199,11 +200,10 @@ button {
     border-radius: 12px 12px 0 0;
   }
 
-
-.calendar-grid {
-  max-height: 60vh;
-  overflow-y: auto;
-}
+  .calendar-grid {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
 
   .month-block {
     width: 100% !important;
@@ -229,7 +229,6 @@ button {
 }
 
 @media (max-width: 425px) {
-
   .search-item {
     padding: 1rem;
     width: 100%;
@@ -291,25 +290,27 @@ button {
 }
 
 @media (max-width: 1024px) {
-    #calendar-container, #guests-container {
-  position: relative;
-  width: 90%;
-  margin: 1rem auto 0;
-  background: white;
-  border-radius: 30px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+  #calendar-container,
+  #guests-container {
+    position: relative;
+    width: 90%;
+    margin: 1rem auto 0;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
 }
 
 @media (max-width: 1440px) {
-    #calendar-container, #guests-container {
-  position: relative;
-  width: 90%;
-  margin: 1rem auto 0;
-  background: white;
-  border-radius: 30px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+  #calendar-container,
+  #guests-container {
+    position: relative;
+    width: 90%;
+    margin: 1rem auto 0;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
 }
 
 @media (min-width: 2560px) {

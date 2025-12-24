@@ -6,24 +6,24 @@
 
 // General style
 $font-family-sans-serif: $body-font;
-$headings-font-family:   $headers-font;
-$body-bg:                $washi-cream;
-$font-size-base:         1rem;
+$headings-font-family: $headers-font;
+$body-bg: $washi-cream;
+$font-size-base: 1rem;
 
 // Colors
 $body-color: $sumi-black;
-$primary:    $moss-green;
-$secondary:  $kintsugi-gold;
-$success:    #28a745; // Standard bootstrap success
-$info:       #17a2b8; // Standard bootstrap info
-$danger:     #dc3545; // Standard bootstrap danger
-$warning:    #ffc107; // Standard bootstrap warning
+$primary: $moss-green;
+$secondary: $kintsugi-gold;
+$success: #28a745; // Standard bootstrap success
+$info: #17a2b8; // Standard bootstrap info
+$danger: #dc3545; // Standard bootstrap danger
+$warning: #ffc107; // Standard bootstrap warning
 
 // Buttons & inputs' radius
-$border-radius-sm:            .0625rem;
-$border-radius:               .125rem;
-$border-radius-lg:            .25rem;
-$border-radius-xl:            .5rem;
-$border-radius-xxl:           1rem;
+$border-radius-sm: 0.0625rem;
+$border-radius: 0.125rem;
+$border-radius-lg: 0.25rem;
+$border-radius-xl: 0.5rem;
+$border-radius-xxl: 1rem;
 
 // Override other variables below!

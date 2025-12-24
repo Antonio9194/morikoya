@@ -1,11 +1,10 @@
-
 // Hero Typography
 .minakoya {
   font-family: $headers-font;
   color: $washi-cream;
   font-size: 5rem;
   font-weight: 400; // Mincho looks better lighter
-  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   letter-spacing: 0.15em;
   margin-bottom: 1rem;
 
@@ -21,7 +20,7 @@
   font-size: 1.2rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
