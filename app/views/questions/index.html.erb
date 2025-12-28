@@ -1,0 +1,28 @@
+<%# <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
+<div class="container-fluid contactus-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
+  <div class="">
+    <% if current_user.present? %>
+      <h5 class="welcome-text"> Welcome back <%= current_user.first_name %>!</h5>
+    <% else %>
+      <h5 class="welcome-text"> Wanna ask Moriko something?</h5>
+    <% end %>
+    <div class="contact-form">
+      <%= simple_form_for @question do |f| %>
+        <%= f.input :user_question, as: :text, label: "Ask Moriko anything" %>
+        <%= f.button :submit, "Ask" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="test-question-display">
+    <ul>
+      <% @questions.each do |question| %>
+        <li>
+          <p>Question ID: <%= question.id %></p>
+          <p>User: <%= question.user_id.nil? ? 'Unidentified' : User.find(question.user_id).last_name %></p>
+          <p>User's question: <%= question.user_question %></p>
+          <p>Moriko's response: <%= question.ai_answer %> </p>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
