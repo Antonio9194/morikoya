@@ -1,7 +1,11 @@
 <div class="container-fluid rooms-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
   
   <!-- Search Info & Warnings -->
-  <%= render "search_info", rooms: @rooms %>
+  <% if @guest_num.present? %>
+    <div class="d-flex justify-content-center mb-5">
+      <%= render "search_info", rooms: @rooms %>
+    </div>
+  <% end %>
 
   <% if @rooms.empty? %>
     <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center">
