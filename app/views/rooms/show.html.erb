@@ -44,7 +44,10 @@
               <span>Up to <%= @room.capacity %> guests</span>
             </div>
             <div class="spec-item">
-              <%= render "rooms/beds_showpage", room: @room %>
+              <i class="fa-solid fa-bed me-2"></i>
+              <div class="d-flex flex-wrap gap-3">
+                <%= render "rooms/beds_showpage", room: @room %>
+              </div>
             </div>
           </div>
         </div>

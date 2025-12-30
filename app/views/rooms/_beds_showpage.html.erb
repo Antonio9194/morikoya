@@ -1,13 +1,13 @@
 <% if room.room_type == "A" %>
-  <p class="mb-1"><strong>Sofa Bed:</strong> <%= @room.sofa_bed %></p>
-  <p class="mb-1"><strong>Bunk Bed:</strong> <%= room.bunk %></p>
-  <p class="mb-1"><strong>Double Bed:</strong> <%= room.double%></p>
+  <span><%= room.sofa_bed %> Sofa Bed</span>
+  <span><%= room.bunk %> Bunk Bed</span>
+  <span><%= room.double%> Double Bed</span>
 <% elsif room.room_type == "B" %>
-  <p class="mb-1"><strong>Sofa Bed:</strong> <%= @room.sofa_bed %></p>
-  <p class="mb-1"><strong>Bunk Bed:</strong> <%= room.bunk %></p>
-  <p class="mb-1"><strong>Semi Double Bed:</strong> <%= room.semi_double%></p>
+  <span><%= room.sofa_bed %> Sofa Bed</span>
+  <span><%= room.bunk %> Bunk Bed</span>
+  <span><%= room.semi_double%> Semi Double Bed</span>
 <% else %>
-  <p class="mb-1"><strong>Sofa Bed:</strong> <%= @room.sofa_bed %></p>
-  <p class="mb-1"><strong>Single Bed:</strong> <%= room.single %></p>
-  <p class="mb-1"><strong>Double Bed:</strong> <%= room.double%></p>
+  <span><%= room.sofa_bed %> Sofa Bed</span>
+  <span><%= room.single %> Single Bed</span>
+  <span><%= room.double%> Double Bed</span>
 <% end %>
