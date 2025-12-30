@@ -68,7 +68,7 @@
     <div class="section-content" data-toggle-section-target="content">
       <div class="room-tiles-grid">
         <% rooms.each do |room| %>
-          <%= link_to room_path(room, check_in: params.dig(:search, :check_in), check_out: params.dig(:search, :check_out), guests: params.dig(:search, :guests)), class: "text-decoration-none" do %>
+          <%= link_to room_path(room, check_in: @check_in, check_out: @check_out, guests: @guest_num), class: "text-decoration-none" do %>
             <div class="room-tile">
               <div class="tile-header">
                 <span class="room-number"><%= room.name %></span>
