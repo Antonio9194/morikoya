@@ -14,19 +14,12 @@ class ChatbotJob < ApplicationJob
     )
     response_content = chatgpt_response['choices'][0]['message']['content']
     question.update(ai_answer: response_content)
-    # puts new_content
-    # puts 'Hey'
 
-    # Turbo::StreamsChannel.broadcast_update_to(
-    #   "question_#{@question.id}",
-    #   target: "question_#{@question.id}",
-    #   partial: "questions/question", locals: { question: question }
-    # )
-    # Turbo::StreamsChannel.broadcast_append_to(
-    #   "question_#{@question.id}",
-    #   target: dom_id(@question),
-    #   partial: "workout_sessions/ai_exercise_form", locals: { workout_session: @question.workout_session, session_exercise: @session_exercise, scroll: true, exercise: @session_exercise.exercise }
-    # )
+    Turbo::StreamsChannel.broadcast_update_to(
+      "question_#{@question.id}",
+      target: "question_#{@question.id}",
+      partial: 'questions/question', locals: { question: question }
+    )
   end
 
   private
@@ -39,7 +32,7 @@ class ChatbotJob < ApplicationJob
     # questions = @question.&user.questions
     results = []
 
-    system_text = "You are an assistant for a website of a hotel named Morikoya, located in Asakusa, Tokyo Japan.
+    system_text = "Your name is Moriko. You are an assistant for a website of a hotel named Morikoya, located in Asakusa, Tokyo Japan.
     This website allows users to make bookings, check the hotel's policies or nearby local activities, attractions and transportation.
     Your main users are people who come to Tokyo, Japan for a trip and consider to stay Morikoya.
     1. Always create answers strictly based on the given information in this text. If you don't know the answer, simply say 'The information is not

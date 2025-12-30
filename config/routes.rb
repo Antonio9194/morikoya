@@ -46,5 +46,5 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   # Questions
-  resources :questions, only: %i[index new create]
+  resources :questions, only: %i[index create]
 end

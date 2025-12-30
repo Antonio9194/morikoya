@@ -29,6 +29,8 @@
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
       <%= yield %>
+      <!--AI chatbot-->
+      <%= render "shared/aichatbot", questions: @questions %>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/index.global.min.js"></script>

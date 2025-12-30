@@ -1,0 +1,12 @@
+<%= simple_form_for Question.new, url: questions_path, method: :post,
+      html: { class: "d-flex", data: { controller: "ai-question-form", action: "turbo:submit-end->ai-question-form#reset" } }  do |f| %>
+  <div class="input-group mb-3 w-100">
+    <div class="form-floating">
+      <%= f.input :user_question, label: false, wrapper: false, input_html: { class: "border-1 rounded-start-5" } %>
+      <%= f.label :user_question, "Your question" %>
+    </div>
+    <%= button_tag type: "submit", class: "btn btn-danger border-1 rounded-end-5", id: "new-question-button" do %>
+      <i class="fa-solid fa-paper-plane"></i>
+    <% end %>
+  </div>
+<% end %>

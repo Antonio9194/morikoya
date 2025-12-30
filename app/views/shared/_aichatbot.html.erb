@@ -1,0 +1,11 @@
+<div class="container chatbot rounded-5 ai-margin-top">
+  <h3 class="mt-2"><i class="fa-solid fa-comments pe-2" style="color: #b15965;"></i>Chat with Moriko</h3>
+  <div id="questions">
+    <% questions.each do |question| %>
+      <%= render "questions/question", question: question %>
+    <% end %>
+  </div>
+  <div class="question-form">
+    <%= render "questions/question_form"%>
+  </div>
+</div>
