@@ -1,43 +1,216 @@
 // Room Details Page Styles
 
+.room-show-page {
+  background-color: $washi-cream;
+  min-height: 100vh;
+  font-family: $body-font;
+  color: $sumi-black;
+  padding-bottom: 4rem;
+}
+
+// Hero Section
+.room-hero {
+  position: relative;
+  
+  .room-hero-image {
+    height: 60vh;
+    object-fit: cover;
+    
+    @media (max-width: 768px) {
+      height: 40vh;
+    }
+  }
+
+  .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0));
+    pointer-events: none;
+  }
+  
+  .carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    opacity: 0.7;
+    &:hover { opacity: 1; }
+  }
+}
+
+// Typography & Layout
+.room-title {
+  font-family: $headers-font;
+  color: $moss-green;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-label {
+  font-family: $headers-font;
+  color: $moss-green;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba($moss-green, 0.2);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.room-price-tag {
+  .price {
+    font-family: $headers-font;
+    color: $lacquer-red;
+    font-weight: 700;
+  }
+  .unit {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+// Specs & Amenities
+.spec-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: $sumi-black;
+  background: white;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba($moss-green, 0.1);
+  border-radius: 2px;
+  
+  i {
+    color: $moss-green;
+    margin-right: 0.5rem;
+  }
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  padding: 0.5rem 0;
+  
+  i {
+    color: $moss-green;
+    width: 24px;
+    text-align: center;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+// Booking Widget
+.booking-widget-wrapper {
+  padding-left: 1rem;
+  
+  @media (max-width: 991px) {
+    padding-left: 0;
+    margin-top: 3rem;
+  }
+}
+
+.booking-widget {
+  background: white;
+  border: 1px solid rgba($moss-green, 0.15);
+  border-radius: 2px;
+  box-shadow: 0 20px 40px rgba($moss-green, 0.08);
+  
+  .widget-title {
+    font-family: $headers-font;
+    color: $moss-green;
+    text-align: center;
+    font-size: 1.75rem;
+    border-bottom: 1px solid rgba($moss-green, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.booking-summary {
+  font-size: 0.95rem;
+  color: $sumi-black;
+  
+  .h5 {
+    font-family: $headers-font;
+    color: $moss-green;
+  }
+}
+
+// Form Elements
 .booking-form .btn {
   background-color: $lacquer-red !important;
   color: $washi-cream !important;
   border: none;
-  border-radius: 4px !important; // Sharp corners
-  padding: 0.8rem !important;
-  white-space: nowrap !important;
-  width: 100%;
+  border-radius: 2px !important;
+  padding: 1rem !important;
   font-family: $body-font;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  margin-top: 1rem;
 
   &:hover {
     background-color: darken($lacquer-red, 10%) !important;
     color: white !important;
     box-shadow: 0 4px 12px rgba($lacquer-red, 0.3);
+    transform: translateY(-1px);
   }
 }
 
 .form-control {
-  border-radius: 4px; // Sharp corners
-  padding: 0.8rem;
+  border-radius: 2px;
+  padding: 1rem;
   border: 1px solid rgba($moss-green, 0.2);
   font-family: $body-font;
+  background-color: rgba($washi-cream, 0.3);
+  font-size: 1rem;
 
   &:focus {
     border-color: $moss-green;
-    box-shadow: 0 0 0 0.2rem rgba($moss-green, 0.25);
+    box-shadow: none;
+    background-color: white;
+  }
+  
+  &::placeholder {
+    color: rgba($sumi-black, 0.4);
   }
 }
 
-// Flatpickr range
-.startRange,
-.endRange {
-  background-color: $lacquer-red !important;
-  border-color: $lacquer-red !important;
+// Flatpickr Customization
+.flatpickr-calendar {
+  border-radius: 2px !important;
+  box-shadow: 0 10px 30px rgba($moss-green, 0.15) !important;
+  font-family: $body-font !important;
+  border: 1px solid rgba($moss-green, 0.1) !important;
+  
+  .flatpickr-months {
+    background: $moss-green;
+    color: white;
+    fill: white;
+    border-radius: 2px 2px 0 0;
+    padding: 0.5rem 0;
+    
+    .flatpickr-month {
+      color: white;
+    }
+    
+    .flatpickr-current-month {
+      color: white;
+      .numInputWrapper span.arrowUp:after { border-bottom-color: white; }
+      .numInputWrapper span.arrowDown:after { border-top-color: white; }
+    }
+  }
+  
+  .flatpickr-weekdays {
+    background: $moss-green;
+    
+    .flatpickr-weekday {
+      color: rgba(255,255,255,0.8);
+    }
+  }
 }
 
 .flatpickr-day.selected,
@@ -51,73 +224,22 @@
 .flatpickr-day.endRange:focus,
 .flatpickr-day.selected:hover,
 .flatpickr-day.startRange:hover,
-.flatpickr-day.endRange:hover,
-.flatpickr-day.selected.prevMonthDay,
-.flatpickr-day.startRange.prevMonthDay,
-.flatpickr-day.endRange.prevMonthDay,
-.flatpickr-day.selected.nextMonthDay,
-.flatpickr-day.startRange.nextMonthDay,
-.flatpickr-day.endRange.nextMonthDay {
+.flatpickr-day.endRange:hover {
   background-color: $lacquer-red !important;
   border-color: $lacquer-red !important;
+  color: white;
 }
 
-@media (max-width: 768px) {
-  .paymentblock {
-    margin-top: 1.4rem;
-  }
+.flatpickr-day.inRange {
+  background-color: rgba($lacquer-red, 0.1) !important;
+  border-color: transparent !important;
+  box-shadow: -5px 0 0 rgba($lacquer-red, 0.1), 5px 0 0 rgba($lacquer-red, 0.1) !important;
 }
 
-@media (min-width: 1024px) {
-  .page-wrapper {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (min-width: 1440px) {
-  .page-wrapper {
-    max-width: 1340px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (min-width: 2560px) {
-  .page-wrapper {
-    max-width: 2400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #roomCarousel img {
-    height: 600px;
-  }
-
-  .card-body {
-    padding: 3rem;
-  }
-
-  .paymentblock .card {
-    top: 50px;
-  }
-
-  .paymentblock .card-body {
-    font-size: 1.1rem;
-  }
-
-  h2.card-title {
-    font-size: 2.2rem;
-  }
-
-  .card-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 6%;
+.flatpickr-day.today {
+  border-color: $moss-green !important;
+  &:hover {
+    background-color: $moss-green !important;
+    color: white !important;
   }
 }
