@@ -1,14 +1,11 @@
 class QuestionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index create]
-
-  def index
-    @questions = Question.all
-    @question = Question.new
-  end
+  skip_before_action :authenticate_user!, only: %i[create]
+  before_action :ensure_session_id
 
   def create
     @question = Question.new(question_params)
-    @question.user_id = current_user.id if current_user.present?
+    @question.session_id = ensure_session_id
+    @question.user_id = current_user&.id
 
     if @question.save
       respond_to do |format|
@@ -29,5 +26,9 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:user_question)
+  end
+
+  def ensure_session_id
+    session[:anonymous_id] ||= SecureRandom.uuid
   end
 end
