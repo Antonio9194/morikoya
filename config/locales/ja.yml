@@ -1,0 +1,11 @@
+ja:
+  home:
+    welcome_back: "ようこそ"
+    next_arrivals: "次の到着"
+    next_departures: "次の出発"
+    currently_staying: "現在滞在中"
+    tagline: "あなたの第二の家"
+    check_in: "チェックイン"
+    check_out: "チェックアウト"
+    guests: "ゲスト"
+    search: "検索"

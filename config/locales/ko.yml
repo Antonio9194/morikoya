@@ -1,0 +1,11 @@
+ko:
+  home:
+    welcome_back: "환영합니다"
+    next_arrivals: "다음 도착"
+    next_departures: "다음 출발"
+    currently_staying: "현재 투숙 중"
+    tagline: "당신의 두 번째 집"
+    check_in: "체크인"
+    check_out: "체크아웃"
+    guests: "투숙객"
+    search: "검색"

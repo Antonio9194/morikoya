@@ -1,0 +1,11 @@
+zh-TW:
+  home:
+    welcome_back: "歡迎回來"
+    next_arrivals: "即將到達"
+    next_departures: "即將離開"
+    currently_staying: "目前入住中"
+    tagline: "您在外的家"
+    check_in: "入住"
+    check_out: "退房"
+    guests: "房客"
+    search: "搜尋"
