@@ -1,0 +1,7 @@
+<div class="languages">
+  <%= button_to "English", set_locale_path(locale: :en), method: :post %>
+  <%= button_to "日本語", set_locale_path(locale: :ja), method: :post %>
+  <%= button_to "한국어", set_locale_path(locale: :ko), method: :post %>
+  <%= button_to "中文", set_locale_path(locale: "zh-CN"), method: :post %>
+  <%= button_to "繁體中文", set_locale_path(locale: "zh-TW"), method: :post %>
+</div>
