@@ -15,3 +15,13 @@ ko:
     abbr_day_names: [일, 월, 화, 수, 목, 금, 토]
     formats:
       month_year: "%Y년 %B"
+
+  navbar:
+    rooms: "객실"
+    contact_us: "문의하기"
+    about_us: "회사소개"
+    faqs: "자주 묻는 질문"
+    login: "로그인"
+    logout: "로그아웃"
+    dashboard: "대시보드"
+    bookings: "예약"

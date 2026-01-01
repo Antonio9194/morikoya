@@ -15,3 +15,13 @@ en:
     abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
     formats:
       month_year: "%B %Y"
+
+  navbar:
+    rooms: "Rooms"
+    contact_us: "Contact Us"
+    about_us: "About Us"
+    faqs: "FAQs"
+    login: "Login"
+    logout: "Logout"
+    dashboard: "Dashboard"
+    bookings: "Bookings"

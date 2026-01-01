@@ -15,3 +15,13 @@ ja:
     abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
     formats:
       month_year: "%Y年 %B"
+
+  navbar:
+    rooms: "ルーム"
+    contact_us: "お問い合わせ"
+    about_us: "私たちについて"
+    faqs: "よくある質問"
+    login: "ログイン"
+    logout: "ログアウト"
+    dashboard: "ダッシュボード"
+    bookings: "予約"
