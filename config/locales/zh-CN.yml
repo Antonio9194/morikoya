@@ -9,3 +9,9 @@ zh-CN:
     check_out: "退房"
     guests: "房客"
     search: "搜索"
+
+  date:
+    month_names: [~, 一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月]
+    abbr_day_names: [日, 一, 二, 三, 四, 五, 六]
+    formats:
+      month_year: "%Y年 %B"

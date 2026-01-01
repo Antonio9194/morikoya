@@ -3,9 +3,15 @@ ko:
     welcome_back: "환영합니다"
     next_arrivals: "다음 도착"
     next_departures: "다음 출발"
-    currently_staying: "현재 투숙 중"
-    tagline: "당신의 두 번째 집"
+    currently_staying: "현재 숙박 중"
+    tagline: "여행 중 당신의 집"
     check_in: "체크인"
     check_out: "체크아웃"
-    guests: "투숙객"
+    guests: "인원"
     search: "검색"
+
+  date:
+    month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
+    abbr_day_names: [일, 월, 화, 수, 목, 금, 토]
+    formats:
+      month_year: "%Y년 %B"

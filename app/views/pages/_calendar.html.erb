@@ -3,19 +3,23 @@
     <button type="button" data-action="click->booking-form#prevMonth">&lt;</button>
     <button type="button" data-action="click->booking-form#nextMonth">&gt;</button>
   </div>
+
   <div class="calendar-grid d-flex" data-booking-form-target="monthsWrapper">
     <% (0..11).each do |i| %>
       <% month = Date.today.beginning_of_month + i.months %>
       <div class="month-block" data-month-index="<%= i %>" style="width: 50%; padding: 10px;">
+        <!-- Month header using i18n -->
         <h4 style="font-weight: 600; text-align: center; margin-bottom: 10px;">
-          <%= month.strftime("%B %Y") %>
+          <%= l(month, format: :month_year) %>
         </h4>
+
         <!-- Weekdays -->
         <div class="weekdays" style="display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-weight: 500; margin-bottom: 5px; color: #777;">
-          <% Date::ABBR_DAYNAMES.each do |day| %>
+          <% I18n.t("date.abbr_day_names").each do |day| %>
             <div><%= day %></div>
           <% end %>
         </div>
+
         <!-- Days -->
         <div class="days-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; gap: 5px;">
           <% first_wday = month.beginning_of_month.wday %>
@@ -27,7 +31,7 @@
             <div class="day"
                  data-day="<%= month.strftime('%Y-%m-') + day.to_s.rjust(2,'0') %>"
                  data-action="click->booking-form#updateValue"
-              style="padding: 5px; cursor: pointer; border-radius: 4px;">
+                 style="padding: 5px; cursor: pointer; border-radius: 4px;">
               <%= day %>
             </div>
           <% end %>
