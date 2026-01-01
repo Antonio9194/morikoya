@@ -4,13 +4,10 @@
   muted: true,
   playsinline: true,
   class: "background-video" %>
-
 <div class="container-fluid abouts-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
-
   <div class="navigation-aboutus">
     <%= render "pages/navaboutus" %>
   </div>
-
   <!-- Intro + Map (ONLY horizontal section) -->
   <div class="about-top">
     <div class="about-info">
@@ -21,35 +18,24 @@
         <p>Experience Asakusa with us—authentic, vibrant, and uniquely Tokyo.</p>
       </div>
     </div>
-
     <div class="aboutusmapcontent">
       <%= render "pages/map" %>
     </div>
   </div>
-
   <!-- FAQ-style stacked sections -->
   <div id="access" class="about-section">
     <%= render "pages/access" %>
   </div>
-
   <div id="attractions" class="about-section">
     <%= render "pages/attractions" %>
   </div>
-
   <div id="food" class="about-section">
     <%= render "pages/restaurants" %>
   </div>
-
   <div id="shopping" class="about-section">
     <%= render "pages/shopping" %>
   </div>
-
   <div id="culture" class="about-section">
     <%= render "pages/culture" %>
   </div>
-
 </div>
-
-<footer>
-  <%= render "shared/footer_rooms" %>
-</footer>

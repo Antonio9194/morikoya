@@ -1,17 +1,26 @@
 .chatbot {
-  background: white;
+  background: #f1ecec;
   margin-top: 9px;
-  height: calc(100vh - 75px);
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
   margin-bottom: 4rem;
+  border: 1px solid rgba(212, 33, 61, 0.6);
 
-  h3 {
+  .window-header {
     border-bottom: 1px solid $red-200;
     margin-bottom: 0;
     padding: 1rem;
+  }
+
+  .fa-xmark {
+    font-size: 25px;
+
+    &:hover {
+      color: #d4213d;
+    }
   }
 
   #questions {
@@ -37,7 +46,7 @@
   .user-question {
     max-width: 70%;
     align-self: flex-end;
-    background: $red;
+    background: $red-200;
     color: $light-gray;
   }
 
@@ -46,7 +55,7 @@
     margin-bottom: 1rem;
     max-width: 70%;
     align-self: flex-start;
-    background: $gray-200;
+    background: white;
   }
 
   .ai-task-button {
@@ -63,5 +72,9 @@
     .form-group {
       margin-bottom: 0;
     }
+  }
+
+  #new-question-button {
+    background: $red-200;
   }
 }
