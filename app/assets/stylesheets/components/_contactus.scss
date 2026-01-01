@@ -60,7 +60,7 @@
 
 // Info & Map Section
 .info-map-section {
-  background-color: $moss-green; // Changed from Red to Green for better contrast/calmness
+  background-color: $lacquer-red;
   color: $washi-cream;
 }
 
@@ -81,18 +81,19 @@
   font-size: 2rem;
   margin-bottom: 1.5rem;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid rgba($washi-cream, 0.3);
+  border-bottom: 1px solid rgba($washi-cream, 0.5); // Increased visibility
   display: inline-block;
   padding-bottom: 0.5rem;
-  color: $washi-cream; // Ensure title is readable
+  color: $washi-cream;
 }
 
 .info-text {
   font-family: $body-font;
-  font-size: 1.2rem; // Increased size for readability
+  font-size: 1.2rem;
   line-height: 1.8;
-  opacity: 1; // Removed opacity to make text clearer
-  font-weight: 400;
+  opacity: 1;
+  font-weight: 500; // Added weight for better readability on red
+  color: $washi-cream;
 }
 
 .map-container {
