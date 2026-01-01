@@ -81,10 +81,10 @@
   font-size: 2rem;
   margin-bottom: 1.5rem;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid rgba($washi-cream, 0.5); // Increased visibility
+  border-bottom: 1px solid $washi-cream; // Solid cream for better visibility
   display: inline-block;
   padding-bottom: 0.5rem;
-  color: $washi-cream;
+  color: $washi-cream !important;
 }
 
 .info-text {
@@ -92,8 +92,8 @@
   font-size: 1.2rem;
   line-height: 1.8;
   opacity: 1;
-  font-weight: 500; // Added weight for better readability on red
-  color: $washi-cream;
+  font-weight: 500;
+  color: $washi-cream !important;
 }
 
 .map-container {
