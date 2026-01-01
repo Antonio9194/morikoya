@@ -58,9 +58,9 @@
   }
 }
 
-// Info & Map Section (Red Block)
+// Info & Map Section
 .info-map-section {
-  background-color: $lacquer-red;
+  background-color: $moss-green; // Changed from Red to Green for better contrast/calmness
   color: $washi-cream;
 }
 
@@ -84,13 +84,15 @@
   border-bottom: 1px solid rgba($washi-cream, 0.3);
   display: inline-block;
   padding-bottom: 0.5rem;
+  color: $washi-cream; // Ensure title is readable
 }
 
 .info-text {
   font-family: $body-font;
-  font-size: 1.1rem;
+  font-size: 1.2rem; // Increased size for readability
   line-height: 1.8;
-  opacity: 0.9;
+  opacity: 1; // Removed opacity to make text clearer
+  font-weight: 400;
 }
 
 .map-container {
