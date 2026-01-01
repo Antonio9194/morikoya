@@ -240,3 +240,77 @@
     color: white !important;
   }
 }
+
+// Large Screens (4K) Scaling
+@media (min-width: 2560px) {
+  // Scale up Hero
+  .room-hero .room-hero-image {
+    height: 800px;
+  }
+
+  // Scale up Typography
+  .room-title {
+    font-size: 4.5rem;
+  }
+
+  .room-price-tag {
+    .price { font-size: 3rem; }
+    .unit { font-size: 1.2rem; }
+  }
+
+  .section-label {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .lead {
+    font-size: 1.5rem;
+  }
+
+  // Scale up Specs & Amenities
+  .spec-item {
+    font-size: 1.4rem;
+    padding: 0.8rem 0;
+    
+    i { font-size: 1.4rem; }
+  }
+
+  .amenity-item {
+    font-size: 1.3rem;
+    padding: 0.8rem 0;
+    
+    i { 
+      width: 32px; 
+      font-size: 1.2rem; 
+    }
+  }
+
+  // Scale up Booking Widget
+  .booking-widget {
+    padding: 3rem !important;
+    
+    .widget-title {
+      font-size: 2.2rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .booking-summary {
+    font-size: 1.2rem;
+    margin-top: 2rem !important;
+    padding-top: 2rem !important;
+  }
+
+  // Scale up Form Elements
+  .form-control {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .booking-form .btn {
+    padding: 1.5rem !important;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+  }
+}
