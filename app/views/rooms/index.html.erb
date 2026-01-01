@@ -1,29 +1,26 @@
 <div class="container-fluid rooms-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
-  
   <!-- Search Info & Warnings -->
   <% if @guest_num.present? %>
     <div class="d-flex justify-content-center mb-5">
       <%= render "search_info", rooms: @rooms %>
     </div>
   <% end %>
-
   <% if @rooms.empty? %>
     <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center">
       Sorry, we are booked out for these dates!
     </h5>
   <% else %>
     <% if @guest_num.present? && @guest_num > 6 %>
-       <h5 class="searchresult text-center mb-5">
-         <i class="fa-solid fa-circle-info me-2"></i>
-         For groups of <%= @guest_num %>, please choose the Presidential Suite or combine multiple rooms.
-       </h5>
+      <h5 class="searchresult text-center mb-5">
+        <i class="fa-solid fa-circle-info me-2"></i>
+        For groups of <%= @guest_num %>, please choose the Presidential Suite or combine multiple rooms.
+      </h5>
     <% end %>
-
     <!-- Section 1: Presidential Suite (Type C) -->
     <% rooms_c = @rooms.where(room_type: "C") %>
     <% if rooms_c.any? %>
-      <%= render "rooms/rooms_section", 
-          rooms: rooms_c, 
+      <%= render "rooms/rooms_section",
+          rooms: rooms_c,
           type: "C",
           title: "Presidential Suite",
           capacity: 8,
@@ -31,12 +28,11 @@
           reversed: false
       %>
     <% end %>
-
     <!-- Section 2: Deluxe Rooms (Type B) -->
     <% rooms_b = @rooms.where(room_type: "B") %>
     <% if rooms_b.any? %>
-      <%= render "rooms/rooms_section", 
-          rooms: rooms_b, 
+      <%= render "rooms/rooms_section",
+          rooms: rooms_b,
           type: "B",
           title: "Deluxe Rooms (Type B)",
           capacity: 6,
@@ -44,12 +40,11 @@
           reversed: true
       %>
     <% end %>
-
     <!-- Section 3: Standard Rooms (Type A) -->
     <% rooms_a = @rooms.where(room_type: "A") %>
     <% if rooms_a.any? %>
-      <%= render "rooms/rooms_section", 
-          rooms: rooms_a, 
+      <%= render "rooms/rooms_section",
+          rooms: rooms_a,
           type: "A",
           title: "Standard Rooms (Type A)",
           capacity: 5,
@@ -57,11 +52,8 @@
           reversed: false
       %>
     <% end %>
-
   <% end %>
-
 </div>
 <footer>
   <%= render "shared/footer_rooms" %>
 </footer>
-

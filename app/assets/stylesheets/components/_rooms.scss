@@ -65,10 +65,10 @@
   padding: 4rem 0;
   background-color: white;
   border-bottom: 1px solid rgba($moss-green, 0.1);
-  
+
   &.reversed {
     background-color: $washi-cream; // Subtle contrast for alternating sections
-    
+
     .indigo-split {
       flex-direction: row-reverse;
     }
@@ -87,7 +87,7 @@
   gap: 5rem; // Increased gap for better separation
   align-items: center;
   margin-bottom: 2rem;
-  
+
   @media (max-width: 992px) {
     flex-direction: column !important; // Stack on mobile
     gap: 2rem;
@@ -99,8 +99,8 @@
   width: 100%;
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15); // Deeper shadow
-  
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); // Deeper shadow
+
   // Ensure carousel images fit nicely
   .carousel-item img {
     height: 550px; // Taller image for better impact
@@ -115,7 +115,6 @@
   justify-content: center;
   padding: 0 1rem;
 }
-
 
 .type-badge {
   display: inline-block;
@@ -143,7 +142,6 @@
   max-width: 600px; // Prevent text lines from getting too long
 }
 
-
 .indigo-specs {
   display: flex;
   gap: 2rem;
@@ -151,21 +149,23 @@
   border-top: 1px solid rgba($moss-green, 0.1);
   border-bottom: 1px solid rgba($moss-green, 0.1);
   padding: 1rem 0;
-  
+
   .spec-item {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     color: $sumi-black;
     font-size: 0.9rem;
-    
-    i { color: $moss-green; }
+
+    i {
+      color: $moss-green;
+    }
   }
 }
 
 .indigo-amenities {
   margin-bottom: 2rem;
-  
+
   .amenities-label {
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -173,8 +173,10 @@
     color: $moss-green !important;
     margin-bottom: 0.5rem;
   }
-  
-  p { font-size: 0.9rem; }
+
+  p {
+    font-size: 0.9rem;
+  }
 }
 
 .btn-indigo-expand {
@@ -194,7 +196,7 @@
   justify-content: center;
   gap: 1rem;
   width: fit-content;
-  
+
   &:hover {
     background: $moss-green;
     color: white;
@@ -220,12 +222,12 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  
+
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba($moss-green, 0.1);
     border-color: $moss-green;
-    
+
     .tile-action {
       color: $lacquer-red;
       transform: translateX(5px);
@@ -238,14 +240,14 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
-  
+
   .room-number {
     font-family: $headers-font;
     font-size: 1.2rem;
     color: $sumi-black;
     font-weight: 600;
   }
-  
+
   .badge-luxury {
     background: $lacquer-red;
     color: white;
@@ -266,10 +268,21 @@
   display: flex;
   align-items: baseline;
   color: $moss-green;
-  
-  .currency { font-size: 0.9rem; margin-right: 2px; }
-  .amount { font-size: 1.4rem; font-weight: 600; font-family: $headers-font; }
-  .per-night { font-size: 0.8rem; color: rgba($sumi-black, 0.6); margin-left: 4px; }
+
+  .currency {
+    font-size: 0.9rem;
+    margin-right: 2px;
+  }
+  .amount {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: $headers-font;
+  }
+  .per-night {
+    font-size: 0.8rem;
+    color: rgba($sumi-black, 0.6);
+    margin-left: 4px;
+  }
 }
 
 .tile-action {
@@ -289,26 +302,27 @@
   font-size: 0.8rem;
   color: rgba($sumi-black, 0.6);
   margin-bottom: 1rem;
-  
-  i { color: $moss-green; margin-right: 4px; }
+
+  i {
+    color: $moss-green;
+    margin-right: 4px;
+  }
 }
 
 .section-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-out;
-  
+
   &.active {
     // max-height is set by JS
     padding-bottom: 2rem;
   }
 }
 
-
 // --- End New Styles ---
 
 @media (max-width: 1062px) {
-
   .searchresult {
     font-size: 1.2rem;
   }
@@ -381,8 +395,10 @@
 
     .spec-item {
       font-size: 1.3rem;
-      
-      i { font-size: 1.3rem; }
+
+      i {
+        font-size: 1.3rem;
+      }
     }
   }
 
@@ -394,7 +410,9 @@
       margin-bottom: 1rem;
     }
 
-    p { font-size: 1.2rem; }
+    p {
+      font-size: 1.2rem;
+    }
   }
 
   .btn-indigo-expand {
@@ -402,4 +420,3 @@
     font-size: 1.1rem;
   }
 }
-

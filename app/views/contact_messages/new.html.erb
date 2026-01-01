@@ -1,24 +1,81 @@
-<%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
-
-<div class="container-fluid contactus-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
-  <div class="contactus">
-    <% if current_user.present? %>
-      <h5 class="welcome-text"> Welcome back <%= current_user.first_name %>!</h5>
-    <% else %>
-      <h5 class="welcome-text"> Leave us a message!</h5>
-    <% end %>
-
-    <div class="contact-form">
-      <%= simple_form_for @contact_message do |f| %>
-        <%= f.input :name, label: "Full Name", input_html: { value: current_user&.first_name } %>
-        <%= f.input :email, label: "Email", input_html: { value: current_user&.email } %>
-        <%= f.input :message, as: :text, label: "Message" %>
-        <%= f.button :submit, "Send" %>
-      <% end %>
+<div class="contact-page">
+  <!-- Hero Section -->
+  <div class="contact-hero">
+    <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "hero-video" %>
+    <div class="hero-overlay">
+      <h1 class="hero-title">Contact Us</h1>
+      <p class="hero-subtitle">We'd love to hear from you</p>
     </div>
   </div>
 
-  <div class="mapcontent">
-    <%= render "pages/map" %>
+  <!-- Info & Map Section -->
+  <div class="info-map-section">
+    <div class="container-fluid contact-wrapper">
+      <div class="row g-0">
+        <!-- Info Side -->
+        <div class="col-lg-5 info-col">
+          <div class="info-content">
+            <div class="info-block mb-5">
+              <h3 class="info-title">Location & Maps</h3>
+              <p class="info-text">
+                389-0111 18-39, Aza Yashizoe,<br>
+                Oaza Nagakura, Karuizawa-cho, Kitasaku-gun,<br>
+                Nagano, Japan
+              </p>
+            </div>
+            
+            <div class="info-block">
+              <h3 class="info-title">Contact Us</h3>
+              <p class="info-text">
+                Hotel Representative: 0267-42-1100<br>
+                FAX: 0267-41-6968
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Map Side -->
+        <div class="col-lg-7 map-col">
+          <div class="map-container">
+            <%= render "pages/map" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form Section -->
+  <div class="form-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <div class="form-card">
+            <div class="text-center mb-5">
+              <h2 class="form-title">Send us a Message</h2>
+              <% if current_user.present? %>
+                <p class="form-subtitle">Welcome back, <%= current_user.first_name %></p>
+              <% else %>
+                <p class="form-subtitle">We will get back to you shortly</p>
+              <% end %>
+            </div>
+
+            <%= simple_form_for @contact_message, html: { class: "luxury-form" } do |f| %>
+              <div class="form-group mb-4">
+                <%= f.input :name, label: false, placeholder: "Full Name", input_html: { value: current_user&.first_name, class: "form-control-luxury" } %>
+              </div>
+              <div class="form-group mb-4">
+                <%= f.input :email, label: false, placeholder: "Email Address", input_html: { value: current_user&.email, class: "form-control-luxury" } %>
+              </div>
+              <div class="form-group mb-5">
+                <%= f.input :message, as: :text, label: false, placeholder: "How can we help you?", input_html: { class: "form-control-luxury", rows: 5 } %>
+              </div>
+              <div class="text-center">
+                <%= f.button :submit, "Send Message", class: "btn-luxury-submit" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

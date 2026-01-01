@@ -1,15 +1,12 @@
 <div class="room-section-indigo <%= 'reversed' if local_assigns[:reversed] %>" data-controller="toggle-section">
   <div class="section-container">
-    
     <!-- SPLIT HEADER: Image + Info -->
     <div class="indigo-split">
-      
       <!-- IMAGE SIDE (Carousel) -->
       <div class="indigo-image">
         <!-- We use the first room's images to represent the type -->
         <%= render "rooms/carousel", room: rooms.first %>
       </div>
-
       <!-- INFO SIDE -->
       <div class="indigo-info">
         <div class="info-content">
@@ -22,11 +19,8 @@
               <i class="fa-solid fa-bed"></i> Standard
             <% end %>
           </div>
-          
           <h2 class="indigo-title"><%= title %></h2>
-          
           <p class="indigo-desc"><%= description %></p>
-          
           <div class="indigo-specs">
             <div class="spec-item">
               <i class="fa-solid fa-user-group"></i>
@@ -49,12 +43,10 @@
               </span>
             </div>
           </div>
-
           <div class="indigo-amenities">
             <h5 class="amenities-label">Amenities</h5>
             <p><%= rooms.first.amenities %></p>
           </div>
-
           <!-- TOGGLE BUTTON -->
           <button class="btn-indigo-expand" data-action="click->toggle-section#toggle">
             <span data-toggle-section-target="text">View Available Rooms</span>
@@ -63,7 +55,6 @@
         </div>
       </div>
     </div>
-
     <!-- COLLAPSIBLE ROOM TILES -->
     <div class="section-content" data-toggle-section-target="content">
       <div class="room-tiles-grid">
@@ -76,13 +67,11 @@
                   <span class="badge-luxury">Luxury</span>
                 <% end %>
               </div>
-              
               <div class="tile-specs-row">
                 <span><i class="fa-solid fa-user-group"></i> <%= room.capacity %></span>
                 <span><i class="fa-solid fa-ruler-combined"></i> <%= room.size %>m²</span>
                 <span><i class="fa-solid fa-bed"></i> <%= room.sofa_bed + (room.double || 0) + (room.single || 0) + (room.bunk || 0) %></span>
               </div>
-
               <div class="tile-body">
                 <div class="tile-price">
                   <span class="currency">¥</span>
@@ -95,12 +84,9 @@
                 </div>
               </div>
             </div>
-
           <% end %>
         <% end %>
       </div>
     </div>
-
   </div>
 </div>
-

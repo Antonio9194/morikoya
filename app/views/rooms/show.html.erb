@@ -20,7 +20,6 @@
       </button>
     </div>
   </div>
-
   <div class="container-fluid rooms-page-wrapper pb-5 px-3 px-md-4">
     <div class="row g-4 g-lg-5">
       <!-- Room Details -->
@@ -33,7 +32,6 @@
               <div class="unit text-muted">per night</div>
             </div>
           </div>
-          
           <div class="room-specs mt-4 d-flex gap-4 flex-wrap">
             <div class="spec-item">
               <i class="fa-solid fa-ruler-combined me-2"></i>
@@ -51,12 +49,10 @@
             </div>
           </div>
         </div>
-
         <div class="room-description mb-5">
           <h3 class="section-label mb-3">Description</h3>
           <p class="lead text-muted"><%= @room.description %></p>
         </div>
-
         <div class="room-amenities mb-5">
           <h3 class="section-label mb-4">Amenities</h3>
           <div class="row g-3">
@@ -71,28 +67,24 @@
           </div>
         </div>
       </div>
-
       <!-- Booking Widget -->
       <div class="col-lg-5 col-xl-4">
         <div class="booking-widget-wrapper sticky-top" style="top: 2rem; z-index: 10;">
           <div class="booking-widget p-4">
             <h3 class="widget-title mb-4">Reserve Your Stay</h3>
-            
             <div class="booking-form">
               <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room) do |f| %>
                 <%= f.input :start_date,
-                  as: :string, 
+                  as: :string,
                   label: false,
                   placeholder: "Select dates",
                   input_html: {
                     class: "chosen-dates form-control-lg mb-3",
                     data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates },
                     value: [@check_in, @check_out].all? ? "#{@check_in} - #{@check_out}" : "" } %>
-                
                 <%= f.button :submit, "Book Now", class: "btn btn-lg w-100 btn-primary" %>
               <% end %>
             </div>
-
             <div class="booking-summary mt-4 pt-4 border-top">
               <!-- Guests Info -->
               <% if @guest_num.present? %>
@@ -101,20 +93,17 @@
                   <span class="fw-bold"><%= @guest_num %> <%= @guest_num > 1 ? "people" : "person" %></span>
                 </div>
               <% end %>
-
               <!-- Nights Calculation -->
               <div class="d-flex justify-content-between mb-2" data-controller="retrieve-dates" data-retrieve-dates-datepicker-outlet=".chosen-dates">
                 <span class="text-muted">Duration</span>
                 <span class="fw-bold" data-retrieve-dates-target="nightsNumDestination">-</span>
               </div>
-
               <!-- Price Calculation -->
               <div data-controller="total-price-display" data-total-price-display-datepicker-outlet=".chosen-dates">
                 <div class="d-flex justify-content-between mb-2">
                   <span class="text-muted">Price per night</span>
                   <span class="fw-bold" data-total-price-display-target="pricePerNight">¥<%= number_with_delimiter(@room.price_per_night) %></span>
                 </div>
-                
                 <div class="d-flex justify-content-between mt-3 pt-3 border-top">
                   <span class="h5 mb-0">Total</span>
                   <span class="h5 mb-0 text-primary" data-total-price-display-target="totalPrice">-</span>
