@@ -348,5 +348,58 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  // Scale up Room Cards
+  .room-section-indigo {
+    padding: 6rem 0;
+  }
+
+  .indigo-image .carousel-item img {
+    height: 800px;
+  }
+
+  .type-badge {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .indigo-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .indigo-desc {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin-bottom: 3rem;
+  }
+
+  .indigo-specs {
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+    gap: 4rem;
+
+    .spec-item {
+      font-size: 1.3rem;
+      
+      i { font-size: 1.3rem; }
+    }
+  }
+
+  .indigo-amenities {
+    margin-bottom: 3rem;
+
+    .amenities-label {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    p { font-size: 1.2rem; }
+  }
+
+  .btn-indigo-expand {
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+  }
 }
 
