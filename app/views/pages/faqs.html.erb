@@ -1,29 +1,43 @@
-<%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
-<div class="container-fluid faq-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
-  <div class="navigation-faq">
-    <%= render "pages/navfaq" %>
+<div class="faq-page">
+  <!-- Hero Section -->
+  <div class="faq-hero">
+    <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "hero-video" %>
+    <div class="hero-overlay">
+      <h1 class="hero-title">Frequently Asked Questions</h1>
+      <p class="hero-subtitle">Everything you need to know for your stay</p>
+    </div>
   </div>
-  
+
+  <!-- Sticky Navigation -->
+  <div class="faq-nav-wrapper">
+    <div class="container">
+      <%= render "pages/navfaq" %>
+    </div>
+  </div>
+
+  <!-- FAQ Content -->
+  <div class="container faq-content-wrapper">
     <!--Reservation & Check-in-->
-    <div id="reservation" class="faqbody" data-controller="faq">
+    <div id="reservation" class="faq-section">
       <%= render "pages/reservationsfaq" %>
     </div>
     <!--Rooms & Amenities-->
-    <div id="roomamenities" class="faqbody" data-controller="faq">
+    <div id="roomamenities" class="faq-section">
       <%= render "pages/roomandamenities" %>
     </div>
     <!--Facilities-->
-    <div id="facilities" class="faqbody" data-controller="faq">
+    <div id="facilities" class="faq-section">
       <%= render "pages/facilities" %>
     </div>
     <!--Policies-->
-    <div id="policies" class="faqbody" data-controller="faq">
+    <div id="policies" class="faq-section">
       <%= render "pages/policies" %>
     </div>
     <!--Access & Location-->
-    <div id="accesslocation" class="faqbody" data-controller="faq">
+    <div id="accesslocation" class="faq-section">
       <%= render "pages/accessandlocation" %>
     </div>
+  </div>
 </div>
 <footer>
   <%= render "shared/footer_rooms" %>

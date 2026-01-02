@@ -1,31 +1,22 @@
-<h3 class="muted">Access & Location</h3>
-<div class="faq-block">
-  <div class="faqquestion" data-action="click->faq#toggle">
-    <h5>How do I get to the hotel?</h5>
-    <h5 class="plus">+</h5>
-  </div>
-  <div class="faqanswer d-none" data-faq-target="answer">
-    <h6>
-      We are located near Asakusa Station & Tawaramachi Station, with easy access via subway and bus.
-      Please refer to our <%= link_to "map", about_us_path %> for the exact address and check the <%= link_to "access", about_us_path %> section, or contact us via this <%= link_to "form", new_contact_message_path  %> for specific instructions.
-    </h6>
-  </div>
-  <hr>
-  <div class="faqquestion" data-action="click->faq#toggle">
-    <h5>Do you offer airport pickup?</h5>
-    <h5 class="plus">+</h5>
-  </div>
-  <div class="faqanswer d-none" data-faq-target="answer">
-    <h6>Airport pickup is not provided, but we can guide you on the best route.</h6>
-  </div>
-  <hr>
-  <div class="faqquestion" data-action="click->faq#toggle">
-    <h5>Is parking available nearby?</h5>
-    <h5 class="plus">+</h5>
-  </div>
-  <div class="faqanswer d-none" data-faq-target="answer">
-    <h6>
-      There is no on-site parking, but several paid parking lots are available within walking distance of the hotel.
-    </h6>
-  </div>
+<div class="section-title">
+  <h2>Access & Location</h2>
+  <div class="divider"></div>
+</div>
+
+<div class="faq-item">
+  <h3>How do I get to the hotel?</h3>
+  <p>
+    We are located near Asakusa Station & Tawaramachi Station, with easy access via subway and bus.
+    Please refer to our <%= link_to "map", about_us_path %> for the exact address and check the <%= link_to "access", about_us_path %> section, or contact us via this <%= link_to "form", new_contact_message_path  %> for specific instructions.
+  </p>
+</div>
+
+<div class="faq-item">
+  <h3>Do you offer airport pickup?</h3>
+  <p>Airport pickup is not provided, but we can guide you on the best route.</p>
+</div>
+
+<div class="faq-item">
+  <h3>Is parking available nearby?</h3>
+  <p>There is no on-site parking, but several paid parking lots are available within walking distance of the hotel.</p>
 </div>
