@@ -14,9 +14,9 @@ class ApplicationController < ActionController::Base
 
   def render_questions
     @questions = if current_user
-                   Question.where(user_id: current_user.id)
+                   Question.where(user_id: current_user.id).order(:created_at)
                  else
-                   Question.where(session_id: ensure_session_id, user_id: nil)
+                   Question.where(session_id: ensure_session_id, user_id: nil).order(:created_at)
                  end
   end
 
