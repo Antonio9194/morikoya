@@ -1,20 +1,20 @@
 zh-CN:
   home:
     welcome_back: "欢迎回来"
-    next_arrivals: "即将到达"
-    next_departures: "即将离开"
-    currently_staying: "当前入住中"
-    tagline: "您在外的家"
+    next_arrivals: "下一个到达"
+    next_departures: "下一个出发"
+    currently_staying: "当前入住"
+    tagline: "旅途中的家"
     check_in: "入住"
     check_out: "退房"
-    guests: "房客"
+    guests: "入住人数"
     search: "搜索"
 
   date:
     month_names: [~, 一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月]
     abbr_day_names: [日, 一, 二, 三, 四, 五, 六]
     formats:
-      month_year: "%Y年 %B"
+      month_year: "%Y年%B"
 
   navbar:
     rooms: "客房"
@@ -23,5 +23,38 @@ zh-CN:
     faqs: "常见问题"
     login: "登录"
     logout: "登出"
-    dashboard: "仪表板"
+    dashboard: "仪表盘"
     bookings: "预订"
+
+  access:
+    title: "交通及出行"
+    description: "浅草在东京拥有卓越的交通便利性，从酒店出发轻松前往市内各大景点。多条地铁线路、机场连接以及观光船近在咫尺，让出行简单方便。"
+
+    subway:
+      - station: "浅草站（筑波快线 – TX线）– 步行3分钟"
+        info: "最近的车站，方便前往秋叶原及东京北部"
+      - station: "田原町站（银座线）– 步行7分钟"
+        info: "快速前往上野、银座、新桥、赤坂、涩谷"
+      - station: "浅草站（银座线）– 步行10分钟"
+        info: "直达上野、银座和涩谷"
+
+    airport:
+      title: "机场出行"
+      haneda: "羽田机场 → 浅草：约40~45分钟（都营浅草线，通常无需换乘）"
+      narita: "成田机场 → 浅草：约60~70分钟（京成线 → 都营浅草线，部分直达）"
+
+    bus:
+      title: "公交及地面交通"
+      info1: "附近都营巴士直达上野、东京晴空塔、东京站及日本桥"
+      info2: "适合喜欢地面出行的客人"
+
+    sightseeing:
+      title: "观光选项"
+      info1: "东京水上巴士（隅田川游船）– 步行10分钟"
+      info2: "可前往台场、浜离宫及日出码头"
+      info3: "浅草历史街区提供人力车游览"
+
+    taxi:
+      title: "出租车及共享出行"
+      info1: "雷门及浅草站附近设有出租车乘车点"
+      info2: "支持无现金叫车应用：GO、Uber、DiDi"

@@ -25,3 +25,36 @@ en:
     logout: "Logout"
     dashboard: "Dashboard"
     bookings: "Bookings"
+
+  access:
+    title: "Transportation & Access"
+    description: "Asakusa offers some of the best transportation access in Tokyo, making it easy to explore the city from our hotel. With multiple train lines, airport connections, and sightseeing boats nearby, getting around is simple and convenient."
+
+    subway:
+      - station: "Asakusa Station (Tsukuba Express – TX Line) – 3 min walk"
+        info: "Closest station, easy access to Akihabara & North Tokyo"
+      - station: "Tawaramachi Station (Ginza Line) – 7 min walk"
+        info: "Fast access to Ueno, Ginza, Shimbashi, Akasaka, Shibuya"
+      - station: "Asakusa Station (Ginza Line) – 10 min walk"
+        info: "Direct access to Ueno, Ginza, and Shibuya"
+
+    airport:
+      title: "Airport Access"
+      haneda: "Haneda Airport → Asakusa: Approx. 40–45 min (Toei Asakusa Line, often no transfers)"
+      narita: "Narita Airport → Asakusa: Approx. 60–70 min (Keisei Line → Toei Asakusa Line, some through-trains)"
+
+    bus:
+      title: "Bus & Local Transport"
+      info1: "Nearby Toei buses connect directly to Ueno, Tokyo Skytree, Tokyo Station, and Nihonbashi"
+      info2: "Convenient for guests who prefer above-ground travel"
+
+    sightseeing:
+      title: "Sightseeing Options"
+      info1: "Tokyo Water Bus (Sumida River Cruise) – 10 min walk"
+      info2: "Scenic access to Odaiba, Hamarikyu Gardens, and Hinode Pier"
+      info3: "Rickshaw tours available throughout Asakusa’s historic streets"
+
+    taxi:
+      title: "Taxi & Ride Share"
+      info1: "Taxi stands located near Kaminarimon Gate and Asakusa Station"
+      info2: "Cashless ride apps available: GO, Uber, DiDi"

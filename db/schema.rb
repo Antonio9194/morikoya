@@ -14,13 +14,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_31_130438) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "amenities", force: :cascade do |t|
-    t.string "name"
-    t.string "icon"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "room_id", null: false
@@ -56,15 +49,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_31_130438) do
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
-  create_table "room_amenities", force: :cascade do |t|
-    t.bigint "room_id", null: false
-    t.bigint "amenity_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["amenity_id"], name: "index_room_amenities_on_amenity_id"
-    t.index ["room_id"], name: "index_room_amenities_on_room_id"
-  end
-
   create_table "rooms", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -79,7 +63,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_31_130438) do
     t.integer "semi_double", default: 0
     t.integer "double", default: 0
     t.integer "sofa_bed", default: 0
-    t.string "type"
     t.string "room_type"
   end
 
@@ -103,6 +86,4 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_31_130438) do
   add_foreign_key "bookings", "users"
   add_foreign_key "contact_messages", "users"
   add_foreign_key "questions", "users"
-  add_foreign_key "room_amenities", "amenities"
-  add_foreign_key "room_amenities", "rooms"
 end

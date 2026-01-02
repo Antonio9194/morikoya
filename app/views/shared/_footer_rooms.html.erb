@@ -1,82 +1,13 @@
-<<<<<<< HEAD
-<div class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <!-- Left: Logo -->
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png", style: "width: 140px; height:60px;" %>
-    <% end %>
-    <!-- Disappear when expanded - Center when collapsed: Social -->
-    <div class="d-lg-none d-flex flex-column align-items-start">
-      <div class="d-flex align-items-center">
-        <%= image_tag "telephone.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-        <p class="mb-0">(xxx) xxxx-xxxx</p>
-      </div>
-      <div class="d-flex align-items-center mt-2">
-        <%= link_to "#", target: :_blank do %>
-          <%= image_tag "instagram.png", style: "width: 20px; height: 20px;", class: "me-4" %>
-        <% end %>
-        <%= link_to "#", target: :_blank do %>
-          <%= image_tag "x-logo.png", style: "width: 20px; height: 20px;" %>
-        <% end %>
-      </div>
-    </div>
-    <!--Center when expanded - Disappear when collapsed: Nav Links-->
-    <div>
-      <ul class=" navfoot navbar-nav d-none d-lg-flex flex-row align-items-center justify-content-between">
-        <% if user_signed_in? && current_user.admin? %>
-          <li class="nav-item">
-            <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-              <%= t("navbar.rooms")%>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to admin_bookings_path, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "bookings.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-              <%= t("navbar.bookings")%>
-            <% end %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-              <%= t("navbar.rooms")%>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "contact.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-              <%= t("navbar.contact_us")%>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1" %>
-              <%= t("navbar.about_us")%>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
-              <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1" %>
-              <%= t("navbar.faqs")%>
-            <% end %>
-          </li>
-          <% if user_signed_in? && current_user.guest? %>
-            <li class="nav-item">
-              <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
-                <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1" %>
-                <%= t("navbar.dashboard")%>
-              <% end %>
-            </li>
-=======
 <footer>
   <div class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
+
       <!-- Left: Logo -->
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "logo.png", style: "width: 140px; height:60px;" %>
       <% end %>
-      <!-- Disappear when expanded - Center when collapsed: Social -->
+
+      <!-- Center when collapsed: Social -->
       <div class="d-lg-none d-flex flex-column align-items-start">
         <div class="d-flex align-items-center">
           <%= image_tag "telephone.png", style: "width: 20px; height: 20px;", class: "me-1" %>
@@ -85,158 +16,76 @@
         <div class="d-flex align-items-center mt-2">
           <%= link_to "#", target: :_blank do %>
             <%= image_tag "instagram.png", style: "width: 20px; height: 20px;", class: "me-4" %>
->>>>>>> 5fd42bedec254a750904ed36828f6428de015d5b
           <% end %>
           <%= link_to "#", target: :_blank do %>
             <%= image_tag "x-logo.png", style: "width: 20px; height: 20px;" %>
           <% end %>
         </div>
       </div>
-      <!--Center when expanded - Disappear when collapsed: Nav Links-->
+
+      <!-- Center when expanded: Nav links -->
       <div>
-        <ul class=" navfoot navbar-nav d-none d-lg-flex flex-row align-items-center justify-content-between">
+        <ul class="navfoot navbar-nav d-none d-lg-flex flex-row align-items-center justify-content-between">
+
           <% if user_signed_in? && current_user.admin? %>
             <li class="nav-item">
               <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
-<<<<<<< HEAD
-                <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1"%>
-                <%= t("navbar.rooms")%>
-=======
                 <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-                Rooms
->>>>>>> 5fd42bedec254a750904ed36828f6428de015d5b
+                <%= t("navbar.rooms") %>
               <% end %>
             </li>
+
             <li class="nav-item">
               <%= link_to admin_bookings_path, class: "nav-link d-flex align-items-center" do %>
                 <%= image_tag "bookings.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-                <%= t("navbar.bookings")%>
+                <%= t("navbar.bookings") %>
               <% end %>
             </li>
+
           <% else %>
             <li class="nav-item">
               <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
-<<<<<<< HEAD
-                <%= image_tag "rooms.png", style: "width: 16px; height: 16px; margin: 0 5px 0 3px"%>
-                <%= t("navbar.rooms")%>
-=======
                 <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-                Rooms
->>>>>>> 5fd42bedec254a750904ed36828f6428de015d5b
+                <%= t("navbar.rooms") %>
               <% end %>
             </li>
+
             <li class="nav-item">
               <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
-<<<<<<< HEAD
-                <%= image_tag "contact.png", style: "width: 16px; height: 16px; margin: 0 5px 0 2px"%>
-                <%= t("navbar.contact_us")%>
-=======
                 <%= image_tag "contact.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-                Contact Us
->>>>>>> 5fd42bedec254a750904ed36828f6428de015d5b
+                <%= t("navbar.contact_us") %>
               <% end %>
             </li>
+
             <li class="nav-item">
               <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
-<<<<<<< HEAD
-                <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
-                <%= t("navbar.about_us")%>
-=======
                 <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1" %>
-                About Us
->>>>>>> 5fd42bedec254a750904ed36828f6428de015d5b
+                <%= t("navbar.about_us") %>
               <% end %>
             </li>
+
             <li class="nav-item">
               <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
-<<<<<<< HEAD
-                <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size-20" %>
-                <%= t("navbar.faqs")%>
-=======
                 <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1" %>
-                FAQs
->>>>>>> 5fd42bedec254a750904ed36828f6428de015d5b
+                <%= t("navbar.faqs") %>
               <% end %>
             </li>
+
             <% if user_signed_in? && current_user.guest? %>
               <li class="nav-item">
                 <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
-<<<<<<< HEAD
-                  <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
-                  <%= t("navbar.dashboard")%>
-=======
                   <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1" %>
-                  Dashboard
->>>>>>> 5fd42bedec254a750904ed36828f6428de015d5b
+                  <%= t("navbar.dashboard") %>
                 <% end %>
               </li>
             <% end %>
           <% end %>
+
         </ul>
       </div>
-      <!-- Right Menu when collapsed - Disappear when expanded: Nav Links -->
-      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Morikoya</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class=" navfoot navbar-nav">
-            <% if user_signed_in? && current_user.admin? %>
-              <li class="nav-item">
-                <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
-                  <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1"%>
-                  Rooms
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to admin_bookings_path, class: "nav-link d-flex align-items-center" do %>
-                  <%= image_tag "bookings.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-                  Bookings
-                <% end %>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
-                  <%= image_tag "rooms.png", style: "width: 16px; height: 16px; margin: 0 5px 0 3px"%>
-                  Rooms
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
-                  <%= image_tag "contact.png", style: "width: 16px; height: 16px; margin: 0 5px 0 2px"%>
-                  Contact Us
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
-                  <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
-                  About Us
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
-                  <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size-20" %>
-                  FAQs
-                <% end %>
-              </li>
-              <% if user_signed_in? && current_user.guest? %>
-                <li class="nav-item">
-                  <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
-                    <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
-                    Dashboard
-                  <% end %>
-                </li>
-              <% end %>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-      <!-- Right when expanded - Disappear when collapsed: Social -->
-      <div class="d-none d-lg-flex d-flex flex-column align-items-start">
+
+      <!-- Right when expanded: Social -->
+      <div class="d-none d-lg-flex flex-column align-items-start">
         <div class="d-flex align-items-center">
           <%= image_tag "telephone.png", style: "width: 20px; height: 20px;", class: "me-1" %>
           <p class="mb-0">(xxx) xxxx-xxxx</p>
@@ -250,6 +99,7 @@
           <% end %>
         </div>
       </div>
+
     </div>
   </div>
 </footer>
