@@ -26,45 +26,45 @@
           <li class="nav-item">
             <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-              Rooms
+              <%= t("navbar.rooms")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to admin_bookings_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "bookings.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-              Bookings
+              <%= t("navbar.bookings")%>
             <% end %>
           </li>
         <% else %>
           <li class="nav-item">
             <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-              Rooms
+              <%= t("navbar.rooms")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "contact.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-              Contact Us
+              <%= t("navbar.contact_us")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1" %>
-              About Us
+              <%= t("navbar.about_us")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1" %>
-              FAQs
+              <%= t("navbar.faqs")%>
             <% end %>
           </li>
           <% if user_signed_in? && current_user.guest? %>
             <li class="nav-item">
               <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
                 <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1" %>
-                Dashboard
+                <%= t("navbar.dashboard")%>
               <% end %>
             </li>
           <% end %>
@@ -86,45 +86,45 @@
             <li class="nav-item">
               <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
                 <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1"%>
-                Rooms
+                <%= t("navbar.rooms")%>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to admin_bookings_path, class: "nav-link d-flex align-items-center" do %>
                 <%= image_tag "bookings.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-                Bookings
+                <%= t("navbar.bookings")%>
               <% end %>
             </li>
           <% else %>
             <li class="nav-item">
               <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
                 <%= image_tag "rooms.png", style: "width: 16px; height: 16px; margin: 0 5px 0 3px"%>
-                Rooms
+                <%= t("navbar.rooms")%>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
                 <%= image_tag "contact.png", style: "width: 16px; height: 16px; margin: 0 5px 0 2px"%>
-                Contact Us
+                <%= t("navbar.contact_us")%>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
                 <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
-                About Us
+                <%= t("navbar.about_us")%>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
                 <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size-20" %>
-                FAQs
+                <%= t("navbar.faqs")%>
               <% end %>
             </li>
             <% if user_signed_in? && current_user.guest? %>
               <li class="nav-item">
                 <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
                   <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
-                  Dashboard
+                  <%= t("navbar.dashboard")%>
                 <% end %>
               </li>
             <% end %>
