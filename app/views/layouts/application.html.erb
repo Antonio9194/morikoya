@@ -30,6 +30,22 @@
       <%= render "shared/languages" %>
       <%= render "shared/flashes" %>
       <%= yield %>
+      <!--AI chatbot-->
+      <%= render "shared/aichatbot", questions: @questions %>
+
+      <!--Footer-->
+        <% if controller_name == "rooms" && action_name == "index" %>
+          <%= render "shared/footer_rooms" %>
+        <% end %>
+        <% if controller_name == "rooms" && action_name == "show" %>
+          <%= render "shared/footer_rooms" %>
+        <% end %>
+        <% if controller_name == "pages" && action_name == "about_us" %>
+          <%= render "shared/footer_rooms" %>
+        <% end %>
+        <% if controller_name == "pages" && action_name == "faqs" %>
+          <%= render "shared/footer_rooms" %>
+        <% end %>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/index.global.min.js"></script>

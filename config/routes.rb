@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     member do
       get 'confirmation'
       patch 'cancel'
-      post 'cancel'  # For AJAX and sendBeacon
+      post 'cancel' # For AJAX and sendBeacon
     end
   end
 
@@ -23,8 +23,8 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'guests#show', as: :guest_dashboard
 
   # 'Guests' booking (keeping for backward compatibility)
-  resources :guests, only: [:show, :update] do
-    resources :bookings, only: [:index, :show]
+  resources :guests, only: %i[show update] do
+    resources :bookings, only: %i[index show]
   end
 
   # Admin only
@@ -46,4 +46,7 @@ Rails.application.routes.draw do
   post "/locale", to: "locales#update", as: :set_locale
 
   root 'pages#home'
+
+  # Questions
+  resources :questions, only: %i[create]
 end
