@@ -1,0 +1,35 @@
+.chat-window {
+  position: fixed;
+  bottom: -50px !important;
+  z-index: 99999999;
+}
+
+@media (max-width: 1024px) {
+  .chat-window {
+    right: 10px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .chat-window {
+    right: 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  .chat-window {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-window {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 425px) {
+  .chat-window {
+    width: 80vw;
+  }
+}
