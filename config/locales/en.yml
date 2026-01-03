@@ -58,3 +58,15 @@ en:
       title: "Taxi & Ride Share"
       info1: "Taxi stands located near Kaminarimon Gate and Asakusa Station"
       info2: "Cashless ride apps available: GO, Uber, DiDi"
+
+  location:
+    title: "Access & Location"
+    question1: "How do I get to the hotel?"
+    answer1: >
+      We are located near Asakusa Station & Tawaramachi Station, with easy access via subway and bus.
+      Please refer to our %{map_link} for the exact address and check the %{access_link} section,
+      or contact us via this %{contact_link} for specific instructions. 
+    question2: "Do you offer airport pickup?"
+    answer2: "Airport pickup is not provided, but we can guide you on the best route."
+    question3: "Is parking available nearby?"
+    answer3: "There is no on-site parking, but several paid parking lots are available within walking distance of the hotel."  
