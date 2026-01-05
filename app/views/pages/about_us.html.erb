@@ -1,51 +1,78 @@
-<%= video_tag "background.mp4",
-  autoplay: true,
-  loop: true,
-  muted: true,
-  playsinline: true,
-  class: "background-video" %>
-
-<div class="container-fluid abouts-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
-
-  <div class="navigation-aboutus">
-    <%= render "pages/navaboutus" %>
+<div class="about-page">
+  <!-- Hero Section -->
+  <div class="about-hero">
+    <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "hero-video" %>
+    <div class="hero-overlay">
+      <h1 class="hero-title">About Morikoya</h1>
+      <p class="hero-subtitle">Discover Asakusa's Hidden Gem</p>
+    </div>
   </div>
 
-  <!-- Intro + Map (ONLY horizontal section) -->
-  <div class="about-top">
-    <div class="about-info">
-      <h4 class="title-block">Morikoya</h4>
-      <div class="morikoya-block">
-        <p>Welcome to Asakusa’s newest hideaway—where tradition, culture, and modern comfort come together.</p>
-        <p>Designed for travelers who appreciate style, convenience, and a touch of Japanese charm.</p>
-        <p>Experience Asakusa with us—authentic, vibrant, and uniquely Tokyo.</p>
+  <!-- Sticky Navigation -->
+  <div class="about-nav-wrapper">
+    <div class="container">
+      <%= render "pages/navaboutus" %>
+    </div>
+  </div>
+
+  <!-- Intro & Map Section (Centered) -->
+  <div class="container about-content-wrapper">
+    <div class="about-intro-section">
+      <div class="row align-items-center g-5">
+        <!-- Text Side -->
+        <div class="col-lg-6">
+          <div class="intro-text-block">
+            <h2 class="section-title">Welcome to Your Sanctuary</h2>
+            <p>Welcome to Asakusa’s newest hideaway—where tradition, culture, and modern comfort come together.</p>
+            <p>Designed for travelers who appreciate style, convenience, and a touch of Japanese charm.</p>
+            <p>Experience Asakusa with us—authentic, vibrant, and uniquely Tokyo.</p>
+          </div>
+        </div>
+        <!-- Map Side -->
+        <div class="col-lg-6">
+          <div class="intro-map-block">
+            <%= render "pages/map" %>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="aboutusmapcontent">
-      <%= render "pages/map" %>
+  <!-- Full Width Alternating Sections -->
+  
+  <!-- Access -->
+  <div id="access" class="about-section-fullwidth">
+    <div class="container">
+      <%= render "pages/access" %>
     </div>
   </div>
 
-  <!-- FAQ-style stacked sections -->
-  <div id="access" class="about-section">
-    <%= render "pages/access" %>
+  <!-- Attractions (Reversed) -->
+  <div id="attractions" class="about-section-fullwidth reversed">
+    <div class="container">
+      <%= render "pages/attractions" %>
+    </div>
   </div>
 
-  <div id="attractions" class="about-section">
-    <%= render "pages/attractions" %>
+  <!-- Food -->
+  <div id="food" class="about-section-fullwidth">
+    <div class="container">
+      <%= render "pages/restaurants" %>
+    </div>
   </div>
 
-  <div id="food" class="about-section">
-    <%= render "pages/restaurants" %>
+  <!-- Shopping (Reversed) -->
+  <div id="shopping" class="about-section-fullwidth reversed">
+    <div class="container">
+      <%= render "pages/shopping" %>
+    </div>
   </div>
 
-  <div id="shopping" class="about-section">
-    <%= render "pages/shopping" %>
-  </div>
-
-  <div id="culture" class="about-section">
-    <%= render "pages/culture" %>
+  <!-- Culture -->
+  <div id="culture" class="about-section-fullwidth">
+    <div class="container">
+      <%= render "pages/culture" %>
+    </div>
   </div>
 
 </div>
