@@ -58,3 +58,20 @@ zh-TW:
       title: "計程車及共乘服務"
       info1: "雷門及淺草站附近設有計程車乘車點"
       info2: "支持無現金叫車應用：GO、Uber、DiDi"
+
+  location:
+    link:
+      map: "地圖"
+      access: "交通資訊"
+      form: "聯絡表單"
+    title: "位置與交通"
+    question1: "如何前往飯店？"
+    answer1: >
+      飯店位於淺草站與田原町站附近，可輕鬆搭乘地鐵與公車抵達。
+      請參考 %{map_link} 查看詳細地址，
+      並查看 %{access_link} 章節了解交通方式。
+      如需進一步協助，歡迎透過 %{contact_link} 與我們聯繫。
+    question2: "是否提供機場接送服務？"
+    answer2: "本飯店不提供機場接送服務，但可為您提供最佳交通建議。"
+    question3: "附近有停車場嗎？"
+    answer3: "飯店未設置停車場，但步行距離內有多個付費停車場。"    

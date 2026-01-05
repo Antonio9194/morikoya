@@ -58,3 +58,20 @@ zh-CN:
       title: "出租车及共享出行"
       info1: "雷门及浅草站附近设有出租车乘车点"
       info2: "支持无现金叫车应用：GO、Uber、DiDi"
+
+  location:
+    link:
+      map: "地图"
+      access: "交通信息"
+      form: "联系表单"
+    title: "位置与交通"
+    question1: "如何前往酒店？"
+    answer1: >
+      酒店位于浅草站和田原町站附近，可通过地铁和公交轻松抵达。
+      请参考 %{map_link} 查看详细地址，
+      并查看 %{access_link} 部分获取交通信息。
+      如需进一步协助，请通过 %{contact_link} 与我们联系。
+    question2: "是否提供机场接送服务？"
+    answer2: "我们不提供机场接送服务，但可为您推荐最便捷的交通方式。"
+    question3: "附近有停车场吗？"
+    answer3: "酒店内不提供停车位，但步行范围内有多处付费停车场。"    

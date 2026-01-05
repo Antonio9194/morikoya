@@ -60,6 +60,10 @@ en:
       info2: "Cashless ride apps available: GO, Uber, DiDi"
 
   location:
+    link:
+      map: "map"
+      access: "access"
+      form: "form"
     title: "Access & Location"
     question1: "How do I get to the hotel?"
     answer1: >
