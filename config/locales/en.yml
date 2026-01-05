@@ -74,3 +74,28 @@ en:
     answer2: "Airport pickup is not provided, but we can guide you on the best route."
     question3: "Is parking available nearby?"
     answer3: "There is no on-site parking, but several paid parking lots are available within walking distance of the hotel."  
+
+  arrivals:
+    room: "Room"
+    checkin: "Check-In"
+    guests: "Guests"
+
+  attractions:
+    title: "Local Attractions"
+    description: "Our location offers quick access to some of Tokyo’s most iconic cultural and historic landmarks—all within walking distance."
+    attraction1: "Sensō-ji Temple (浅草寺) – 8 min walk"  
+    info1: "Tokyo’s oldest and most visited temple, home to the famous Kaminarimon Gate and Five-Story Pagoda."
+    attraction2: "Nakamise Shopping Street – 9 min walk"
+    info2: "A historic promenade leading to Sensō-ji filled with traditional crafts and classic Japanese street snacks."
+    attraction3: "Asakusa Shrine (浅草神社) – 10 min walk"
+    info3: "A beautifully preserved Shinto shrine next to Sensō-ji, known for the Sanja Matsuri festival."
+    attraction4: "Asakusa Culture Tourist Information Center – 11 min walk"
+    info4: "Offers a free observation deck with panoramic views of Asakusa and Tokyo Skytree."
+    attraction5: "Hanayashiki Amusement Park – 12 min walk"
+    info5: "Japan’s oldest amusement park, offering nostalgic retro rides and family-friendly attractions."
+    attraction6: "Sumida Park – 13 min walk"
+    info6: "A riverside park famous for cherry blossoms and Skytree views along the water."
+    attraction7: "Sumida River Walk – 15 min walk"
+    info7: "A scenic pedestrian bridge offering beautiful waterfront views and access to Tokyo Skytree."
+    attraction8: "Tokyo Skytree – 20 min walk / 10 min by train."
+    info8: "The tallest tower in Japan with observation decks, aquarium, and shopping center."
