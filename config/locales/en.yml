@@ -130,3 +130,12 @@ en:
 
   map:
     address: "〒111-0035 Tokyo, Taito-ku, Nishiasakusa 3-20-13"  
+
+  policies:
+    title: "Policies"  
+    question1: "Are pets allowed?"
+    answer1: "Pets are not allowed."
+    question2: "Is smoking permitted?"
+    answer2: "The hotel is fully non-smoking."
+    question3: "Do you allow children?"
+    answer3: "Children are welcome."
