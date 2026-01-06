@@ -139,3 +139,18 @@ en:
     answer2: "The hotel is fully non-smoking."
     question3: "Do you allow children?"
     answer3: "Children are welcome."
+
+  reservations:
+    title: "Reservation & Check in"  
+    question1: "What are the check-in and check-out times?"
+    answer1: "Check-in starts from 15:00 & Check-out is until 11:00."
+    question2: "Can I request early check-in or early check-out?"
+    answer2: "Early check-in depends on availability, if possible we will accomodate it for you, while early check-out is always available."
+    question3: "Do you accept walk-in reservations?"
+    answer3: "Walk-ins are accepted depending on room availability on the same day."
+    question4: "What is your cancellation policy?"
+    answer4: "Free cancellation is available within 3 hours of booking, after that, cancellation fees will apply."
+    question5: "What payment methods do you accept?"
+    answer5: "We accept major credit cards, cash, and selected digital payment methods."
+    question6: "Is there a deposit required?"
+    answer6: "Deposit is not required."
