@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
                   notice: 'Please complete payment.'
     else
       redirect_to room_path(@room),
-                  alert: 'Failed to make a booking. Please try again!',
+                  alert: "Failed to make a booking: #{@booking.errors.full_messages.to_sentence}",
                   status: :unprocessable_entity
     end
   end

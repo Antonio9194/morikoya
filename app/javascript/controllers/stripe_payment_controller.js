@@ -28,10 +28,11 @@ export default class extends Controller {
     this.elements = this.stripe.elements();
 
     this.card = this.elements.create("card", {
+      hidePostalCode: true,
       style: {
         base: {
           fontSize: "16px",
-          color: "#32325d",
+          color: "#2c2c2c",
           fontFamily:
             '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
           "::placeholder": {

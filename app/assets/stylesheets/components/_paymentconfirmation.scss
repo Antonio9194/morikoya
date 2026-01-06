@@ -1,82 +1,170 @@
-//Payment confirmation
-.paymentcontainer {
-    border-radius: 30px !important;
+// Styles for Payment Input and Confirmation Pages
+// Indigo Aesthetic: Clean, Sharp, Luxury
+
+.payment-page {
+  font-family: $body-font;
+  color: $sumi-black;
 }
 
-.paymentcard {
-    border-radius: 30px 30px 0 0 !important;
-    background-color: $lacquer-red !important;
+.payment-card {
+  border: none !important;
+  border-radius: 4px !important; // Sharp corners
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important; // Floating shadow
+  background-color: white !important;
+  transition: transform 0.3s ease;
 }
 
-  .paymentsubmit {
-  background-color: $lacquer-red !important;
-  border: $lacquer-red;
-  color: #1E1E1E;
-  border-radius: 30px !important;
-  padding: 0.6rem !important;
-  white-space: nowrap !important;
-  width: 100%;
+.payment-header {
+  background-color: white !important;
+  border-bottom: 1px solid rgba($moss-green, 0.1) !important;
+  padding: 2rem 0 !important;
+  
+  h3 {
+    font-family: $headers-font;
+    color: $moss-green;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
 }
 
-.paymentsubmit:hover {
-  background-color: $lacquer-red !important;
-  color: #FFFFFF !important;
+.section-title {
+  font-family: $headers-font;
+  color: $moss-green;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
 }
 
-//Payment successfull
-.paymentsuccess {
-    border-radius: 30px;
-}
-.paymentsuccess .card-header {
-    background-color: $lacquer-red;
-    border-radius: 30px 30px 0 0;
-}
-
-.bookingconfirmed {
-  background-color: #FFFFFF;
+// Summary Rows
+.summary-row {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 40px;
-  padding: 0.8rem;
-  margin-bottom: 0.6rem;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed rgba($moss-green, 0.2);
+  font-size: 1.05rem;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  // Remove border from the row before the total to avoid double lines
+  &:nth-last-child(2) {
+    border-bottom: none;
+  }
+  
+  .label {
+    color: rgba($sumi-black, 0.7);
+    font-weight: 500;
+  }
+  
+  .value {
+    color: $sumi-black;
+    font-weight: 600;
+    font-family: $body-font; // Ensure readability
+  }
+
+  &.total-row {
+    border-top: 2px solid rgba($moss-green, 0.1);
+    border-bottom: none;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+  }
 }
 
-.bookingconfirmed h4 {
-  color: #1E1E1E !important;
+.summary-divider {
+  border-color: rgba($moss-green, 0.2) !important;
 }
 
-.badge {
-    background-color: $lacquer-red;
-    border-radius: 30px;
-}
-
-.paymenttotal {
-color: #1E1E1E !important;
-}
-
-//Back to home button
-  .backtohome {
+// Buttons
+.payment-submit-btn {
   background-color: $lacquer-red !important;
-  border: $lacquer-red;
-  color: #1E1E1E;
-  border-radius: 30px !important;
-  padding: 0.6rem !important;
-  white-space: nowrap !important;
-  width: 100%;
+  color: $washi-cream !important;
+  border: none !important;
+  border-radius: 2px !important;
+  padding: 1rem !important;
+  font-family: $body-font;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  
+  &:hover {
+    background-color: darken($lacquer-red, 10%) !important;
+    color: white !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba($lacquer-red, 0.3);
+  }
 }
 
-.backtohome:hover {
-  background-color: $lacquer-red !important;
-  color: #FFFFFF !important;
+// Success Page Specifics
+.success-icon {
+  color: $moss-green; // Elegant green for success
+  font-size: 4rem;
+  
+  i {
+    filter: drop-shadow(0 4px 10px rgba($moss-green, 0.3));
+  }
 }
 
-//Booking Summary
-.bookingsummary {
-  border-radius: 30px;
-  padding: 0.8rem;
-  margin-bottom: 0.6rem;
+.success-title {
+  font-family: $headers-font;
+  color: $moss-green;
+  font-weight: 700;
 }
 
+.success-subtitle {
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
 
+.badge-paid {
+    background-color: $moss-green !important;
+    color: white;
+    border-radius: 2px;
+    padding: 0.4em 1em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+// Responsive
+@media (max-width: 576px) {
+  .payment-card .card-body {
+    padding: 2rem !important;
+  }
+  
+  .payment-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .summary-row {
+    font-size: 0.95rem;
+  }
+}
+
+// 4K Scaling
+@media (min-width: 2560px) {
+  .payment-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    .card-body {
+      padding: 4rem !important;
+    }
+  }
+  
+  .payment-header h3 {
+    font-size: 2.5rem;
+  }
+  
+  .summary-row {
+    font-size: 1.4rem;
+    padding: 1.5rem 0;
+  }
+  
+  .payment-submit-btn {
+    font-size: 1.4rem;
+    padding: 1.5rem !important;
+  }
+}
