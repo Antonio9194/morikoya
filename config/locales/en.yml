@@ -154,3 +154,18 @@ en:
     answer5: "We accept major credit cards, cash, and selected digital payment methods."
     question6: "Is there a deposit required?"
     answer6: "Deposit is not required."
+
+  restaurants:
+    title: "Restaurants & Cafes"  
+    place1: "Wafuu-dokoro Usagi (和風処うさぎ) – 9 min walk."
+    info1: "Relaxed izakaya with seasonal dishes and a great selection of sake."
+    place2: "Cafe Michikusa (カフェみちくさ) – 9 min walk."
+    info2: "Cozy café offering lunch sets and light meals; ideal for brunch or a casual coffee break."
+    place3: "Sukemasa Coffee (スケマサコーヒー) – 10 min walk."
+    info3: "Quiet specialty coffee shop near Asakusa’s backstreets — perfect for a relaxed filter coffee or dessert after sightseeing."
+    place4: "Yoroiya (与ろゐ屋) – 11 min walk."
+    info4: "Classic Asakusa-style soy-sauce ramen, casual and delicious."
+    place5: "Benitsuru Pancake (紅鶴パンケーキ) – 12 min walk."
+    info5: "Famous for fluffy, soufflé-style pancakes — great for breakfast or a relaxed treat."
+    place6: "Sushi Zanmai Asakusa Kaminarimon (すしざんまい 浅草雷門店) – 13 min walk."
+    info6: "Affordable, reliable sushi — ideal for visitors wanting fresh sushi near Asakusa."
