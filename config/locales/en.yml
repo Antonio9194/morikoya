@@ -169,3 +169,17 @@ en:
     info5: "Famous for fluffy, soufflé-style pancakes — great for breakfast or a relaxed treat."
     place6: "Sushi Zanmai Asakusa Kaminarimon (すしざんまい 浅草雷門店) – 13 min walk."
     info6: "Affordable, reliable sushi — ideal for visitors wanting fresh sushi near Asakusa."
+
+  amenities:
+    title: "Rooms & Amenities"
+    question1: "What amenities are included?"
+    answer1: >
+      Bathroom amenities including towels, shampoo, body wash, and more are provided.
+      For details, feel free to check our %{rooms_link}.
+    question2: "Is Wi-Fi available?"
+    answer2: "Yes, free high-speed Wi-Fi is available throughout the hotel."
+    question3: "Are toiletries replenished daily?"
+    answer3: "Yes, housekeeping will replenish them during your stay."
+
+    links:
+      rooms: "rooms"
