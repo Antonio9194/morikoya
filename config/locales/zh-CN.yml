@@ -241,3 +241,8 @@ zh-CN:
     info10: "付款状态："
     info11: "已支付"
     info12: "前往仪表板"
+
+  moriko:
+    reply: "森子正在思考中…"
+    chat: "要和森子聊天吗？"
+    title: "与森子聊天"

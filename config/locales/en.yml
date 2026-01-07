@@ -240,3 +240,8 @@ en:
     info10: "Payment Status:"
     info11: "Paid"
     info12: "To Dashboard"
+
+  moriko:
+    reply: "Moriko is thinking..."
+    chat: "Do you want to chat with Moriko?"
+    title: "Chat with Moriko"
