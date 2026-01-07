@@ -42,7 +42,7 @@
 
 .dashboard-card h4 {
   font-family: $headers-font;
-  color: $moss-green;
+  color: $sumi-black !important; // Enforce Sumi Black override
   margin-top: 1rem;
 }
 
@@ -86,7 +86,7 @@
   
   .card-title {
     font-family: $headers-font;
-    color: $moss-green;
+    color: $sumi-black !important; // Enforce Sumi Black
     font-weight: 600;
   }
 }
