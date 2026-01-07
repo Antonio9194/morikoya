@@ -5,29 +5,32 @@
   future_bookings = confirmed_bookings.future.order(start_date: :asc)
 %>
 <% if ongoing_bookings.any? || past_bookings.any? || future_bookings.any? %>
-  <!-- Bootstrap Tabs Navigation -->
-  <ul class="nav nav-tabs mb-4" id="bookingsTabs" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="menutabs nav-link <%= 'active' if future_bookings.any? %>"
-              id="upcoming-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#upcoming"
-              type="button"
-              role="tab"
-              aria-controls="upcoming"
-              aria-selected="<%= future_bookings.any? ? 'true' : 'false' %>">
-        <i class="bi bi-calendar-event me-2"></i>
-        Upcoming
-        <% if future_bookings.any? %>
-          <span class="badge ms-2"><%= future_bookings.count %></span>
-        <% end %>
-      </button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="menutabs nav-link <%= 'active' if ongoing_bookings.any? && future_bookings.empty? %>"
-              id="current-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#current"
+  <!-- Tabs Navigation Container -->
+  <div class="dashboard-card card mb-4">
+    <div class="card-body p-2">
+      <ul class="nav nav-pills nav-fill" id="bookingsTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-2 <%= 'active' if future_bookings.any? %>"
+                  id="upcoming-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#upcoming"
+                  type="button"
+                  role="tab"
+                  aria-controls="upcoming"
+                  aria-selected="<%= future_bookings.any? ? 'true' : 'false' %>">
+            <i class="bi bi-calendar-event me-2"></i>
+            Upcoming
+            <% if future_bookings.any? %>
+              <span class="badge bg-white text-primary ms-2"><%= future_bookings.count %></span>
+            <% end %>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-2 <%= 'active' if ongoing_bookings.any? && future_bookings.empty? %>"
+                  id="current-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#current"
+
               type="button"
               role="tab"
               aria-controls="current"
@@ -40,7 +43,7 @@
       </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="menutabs nav-link <%= 'active' if past_bookings.any? && ongoing_bookings.empty? && future_bookings.empty? %>"
+      <button class="nav-link rounded-2 <%= 'active' if past_bookings.any? && ongoing_bookings.empty? && future_bookings.empty? %>"
               id="past-tab"
               data-bs-toggle="tab"
               data-bs-target="#past"
@@ -56,6 +59,8 @@
       </button>
     </li>
   </ul>
+    </div>
+  </div>
   <!-- Tab Content -->
   <div class="tab-content" id="bookingsTabContent">
     <%= render "guests/bookings_tab",

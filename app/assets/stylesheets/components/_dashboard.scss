@@ -4,20 +4,23 @@
   font-family: $body-font;
   color: $sumi-black;
   background-color: $washi-cream; // Set background color
-  min-height: 100vh;
+  // Subtract navbar height (approx 80-90px) to prevent unnecessary scrollbar
+  min-height: calc(100vh - 90px); 
   padding-top: 2rem;
+  padding-bottom: 2rem; // Balance spacing
 }
 
 // Common Card Style
 .dashboard-card, .messagescard, .booking-card {
-  border: none !important;
+  border: 1px solid rgba($sumi-black, 0.05) !important; // Subtle border for definition
   border-radius: 4px !important; // Sharp corners
   background-color: white !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08) !important;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important; // Much softer, "settled" shadow
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   &:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
   }
 }
 
@@ -25,7 +28,7 @@
 .avatar-circle {
   width: 80px;
   height: 80px;
-  background-color: rgba($moss-green, 0.1);
+  background-color: rgba($moss-green, 0.05); // Lighter background
   color: $moss-green;
   font-family: $headers-font;
   font-size: 2rem;
@@ -40,33 +43,46 @@
 .dashboard-card h4 {
   font-family: $headers-font;
   color: $moss-green;
+  margin-top: 1rem;
 }
 
-.btn-outline-primary {
-  color: $moss-green !important;
-  border-color: rgba($moss-green, 0.3) !important;
-  border-radius: 2px !important;
-  
-  &:hover {
-    background-color: $moss-green !important;
-    color: white !important;
+// Profile Card Buttons
+.dashboard-card {
+  .btn-outline-primary, .btn-outline-secondary {
+    border-radius: 2px !important;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-width: 1px;
+    box-shadow: none !important;
+    
+    &:hover {
+      transform: translateY(-1px);
+    }
   }
-}
-
-.btn-outline-secondary {
-  color: $sumi-black !important;
-  border-color: rgba($sumi-black, 0.3) !important;
-  border-radius: 2px !important;
   
-  &:hover {
-    background-color: $sumi-black !important;
-    color: white !important;
+  .btn-outline-primary {
+    color: $moss-green !important;
+    border-color: $moss-green !important;
+    &:hover {
+      background-color: $moss-green !important;
+      color: white !important;
+    }
+  }
+
+  .btn-outline-secondary {
+    color: rgba($sumi-black, 0.7) !important;
+    border-color: rgba($sumi-black, 0.3) !important;
+    &:hover {
+      background-color: $sumi-black !important;
+      color: white !important;
+      border-color: $sumi-black !important;
+    }
   }
 }
 
 // Messages Card
 .messagescard {
-  height: auto !important; // Allow growth
+  border-radius: 4px !important;
   
   .card-title {
     font-family: $headers-font;
@@ -76,51 +92,59 @@
 }
 
 .messages-list .message.card {
-  background-color: $washi-cream !important; // Distinct paper feel
-  border: 1px dashed rgba($moss-green, 0.2) !important;
+  background-color: $washi-cream !important; // Matching the page bg for integrated feel
+  border: 1px solid rgba($moss-green, 0.1) !important;
   border-radius: 2px !important;
+  box-shadow: none !important; // Flat internal cards
   
   p {
     font-size: 0.95rem;
+    color: $sumi-black;
   }
   
   small {
     color: rgba($sumi-black, 0.5);
     font-size: 0.8rem;
+    display: block;
+    margin-top: 0.5rem;
+    font-style: italic;
   }
 }
 
 
-// Nav Tabs
-.nav-tabs {
-  border-bottom: 1px solid rgba($moss-green, 0.1) !important;
-  
+// Nav Tabs - Clean Pill Style
+.nav-pills {
   .nav-link {
     color: rgba($sumi-black, 0.6) !important;
-    border: none !important;
-    border-bottom: 2px solid transparent !important;
     font-family: $headers-font;
     font-weight: 500;
-    padding: 0.8rem 1.5rem;
-    transition: all 0.3s ease;
+    padding: 0.6rem 1rem !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease;
     
     &:hover {
+      background-color: rgba($moss-green, 0.05);
       color: $moss-green !important;
     }
     
     &.active {
-      color: $moss-green !important;
-      background: transparent !important;
-      border-bottom: 2px solid $lacquer-red !important;
-      font-weight: 600;
+      background-color: $moss-green !important;
+      color: white !important;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      
+      .badge {
+        background-color: white !important;
+        color: $moss-green !important;
+      }
     }
   }
 }
 
-// Booking List Style (Refactored from previous list style)
+// Booking List Style
 .booking-card {
   margin-bottom: 1rem;
-  border-left: 4px solid $moss-green !important; // Status indicator
+  border-left: none !important; // Remove the heavy left border 
+  border: 1px solid rgba(0,0,0,0.05) !important;
   
   .card-body {
     padding: 1.5rem;
@@ -128,26 +152,32 @@
   
   h5 {
     font-family: $headers-font;
-    color: $sumi-black;
     font-weight: 600;
+    color: $sumi-black;
   }
   
-  p {
-    font-size: 0.95rem;
-    color: rgba($sumi-black, 0.7);
-  }
-  
-  .btn-primary {
-    background-color: $lacquer-red !important;
-    border: none !important;
-    border-radius: 2px !important;
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  // Responsive Booking Card Layout
+  .booking-dates {
+    // Desktop: Borders on sides
+    @media (min-width: 992px) {
+      border-left: 1px solid rgba($sumi-black, 0.1);
+      border-right: 1px solid rgba($sumi-black, 0.1);
+    }
     
-    &:hover {
-      background-color: darken($lacquer-red, 10%) !important;
+    // Mobile: Borders top/bottom or spacing
+    @media (max-width: 991.98px) {
+      border-top: 1px solid rgba($sumi-black, 0.05);
+      border-bottom: 1px solid rgba($sumi-black, 0.05);
+      padding: 1rem 0;
+      margin: 1rem 0;
+    }
+  }
+  
+  .booking-actions {
+    // Mobile alignment handled by utility classes (align-items-start vs align-items-lg-end)
+    // Just ensuring spacing if needed
+    @media (max-width: 991.98px) {
+      padding-top: 0.5rem;
     }
   }
 }

@@ -3,9 +3,9 @@
      role="tabpanel"
      aria-labelledby="<%= tab_id %>-tab">
   <% if bookings.any? %>
-    <div class="row g-4">
+    <div class="d-flex flex-column gap-3">
       <% bookings.each do |booking| %>
-        <div class="col-12 col-lg-6">
+        <div>
           <%= render "guests/booking_card",
                      booking: booking,
                      border_color: border_color,

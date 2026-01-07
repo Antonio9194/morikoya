@@ -1,21 +1,41 @@
-<div class="booking-card card h-100">
-  <div class="card-body">
-    <h5 class="mb-3"><%= booking.room.name %></h5>
-    <div class="mb-2">
-      <small class="text-muted d-block">Check-in</small>
-      <p class="h6 mb-0 fw-bold"><%= booking.start_date.strftime("%d %b, %Y") %></p>
-    </div>
-    <div class="mb-4">
-      <small class="text-muted d-block">Check-out</small>
-      <p class="h6 mb-0 fw-bold"><%= booking.end_date.strftime("%d %b, %Y") %></p>
-    </div>
-    <div class="d-flex justify-content-between align-items-center mt-auto">
-      <span class="badge bg-light text-dark border">
-        <i class="bi bi-<%= icon %> me-1"></i> <%= status_text %>
-      </span>
-      <span class="badge <%= booking.payment_status == 'paid' ? 'bg-success' : 'bg-secondary' %>">
-        <%= booking.payment_status.capitalize %>
-      </span>
+<div class="booking-card card mb-3">
+  <div class="card-body p-4">
+    <div class="row align-items-center">
+      <!-- Room Name -->
+      <div class="col-lg-4 mb-3 mb-lg-0">
+        <h5 class="mb-0 text-dark"><%= booking.room.name %></h5>
+        <small class="text-muted"><%= booking.id %></small>
+      </div>
+      
+      <!-- Dates -->
+      <div class="col-lg-4 booking-dates mb-3 mb-lg-0">
+        <div class="d-flex justify-content-around text-center">
+          <div>
+            <small class="text-muted d-block text-uppercase" style="font-size: 0.75rem;">Check-in</small>
+            <span class="fw-bold"><%= booking.start_date.strftime("%d %b") %></span>
+            <small class="text-muted d-block"><%= booking.start_date.year %></small>
+          </div>
+          <div>
+            <small class="text-muted d-block text-uppercase" style="font-size: 0.75rem;">Check-out</small>
+            <span class="fw-bold"><%= booking.end_date.strftime("%d %b") %></span>
+            <small class="text-muted d-block"><%= booking.end_date.year %></small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action/Status -->
+      <div class="col-lg-4 booking-actions">
+         <div class="d-flex flex-column align-items-lg-end align-items-start gap-2">
+            <span class="badge rounded-pill <%= booking.payment_status == 'paid' ? 'bg-success-subtle text-success' : 'bg-warning-subtle text-warning' %>">
+              <i class="bi bi-<%= icon %> me-1"></i> <%= status_text %>
+            </span>
+            <% if booking.payment_status == 'paid' %>
+                 <span class="badge bg-light text-muted border">Paid</span>
+            <% else %>
+                 <span class="badge bg-light text-muted border">Unpaid</span>
+            <% end %>
+         </div>
+      </div>
     </div>
   </div>
 </div>

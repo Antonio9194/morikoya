@@ -1,46 +1,133 @@
-// Modal Styles - Indigo Aesthetic
+// Modal Specific Styles - Indigo Aesthetic
 
 .modal-content {
+  border-radius: 4px !important; // Sharp corners for all modals
   border: none !important;
-  border-radius: 4px !important; // Sharp corners
-  background-color: white !important;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  background-color: $washi-cream !important;
+  font-family: $body-font;
 }
 
 .modal-header {
   border-bottom: 1px solid rgba($moss-green, 0.1) !important;
-  padding: 1.5rem 2rem !important;
-  background-color: $washi-cream; // Subtle contrast header
-  
+  padding: 1.5rem !important;
+
   .modal-title {
     font-family: $headers-font;
     color: $moss-green;
     font-weight: 600;
-    letter-spacing: 0.02em;
   }
-  
+
   .btn-close {
+    background-size: 0.8rem;
     opacity: 0.5;
-    transition: opacity 0.3s ease;
-    
-    &:hover {
-      opacity: 1;
+    &:focus {
+      box-shadow: none !important;
     }
   }
 }
 
 .modal-body {
-  padding: 2rem !important;
-  font-family: $body-font;
+  padding: 1.5rem !important;
   color: $sumi-black;
 }
 
 .modal-footer {
   border-top: 1px solid rgba($moss-green, 0.1) !important;
-  padding: 1rem 2rem !important;
+  padding: 1.5rem !important;
 }
 
-// Ensure backdrop is elegant
-.modal-backdrop.show {
-  opacity: 0.6; // Slightly darker for focus
+// Form Controls in Modals
+.modal-body {
+  .form-control {
+    background-color: white !important;
+    border: 1px solid rgba($moss-green, 0.2) !important;
+    border-radius: 2px !important;
+    color: $sumi-black !important;
+    font-family: $body-font;
+    padding: 0.75rem 1rem !important;
+
+    &:focus {
+      border-color: $moss-green !important;
+      box-shadow: 0 0 0 2px rgba($moss-green, 0.1) !important;
+    }
+  }
+
+  .form-label {
+    font-family: $headers-font;
+    color: rgba($sumi-black, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
 }
+
+// Start: Billing Modal Specifics //
+
+#billingModal {
+  // Table Styling
+  .table {
+    border-color: rgba($moss-green, 0.2) !important;
+
+    thead {
+      th {
+        background-color: rgba($moss-green, 0.1) !important;
+        color: $moss-green !important;
+        font-family: $headers-font;
+        border-bottom: 2px solid rgba($moss-green, 0.3) !important;
+        font-weight: 600;
+        padding: 1rem !important;
+      }
+    }
+
+    tbody {
+      td {
+        padding: 1rem !important;
+        border-bottom: 1px solid rgba($moss-green, 0.1) !important;
+        color: $sumi-black;
+        vertical-align: middle;
+      }
+
+      tr:hover td {
+        background-color: rgba($moss-green, 0.05) !important; // Row hover effect
+      }
+    }
+  }
+
+  // Status Badge
+  .badge {
+    background-color: rgba($moss-green, 0.15) !important;
+    color: $moss-green !important;
+    border: 1px solid rgba($moss-green, 0.3) !important;
+    border-radius: 4px !important;
+    padding: 0.5em 0.8em !important;
+    font-weight: 600;
+    
+    i {
+      color: $moss-green !important;
+    }
+  }
+
+  // Download Button
+  .download, .btn-sm {
+    background-color: $lacquer-red !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 2px !important;
+    padding: 0.4rem 1rem !important;
+    font-size: 0.85rem !important;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken($lacquer-red, 10%) !important;
+      transform: translateY(-1px);
+    }
+  }
+  
+  // Total Payment Section
+  .bg-light.rounded {
+    background-color: white !important;
+    border: 1px solid rgba($moss-green, 0.2) !important;
+    border-radius: 4px !important; // Override Bootstrap 'rounded'
+  }
+}
+// End: Billing Modal Specifics //
