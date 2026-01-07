@@ -245,3 +245,17 @@ en:
     reply: "Moriko is thinking..."
     chat: "Do you want to chat with Moriko?"
     title: "Chat with Moriko"
+
+  nav_aboutus:
+    nav1: "Transportation & Access"
+    nav2: "Local Attractions"
+    nav3: "Restaurants & Cafes"
+    nav4: "Shopping Streets"
+    nav5: "Cultural Experiences"
+
+  nav_faq:
+    nav1: "Reservations"
+    nav2: "Rooms & amenities"
+    nav3: "Facilities"
+    nav4: "Policies"
+    nav5: "Access & Location"

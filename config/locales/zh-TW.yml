@@ -251,3 +251,17 @@ zh-TW:
     reply: "森子正在思考中…"
     chat: "要和森子聊天嗎？"
     title: "與森子聊天"
+
+  nav_aboutus:
+    nav1: "交通與抵達"
+    nav2: "當地景點"
+    nav3: "餐廳與咖啡館"
+    nav4: "購物街"
+    nav5: "文化體驗"
+
+  nav_faq:
+    nav1: "預訂"
+    nav2: "客房與設施"
+    nav3: "館內設施"
+    nav4: "政策"
+    nav5: "交通與位置"
