@@ -1,72 +1,46 @@
-// Profile Modal
-#profileModal {
-  .modal-content {
-    background: white;
-    border-radius: 12px;
-  }
-  .form-control {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
+// Modal Styles - Indigo Aesthetic
 
-  .close {
-    float: right;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-  .updateprofile {
-  background-color: $lacquer-red !important;
-  border: $lacquer-red;
-  color: #1E1E1E;
-  border-radius: 30px !important;
-  padding: 0.6rem !important;
-  white-space: nowrap !important;
-  width: 100%;
+.modal-content {
+  border: none !important;
+  border-radius: 4px !important; // Sharp corners
+  background-color: white !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2) !important;
 }
 
-.updateprofile:hover {
-  background-color: $lacquer-red !important;
-  color: #FFFFFF !important;
-}
-}
-
-// Billing History Modal
-#billingModal {
-  .modal-content {
-    background: white;
-    border-radius: 12px;
+.modal-header {
+  border-bottom: 1px solid rgba($moss-green, 0.1) !important;
+  padding: 1.5rem 2rem !important;
+  background-color: $washi-cream; // Subtle contrast header
+  
+  .modal-title {
+    font-family: $headers-font;
+    color: $moss-green;
+    font-weight: 600;
+    letter-spacing: 0.02em;
   }
-
-  .close {
-    float: right;
-    font-size: 1.5rem;
-    cursor: pointer;
+  
+  .btn-close {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
-// Admin Booking Modals
-#deleteBookingModal,
-#bookingModal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+.modal-body {
+  padding: 2rem !important;
+  font-family: $body-font;
+  color: $sumi-black;
+}
 
-  .modal-content {
-    background: white;
-    margin: 100px auto;
-    padding: 20px;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 12px;
-  }
+.modal-footer {
+  border-top: 1px solid rgba($moss-green, 0.1) !important;
+  padding: 1rem 2rem !important;
+}
+
+// Ensure backdrop is elegant
+.modal-backdrop.show {
+  opacity: 0.6; // Slightly darker for focus
 }

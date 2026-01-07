@@ -1,50 +1,151 @@
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .dashboard-link {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+// Dashboard Styles - Indigo Aesthetic
+
+.dashboard-page-wrapper {
+  font-family: $body-font;
+  color: $sumi-black;
+}
+
+// Common Card Style
+.dashboard-card, .messagescard, .booking-card {
+  border: none !important;
+  border-radius: 4px !important; // Sharp corners
+  background-color: white !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
   }
 }
 
-@media (max-width: 991px) {
-  .user-info-card {
-    display: none;
+// User Profile Section
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  background-color: rgba($moss-green, 0.1);
+  color: $moss-green;
+  font-family: $headers-font;
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; // Keep avatar round
+  border: 1px solid rgba($moss-green, 0.2);
+}
+
+.dashboard-card h4 {
+  font-family: $headers-font;
+  color: $moss-green;
+}
+
+.btn-outline-primary {
+  color: $moss-green !important;
+  border-color: rgba($moss-green, 0.3) !important;
+  border-radius: 2px !important;
+  
+  &:hover {
+    background-color: $moss-green !important;
+    color: white !important;
   }
 }
 
-@media (max-width: 767px) {
-  .message-section-expand {
-    display: none;
-  }
-  .dashboard-page-wrapper {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .message-section-toggle {
-    display: none;
-  }
-  .dashboard-page-wrapper {
-    padding-left: 1rem;
-   padding-right: 1rem;
+.btn-outline-secondary {
+  color: $sumi-black !important;
+  border-color: rgba($sumi-black, 0.3) !important;
+  border-radius: 2px !important;
+  
+  &:hover {
+    background-color: $sumi-black !important;
+    color: white !important;
   }
 }
 
-@media (min-width: 1440px) {
-
-  .dashboard-page-wrapper {
-  width: 1340px;
-  margin-left: auto;
-  margin-right: auto;
- }
+// Messages Card
+.messagescard {
+  height: auto !important; // Allow growth
+  
+  .card-title {
+    font-family: $headers-font;
+    color: $moss-green;
+    font-weight: 600;
+  }
 }
 
-@media (min-width: 2560px) {
-
-  .dashboard-page-wrapper {
-  width: 2400px;
-  margin-left: auto;
-  margin-right: auto;
- }
+.messages-list .message.card {
+  background-color: $washi-cream !important; // Distinct paper feel
+  border: 1px dashed rgba($moss-green, 0.2) !important;
+  border-radius: 2px !important;
+  
+  p {
+    font-size: 0.95rem;
+  }
+  
+  small {
+    color: rgba($sumi-black, 0.5);
+    font-size: 0.8rem;
+  }
 }
+
+
+// Nav Tabs
+.nav-tabs {
+  border-bottom: 1px solid rgba($moss-green, 0.1) !important;
+  
+  .nav-link {
+    color: rgba($sumi-black, 0.6) !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    font-family: $headers-font;
+    font-weight: 500;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: $moss-green !important;
+    }
+    
+    &.active {
+      color: $moss-green !important;
+      background: transparent !important;
+      border-bottom: 2px solid $lacquer-red !important;
+      font-weight: 600;
+    }
+  }
+}
+
+// Booking List Style (Refactored from previous list style)
+.booking-card {
+  margin-bottom: 1rem;
+  border-left: 4px solid $moss-green !important; // Status indicator
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  h5 {
+    font-family: $headers-font;
+    color: $sumi-black;
+    font-weight: 600;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    color: rgba($sumi-black, 0.7);
+  }
+  
+  .btn-primary {
+    background-color: $lacquer-red !important;
+    border: none !important;
+    border-radius: 2px !important;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    
+    &:hover {
+      background-color: darken($lacquer-red, 10%) !important;
+    }
+  }
+}
+
