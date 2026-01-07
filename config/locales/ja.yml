@@ -10,12 +10,6 @@ ja:
     guests: "宿泊人数"
     search: "検索"
 
-  date:
-    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
-    abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
-    formats:
-      month_year: "%Y年 %B"
-
   navbar:
     rooms: "ルーム"
     contact_us: "お問い合わせ"
@@ -227,6 +221,7 @@ ja:
     abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
     formats:
       long: "%Y年%B%d日"
+      month_year: "%Y年 %B"
 
   booking_confirmation:
     heading: "お支払いが完了しました！"

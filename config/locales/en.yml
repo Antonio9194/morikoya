@@ -10,12 +10,6 @@ en:
     guests: "Guests"
     search: "Search"
 
-  date:
-    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
-    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
-    formats:
-      month_year: "%B %Y"
-
   navbar:
     rooms: "Rooms"
     contact_us: "Contact Us"
@@ -225,6 +219,7 @@ en:
     abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
     formats:
       long: "%B %d, %Y"
+      month_year: "%B %Y"
 
   booking_confirmation:
     heading: "Payment Successful!"
@@ -259,3 +254,6 @@ en:
     nav3: "Facilities"
     nav4: "Policies"
     nav5: "Access & Location"
+
+  contact_message:
+    title: "Welcome back"

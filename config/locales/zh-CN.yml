@@ -10,12 +10,6 @@ zh-CN:
     guests: "入住人数"
     search: "搜索"
 
-  date:
-    month_names: [~, 一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月]
-    abbr_day_names: [日, 一, 二, 三, 四, 五, 六]
-    formats:
-      month_year: "%Y年%B"
-
   navbar:
     rooms: "客房"
     contact_us: "联系我们"
@@ -223,9 +217,11 @@ zh-CN:
     return: "取消并返回房间页面"
 
   date:
+    month_names: [~, 一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月]
+    abbr_day_names: [日, 一, 二, 三, 四, 五, 六]
     formats:
       long: "%Y年%B%d日"
-    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+      month_year: "%Y年%B"
 
   booking_confirmation:
     heading: "付款成功！"

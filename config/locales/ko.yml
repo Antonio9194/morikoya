@@ -10,12 +10,6 @@ ko:
     guests: "인원"
     search: "검색"
 
-  date:
-    month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
-    abbr_day_names: [일, 월, 화, 수, 목, 금, 토]
-    formats:
-      month_year: "%Y년 %B"
-
   navbar:
     rooms: "객실"
     contact_us: "문의하기"
@@ -224,9 +218,11 @@ ko:
     return: "취소하고 객실 페이지로 돌아가기"
 
   date:
+    month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
+    abbr_day_names: [일, 월, 화, 수, 목, 금, 토]
     formats:
       long: "%Y년 %B %d일"
-    month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
+      month_year: "%Y년 %B"
 
   booking_confirmation:
     heading: "결제가 완료되었습니다!"
