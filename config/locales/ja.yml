@@ -227,3 +227,18 @@ ja:
     abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
     formats:
       long: "%Y年%B%d日"
+
+  booking_confirmation:
+    heading: "お支払いが完了しました！"
+    info1: "ご予約が確定しました！"
+    info2: "お支払いありがとうございます。"
+    info3: "予約詳細"
+    info4: "予約ID："
+    info5: "部屋："
+    info6: "チェックイン："
+    info7: "チェックアウト："
+    info8: "宿泊数："
+    info9: "支払い総額："
+    info10: "支払い状況："
+    info11: "支払い済み"
+    info12: "ダッシュボードへ"

@@ -227,3 +227,18 @@ ko:
     formats:
       long: "%Y년 %B %d일"
     month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
+
+  booking_confirmation:
+    heading: "결제가 완료되었습니다!"
+    info1: "예약이 확정되었습니다!"
+    info2: "결제해 주셔서 감사합니다."
+    info3: "예약 정보"
+    info4: "예약 ID:"
+    info5: "객실:"
+    info6: "체크인:"
+    info7: "체크아웃:"
+    info8: "박수:"
+    info9: "총 결제 금액:"
+    info10: "결제 상태:"
+    info11: "결제 완료"
+    info12: "대시보드로 이동"

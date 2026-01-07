@@ -226,3 +226,18 @@ zh-CN:
     formats:
       long: "%Y年%B%d日"
     month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+
+  booking_confirmation:
+    heading: "付款成功！"
+    info1: "您的预订已确认！"
+    info2: "感谢您的付款。"
+    info3: "预订详情"
+    info4: "预订编号："
+    info5: "房间："
+    info6: "入住："
+    info7: "退房："
+    info8: "晚数："
+    info9: "支付总额："
+    info10: "付款状态："
+    info11: "已支付"
+    info12: "前往仪表板"

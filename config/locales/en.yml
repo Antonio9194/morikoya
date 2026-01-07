@@ -225,3 +225,18 @@ en:
     abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
     formats:
       long: "%B %d, %Y"
+
+  booking_confirmation:
+    heading: "Payment Successful!"
+    info1: "Your booking is confirmed!"
+    info2: "Thank you for your payment."
+    info3: "Booking Details"
+    info4: "Booking ID:"
+    info5: "Room:"
+    info6: "Check-in:"
+    info7: "Check-out:"
+    info8: "Nights:"
+    info9: "Total Paid:"
+    info10: "Payment Status:"
+    info11: "Paid"
+    info12: "To Dashboard"
