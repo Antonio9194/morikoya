@@ -94,11 +94,11 @@
   </div>
 <% else %>
   <!-- No Confirmed Bookings -->
-  <div class="bookingscard card shadow border-light rounded-4">
+  <div class="dashboard-card card">
     <div class="card-body p-5 text-center">
       <i class="bi bi-calendar-x text-muted mb-3" style="font-size: 3rem;"></i>
       <p class="text-muted mb-0">No confirmed bookings yet...</p>
-      <%= link_to "Browse Rooms", rooms_path, class: "browserooms btn btn-primary mt-3" if defined?(rooms_path) %>
+      <%= link_to "Find a Room", rooms_path, class: "btn btn-outline-primary mt-3" %>
     </div>
   </div>
 <% end %>

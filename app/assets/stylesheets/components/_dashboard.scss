@@ -3,6 +3,9 @@
 .dashboard-page-wrapper {
   font-family: $body-font;
   color: $sumi-black;
+  background-color: $washi-cream; // Set background color
+  min-height: 100vh;
+  padding-top: 2rem;
 }
 
 // Common Card Style
