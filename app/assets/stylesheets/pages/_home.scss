@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   padding: 0; // Reset padding to let items fill
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); // Tighter, more grounded shadow
   border: 1px solid rgba($moss-green, 0.1);
   overflow: hidden; // For the button to fit perfectly
 
@@ -90,6 +90,7 @@
 
 .text .label {
   font-size: 0.75rem;
+  font-family: $headers-font; // Match the new design system
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -102,6 +103,7 @@
   font-family: $headers-font;
   font-size: 1.1rem;
   color: $sumi-black;
+  font-weight: 600; // Added weight for better readability
 }
 
 .search-btn {
