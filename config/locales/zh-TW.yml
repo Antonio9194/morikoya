@@ -261,3 +261,10 @@ zh-TW:
     nav3: "館內設施"
     nav4: "政策"
     nav5: "交通與位置"
+
+  contact_message:
+    title: "歡迎回來"
+    alt: "留下訊息給我們！"
+    full_name: "姓名"
+    email: "電子郵件"
+    message: "留言"

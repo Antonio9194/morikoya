@@ -257,3 +257,7 @@ en:
 
   contact_message:
     title: "Welcome back"
+    alt: "Leave us a message!"
+    full_name: "Full Name"
+    email: "Email"
+    message: "Message"

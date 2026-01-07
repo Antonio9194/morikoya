@@ -256,3 +256,10 @@ ja:
     nav3: "館内設備"
     nav4: "ポリシー"
     nav5: "アクセス・所在地"
+
+  contact_message:
+    title: "お帰りなさい"
+    alt: "メッセージをお送りください！"
+    full_name: "氏名"
+    email: "メールアドレス"
+    message: "メッセージ"

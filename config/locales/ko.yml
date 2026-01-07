@@ -257,3 +257,10 @@ ko:
     nav3: "시설"
     nav4: "정책"
     nav5: "오시는 길 및 위치"
+
+  contact_message:
+    title: "돌아오신 것을 환영합니다"
+    alt: "메시지를 남겨주세요!"
+    full_name: "성함"
+    email: "이메일"
+    message: "메시지"

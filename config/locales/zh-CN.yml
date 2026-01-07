@@ -256,3 +256,10 @@ zh-CN:
     nav3: "酒店设施"
     nav4: "政策"
     nav5: "交通与位置"
+
+  contact_message:
+    title: "欢迎回来"
+    alt: "给我们留言！"
+    full_name: "姓名"
+    email: "邮箱"
+    message: "留言"
