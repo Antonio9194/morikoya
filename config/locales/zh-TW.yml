@@ -228,6 +228,10 @@ zh-TW:
       long: "%Y年%B%d日"
       month_year: "%Y年%B"
 
+  time:
+    formats:
+      month_year: "%Y年 %B"
+
   booking_confirmation:
     heading: "付款成功！"
     info1: "您的預訂已確認！"
@@ -268,3 +272,14 @@ zh-TW:
     full_name: "姓名"
     email: "電子郵件"
     message: "留言"
+
+  dashboard:
+    info1: "會員註冊時間"
+    info2: "個人資料"
+    info3: "名字"
+    info4: "姓氏"
+    info5: "電子郵件地址"
+    info6: "電話號碼"
+    update: "更新資料"
+    note1: "您可以更新您的電子郵件地址"
+    note2: "請包含國家區號"

@@ -221,6 +221,10 @@ en:
       long: "%B %d, %Y"
       month_year: "%B %Y"
 
+  time:
+    formats:
+      month_year: "%B %Y"
+
   booking_confirmation:
     heading: "Payment Successful!"
     info1: "Your booking is confirmed!"
@@ -261,3 +265,14 @@ en:
     full_name: "Full Name"
     email: "Email"
     message: "Message"
+
+  dashboard:
+    info1: "Member since"
+    info2: "Profile Information"
+    info3: "First Name"
+    info4: "Last Name"
+    info5: "Email Address"
+    info6: "Phone Number"
+    update: "Update Profile"
+    note1: "You can update your email address"
+    note2: "Include country code for international numbers"

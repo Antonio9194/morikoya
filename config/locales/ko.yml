@@ -224,6 +224,10 @@ ko:
       long: "%Y년 %B %d일"
       month_year: "%Y년 %B"
 
+  time:
+    formats:
+      month_year: "%Y년 %B"
+
   booking_confirmation:
     heading: "결제가 완료되었습니다!"
     info1: "예약이 확정되었습니다!"
@@ -264,3 +268,14 @@ ko:
     full_name: "성함"
     email: "이메일"
     message: "메시지"
+
+  dashboard:
+    info1: "회원 가입일"
+    info2: "프로필 정보"
+    info3: "이름"
+    info4: "성"
+    info5: "이메일 주소"
+    info6: "전화번호"
+    update: "프로필 업데이트"
+    note1: "이메일 주소를 업데이트할 수 있습니다"
+    note2: "국가 코드를 포함해 입력하세요"

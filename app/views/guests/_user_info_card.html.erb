@@ -1,7 +1,7 @@
 <div class="usercard card shadow border-light rounded-4 text-center h-100">
   <div class="card-body p-5">
     <h4 class="mb-2"><%= user.first_name %></h4>
-    <p class="text-muted mb-0">Member since</p>
-    <p class="text-muted"><%= user.created_at.strftime("%B %Y") %></p>
+    <p class="text-muted mb-0"><%= t("dashboard.info1") %></p>
+    <p class="text-muted"><%= l(user.created_at, format: :month_year) %></p>
   </div>
 </div>

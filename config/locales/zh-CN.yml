@@ -223,6 +223,10 @@ zh-CN:
       long: "%Y年%B%d日"
       month_year: "%Y年%B"
 
+  time:
+    formats:
+      month_year: "%Y年 %B"
+
   booking_confirmation:
     heading: "付款成功！"
     info1: "您的预订已确认！"
@@ -263,3 +267,14 @@ zh-CN:
     full_name: "姓名"
     email: "邮箱"
     message: "留言"
+
+  dashboard:
+    info1: "注册时间"
+    info2: "个人资料"
+    info3: "名字"
+    info4: "姓氏"
+    info5: "电子邮件地址"
+    info6: "电话号码"
+    update: "更新资料"
+    note1: "您可以更新您的电子邮件地址"
+    note2: "请包含国家区号"

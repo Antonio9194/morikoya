@@ -223,6 +223,10 @@ ja:
       long: "%Y年%B%d日"
       month_year: "%Y年 %B"
 
+  time:
+    formats:
+      month_year: "%Y年 %B"
+
   booking_confirmation:
     heading: "お支払いが完了しました！"
     info1: "ご予約が確定しました！"
@@ -263,3 +267,14 @@ ja:
     full_name: "氏名"
     email: "メールアドレス"
     message: "メッセージ"
+
+  dashboard:
+    info1: "会員登録日"
+    info2: "プロフィール情報"
+    info3: "名前"
+    info4: "姓"
+    info5: "メールアドレス"
+    info6: "電話番号"
+    update: "プロフィールを更新"
+    note1: "メールアドレスを更新できます"
+    note2: "国番号を含めて入力してください"
