@@ -69,11 +69,11 @@ en:
     answer1: >
       We are located near Asakusa Station & Tawaramachi Station, with easy access via subway and bus.
       Please refer to our %{map_link} for the exact address and check the %{access_link} section,
-      or contact us via this %{contact_link} for specific instructions. 
+      or contact us via this %{contact_link} for specific instructions.
     question2: "Do you offer airport pickup?"
     answer2: "Airport pickup is not provided, but we can guide you on the best route."
     question3: "Is parking available nearby?"
-    answer3: "There is no on-site parking, but several paid parking lots are available within walking distance of the hotel."  
+    answer3: "There is no on-site parking, but several paid parking lots are available within walking distance of the hotel."
 
   arrivals:
     room: "Room"
@@ -83,7 +83,7 @@ en:
   attractions:
     title: "Local Attractions"
     description: "Our location offers quick access to some of Tokyo’s most iconic cultural and historic landmarks—all within walking distance."
-    attraction1: "Sensō-ji Temple (浅草寺) – 8 min walk"  
+    attraction1: "Sensō-ji Temple (浅草寺) – 8 min walk"
     info1: "Tokyo’s oldest and most visited temple, home to the famous Kaminarimon Gate and Five-Story Pagoda."
     attraction2: "Nakamise Shopping Street – 9 min walk"
     info2: "A historic promenade leading to Sensō-ji filled with traditional crafts and classic Japanese street snacks."
@@ -102,7 +102,7 @@ en:
 
   culture:
     title: "Cultural Experiences"
-    culture1: "Modern and vintage kimono/yukata rentals with optional hairstyling; perfect for exploring Sensō-ji."  
+    culture1: "Modern and vintage kimono/yukata rentals with optional hairstyling; perfect for exploring Sensō-ji."
     info1: "Tokyo’s oldest and most visited temple, home to the famous Kaminarimon Gate and Five-Story Pagoda."
     culture2: "Kesa Tokyo Kimono Rental (ケサ東京) – 10 min walk"
     info2: "Casual and formal kimono options with English support; great for strolling through Asakusa’s shrines."
@@ -117,10 +117,10 @@ en:
     culture7: "Sumo Museum & Ryogoku Kokugikan (相撲博物館・両国国技館) – 20 min by train."
     info7: "The center of sumo culture; explore the museum, the stadium, and sumo-themed streets in Ryōgoku."
     culture8: "Sumo Morning Practice Viewing (相撲部屋 朝稽古) – 20 min by train."
-    info8: "Visit a sumo stable during early morning training for an unforgettable look at real sumo life."  
+    info8: "Visit a sumo stable during early morning training for an unforgettable look at real sumo life."
 
   facilities:
-    title: "Facilities"  
+    title: "Facilities"
     question1: "Do you have a laundry area?"
     answer1: "Yes, every apartment has a washer-dryer."
     question2: "Is luggage storage available?"
@@ -129,10 +129,10 @@ en:
     answer3: "We do not have private parking, but nearby paid parking options are available."
 
   map:
-    address: "〒111-0035 Tokyo, Taito-ku, Nishiasakusa 3-20-13"  
+    address: "〒111-0035 Tokyo, Taito-ku, Nishiasakusa 3-20-13"
 
   policies:
-    title: "Policies"  
+    title: "Policies"
     question1: "Are pets allowed?"
     answer1: "Pets are not allowed."
     question2: "Is smoking permitted?"
@@ -141,7 +141,7 @@ en:
     answer3: "Children are welcome."
 
   reservations:
-    title: "Reservation & Check in"  
+    title: "Reservation & Check in"
     question1: "What are the check-in and check-out times?"
     answer1: "Check-in starts from 15:00 & Check-out is until 11:00."
     question2: "Can I request early check-in or early check-out?"
@@ -156,7 +156,7 @@ en:
     answer6: "Deposit is not required."
 
   restaurants:
-    title: "Restaurants & Cafes"  
+    title: "Restaurants & Cafes"
     place1: "Wafuu-dokoro Usagi (和風処うさぎ) – 9 min walk."
     info1: "Relaxed izakaya with seasonal dishes and a great selection of sake."
     place2: "Cafe Michikusa (カフェみちくさ) – 9 min walk."
@@ -184,10 +184,10 @@ en:
     links:
       rooms: "rooms"
 
-  shopping: 
-    title: "Shopping Streets" 
+  shopping:
+    title: "Shopping Streets"
     place1: "Kappabashi Kitchen Town (かっぱ橋道具街) – 5 min walk."
-    info1: "Famous street for kitchenware, Japanese knives, ceramics, and food-sample shops."   
+    info1: "Famous street for kitchenware, Japanese knives, ceramics, and food-sample shops."
     place2: "Ura-Asakusa (裏浅草) – 6 min walk."
     info2: "Trendy backstreets with boutiques, handcrafted goods, and indie cafés."
     place3: "Rokku Broadway / Rokku-dori (六区通り) – 9 min walk."
@@ -204,5 +204,24 @@ en:
   aboutus:
     info1: "Welcome to Asakusa’s newest hideaway—where tradition, culture, and modern comfort come together."
     info2: "Designed for travelers who appreciate style, convenience, and a touch of Japanese charm."
-    info3: "Experience Asakusa with us—authentic, vibrant, and uniquely Tokyo."  
-    
+    info3: "Experience Asakusa with us—authentic, vibrant, and uniquely Tokyo."
+
+  payment:
+    complete: "Complete Your Payment"
+    summary: "Booking Summary"
+    info1: "Room:"
+    info2: "Check-in:"
+    info3: "Check-out:"
+    info4: "Number of nights:"
+    info5: "Price per night:"
+    info6: "Total Amount:"
+    info7: "Card Information"
+    info8: "Pay ¥"
+    info9: "Your payment is secure and encrypted with Stripe"
+    info10: "Nights"
+    return: "Cancel and return to room"
+  date:
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+    formats:
+      long: "%B %d, %Y"
