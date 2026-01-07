@@ -1,0 +1,138 @@
+// Authentication Pages (Login & Sign Up)
+// Indigo Aesthetic
+
+.auth-page {
+  font-family: $body-font;
+  color: $sumi-black;
+  min-height: 80vh; // Ensure it takes up vertical space
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.auth-card {
+  border: none !important;
+  border-radius: 4px !important; // Sharp corners
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important; // Floating shadow
+  background-color: white !important;
+  width: 100%;
+  max-width: 450px; // Limit width for elegance
+  padding: 2.5rem;
+  
+  // For Sign Up we might want it slightly wider if needed, 
+  // but stacked 450px is usually fine.
+  &.auth-card-wide {
+    max-width: 600px;
+  }
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-family: $headers-font;
+    color: $moss-green;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: rgba($sumi-black, 0.6);
+    margin-top: 0.5rem;
+  }
+}
+
+// Form Styling
+.auth-form {
+  .form-inputs {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-control {
+    border-radius: 2px !important; // Sharp inputs
+    border: 1px solid rgba($moss-green, 0.2);
+    padding: 0.8rem;
+    font-size: 1rem;
+    
+    &:focus {
+      border-color: $moss-green;
+      box-shadow: 0 0 0 0.2rem rgba($moss-green, 0.1);
+    }
+  }
+  
+  .form-label {
+    font-weight: 500;
+    color: $moss-green;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  // Checkbox styling (SimpleForm default tweaks)
+  .form-check-input {
+    border-color: rgba($moss-green, 0.3);
+    border-radius: 2px;
+    
+    &:checked {
+      background-color: $moss-green;
+      border-color: $moss-green;
+    }
+  }
+}
+
+// Buttons
+.auth-btn {
+  background-color: $lacquer-red !important;
+  color: $washi-cream !important;
+  border: none !important;
+  border-radius: 2px !important;
+  padding: 0.8rem 1.5rem !important;
+  font-family: $body-font;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: 100%;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken($lacquer-red, 10%) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba($lacquer-red, 0.3);
+  }
+}
+
+// Links
+.auth-links {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  
+  a {
+    color: rgba($sumi-black, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    margin: 0 0.5rem;
+    
+    &:hover {
+      color: $moss-green;
+    }
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 576px) {
+  .auth-page {
+    padding: 1rem; // Add side padding so card doesn't touch edges
+  }
+
+  .auth-card {
+    padding: 1.5rem; // Reduce internal padding on mobile
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important; // Softer shadow on mobile
+  }
+
+  .auth-header h2 {
+    font-size: 1.6rem; // Slightly smaller header
+  }
+}
