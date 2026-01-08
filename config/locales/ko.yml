@@ -226,6 +226,7 @@ ko:
 
   time:
     formats:
+      long: "%Y년 %B %d일"
       month_year: "%Y년 %B"
 
   booking_confirmation:
@@ -279,3 +280,14 @@ ko:
     update: "프로필 업데이트"
     note1: "이메일 주소를 업데이트할 수 있습니다"
     note2: "국가 코드를 포함해 입력하세요"
+    messages: "메시지"
+    note3: "아직 메시지가 없습니다..."
+    note4: "Morikoya와의 문의 내역을 확인할 수 있습니다."
+    browse: "객실 보기"
+    note5: "아직 확정된 예약이 없습니다…"
+    upcoming: "다가오는 예약"
+    current: "현재"
+    past: "과거"
+    noupcoming: "예정된 예약이 없습니다…"
+    nocurrent: "현재 투숙 중인 예약이 없습니다…"
+    nopast: "지난 투숙 기록이 없습니다…"

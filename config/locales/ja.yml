@@ -225,6 +225,7 @@ ja:
 
   time:
     formats:
+      long: "%Y年%B%d日"
       month_year: "%Y年 %B"
 
   booking_confirmation:
@@ -278,3 +279,14 @@ ja:
     update: "プロフィールを更新"
     note1: "メールアドレスを更新できます"
     note2: "国番号を含めて入力してください"
+    messages: "メッセージ"
+    note3: "まだメッセージはありません…"
+    note4: "モリコヤとのお問い合わせ履歴を確認できます。"
+    browse: "客室を見る"
+    note5: "まだ確定した予約はありません…"
+    upcoming: "今後の予約"
+    current: "現在"
+    past: "過去"
+    noupcoming: "今後の予約はありません…"
+    nocurrent: "現在の滞在はありません…"
+    nopast: "過去の滞在はありません…"

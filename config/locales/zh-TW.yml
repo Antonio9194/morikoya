@@ -230,6 +230,7 @@ zh-TW:
 
   time:
     formats:
+      long: "%Y年%B%d日"
       month_year: "%Y年 %B"
 
   booking_confirmation:
@@ -283,3 +284,14 @@ zh-TW:
     update: "更新資料"
     note1: "您可以更新您的電子郵件地址"
     note2: "請包含國家區號"
+    messages: "訊息"
+    note3: "尚無訊息……"
+    note4: "查看您與Morikoya的聯繫紀錄。"
+    browse: "瀏覽客房"
+    note5: "尚無已確認的預訂…"
+    upcoming: "即將到來的"
+    current: "當前"
+    past: "過去"
+    noupcoming: "沒有即將到來的預訂…"
+    nocurrent: "目前沒有入住…"
+    nopast: "沒有過去的入住紀錄…"

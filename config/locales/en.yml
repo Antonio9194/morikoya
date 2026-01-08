@@ -223,6 +223,7 @@ en:
 
   time:
     formats:
+      long: "%B %d, %Y"
       month_year: "%B %Y"
 
   booking_confirmation:
@@ -276,3 +277,14 @@ en:
     update: "Update Profile"
     note1: "You can update your email address"
     note2: "Include country code for international numbers"
+    messages: "Messages"
+    note3: "No messages yet..."
+    note4: "See your contact history with Morikoya."
+    browse: "Browse Rooms"
+    note5: "No confirmed bookings yet..."
+    upcoming: "Upcoming"
+    current: "Current"
+    past: "Past"
+    noupcoming: "No upcoming bookings..."
+    nocurrent: "No current stays..."
+    nopast: "No past stays..."
