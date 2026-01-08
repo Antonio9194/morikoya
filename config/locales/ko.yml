@@ -314,3 +314,5 @@ ko:
     download: "다운로드"
     total: "총 결제 금액:"
     nomoney: "아직 결제 내역이 없습니다…"
+    profile_info: "프로필 정보"
+    billing_history: "결제 내역"

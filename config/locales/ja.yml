@@ -313,3 +313,5 @@ ja:
     download: "ダウンロード"
     total: "支払い合計："
     nomoney: "まだ支払い履歴はありません…"
+    profile_info: "プロフィール情報"
+    billing_history: "請求履歴"

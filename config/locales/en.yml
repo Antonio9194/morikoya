@@ -311,3 +311,5 @@ en:
     download: "Download"
     total: "Total Payments:"
     nomoney: "No payment history yet..."
+    profile_info: "Profile Info"
+    billing_history: "Billing History"

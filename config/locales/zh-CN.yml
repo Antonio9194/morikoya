@@ -313,3 +313,5 @@ zh-CN:
     download: "下载"
     total: "付款总额："
     nomoney: "暂无付款记录…"
+    profile_info: "个人资料信息"
+    billing_history: "账单记录"
