@@ -325,3 +325,14 @@ en:
     forgot: "Forgot your password?"    
     reset: "Send me reset password instructions"
     email: "Email"
+
+  signup:
+    title: "Sign Up"  
+    email: "Email"
+    first_name: "First Name"
+    last_name: "Last Name"  
+    min_length: "%{count} characters minimum"
+    password: "Password"
+    confirmpass: "Password Confirmation"
+    phone: "Phone Number"
+    submit: "Sign up"

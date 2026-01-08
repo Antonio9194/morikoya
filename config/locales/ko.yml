@@ -328,3 +328,14 @@ ko:
     forgot: "비밀번호를 잊으셨나요?"
     reset: "비밀번호 재설정 안내를 보내기"
     email: "이메일"
+
+  signup:
+    title: "회원가입"
+    email: "이메일"
+    first_name: "이름"
+    last_name: "성"
+    min_length: "%{count}자 이상"
+    password: "비밀번호"
+    confirmpass: "비밀번호 확인"
+    phone: "전화번호"
+    submit: "가입하기"  

@@ -332,3 +332,14 @@ zh-TW:
     forgot: "忘記密碼？"
     reset: "發送重置密碼指示"
     email: "電子郵件"
+
+  signup:
+    title: "註冊"
+    email: "電子郵件"
+    first_name: "名字"
+    last_name: "姓氏"
+    min_length: "至少 %{count} 個字元"
+    password: "密碼"
+    confirmpass: "確認密碼"
+    phone: "電話號碼"
+    submit: "註冊"  

@@ -327,3 +327,14 @@ ja:
     forgot: "パスワードをお忘れですか？"
     reset: "パスワード再設定の案内を送信する"
     email: "メールアドレス"
+
+  signup:
+    title: "サインアップ"
+    email: "メールアドレス"
+    first_name: "名前"
+    last_name: "姓"
+    min_length: "%{count}文字以上"
+    password: "パスワード"
+    confirmpass: "パスワード確認"
+    phone: "電話番号"
+    submit: "サインアップ"  
