@@ -316,3 +316,15 @@ ko:
     nomoney: "아직 결제 내역이 없습니다…"
     profile_info: "프로필 정보"
     billing_history: "결제 내역"
+
+  devise:
+    confirmation: "확인 이메일 재전송"
+
+  password:
+    change: "비밀번호 변경"
+    new: "새 비밀번호"
+    new_confirm: "새 비밀번호 확인"
+    min_length: "%{count}자 이상"    
+    forgot: "비밀번호를 잊으셨나요?"
+    reset: "비밀번호 재설정 안내를 보내기"
+    email: "이메일"

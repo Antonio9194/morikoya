@@ -315,3 +315,15 @@ zh-CN:
     nomoney: "暂无付款记录…"
     profile_info: "个人资料信息"
     billing_history: "账单记录"
+
+  devise:
+    confirmation: "重新发送确认邮件"
+
+  password:
+    change: "更改密码"
+    new: "新密码"
+    new_confirm: "确认新密码"
+    min_length: "最少 %{count} 个字符"    
+    forgot: "忘记密码？"
+    reset: "发送重置密码指示"
+    email: "电子邮件"

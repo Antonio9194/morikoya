@@ -320,3 +320,15 @@ zh-TW:
     nomoney: "尚無付款紀錄…"
     profile_info: "個人資料資訊"
     billing_history: "帳單紀錄"
+
+  devise:
+    confirmation: "重新發送確認郵件"  
+
+  password:
+    change: "更改密碼"
+    new: "新密碼"
+    new_confirm: "確認新密碼"
+    min_length: "至少 %{count} 個字符"  
+    forgot: "忘記密碼？"
+    reset: "發送重置密碼指示"
+    email: "電子郵件"

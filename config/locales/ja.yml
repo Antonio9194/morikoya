@@ -315,3 +315,15 @@ ja:
     nomoney: "まだ支払い履歴はありません…"
     profile_info: "プロフィール情報"
     billing_history: "請求履歴"
+
+  devise:
+    confirmation: "確認メールを再送信"
+
+  password:
+    change: "パスワードを変更する"
+    new: "新しいパスワード"
+    new_confirm: "新しいパスワードを確認"
+    min_length: "%{count}文字以上"    
+    forgot: "パスワードをお忘れですか？"
+    reset: "パスワード再設定の案内を送信する"
+    email: "メールアドレス"

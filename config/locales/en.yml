@@ -313,3 +313,15 @@ en:
     nomoney: "No payment history yet..."
     profile_info: "Profile Info"
     billing_history: "Billing History"
+
+  devise:
+    confirmation: "Resend confirmation instructions"
+
+  password:
+    change: "Change your password"  
+    new: "New password"
+    new_confirm: "Confirm your new password"
+    min_length: "%{count} characters minimum"
+    forgot: "Forgot your password?"    
+    reset: "Send me reset password instructions"
+    email: "Email"
