@@ -350,3 +350,11 @@ zh-TW:
     password: "密碼"
     remember: "保持登入狀態"
     submit: "登入"  
+
+  shared:
+    login: "登入"
+    signup: "註冊"
+    forgot: "忘記密碼？"
+    confirmation: "未收到確認郵件？"
+    unlcok: "未收到解鎖郵件？"
+    signin: "使用 %{provider} 登入"  

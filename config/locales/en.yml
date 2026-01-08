@@ -343,3 +343,11 @@ en:
     password: "Password"
     remember: "Remember Me"
     submit: "Log In"
+
+  shared: 
+    login: "Log In"  
+    signup: "Sign Up"
+    forgot: "Forgot your password?"
+    confirmation: "Didn't receive confirmation instructions?"
+    unlcok: "Didn't receive unlock instructions?"
+    signin: "Sign in with %{provider}"  

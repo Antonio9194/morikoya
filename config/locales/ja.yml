@@ -345,3 +345,11 @@ ja:
     password: "パスワード"
     remember: "ログイン状態を保持する"
     submit: "ログイン"  
+
+  shared:
+    login: "ログイン"
+    signup: "サインアップ"
+    forgot: "パスワードをお忘れですか？"
+    confirmation: "確認メールが届かない場合"
+    unlcok: "ロック解除メールが届かない場合"
+    signin: "%{provider}でサインイン"  

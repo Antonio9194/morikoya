@@ -346,3 +346,11 @@ ko:
     password: "비밀번호"
     remember: "로그인 상태 유지"
     submit: "로그인"  
+
+  shared:
+    login: "로그인"
+    signup: "회원가입"
+    forgot: "비밀번호를 잊으셨나요?"
+    confirmation: "확인 이메일을 받지 못하셨나요?"
+    unlcok: "잠금 해제 이메일을 받지 못하셨나요?"
+    signin: "%{provider}로 로그인"  

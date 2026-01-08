@@ -345,3 +345,11 @@ zh-CN:
     password: "密码"
     remember: "保持登录状态"
     submit: "登录"  
+
+  shared:
+    login: "登录"
+    signup: "注册"
+    forgot: "忘记密码？"
+    confirmation: "未收到确认邮件？"
+    unlcok: "未收到解锁邮件？"
+    signin: "使用 %{provider} 登录"  
