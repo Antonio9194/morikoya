@@ -339,3 +339,10 @@ ko:
     confirmpass: "비밀번호 확인"
     phone: "전화번호"
     submit: "가입하기"  
+
+  login:
+    title: "로그인"
+    email: "이메일"
+    password: "비밀번호"
+    remember: "로그인 상태 유지"
+    submit: "로그인"  

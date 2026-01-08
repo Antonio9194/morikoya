@@ -336,3 +336,10 @@ en:
     confirmpass: "Password Confirmation"
     phone: "Phone Number"
     submit: "Sign up"
+
+  login: 
+    title: "Log In"  
+    email: "Email"
+    password: "Password"
+    remember: "Remember Me"
+    submit: "Log In"

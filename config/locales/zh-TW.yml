@@ -343,3 +343,10 @@ zh-TW:
     confirmpass: "確認密碼"
     phone: "電話號碼"
     submit: "註冊"  
+
+  login:
+    title: "登入"
+    email: "電子郵件"
+    password: "密碼"
+    remember: "保持登入狀態"
+    submit: "登入"  

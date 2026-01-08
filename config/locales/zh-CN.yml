@@ -338,3 +338,10 @@ zh-CN:
     confirmpass: "确认密码"
     phone: "电话号码"
     submit: "注册"  
+
+  login:
+    title: "登录"
+    email: "邮箱"
+    password: "密码"
+    remember: "保持登录状态"
+    submit: "登录"  

@@ -338,3 +338,10 @@ ja:
     confirmpass: "パスワード確認"
     phone: "電話番号"
     submit: "サインアップ"  
+
+  login:
+    title: "ログイン"
+    email: "メールアドレス"
+    password: "パスワード"
+    remember: "ログイン状態を保持する"
+    submit: "ログイン"  
