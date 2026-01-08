@@ -269,6 +269,11 @@ zh-CN:
     email: "邮箱"
     message: "留言"
 
+  payment_status:
+    paid: "已支付"
+    pending: "待处理"
+    failed: "失败" 
+
   dashboard:
     info1: "注册时间"
     info2: "个人资料"
@@ -286,6 +291,8 @@ zh-CN:
     note5: "尚无已确认的预订…"
     upcoming: "即将到来的"
     current: "当前"
+    ongoing: "进行中"
+    completed: "已完成"
     past: "过去"
     noupcoming: "没有即将到来的预订…"
     nocurrent: "当前没有入住…"

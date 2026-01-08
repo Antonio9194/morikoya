@@ -274,6 +274,11 @@ zh-TW:
     email: "電子郵件"
     message: "留言"
 
+  payment_status:
+    paid: "已付款"
+    pending: "待處理"
+    failed: "失敗"
+
   dashboard:
     info1: "會員註冊時間"
     info2: "個人資料"
@@ -291,6 +296,8 @@ zh-TW:
     note5: "尚無已確認的預訂…"
     upcoming: "即將到來的"
     current: "當前"
+    ongoing: "進行中"
+    completed: "已完成"
     past: "過去"
     noupcoming: "沒有即將到來的預訂…"
     nocurrent: "目前沒有入住…"

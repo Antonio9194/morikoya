@@ -265,7 +265,12 @@ en:
     alt: "Leave us a message!"
     full_name: "Full Name"
     email: "Email"
-    message: "Message"
+    message: "Message" 
+
+  status:
+    paid: "Paid"
+    pending: "Pending"
+    failed: "Failed" 
 
   dashboard:
     info1: "Member since"
@@ -284,7 +289,12 @@ en:
     note5: "No confirmed bookings yet..."
     upcoming: "Upcoming"
     current: "Current"
+    ongoing: "Ongoing"
+    completed: "Completed"
     past: "Past"
     noupcoming: "No upcoming bookings..."
     nocurrent: "No current stays..."
     nopast: "No past stays..."
+    checkin: "Check-in"
+    checkout: "Check-out"
+

@@ -269,6 +269,11 @@ ja:
     email: "メールアドレス"
     message: "メッセージ"
 
+  payment_status:
+    paid: "支払い済み"
+    pending: "保留中"
+    failed: "失敗" 
+
   dashboard:
     info1: "会員登録日"
     info2: "プロフィール情報"
@@ -286,6 +291,8 @@ ja:
     note5: "まだ確定した予約はありません…"
     upcoming: "今後の予約"
     current: "現在"
+    ongoing: "滞在中"
+    completed: "完了"
     past: "過去"
     noupcoming: "今後の予約はありません…"
     nocurrent: "現在の滞在はありません…"

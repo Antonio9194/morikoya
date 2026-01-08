@@ -270,6 +270,11 @@ ko:
     email: "이메일"
     message: "메시지"
 
+  payment_status:
+    paid: "결제 완료"
+    pending: "보류 중"
+    failed: "실패"
+
   dashboard:
     info1: "회원 가입일"
     info2: "프로필 정보"
@@ -287,6 +292,8 @@ ko:
     note5: "아직 확정된 예약이 없습니다…"
     upcoming: "다가오는 예약"
     current: "현재"
+    ongoing: "진행 중"
+    completed: "완료됨"
     past: "과거"
     noupcoming: "예정된 예약이 없습니다…"
     nocurrent: "현재 투숙 중인 예약이 없습니다…"
