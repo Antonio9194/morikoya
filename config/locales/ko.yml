@@ -219,14 +219,18 @@ ko:
 
   date:
     month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
+    abbr_month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
     abbr_day_names: [일, 월, 화, 수, 목, 금, 토]
     formats:
-      long: "%Y년 %B %d일"
+      short: "%-m월%-d일"
+      long: "%Y년%B%d일"
+      long_inverted: "%d일 %b, %Y년"
       month_year: "%Y년 %B"
-
   time:
     formats:
-      long: "%Y년 %B %d일"
+      short: "%-m월%-d일"
+      long: "%Y년%B%d일"
+      long_inverted: "%d일 %b, %Y년"
       month_year: "%Y년 %B"
 
   booking_confirmation:
@@ -298,3 +302,15 @@ ko:
     noupcoming: "예정된 예약이 없습니다…"
     nocurrent: "현재 투숙 중인 예약이 없습니다…"
     nopast: "지난 투숙 기록이 없습니다…"
+    checkin: "체크인"
+    checkout: "체크아웃"
+    billing: "결제 내역"
+    transaction_id: "거래 ID"
+    room: "객실"
+    issue_date: "발행일"
+    amount: "금액"
+    billing_status: "상태"
+    receipt: "영수증"
+    download: "다운로드"
+    total: "총 결제 금액:"
+    nomoney: "아직 결제 내역이 없습니다…"

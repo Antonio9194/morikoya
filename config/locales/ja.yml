@@ -218,14 +218,18 @@ ja:
 
   date:
     month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
     formats:
+      short: "%-m月%-d日"
       long: "%Y年%B%d日"
+      long_inverted: "%d日 %b, %Y年"
       month_year: "%Y年 %B"
-
   time:
     formats:
+      short: "%-m月%-d日"
       long: "%Y年%B%d日"
+      long_inverted: "%d日 %b, %Y年"
       month_year: "%Y年 %B"
 
   booking_confirmation:
@@ -297,3 +301,15 @@ ja:
     noupcoming: "今後の予約はありません…"
     nocurrent: "現在の滞在はありません…"
     nopast: "過去の滞在はありません…"
+    checkin: "チェックイン"
+    checkout: "チェックアウト"
+    billing: "請求履歴"
+    transaction_id: "取引ID"
+    room: "部屋"
+    issue_date: "発行日"
+    amount: "金額"
+    billing_status: "ステータス"
+    receipt: "領収書"
+    download: "ダウンロード"
+    total: "支払い合計："
+    nomoney: "まだ支払い履歴はありません…"

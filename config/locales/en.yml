@@ -218,12 +218,16 @@ en:
     month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
     abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
     formats:
+      short: "%d %b"
       long: "%B %d, %Y"
+      long_inverted: "%d %b, %Y"
       month_year: "%B %Y"
 
   time:
     formats:
+      short: "%d %b"
       long: "%B %d, %Y"
+      long_inverted: "%d %b, %Y"
       month_year: "%B %Y"
 
   booking_confirmation:
@@ -297,4 +301,13 @@ en:
     nopast: "No past stays..."
     checkin: "Check-in"
     checkout: "Check-out"
-
+    billing: "Billing History"
+    transaction_id: "Transaction ID"
+    room: "Room"
+    issue_date: "Issue Date"
+    amount: "Amount"
+    billing_status: "Status"
+    receipt: "Receipt"
+    download: "Download"
+    total: "Total Payments:"
+    nomoney: "No payment history yet..."

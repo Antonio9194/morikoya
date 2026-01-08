@@ -222,15 +222,19 @@ zh-TW:
     return: "取消並返回房間頁面"
 
   date:
-    month_names: [~, 一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月]
+    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     abbr_day_names: [日, 一, 二, 三, 四, 五, 六]
     formats:
+      short: "%-m月%-d日"
       long: "%Y年%B%d日"
-      month_year: "%Y年%B"
-
+      long_inverted: "%d日 %b, %Y年"
+      month_year: "%Y年 %B"
   time:
     formats:
+      short: "%-m月%-d日"
       long: "%Y年%B%d日"
+      long_inverted: "%d日 %b, %Y年"
       month_year: "%Y年 %B"
 
   booking_confirmation:
@@ -302,3 +306,15 @@ zh-TW:
     noupcoming: "沒有即將到來的預訂…"
     nocurrent: "目前沒有入住…"
     nopast: "沒有過去的入住紀錄…"
+    checkin: "入住"
+    checkout: "退房"
+    billing: "帳單記錄"
+    transaction_id: "交易編號"
+    room: "房間"
+    issue_date: "開立日期"
+    amount: "金額"
+    billing_status: "狀態"
+    receipt: "收據"
+    download: "下载"
+    total: "付款總額："
+    nomoney: "尚無付款紀錄…"
