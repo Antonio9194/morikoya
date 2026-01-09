@@ -276,7 +276,7 @@ ja:
   payment_status:
     paid: "支払い済み"
     pending: "保留中"
-    failed: "失敗" 
+    failed: "失敗"
 
   dashboard:
     info1: "会員登録日"
@@ -323,7 +323,7 @@ ja:
     change: "パスワードを変更する"
     new: "新しいパスワード"
     new_confirm: "新しいパスワードを確認"
-    min_length: "%{count}文字以上"    
+    min_length: "%{count}文字以上"
     forgot: "パスワードをお忘れですか？"
     reset: "パスワード再設定の案内を送信する"
     email: "メールアドレス"
@@ -337,14 +337,14 @@ ja:
     password: "パスワード"
     confirmpass: "パスワード確認"
     phone: "電話番号"
-    submit: "サインアップ"  
+    submit: "サインアップ"
 
   login:
     title: "ログイン"
     email: "メールアドレス"
     password: "パスワード"
     remember: "ログイン状態を保持する"
-    submit: "ログイン"  
+    submit: "ログイン"
 
   shared:
     login: "ログイン"
@@ -352,4 +352,29 @@ ja:
     forgot: "パスワードをお忘れですか？"
     confirmation: "確認メールが届かない場合"
     unlcok: "ロック解除メールが届かない場合"
-    signin: "%{provider}でサインイン"  
+    signin: "%{provider}でサインイン"
+
+  rooms:
+    info1: "1泊あたり"
+    size: "サイズ："
+    capacity: "定員："
+    guestnum: "ゲスト"
+    amenities: "設備"
+    booking: "予約する"
+    duration: "宿泊期間を指定"
+    book: "この部屋を予約"
+    guests: "ゲスト人数："
+    nights: "宿泊数："
+    person:
+      one: "人"
+      other: "人"
+    price: "1泊あたりの料金："
+    total: "合計金額："
+    info2: "なぜ私たちを選ぶ？"
+    info3: "快適で便利なお部屋でおくつろぎください。仕事でも休暇でも、滞在を快適にするための設備とサービスをご用意しています。ぜひご予約ください。"
+    choice1: "グループのために少なくとも2部屋を選択してください！"
+    fully_booked: "申し訳ありません、満室です！"
+    choice2: "グループのために少なくとも1部屋を選択してください！"
+    fit: "この部屋はグループにぴったりです！"
+    choice3: "別々の部屋をご希望の場合にどうぞ！"
+    choice4: "グループに2部屋をご用意！"

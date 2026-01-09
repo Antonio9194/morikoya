@@ -276,7 +276,7 @@ zh-CN:
   payment_status:
     paid: "已支付"
     pending: "待处理"
-    failed: "失败" 
+    failed: "失败"
 
   dashboard:
     info1: "注册时间"
@@ -323,7 +323,7 @@ zh-CN:
     change: "更改密码"
     new: "新密码"
     new_confirm: "确认新密码"
-    min_length: "最少 %{count} 个字符"    
+    min_length: "最少 %{count} 个字符"
     forgot: "忘记密码？"
     reset: "发送重置密码指示"
     email: "电子邮件"
@@ -337,14 +337,14 @@ zh-CN:
     password: "密码"
     confirmpass: "确认密码"
     phone: "电话号码"
-    submit: "注册"  
+    submit: "注册"
 
   login:
     title: "登录"
     email: "邮箱"
     password: "密码"
     remember: "保持登录状态"
-    submit: "登录"  
+    submit: "登录"
 
   shared:
     login: "登录"
@@ -352,4 +352,29 @@ zh-CN:
     forgot: "忘记密码？"
     confirmation: "未收到确认邮件？"
     unlcok: "未收到解锁邮件？"
-    signin: "使用 %{provider} 登录"  
+    signin: "使用 %{provider} 登录"
+
+  rooms:
+    info1: "每晚"
+    size: "房间大小："
+    capacity: "入住人数上限："
+    guestnum: "入住人数"
+    amenities: "设施"
+    booking: "预订"
+    duration: "选择入住时长"
+    book: "预订此房间"
+    guests: "入住人数："
+    nights: "入住晚数："
+    person:
+      one: "人"
+      other: "人"
+    price: "每晚价格："
+    total: "总价格："
+    info2: "为什么选择我们？"
+    info3: "享受我们精心设计的舒适房间。无论是商务出行还是休闲住宿，这里的设施与服务都为您的入住提供便利与舒适。立即预订，享受愉快的住宿体验。"
+    choice1: "为您的团队至少选择两间房！"
+    fully_booked: "抱歉，我们已订满！"
+    choice2: "为您的团队至少选择一间房！"
+    fit: "这间房非常适合您的团队！"
+    choice3: "如果您想分开房间，也可以选择！"
+    choice4: "为您的团队准备两间房！"

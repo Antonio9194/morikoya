@@ -322,13 +322,13 @@ zh-TW:
     billing_history: "帳單紀錄"
 
   devise:
-    confirmation: "重新發送確認郵件"  
+    confirmation: "重新發送確認郵件"
 
   password:
     change: "更改密碼"
     new: "新密碼"
     new_confirm: "確認新密碼"
-    min_length: "至少 %{count} 個字符"  
+    min_length: "至少 %{count} 個字符"
     forgot: "忘記密碼？"
     reset: "發送重置密碼指示"
     email: "電子郵件"
@@ -342,14 +342,14 @@ zh-TW:
     password: "密碼"
     confirmpass: "確認密碼"
     phone: "電話號碼"
-    submit: "註冊"  
+    submit: "註冊"
 
   login:
     title: "登入"
     email: "電子郵件"
     password: "密碼"
     remember: "保持登入狀態"
-    submit: "登入"  
+    submit: "登入"
 
   shared:
     login: "登入"
@@ -357,4 +357,30 @@ zh-TW:
     forgot: "忘記密碼？"
     confirmation: "未收到確認郵件？"
     unlcok: "未收到解鎖郵件？"
-    signin: "使用 %{provider} 登入"  
+    signin: "使用 %{provider} 登入"
+
+  rooms:
+    info1: "每晚"
+    size: "房間大小："
+    capacity: "入住人數上限："
+    guestnum: "入住人數"
+    amenities: "設施"
+    booking: "預訂"
+    duration: "選擇入住時長"
+    book: "預訂此房間"
+    guests: "入住人數："
+    nights: "入住晚數："
+    person:
+      one: "人"
+      other: "人"
+    price: "每晚價格："
+    total: "總價格："
+    info2: "為什麼選擇我們？"
+    info3: "在我們精心設計的房間中享受舒適自在。無論是商務還是休閒，我們的設施與服務都能讓您的入住輕鬆愉快。立即預訂，享受美好的住宿體驗。"
+    choice1: "為您的團隊至少選擇兩間房！"
+    fully_booked: "抱歉，我們已客滿！"
+    choice2: "為您的團隊至少選擇一間房！"
+    fit: "這間房非常適合您的團隊！"
+    choice3: "如果您想分開房間，也可以選擇！"
+    choice4: "為您的團隊準備兩間房！"
+

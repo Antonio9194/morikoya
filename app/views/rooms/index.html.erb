@@ -3,11 +3,11 @@
     <!--Render search dates-->
     <% if @rooms.count > 1 %>
       <%= render "search_info", rooms: @rooms %>
-      <h5 class="searchresult">Choose at least two rooms for your group!</h5>
+      <h5 class="searchresult"><%= t("rooms.choice1") %></h5>
       <%= render "rooms/other_nums", rooms: @rooms %>
     <% else %>
       <%= render "search_info", rooms: @rooms %>
-      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">Sorry we are booked out!</h5>
+      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3"><%= t("rooms.fully_booked") %></h5>
     <% end %>
   <% end %>
   <% if @guest_num.present? && @guest_num == 8 %>
@@ -25,21 +25,21 @@
   <% if @guest_num.present? && @guest_num <= 5 %>
     <% if @rooms.count > 1 %>
       <%= render "search_info", rooms: @rooms %>
-      <h5 class="searchresult">Choose at least one room for your group!</h5>
+      <h5 class="searchresult"><%= t("rooms.choice2") %></h5>
       <%= render "rooms/other_nums", rooms: @rooms %>
     <% elsif @rooms.count == 1 %>
       <%= render "search_info", rooms: @rooms %>
       <h5 class="searchresult">We only have one room left!</h5>
       <%= render "rooms/other_nums", rooms: @rooms %>
     <% else %>
-      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">Sorry we are booked out!</h5>
+      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3"><%= t("rooms.fully_booked") %></h5>
     <% end %>
   <% end %>
   <% if @guest_num.nil? %>
     <% unless @rooms.count.zero? %>
       <%= render "rooms/other_nums", rooms: @rooms %>
     <% else %>
-      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3">Sorry we are booked out!</h5>
+      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3"><%= t("rooms.fully_booked") %></h5>
     <% end %>
   <% end %>
 </div>
