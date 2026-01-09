@@ -359,7 +359,7 @@ zh-CN:
     size: "房间大小："
     capacity: "入住人数上限："
     guestnum: "入住人数"
-    amenities: "设施"
+    amenities_list: "设施"
     booking: "预订"
     duration: "选择入住时长"
     book: "预订此房间"
@@ -378,3 +378,10 @@ zh-CN:
     fit: "这间房非常适合您的团队！"
     choice3: "如果您想分开房间，也可以选择！"
     choice4: "为您的团队准备两间房！"
+    amenities:
+      standard: "24小时入住、空调、阳台、衣柜、烘干机、电梯、晾衣架、吹风机、暖气、热水、现场办理入住、网络、熨衣板、熨斗、床单、蚊帐、独立入口、电视、毛巾、洗衣机"
+      bathroom: "坐浴盆、淋浴、马桶、沐浴露、护发素、洗发水、沐浴胶"
+      kitchen: "用餐区、厨房用具、咖啡机、冰柜、炉灶、微波炉、冰箱"
+    sofa_bed:
+      one: "沙发床"
+      other: "沙发床"

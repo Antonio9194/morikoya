@@ -364,7 +364,7 @@ zh-TW:
     size: "房間大小："
     capacity: "入住人數上限："
     guestnum: "入住人數"
-    amenities: "設施"
+    amenities_list: "設施"
     booking: "預訂"
     duration: "選擇入住時長"
     book: "預訂此房間"
@@ -383,4 +383,10 @@ zh-TW:
     fit: "這間房非常適合您的團隊！"
     choice3: "如果您想分開房間，也可以選擇！"
     choice4: "為您的團隊準備兩間房！"
-
+    amenities:
+      standard: "24小時入住、空調、陽台、衣櫃、烘乾機、電梯、曬衣架、吹風機、暖氣、熱水、面對面入住辦理、網路、燙衣板、熨斗、床單、蚊帳、獨立入口、電視、毛巾、洗衣機"
+      bathroom: "免治馬桶、淋浴、馬桶、沐浴乳、潤髮乳、洗髮精、沐浴膠"
+      kitchen: "用餐區、廚房用品、咖啡機、冰櫃、爐灶、微波爐、冰箱"
+    sofa_bed:
+      one: "沙發床"
+      other: "沙發床"
