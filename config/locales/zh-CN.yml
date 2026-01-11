@@ -385,3 +385,9 @@ zh-CN:
     sofa_bed:
       one: "沙发床"
       other: "沙发床"
+    double_bed:
+      one: "双人床"
+      other: "双人床"
+    bunk_bed:
+      one: "双层床"
+      other: "双层床"

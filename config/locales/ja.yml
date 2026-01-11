@@ -385,3 +385,9 @@ ja:
     sofa_bed:
       one: "ソファベッド"
       other: "ソファベッド"
+    double_bed:
+      one: "ダブルベッド"
+      other: "ダブルベッド"
+    bunk_bed:
+      one: "二段ベッド"
+      other: "二段ベッド"

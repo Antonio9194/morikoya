@@ -356,7 +356,7 @@ en:
     info1: "per night"
     size: "Size:"
     capacity: "Capacity:"
-    guestnum: "guests"
+    guestnum: "Guests"
     amenities_list: "Amenities"
     booking: "Make a booking"
     duration: "Specify the booking duration"
@@ -381,5 +381,17 @@ en:
       bathroom: "Bidet, Shower, Toilet, Body Soap, Conditioner, Shampoo. Shower Gel"
       kitchen: "Dining Area, Kitchen Utensils, Coffee Machine, Freezer, Kitchen Stove, Microwave, Refrigerator, "
     sofa_bed:
-      one: "sofa bed"
-      other:  "sofa beds"
+      one: "Sofa Bed"
+      other:  "Sofa Beds"
+    double_bed:
+      one: "Double Bed"
+      other: "Double Beds"
+    bunk_bed:
+      one: "Bunk Bed"
+      other: "Bunk Beds"
+    semidouble_bed:
+      one: "Semi Double Bed"
+      other: "Smi Double Bed"
+    single_bed:
+      one: "Single Bed"
+      other: "Single Beds"

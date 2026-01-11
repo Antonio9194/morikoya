@@ -390,3 +390,9 @@ zh-TW:
     sofa_bed:
       one: "沙發床"
       other: "沙發床"
+    double_bed:
+      one: "雙人床"
+      other: "雙人床"
+    bunk_bed:
+      one: "雙層床"
+      other: "雙層床"

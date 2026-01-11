@@ -386,3 +386,9 @@ ko:
     sofa_bed:
       one: "소파베드"
       other: "소파베드"
+    double_bed:
+      one: "더블침대"
+      other: "더블침대"
+    bunk_bed:
+      one: "이층침대"
+      other: "이층침대"
