@@ -392,3 +392,9 @@ ko:
     bunk_bed:
       one: "이층침대"
       other: "이층침대"
+    semidouble_bed:
+      one: "세미 더블 침대"
+      other: "세미 더블 침대"
+    single_bed:
+      one: "싱글 침대"
+      other: "싱글 침대"

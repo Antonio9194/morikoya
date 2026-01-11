@@ -391,3 +391,9 @@ ja:
     bunk_bed:
       one: "二段ベッド"
       other: "二段ベッド"
+    semidouble_bed:
+      one: "セミダブルベッド"
+      other: "セミダブルベッド"
+    single_bed:
+      one: "シングルベッド"
+      other: "シングルベッド"

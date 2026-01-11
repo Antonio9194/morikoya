@@ -391,3 +391,9 @@ zh-CN:
     bunk_bed:
       one: "双层床"
       other: "双层床"
+    semidouble_bed:
+      one: "小双人床"
+      other: "小双人床"
+    single_bed:
+      one: "单人床"
+      other: "单人床"
