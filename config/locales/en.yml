@@ -363,9 +363,12 @@ en:
     book: "Book this room"
     guests: "Number of guests:"
     nights: "Number of nights:"
+    numnights:
+      one: "Night"
+      other: "Nights"
     person:
-      one: "person"
-      other: "people"
+      one: "Person"
+      other: "People"
     price: "Price per night:"
     total: "Total price:"
     info2: "Why Book With Us?"

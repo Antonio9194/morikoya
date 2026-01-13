@@ -370,6 +370,8 @@ zh-TW:
     book: "預訂此房間"
     guests: "入住人數："
     nights: "入住晚數："
+    numnights:
+      other: "晚"
     person:
       one: "人"
       other: "人"

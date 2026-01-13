@@ -365,6 +365,8 @@ ja:
     book: "この部屋を予約"
     guests: "ゲスト人数："
     nights: "宿泊数："
+    numnights:
+      other: "泊"
     person:
       one: "人"
       other: "人"

@@ -365,6 +365,8 @@ zh-CN:
     book: "预订此房间"
     guests: "入住人数："
     nights: "入住晚数："
+    numnights:
+      other: "晚"
     person:
       one: "人"
       other: "人"
