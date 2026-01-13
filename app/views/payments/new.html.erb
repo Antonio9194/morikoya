@@ -11,7 +11,7 @@
         <div class="paymentcard card-header bg-primary text-white">
           <h3 class="mb-0">
             <i class="fas fa-credit-card me-2"></i>
-            Complete Your Payment
+            <%= t("payment.complete") %>
           </h3>
         </div>
         <!-- Card Body -->
@@ -20,32 +20,32 @@
           <div class="bookingsummary alert-light border">
             <h5 class="alert-heading mb-3">
               <i class="fas fa-receipt me-2"></i>
-              Booking Summary
+              <%= t("payment.summary") %>
             </h5>
             <div class="row mb-2">
-              <div class="col-sm-5 text-muted">Room:</div>
+              <div class="col-sm-5 text-muted"><%= t("payment.info1") %></div>
               <div class="col-sm-7 fw-bold"><%= @booking.room.name %></div>
             </div>
             <div class="row mb-2">
-              <div class="col-sm-5 text-muted">Check-in:</div>
-              <div class="col-sm-7"><%= @booking.start_date.strftime("%B %d, %Y") %></div>
+              <div class="col-sm-5 text-muted"><%= t("payment.info2") %></div>
+              <div class="col-sm-7"><%= l @booking.start_date, format: :long %></div>
             </div>
             <div class="row mb-2">
-              <div class="col-sm-5 text-muted">Check-out:</div>
-              <div class="col-sm-7"><%= @booking.end_date.strftime("%B %d, %Y") %></div>
+              <div class="col-sm-5 text-muted"><%= t("payment.info3") %></div>
+              <div class="col-sm-7"><%= l @booking.end_date, format: :long %></div>
             </div>
             <div class="row mb-2">
-              <div class="col-sm-5 text-muted">Number of nights:</div>
-              <div class="col-sm-7"><%= @booking.number_of_nights %> nights</div>
+              <div class="col-sm-5 text-muted"><%= t("payment.info4") %></div>
+              <div class="col-sm-7"><%= @booking.number_of_nights %> <%= t("payment.info10") %></div>
             </div>
             <div class="row mb-2">
-              <div class="col-sm-5 text-muted">Price per night:</div>
+              <div class="col-sm-5 text-muted"><%= t("payment.info5") %></div>
               <div class="col-sm-7">¥<%= number_with_delimiter(@booking.room.price_per_night) %></div>
             </div>
             <hr class="my-3">
             <div class="row">
               <div class="col-sm-5">
-                <h5 class="mb-0">Total Amount:</h5>
+                <h5 class="mb-0"><%= t("payment.info6") %></h5>
               </div>
               <div class="col-sm-7">
                 <h5 class="text-primary mb-0">
@@ -66,7 +66,8 @@
             <!-- Card Element Container -->
             <div class="mb-4">
               <%= f.label :card_information, class: "form-label fw-bold" do %>
-                <i class="fas fa-credit-card me-2"></i>Card Information
+                <i class="fas fa-credit-card me-2"></i>
+                <%= t("payment.info7") %>
               <% end %>
               <!-- Stripe Elements will mount here -->
               <div id="card-element"
@@ -88,7 +89,8 @@
                            data: { stripe_payment_target: "submitButton" } do %>
                 <span data-stripe-payment-target="buttonText">
                   <i class="fas fa-lock me-2"></i>
-                  Pay ¥<%= number_with_delimiter(@booking.total_price_cents) %>
+                  <%= t("payment.info8") %>
+                  <%= number_with_delimiter(@booking.total_price_cents) %>
                 </span>
                 <span class="spinner-border spinner-border-sm ms-2 d-none"
                       data-stripe-payment-target="spinner">
@@ -100,7 +102,7 @@
           <div class="text-center text-muted">
             <small>
               <i class="fas fa-shield-alt me-1"></i>
-              Your payment is secure and encrypted with Stripe
+              <%= t("payment.info9") %>
             </small>
           </div>
           <!-- Cancel Link -->
@@ -111,7 +113,8 @@
                 turbo_confirm: "Cancel this booking?"
               },
               class: "btn btn-link text-muted" do %>
-              <i class="fas fa-arrow-left me-1"></i> Cancel and return to room
+              <i class="fas fa-arrow-left me-1"></i>
+              <%= t("payment.return") %>
             <% end %>
           </div>
         </div>

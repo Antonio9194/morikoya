@@ -2,12 +2,12 @@
   <div class="chatbot-container">
     <%= image_tag "moriko.png", class: "chatbot-avatar",
       data: {action: "click->aichat-window#open", aichat_window_target: "avatar"} %>
-    <p class="greet-text">Do you want to chat with Moriko?</p>
+    <p class="greet-text"><%= t("moriko.chat") %></p>
   </div>
   <div class="chat-window d-none" data-aichat-window-target="chatWindow">
     <div class="container chatbot rounded-5 ai-margin-top">
       <div class="d-flex justify-content-between align-items-center window-header">
-        <h3 class="mt-2"><i class="fa-solid fa-comments pe-2" style="color: #b15965;"></i>Chat with Moriko</h3>
+        <h3 class="mt-2"><i class="fa-solid fa-comments pe-2" style="color: #b15965;"></i><%= t("moriko.title") %></h3>
         <i class="fa-solid fa-xmark" data-action="click->aichat-window#close"></i>
       </div>
       <div id="questions">

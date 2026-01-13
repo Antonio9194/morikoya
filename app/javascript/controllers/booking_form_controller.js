@@ -35,7 +35,9 @@ export default class extends Controller {
   // added logic in stimulus controller to change the date format shown in the checkin and checkout values update which refers to the search bars in homepage and rooms
   formatDate(dateString) {
     const d = new Date(dateString);
-    return d.toLocaleDateString("en-GB", {
+    const locale = document.body.dataset.locale || "en";
+
+    return d.toLocaleDateString(locale, {
       day: "2-digit",
       month: "short",
       year: "numeric",

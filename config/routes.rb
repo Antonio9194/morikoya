@@ -43,6 +43,8 @@ Rails.application.routes.draw do
   get 'about_us', to: 'pages#about_us'
   get 'faqs', to: 'pages#faqs'
 
+  post "/locale", to: "locales#update", as: :set_locale
+
   root 'pages#home'
 
   # Questions

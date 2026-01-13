@@ -23,15 +23,14 @@
       <div class="card mb-4 rounded-5 shadow-sm">
         <div class="card-body">
           <h2 class="card-title"><%= @room.name %></h2>
-          <p class="card-text text-muted"><%= @room.description %></p>
           <div class="row">
             <div class="col-md-4">
               <h5 class="text-primary">¥<%= number_with_delimiter(@room.price_per_night) %></h5>
-              <small class="text-muted">per night</small>
+              <small class="text-muted"><%= t("rooms.info1") %></small>
             </div>
             <div class="col-md-4">
-              <p class="mb-1"><strong>Size:</strong> <%= @room.size %> m²</p>
-              <p class="mb-0"><strong>Capacity:</strong> <%= @room.capacity %> guests</p>
+              <p class="mb-1"><strong><%= t("rooms.size") %></strong> <%= @room.size %> m²</p>
+              <p class="mb-0"><strong><%= t("rooms.capacity") %></strong> <%= @room.capacity %> <%= t("rooms.guestnum") %></p>
             </div>
             <!--Render beds depending on bed types-->
             <div class="col-md-4">
@@ -44,13 +43,13 @@
       <!-- List of amenities -->
       <div class="card rounded-5 shadow-sm" style="overflow: hidden">
         <div class="card-header">
-          <h5 class="mb-0">Amenities</h5>
+          <h5 class="mb-0"><%= t("rooms.amenities_list") %></h5>
         </div>
         <div class="card-body">
           <div class="row">
-            <% @room.amenities.split(',').each do |amenity| %>
+            <% I18n.t("rooms.amenities").each do |key, label| %>
               <div class="col-md-6 mb-2">
-                <i class="fas fa-check text-success me-2"></i><%= amenity.strip %>
+                <i class="fas fa-check text-success me-2"></i><%= label %>
               </div>
             <% end %>
           </div>
@@ -61,18 +60,18 @@
     <div class="paymentblock col-lg-4">
       <div class="card position-sticky rounded-5 shadow-sm h-100" style="top: 20px; overflow: hidden">
         <div class="card-header">
-          <h5 class="mb-0">Make a booking</h5>
+          <h5 class="mb-0"><%= t("rooms.booking") %></h5>
         </div>
         <div class="card-body">
           <div class="booking-form">
             <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room) do |f| %>
               <%= f.input :start_date,
-                as: :string, label: "Specify the booking duration",
+                as: :string, label: t("rooms.duration"),
                 input_html: {
                   class: "chosen-dates",
                   data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates },
                   value: [@check_in, @check_out].all? ? "#{@check_in} - #{@check_out}" : "" } %>
-              <%= f.button :submit, "Book this room", class: "btn" %>
+              <%= f.button :submit, t("rooms.book"), class: "btn" %>
             <% end %>
           </div>
           <hr style="height: 2px;">
@@ -81,20 +80,22 @@
             <% if @guest_num.present? %>
               <div class="row guest-num">
                 <div class="title col-8">
-                  <p class="card-text">Number of guests:</p>
+                  <p class="card-text"><%= t("rooms.guests") %></p>
                 </div>
                 <div class="value col-4">
-                  <p class="card-text text-end"><%= @guest_num %> <%= @guest_num > 1 ? "person".pluralize : "person" %></p>
+                  <p class="card-text text-end">
+                    <%= @guest_num %> <%= t("rooms.person", count: @guest_num) %>
+                  </p>
                 </div>
               </div>
             <% end %>
             <!--Nights Num Retrieving using Stimulus Outlet-->
             <div class="row night-num" data-controller="retrieve-dates" data-retrieve-dates-datepicker-outlet=".chosen-dates">
               <div class="title col-8">
-                <p class="card-text">Number of nights:</p>
+                <p class="card-text"><%= t("rooms.nights") %></p>
               </div>
               <div class="value col-4">
-                <p class="card-text text-end" data-retrieve-dates-target="nightsNumDestination"></p>
+                <p class="card-text text-end" data-retrieve-dates-target="nightsNumDestination" data-retrieve-dates-label="<%= t("rooms.numnights", count: 2) %>"></p>
               </div>
             </div>
             <!--Calculate and display Total Price - Retrieving using Stimulus Outlet-->
@@ -102,7 +103,7 @@
               <!--Price Per Night-->
               <div class="row price-per-night">
                 <div class="title col-8">
-                  <p class="card-text">Price per night:</p>
+                  <p class="card-text"><%= t("rooms.price") %></p>
                 </div>
                 <div class="value col-4">
                   <p class="card-text text-end" data-total-price-display-target="pricePerNight">¥<%= number_with_delimiter(@room.price_per_night) %></p>
@@ -111,7 +112,7 @@
               <!--Total Price-->
               <div class="row total-price">
                 <div class="title col-8">
-                  <p class="card-text">Total price:</p>
+                  <p class="card-text"><%= t("rooms.total") %></p>
                 </div>
                 <div class="value col-4">
                   <p class="card-text text-end" data-total-price-display-target="totalPrice"></p>
@@ -129,8 +130,8 @@
     <div class="col-12">
       <div class="card rounded-5 shadow-sm">
         <div class="card-body text-center">
-          <h2 class="card-title">Why Book With Us?</h2>
-          <p class="card-text">Experience unparalleled comfort and luxury in our meticulously designed rooms. Whether you're here for business or leisure, our amenities and services are tailored to meet your every need. Book now to enjoy exclusive offers and a memorable stay!</p>
+          <h2 class="card-title"><%= t("rooms.info2") %></h2>
+          <p class="card-text"><%= t("rooms.info3") %></p>
         </div>
       </div>
     </div>

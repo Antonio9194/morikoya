@@ -15,31 +15,31 @@
           <li class="nav-item">
             <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "collapsed-size-16 rooms-icon" %>
-              Rooms
+              <%= t("navbar.rooms")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "contact.png", style: "width: 20px; height: 20px;", class: "collapsed-size-16 contact-icon" %>
-              Contact Us
+              <%= t("navbar.contact_us")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
-              About Us
+              <%= t("navbar.about_us")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size-20" %>
-              FAQs
+              <%= t("navbar.faqs")%>
             <% end %>
           </li>
           <li class="nav-item pwa-visible">
             <%= link_to new_user_session_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "login.png", style: "width: 20px; height: 20px;", class: "collapsed-size-16 login-icon" %>
-              Login
+              <%= t("navbar.login")%>
             <% end %>
           </li>
         <% end %>
@@ -49,13 +49,13 @@
           <li class="nav-item">
             <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-              Rooms
+              <%= t("navbar.rooms")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to admin_bookings_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "bookings.png", style: "width: 20px; height: 20px;", class: "me-1" %>
-              Bookings
+              <%= t("navbar.bookings")%>
             <% end %>
           </li>
           <li class="nav-item pwa-visible">
@@ -71,37 +71,37 @@
           <li class="nav-item">
             <%= link_to rooms_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "rooms.png", style: "width: 20px; height: 20px;", class: "collapsed-size-16 rooms-icon" %>
-              Rooms
+              <%= t("navbar.rooms")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to new_contact_message_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "contact.png", style: "width: 20px; height: 20px;", class: "collapsed-size-16 contact-icon" %>
-              Contact Us
+              <%= t("navbar.contact_us")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to about_us_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "about.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
-              About Us
+              <%= t("navbar.about_us")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to faqs_path, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "faq.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size-20" %>
-              FAQs
+              <%= t("navbar.faqs")%>
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to guest_path(current_user), class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "guestDashboard.png", style: "width: 25px; height: 25px;", class: "me-1 collapsed-size-20" %>
-              Dashboard
+              <%= t("navbar.dashboard")%>
             <% end %>
           </li>
           <li class="nav-item pwa-visible">
             <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link d-flex align-items-center" do %>
               <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size-20" %>
-              Logout
+              <%= t("navbar.logout")%>
             <% end %>
           </li>
         <% end %>
@@ -114,14 +114,14 @@
         <li class="nav-item">
           <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link d-flex align-items-center" do %>
             <%= image_tag "logout.png", style: "width: 23px; height: 23px;", class: "me-1 collapsed-size-20" %>
-            Logout
+            <%= t("navbar.logout")%>
           <% end %>
         </li>
       <% else %>
         <li class="nav-item ">
           <%= link_to new_user_session_path, class: "nav-link d-flex align-items-center" do %>
             <%= image_tag "login.png", style: "width: 20px; height: 20px;", class: "collapsed-size-16 login-icon" %>
-            Login
+            <%= t("navbar.login")%>
           <% end %>
         </li>
       <% end %>

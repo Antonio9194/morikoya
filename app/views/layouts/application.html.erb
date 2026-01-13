@@ -24,9 +24,10 @@
     <script src="https://js.stripe.com/v3/"></script>
   </head>
 
-  <body>
+  <body data-locale="<%= I18n.locale %>">
     <main>
       <%= render "shared/navbar" %>
+      <%= render "shared/languages" %>
       <%= render "shared/flashes" %>
       <%= yield %>
       <!--AI chatbot-->

@@ -1,28 +1,27 @@
 <% if current_user.present? && current_user.admin? %>
   <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
-  
   <div class="d-flex flex-column justify-content-center align-items-center">
     <div>
       <h1 class="minakoya" style="color: white; font-size: 5rem;">MorikoYa</h1>
       <hr class="line-above">
-      <p style="color: white;">Welcome back <%= current_user.first_name %></p>
+      <p style="color: white;"><%= t("home.welcome_back") %> <%= current_user.first_name %></p>
     </div>
     <!-- Daily summary -->
     <div class="daily-summary" data-controller="admin-dashboard">
       <div class="row header">
         <div class="col">
           <button data-action="click->admin-dashboard#showArrivals">
-            Next Arrivals (<%= @arrivals&.count || 0 %>)
+            <%= t("home.next_arrivals") %> (<%= @arrivals&.count || 0 %>)
           </button>
         </div>
         <div class="col">
           <button data-action="click->admin-dashboard#showDepartures">
-            Next Departures (<%= @departures&.count || 0 %>)
+            <%= t("home.next_departures") %> (<%= @departures&.count || 0 %>)
           </button>
         </div>
         <div class="col">
           <button data-action="click->admin-dashboard#showStayings">
-            Currently Staying (<%= @stayings&.count || 0 %>)
+            <%= t("home.currently_staying") %> (<%= @stayings&.count || 0 %>)
           </button>
         </div>
       </div>
@@ -37,60 +36,60 @@
         <%= render 'stayings' %>
       </div>
     </div>
-  <% else %>
-    <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
-    <div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh;">
-      <div>
-        <h1 class="minakoya" style="color: white; font-size: 5rem;">MorikoYa</h1>
-        <hr class="line-above">
-        <p style="color: white;">Your Home Away From Home</p>
-      </div>
-      <%= form_with url: rooms_path, method: :get, class: "form d-flex flex-column", data: { controller: "booking-form guests" } do %>
-        <div class="d-flex justify-content-between align-items-center search-bar">
-          <!-- Check-In -->
-          <div class="search-item" id="check-in-btn" data-action="click->booking-form#open" data-type="check_in">
-            <div class="icon-circle">
-              <%= image_tag "checkinout.png" %>
-            </div>
-            <div class="text">
-              <div class="label">Check-In</div>
-              <div class="value" data-booking-form-target="checkInValue">
-                <%= params.dig(:search, :check_in) %>
-              </div>
-            </div>
-          </div>
-          <!-- Check-Out -->
-          <div class="search-item" id="check-out-btn" data-action="click->booking-form#open" data-type="check_out">
-            <div class="icon-circle">
-              <%= image_tag "checkinout.png" %>
-            </div>
-            <div class="text">
-              <div class="label">Check-Out</div>
-              <div class="value" data-booking-form-target="checkOutValue">
-                <%= params.dig(:search, :check_out) %>
-              </div>
-            </div>
-          </div>
-          <%= hidden_field_tag :check_in, params.dig(:search, :check_in), data: { booking_form_target: "checkInInput" } %>
-          <%= hidden_field_tag :check_out, params.dig(:search, :check_out), data: { booking_form_target: "checkOutInput" } %>
-          <!-- Guests -->
-          <div class="search-item" id="guests-btn" data-action="click->guests#open" >
-            <div class="icon-circle">
-              <%= image_tag "guests.png" %>
-            </div>
-            <div class="text">
-              <div class="label">Guests</div>
-              <div class="value d-none" data-guests-target="guestsValue">
-                <%= params.dig(:search, :guests)%>
-              </div>
-            </div>
-          </div>
-          <%= hidden_field_tag :guests, params.dig(:search, :guests), data: {guests_target: "guestsInput"} %>
-          <%= submit_tag "Search", class: "search-btn" %>
-        </div>
-        <%= render "calendar" %>
-        <!--"guest_num: @guest_num" is here so that there is no "undefined" error when rendering the partial-->
-        <%= render "guests", guest_num: @guest_num %>
-      <% end %>
+  </div>
+<% else %>
+  <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
+  <div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh;">
+    <div>
+      <h1 class="minakoya" style="color: white; font-size: 5rem;">MorikoYa</h1>
+      <hr class="line-above">
+      <p style="color: white;"><%= t("home.tagline") %></p>
     </div>
-  <% end %>
+    <%= form_with url: rooms_path, method: :get, class: "form d-flex flex-column", data: { controller: "booking-form guests" } do %>
+      <div class="d-flex justify-content-between align-items-center search-bar">
+        <!-- Check-In -->
+        <div class="search-item" id="check-in-btn" data-action="click->booking-form#open" data-type="check_in">
+          <div class="icon-circle">
+            <%= image_tag "checkinout.png" %>
+          </div>
+          <div class="text">
+            <div class="label"><%= t("home.check_in") %></div>
+            <div class="value" data-booking-form-target="checkInValue">
+              <%= params.dig(:search, :check_in) %>
+            </div>
+          </div>
+        </div>
+        <!-- Check-Out -->
+        <div class="search-item" id="check-out-btn" data-action="click->booking-form#open" data-type="check_out">
+          <div class="icon-circle">
+            <%= image_tag "checkinout.png" %>
+          </div>
+          <div class="text">
+            <div class="label"><%= t("home.check_out") %></div>
+            <div class="value" data-booking-form-target="checkOutValue">
+              <%= params.dig(:search, :check_out) %>
+            </div>
+          </div>
+        </div>
+        <%= hidden_field_tag :check_in, params.dig(:search, :check_in), data: { booking_form_target: "checkInInput" } %>
+        <%= hidden_field_tag :check_out, params.dig(:search, :check_out), data: { booking_form_target: "checkOutInput" } %>
+        <!-- Guests -->
+        <div class="search-item" id="guests-btn" data-action="click->guests#open" >
+          <div class="icon-circle">
+            <%= image_tag "guests.png" %>
+          </div>
+          <div class="text">
+            <div class="label"><%= t("home.guests") %></div>
+            <div class="value d-none" data-guests-target="guestsValue">
+              <%= params.dig(:search, :guests) %>
+            </div>
+          </div>
+        </div>
+        <%= hidden_field_tag :guests, params.dig(:search, :guests), data: {guests_target: "guestsInput"} %>
+        <%= submit_tag t("home.search"), class: "search-btn" %>
+      </div>
+      <%= render "calendar" %>
+      <%= render "guests", guest_num: @guest_num %>
+    <% end %>
+  </div>
+<% end %>

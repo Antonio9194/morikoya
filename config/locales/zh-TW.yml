@@ -1,0 +1,437 @@
+zh-TW:
+  home:
+    welcome_back: "歡迎回來"
+    next_arrivals: "下一個到達"
+    next_departures: "下一個出發"
+    currently_staying: "目前入住"
+    tagline: "旅途中的家"
+    check_in: "入住"
+    check_out: "退房"
+    guests: "入住人數"
+    search: "搜尋"
+
+  navbar:
+    rooms: "客房"
+    contact_us: "聯絡我們"
+    about_us: "關於我們"
+    faqs: "常見問題"
+    login: "登入"
+    logout: "登出"
+    dashboard: "儀表板"
+    bookings: "預訂"
+
+  access:
+    title: "交通及出行"
+    description: "淺草在東京擁有卓越的交通便利性，從飯店出發輕鬆前往市內各大景點。多條地鐵路線、機場連接以及觀光船近在咫尺，讓出行簡單方便。"
+
+    subway:
+      - station: "淺草站（筑波快線 – TX線）– 步行3分鐘"
+        info: "最近的車站，方便前往秋葉原及東京北部"
+      - station: "田原町站（銀座線）– 步行7分鐘"
+        info: "快速前往上野、銀座、新橋、赤坂、澀谷"
+      - station: "淺草站（銀座線）– 步行10分鐘"
+        info: "直達上野、銀座和澀谷"
+
+    airport:
+      title: "機場出行"
+      haneda: "羽田機場 → 淺草：約40~45分鐘（都營淺草線，通常無需換乘）"
+      narita: "成田機場 → 淺草：約60~70分鐘（京成線 → 都營淺草線，部分直達）"
+
+    bus:
+      title: "公車及地面交通"
+      info1: "附近都營巴士直達上野、東京晴空塔、東京站及日本橋"
+      info2: "適合喜歡地面出行的客人"
+
+    sightseeing:
+      title: "觀光選項"
+      info1: "東京水上巴士（隅田川遊船）– 步行10分鐘"
+      info2: "可前往台場、濱離宮及日出碼頭"
+      info3: "淺草歷史街區提供人力車遊覽"
+
+    taxi:
+      title: "計程車及共乘服務"
+      info1: "雷門及淺草站附近設有計程車乘車點"
+      info2: "支持無現金叫車應用：GO、Uber、DiDi"
+
+  location:
+    link:
+      map: "地圖"
+      access: "交通資訊"
+      form: "聯絡表單"
+    title: "位置與交通"
+    question1: "如何前往飯店？"
+    answer1: >
+      飯店位於淺草站與田原町站附近，可輕鬆搭乘地鐵與公車抵達。
+      請參考 %{map_link} 查看詳細地址，
+      並查看 %{access_link} 章節了解交通方式。
+      如需進一步協助，歡迎透過 %{contact_link} 與我們聯繫。
+    question2: "是否提供機場接送服務？"
+    answer2: "本飯店不提供機場接送服務，但可為您提供最佳交通建議。"
+    question3: "附近有停車場嗎？"
+    answer3: "飯店未設置停車場，但步行距離內有多個付費停車場。"
+
+  arrivals:
+    room: "房間"
+    checkin: "入住"
+    guests: "人數"
+
+  departure:
+    room: "房間"
+    checkin: "入住"
+    guests: "人數"
+
+  attractions:
+    title: "本地景點"
+    description: "我們的酒店位置方便，步行即可到達東京一些最具標誌性的文化和歷史景點。"
+    attraction1: "淺草寺（Sensō-ji Temple）– 步行8分鐘"
+    info1: "東京最古老且最受歡迎的寺廟，著名的雷門和五重塔都在這裡。"
+    attraction2: "仲見世街 – 步行9分鐘"
+    info2: "通往淺草寺的歷史步行街，售賣傳統工藝品和經典日本街頭小吃。"
+    attraction3: "淺草神社（Asakusa Shrine）– 步行10分鐘"
+    info3: "位於淺草寺旁的保存完好的神社，以三社祭聞名。"
+    attraction4: "淺草文化旅遊資訊中心 – 步行11分鐘"
+    info4: "提供免費觀景台，可俯瞰淺草和東京天空樹全景。"
+    attraction5: "花屋敷遊樂園 – 步行12分鐘"
+    info5: "日本最古老的遊樂園，提供懷舊復古的遊樂設施和適合家庭的景點。"
+    attraction6: "隅田公園 – 步行13分鐘"
+    info6: "沿河公園，因櫻花和天空樹景觀而聞名。"
+    attraction7: "隅田川步道 – 步行15分鐘"
+    info7: "風景優美的步行橋，可欣賞河濱美景並通往東京天空樹。"
+    attraction8: "東京天空樹 – 步行20分鐘 / 乘火車10分鐘"
+    info8: "日本最高的塔，設有觀景台、水族館和購物中心。"
+
+  culture:
+    title: "文化體驗"
+    culture1: "現代及復古和服/浴衣租賃（可選髮型造型）；非常適合遊覽淺草寺。"
+    info1: "東京最古老且最受歡迎的寺廟，著名的雷門和五重塔都在這裡。"
+    culture2: "Kesa 東京和服租賃 – 步行10分鐘"
+    info2: "提供休閒及正式和服，可使用英文。適合在淺草神社街區漫步。"
+    culture3: "茶道體驗 – 步行10分鐘"
+    info3: "在榻榻米房間學習茶道禮儀，準備抹茶，享受日本點心。"
+    culture4: "和菓子製作體驗 – 步行10分鐘"
+    info4: "在傳統甜點師指導下製作應季的練切點心。"
+    culture5: "摺紙 / 書法工作坊 – 步行10分鐘"
+    info5: "親手體驗日本書法或傳統紙藝製作。"
+    culture6: "和服 + 江戶切子玻璃工藝體驗 (花華 × 創吉) – 步行12分鐘"
+    info6: "穿上和服製作江戶風格切割玻璃，獨特的工藝與文化體驗結合。"
+    culture7: "相撲博物館 & 兩國國技館 – 乘火車20分鐘"
+    info7: "相撲文化中心；探索博物館、體育場及兩國的相撲主題街道。"
+    culture8: "相撲早晨練習參觀 – 乘火車20分鐘"
+    info8: "早晨參觀相撲訓練館，深入了解真實相撲生活。"
+
+  facilities:
+    title: "設施"
+    question1: "有洗衣間嗎？"
+    answer1: "是的，每間公寓都配有洗衣機和烘乾機。"
+    question2: "可以寄放行李嗎？"
+    answer2: "入住前和退房後都可以寄放行李。"
+    question3: "有停車場嗎？"
+    answer3: "沒有私人停車位，但附近有付費停車場可使用。"
+
+  map:
+    address: "〒111-0035 東京都台東區西淺草3-20-13"
+
+  policies:
+    title: "住宿政策"
+    question1: "可以攜帶寵物嗎？"
+    answer1: "不允許攜帶寵物。"
+    question2: "可以吸菸嗎？"
+    answer2: "本館為全館禁菸。"
+    question3: "可以攜帶兒童入住嗎？"
+    answer3: "歡迎兒童入住。"
+
+  reservations:
+    title: "訂房與入住"
+    question1: "入住與退房時間是幾點？"
+    answer1: "入住時間為15:00 之後，退房時間為 11:00 之前。"
+    question2: "可以申請提前入住或提前退房嗎？"
+    answer2: "提前入住需視房況而定，若可行我們將盡量安排；提前退房則隨時可以。"
+    question3: "可以當天直接到店訂房嗎？"
+    answer3: "是否接受當天到店訂房取決於當日房間狀況。"
+    question4: "取消政策為何？"
+    answer4: "訂房後 3 小時內可免費取消，超過時間將收取取消費用。"
+    question5: "可使用哪些付款方式？"
+    answer5: "我們接受主要信用卡、現金以及部分數位支付方式。"
+    question6: "需要支付押金嗎？"
+    answer6: "不需要押金。"
+
+  restaurants:
+    title: "餐廳與咖啡館"
+    place1: "和風處兔（和風処うさぎ）– 步行9分鐘"
+    info1: "氣氛輕鬆的居酒屋，提供當季料理與多樣清酒選擇。"
+    place2: "道草咖啡（カフェみちくさ）– 步行9分鐘"
+    info2: "溫馨咖啡館，提供午餐套餐與輕食，適合早午餐或輕鬆休息。"
+    place3: "Sukemasa Coffee（スケマサコーヒー）– 步行10分鐘"
+    info3: "位於淺草後街的安靜精品咖啡店，適合觀光後享用手沖咖啡或甜點。"
+    place4: "Yoroiya（与ろゐ屋）– 步行11分鐘"
+    info4: "經典淺草風味醬油拉麵，輕鬆又美味。"
+    place5: "Benitsuru Pancake（紅鶴鬆餅）– 步行12分鐘"
+    info5: "以蓬鬆的舒芙蕾風鬆餅聞名，適合早餐或悠閒的甜點時光。"
+    place6: "壽司三味 淺草雷門店（すしざんまい）– 步行13分鐘"
+    info6: "價格實惠、品質穩定的壽司店，適合想在淺草享用新鮮壽司的旅客。"
+
+  amenities:
+    title: "客房與設施"
+    question1: "包含哪些設施？"
+    answer1: >
+      我們提供毛巾、洗髮精、沐浴乳等盥洗用品。
+      詳情請查看%{rooms_link}。
+    question2: "有提供 Wi-Fi 嗎？"
+    answer2: "是的，飯店全館提供免費高速 Wi-Fi。"
+    question3: "盥洗用品會每天補充嗎？"
+    answer3: "是的，住宿期間將由房務人員補充。"
+
+    links:
+      rooms: "客房"
+
+  shopping:
+    title: "購物街區"
+    place1: "合羽橋道具街（かっぱ橋道具街）– 步行5分鐘"
+    info1: "以廚具、日本刀具、陶瓷及食品模型商店聞名的街道。"
+    place2: "裏淺草（裏浅草）– 步行6分鐘"
+    info2: "充滿精品店、手工藝品與獨立咖啡館的時尚後街。"
+    place3: "六區大道／六區通（六区通り）– 步行9分鐘"
+    info3: "具有昭和復古風格的商店街，結合劇場、小吃攤與老東京魅力。"
+    place4: "傳法院通（伝法院通り）– 步行10分鐘"
+    info4: "江戶風格街道，販售傳統工藝、和菓子甜點與復古商店。"
+    place5: "仲見世商店街（仲見世商店街）– 步行12分鐘"
+    info5: "日本最古老的商店街之一，提供傳統小吃、紀念品與手工藝品。"
+    place6: "新仲見世商店街（新仲見世商店街）– 步行13分鐘"
+    info6: "有遮棚的商店街，販售服飾、配件、零食與輕食餐廳。"
+    place7: "Hoppy通（ホッピー通り）– 步行14分鐘"
+    info7: "聚集居酒屋與小吃攤的熱鬧街道，夜晚氣氛特別好。"
+
+  aboutus:
+    info1: "歡迎來到淺草全新的靜謐居所——傳統、文化與現代舒適在此完美結合。"
+    info2: "專為重視風格、便利性與日式魅力的旅人所設計。"
+    info3: "與我們一同體驗真實、充滿活力且獨一無二的東京淺草。"
+
+  payment:
+    complete: "完成付款"
+    summary: "預訂摘要"
+    info1: "房間："
+    info2: "入住："
+    info3: "退房："
+    info4: "入住晚數："
+    info5: "每晚價格："
+    info6: "總金額："
+    info7: "信用卡資訊"
+    info8: "支付 ¥"
+    info9: "您的付款已透過 Stripe 安全加密"
+    info10: "晚"
+    return: "取消並返回房間頁面"
+
+  date:
+    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_day_names: [日, 一, 二, 三, 四, 五, 六]
+    formats:
+      short: "%-m月%-d日"
+      long: "%Y年%B%d日"
+      long_inverted: "%d日 %b, %Y年"
+      month_year: "%Y年 %B"
+  time:
+    formats:
+      short: "%-m月%-d日"
+      long: "%Y年%B%d日"
+      long_inverted: "%d日 %b, %Y年"
+      month_year: "%Y年 %B"
+
+  booking_confirmation:
+    heading: "付款成功！"
+    info1: "您的預訂已確認！"
+    info2: "感謝您的付款。"
+    info3: "預訂詳情"
+    info4: "預訂編號："
+    info5: "房間："
+    info6: "入住："
+    info7: "退房："
+    info8: "晚數："
+    info9: "支付總額："
+    info10: "付款狀態："
+    info11: "已支付"
+    info12: "前往控制台"
+
+  moriko:
+    reply: "森子正在思考中…"
+    chat: "要和森子聊天嗎？"
+    title: "與森子聊天"
+
+  nav_aboutus:
+    nav1: "交通與抵達"
+    nav2: "當地景點"
+    nav3: "餐廳與咖啡館"
+    nav4: "購物街"
+    nav5: "文化體驗"
+
+  nav_faq:
+    nav1: "預訂"
+    nav2: "客房與設施"
+    nav3: "館內設施"
+    nav4: "政策"
+    nav5: "交通與位置"
+
+  contact_message:
+    title: "歡迎回來"
+    alt: "留下訊息給我們！"
+    full_name: "姓名"
+    email: "電子郵件"
+    message: "留言"
+
+  payment_status:
+    paid: "已付款"
+    pending: "待處理"
+    failed: "失敗"
+
+  dashboard:
+    info1: "會員註冊時間"
+    info2: "個人資料"
+    info3: "名字"
+    info4: "姓氏"
+    info5: "電子郵件地址"
+    info6: "電話號碼"
+    update: "更新資料"
+    note1: "您可以更新您的電子郵件地址"
+    note2: "請包含國家區號"
+    messages: "訊息"
+    note3: "尚無訊息……"
+    note4: "查看您與Morikoya的聯繫紀錄。"
+    browse: "瀏覽客房"
+    note5: "尚無已確認的預訂…"
+    upcoming: "即將到來的"
+    current: "當前"
+    ongoing: "進行中"
+    completed: "已完成"
+    past: "過去"
+    noupcoming: "沒有即將到來的預訂…"
+    nocurrent: "目前沒有入住…"
+    nopast: "沒有過去的入住紀錄…"
+    checkin: "入住"
+    checkout: "退房"
+    billing: "帳單記錄"
+    transaction_id: "交易編號"
+    room: "房間"
+    issue_date: "開立日期"
+    amount: "金額"
+    billing_status: "狀態"
+    receipt: "收據"
+    download: "下载"
+    total: "付款總額："
+    nomoney: "尚無付款紀錄…"
+    profile_info: "個人資料資訊"
+    billing_history: "帳單紀錄"
+
+  devise:
+    confirmation: "重新發送確認郵件"
+
+  password:
+    change: "更改密碼"
+    new: "新密碼"
+    new_confirm: "確認新密碼"
+    min_length: "至少 %{count} 個字符"
+    forgot: "忘記密碼？"
+    reset: "發送重置密碼指示"
+    email: "電子郵件"
+
+  signup:
+    title: "註冊"
+    email: "電子郵件"
+    first_name: "名字"
+    last_name: "姓氏"
+    min_length: "至少 %{count} 個字元"
+    password: "密碼"
+    confirmpass: "確認密碼"
+    phone: "電話號碼"
+    submit: "註冊"
+
+  login:
+    title: "登入"
+    email: "電子郵件"
+    password: "密碼"
+    remember: "保持登入狀態"
+    submit: "登入"
+
+  shared:
+    login: "登入"
+    signup: "註冊"
+    forgot: "忘記密碼？"
+    confirmation: "未收到確認郵件？"
+    unlcok: "未收到解鎖郵件？"
+    signin: "使用 %{provider} 登入"
+
+  rooms:
+    info1: "每晚"
+    size: "房間大小："
+    capacity: "入住人數上限："
+    guestnum: "入住人數"
+    amenities_list: "設施"
+    booking: "預訂"
+    duration: "選擇入住時長"
+    book: "預訂此房間"
+    guests: "入住人數："
+    nights: "入住晚數："
+    numnights:
+      other: "晚"
+    person:
+      one: "人"
+      other: "人"
+    price: "每晚價格："
+    total: "總價格："
+    info2: "為什麼選擇我們？"
+    info3: "在我們精心設計的房間中享受舒適自在。無論是商務還是休閒，我們的設施與服務都能讓您的入住輕鬆愉快。立即預訂，享受美好的住宿體驗。"
+    choice1: "為您的團隊至少選擇兩間房！"
+    fully_booked: "抱歉，我們已客滿！"
+    choice2: "為您的團隊至少選擇一間房！"
+    fit: "這間房非常適合您的團隊！"
+    choice3: "如果您想分開房間，也可以選擇！"
+    choice4: "為您的團隊準備兩間房！"
+    amenities:
+      twentyfour_hour_checkin: "24小時入住"
+      air_conditioning: "空調"
+      balcony: "陽台"
+      wardrobe: "衣櫃"
+      dryer: "烘衣機"
+      elevator: "電梯"
+      drying_rack: "曬衣架"
+      hair_dryer: "吹風機"
+      heating: "暖氣"
+      hot_water: "熱水"
+      in_person_checkin: "親自辦理入住"
+      internet: "網路"
+      ironing_board: "燙衣板"
+      iron: "熨斗"
+      linens: "床單與被套"
+      mosquito_net: "蚊帳"
+      private_entrance: "獨立入口"
+      tv: "電視"
+      towels: "毛巾"
+      washing_machine: "洗衣機"
+      bidet: "坐浴盆"
+      shower: "淋浴"
+      toilet: "馬桶"
+      body_soap: "沐浴皂"
+      conditioner: "潤髮乳"
+      shampoo: "洗髮精"
+      shower_gel: "沐浴乳"
+      dining_area: "用餐區"
+      kitchen_utensils: "廚房用品"
+      coffee_machine: "咖啡機"
+      freezer: "冷凍庫"
+      kitchen_stove: "爐灶"
+      microwave: "微波爐"
+      refrigerator: "冰箱"
+    sofa_bed:
+      one: "沙發床"
+      other: "沙發床"
+    double_bed:
+      one: "雙人床"
+      other: "雙人床"
+    bunk_bed:
+      one: "雙層床"
+      other: "雙層床"
+    semidouble_bed:
+      one: "小雙人床"
+      other: "小雙人床"
+    single_bed:
+      one: "單人床"
+      other: "單人床"

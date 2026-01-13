@@ -1,23 +1,20 @@
 <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "background-video" %>
-
 <div class="container-fluid contactus-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
   <div class="contactus">
     <% if current_user.present? %>
-      <h5 class="welcome-text"> Welcome back <%= current_user.first_name %>!</h5>
+      <h5 class="welcome-text"> <%= t("contact_message.title") %> <%= current_user.first_name %>!</h5>
     <% else %>
-      <h5 class="welcome-text"> Leave us a message!</h5>
+      <h5 class="welcome-text"> <%= t("contact_message.alt") %></h5>
     <% end %>
-
     <div class="contact-form">
       <%= simple_form_for @contact_message do |f| %>
-        <%= f.input :name, label: "Full Name", input_html: { value: current_user&.first_name } %>
-        <%= f.input :email, label: "Email", input_html: { value: current_user&.email } %>
-        <%= f.input :message, as: :text, label: "Message" %>
+        <%= f.input :name, label: t("contact_message.full_name"), input_html: { value: current_user&.first_name } %>
+        <%= f.input :email, label: t("contact_message.email"), input_html: { value: current_user&.email } %>
+        <%= f.input :message, as: :text, label: t("contact_message.message") %>
         <%= f.button :submit, "Send" %>
       <% end %>
     </div>
   </div>
-
   <div class="mapcontent">
     <%= render "pages/map" %>
   </div>

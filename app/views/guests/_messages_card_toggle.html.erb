@@ -2,26 +2,26 @@
   <div class="card-body p-4" data-controller="messages-toggle">
     <% if user.contact_messages.any? %>
       <div class="d-flex justify-content-between align-items-start">
-        <h5 class="card-title mb-4">Messages</h5>
+        <h5 class="card-title mb-4"><%= t("dashboard.messages") %></h5>
         <%= image_tag "eyeslash.png", style: "width: 30px; height: 30px; padding:5px; border: solid 1px #A9A9A9; border-radius: 20%",  data: { action: "click->messages-toggle#expand", messages_toggle_target: "collapseIcon" }%>
         <%= image_tag "eye.png", class:"d-none", style:"width: 30px; height: 30px; padding:5px; border: solid 1px #A9A9A9; border-radius: 20%",  data: { action: "click->messages-toggle#collapse", messages_toggle_target: "expandIcon" }%>
       </div>
       <div data-messages-toggle-target="placeholderText">
-        <p class="text-muted text-center py-4">See your contact history with Morikoya.</p>
+        <p class="text-muted text-center py-4"><%= t("dashboard.note4") %></p>
       </div>
       <div class="messages-list d-none" data-messages-toggle-target="messagesList">
         <% user.contact_messages.each do |message| %>
           <div class="message card mb-3 border-0 bg-light rounded-3">
             <div class="card-body p-3">
               <p class="mb-0"><%= message.message %></p>
-              <small class="text-muted"><%= message.created_at.strftime("%d %b, %Y") %></small>
+              <small class="text-muted"><%= l(message.created_at, format: :long) %></small>
             </div>
           </div>
         <% end %>
       </div>
     <% else %>
-      <h5 class="card-title mb-4">Messages</h5>
-      <p class="text-muted text-center py-4">No messages yet...</p>
+      <h5 class="card-title mb-4"><%= t("dashboard.messages") %></h5>
+      <p class="text-muted text-center py-4"><%= t("dashboard.note3") %></p>
     <% end %>
   </div>
 </div>

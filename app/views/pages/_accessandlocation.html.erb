@@ -1,31 +1,33 @@
-<h3 class="muted">Access & Location</h3>
+<h3 class="muted"><%= t("location.title") %></h3>
 <div class="faq-block">
   <div class="faqquestion" data-action="click->faq#toggle">
-    <h5>How do I get to the hotel?</h5>
+    <h5><%= t("location.question1") %></h5>
     <h5 class="plus">+</h5>
   </div>
   <div class="faqanswer d-none" data-faq-target="answer">
     <h6>
-      We are located near Asakusa Station & Tawaramachi Station, with easy access via subway and bus.
-      Please refer to our <%= link_to "map", about_us_path %> for the exact address and check the <%= link_to "access", about_us_path %> section, or contact us via this <%= link_to "form", new_contact_message_path  %> for specific instructions.
+      <%= t(
+      "location.answer1",
+      map_link: link_to(t("location.link.map"), about_us_path),
+      access_link: link_to(t("location.link.access"), about_us_path(anchor: "access")),
+      contact_link: link_to(t("location.link.form"), new_contact_message_path)
+      ).html_safe %>
     </h6>
   </div>
   <hr>
   <div class="faqquestion" data-action="click->faq#toggle">
-    <h5>Do you offer airport pickup?</h5>
+    <h5><%= t("location.question2") %></h5>
     <h5 class="plus">+</h5>
   </div>
   <div class="faqanswer d-none" data-faq-target="answer">
-    <h6>Airport pickup is not provided, but we can guide you on the best route.</h6>
+    <h6><%= t("location.answer2") %></h6>
   </div>
   <hr>
   <div class="faqquestion" data-action="click->faq#toggle">
-    <h5>Is parking available nearby?</h5>
+    <h5><%= t("location.question3") %></h5>
     <h5 class="plus">+</h5>
   </div>
   <div class="faqanswer d-none" data-faq-target="answer">
-    <h6>
-      There is no on-site parking, but several paid parking lots are available within walking distance of the hotel.
-    </h6>
+    <h6><%= t("location.answer3") %></h6>
   </div>
 </div>
