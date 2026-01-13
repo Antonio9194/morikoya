@@ -8,7 +8,7 @@
       <div class="text">
         <div class="label"><%= t("home.check_in") %></div>
         <div class="value" data-booking-form-target="checkInValue">
-          <%= @check_in && l(@check_in, format: :long_inverted) %>
+          <%= @check_in && l(@check_in, format: :long) %>
         </div>
       </div>
     </div>
@@ -20,7 +20,7 @@
       <div class="text">
         <div class="label"><%= t("home.check_out") %></div>
         <div class="value" data-booking-form-target="checkOutValue">
-          <%= @check_out && l(@check_out, format: :long_inverted) %>
+          <%= @check_out && l(@check_out, format: :long) %>
         </div>
       </div>
     </div>
