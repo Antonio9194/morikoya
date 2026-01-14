@@ -3,8 +3,8 @@
   <div class="contact-hero">
     <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "hero-video" %>
     <div class="hero-overlay">
-      <h1 class="hero-title">Contact Us</h1>
-      <p class="hero-subtitle">We'd love to hear from you</p>
+      <h1 class="hero-title"><%= t("contact_message.header") %></h1>
+      <p class="hero-subtitle"><%= t("contact_message.header1") %></p>
     </div>
   </div>
   <!-- Info & Map Section -->
@@ -15,15 +15,15 @@
         <div class="col-lg-5 info-col">
           <div class="info-content">
             <div class="info-block mb-5">
-              <h3 class="info-title">Location & Maps</h3>
+              <h3 class="info-title"><%= t("contact_message.subtitle") %></h3>
               <p class="info-text">
                 〒111-0035<br>
-                3-20-13 Nishiasakusa,<br>
-                Taito-ku, Tokyo, Japan
+                <%= t("contact_message.address1") %><br>
+                <%= t("contact_message.address2") %>
               </p>
             </div>
             <div class="info-block">
-              <h3 class="info-title">Contact Us</h3>
+              <h3 class="info-title"><%= t("contact_message.header") %></h3>
               <p class="info-text">
                 Phone: 03-xxxx-xxxx<br>
                 Fax: 03-xxxx-xxxx
@@ -47,25 +47,25 @@
         <div class="col-lg-8 col-xl-6">
           <div class="form-card">
             <div class="text-center mb-5">
-              <h2 class="form-title">Send us a Message</h2>
+              <h2 class="form-title"><%= t("contact_message.alt") %></h2>
               <% if current_user.present? %>
-                <p class="form-subtitle">Welcome back, <%= current_user.first_name %></p>
+                <p class="form-subtitle"><%= t("contact_message.title") %> <%= current_user.first_name %></p>
               <% else %>
-                <p class="form-subtitle">We will get back to you shortly</p>
+                <p class="form-subtitle"><%= t("contact_message.alt") %></p>
               <% end %>
             </div>
             <%= simple_form_for @contact_message, html: { class: "luxury-form" } do |f| %>
               <div class="form-group mb-4">
-                <%= f.input :name, label: false, placeholder: "Full Name", input_html: { value: current_user&.first_name, class: "form-control-luxury" } %>
+                <%= f.input :name, label: false, placeholder: t("contact_message.full_name"), input_html: { value: current_user&.first_name, class: "form-control-luxury" } %>
               </div>
               <div class="form-group mb-4">
-                <%= f.input :email, label: false, placeholder: "Email Address", input_html: { value: current_user&.email, class: "form-control-luxury" } %>
+                <%= f.input :email, label: false, placeholder: t("contact_message.email"), input_html: { value: current_user&.email, class: "form-control-luxury" } %>
               </div>
               <div class="form-group mb-5">
-                <%= f.input :message, as: :text, label: false, placeholder: "How can we help you?", input_html: { class: "form-control-luxury", rows: 5 } %>
+                <%= f.input :message, as: :text, label: false, placeholder: t("contact_message.message"), input_html: { class: "form-control-luxury", rows: 5 } %>
               </div>
               <div class="text-center">
-                <%= f.button :submit, "Send Message", class: "btn-luxury-submit" %>
+                <%= f.button :submit, t("contact_message.send"), class: "btn-luxury-submit" %>
               </div>
             <% end %>
           </div>

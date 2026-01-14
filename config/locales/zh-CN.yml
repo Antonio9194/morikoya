@@ -1,0 +1,470 @@
+zh-CN:
+  home:
+    welcome_back: "欢迎回来"
+    next_arrivals: "下一个到达"
+    next_departures: "下一个出发"
+    currently_staying: "当前入住"
+    tagline: "旅途中的家"
+    check_in: "入住"
+    check_out: "退房"
+    guests: "入住人数"
+    search: "搜索"
+
+  navbar:
+    rooms: "客房"
+    contact_us: "联系我们"
+    about_us: "关于我们"
+    faqs: "常见问题"
+    login: "登录"
+    logout: "登出"
+    dashboard: "仪表盘"
+    bookings: "预订"
+
+  access:
+    title: "交通及出行"
+    description: "浅草在东京拥有卓越的交通便利性，从酒店出发轻松前往市内各大景点。多条地铁线路、机场连接以及观光船近在咫尺，让出行简单方便。"
+
+    subway:
+      - station: "浅草站（筑波快线 – TX线）– 步行3分钟"
+        info: "最近的车站，方便前往秋叶原及东京北部"
+      - station: "田原町站（银座线）– 步行7分钟"
+        info: "快速前往上野、银座、新桥、赤坂、涩谷"
+      - station: "浅草站（银座线）– 步行10分钟"
+        info: "直达上野、银座和涩谷"
+
+    airport:
+      title: "机场出行"
+      haneda: "羽田机场 → 浅草：约40~45分钟（都营浅草线，通常无需换乘）"
+      narita: "成田机场 → 浅草：约60~70分钟（京成线 → 都营浅草线，部分直达）"
+
+    bus:
+      title: "公交及地面交通"
+      info1: "附近都营巴士直达上野、东京晴空塔、东京站及日本桥"
+      info2: "适合喜欢地面出行的客人"
+
+    sightseeing:
+      title: "观光选项"
+      info1: "东京水上巴士（隅田川游船）– 步行10分钟"
+      info2: "可前往台场、浜离宫及日出码头"
+      info3: "浅草历史街区提供人力车游览"
+
+    taxi:
+      title: "出租车及共享出行"
+      info1: "雷门及浅草站附近设有出租车乘车点"
+      info2: "支持无现金叫车应用：GO、Uber、DiDi"
+
+  location:
+    link:
+      map: "地图"
+      access: "交通信息"
+      form: "联系表单"
+    title: "位置与交通"
+    question1: "如何前往酒店？"
+    answer1: >
+      酒店位于浅草站和田原町站附近，可通过地铁和公交轻松抵达。
+      请参考 %{map_link} 查看详细地址，
+      并查看 %{access_link} 部分获取交通信息。
+      如需进一步协助，请通过 %{contact_link} 与我们联系。
+    question2: "是否提供机场接送服务？"
+    answer2: "我们不提供机场接送服务，但可为您推荐最便捷的交通方式。"
+    question3: "附近有停车场吗？"
+    answer3: "酒店内不提供停车位，但步行范围内有多处付费停车场。"
+
+  arrivals:
+    room: "房间"
+    checkin: "入住"
+    guests: "人数"
+
+  attractions:
+    title: "本地景点"
+    description: "我们的酒店位置方便，步行即可到达东京一些最具标志性的文化和历史景点。"
+    attraction1: "浅草寺（Sensō-ji Temple）– 步行8分钟"
+    info1: "东京最古老且最受欢迎的寺庙，著名的雷门和五重塔都在这里。"
+    attraction2: "仲见世街 – 步行9分钟"
+    info2: "通往浅草寺的历史步行街，售卖传统工艺品和经典日本街头小吃。"
+    attraction3: "浅草神社（Asakusa Shrine）– 步行10分钟"
+    info3: "位于浅草寺旁的保存完好的神社，以三社祭闻名。"
+    attraction4: "浅草文化旅游信息中心 – 步行11分钟"
+    info4: "提供免费观景台，可俯瞰浅草和东京天空树全景。"
+    attraction5: "花屋敷游乐园 – 步行12分钟"
+    info5: "日本最古老的游乐园，提供怀旧复古的游乐设施和适合家庭的景点。"
+    attraction6: "隅田公园 – 步行13分钟"
+    info6: "沿河公园，因樱花和天空树景观而闻名。"
+    attraction7: "隅田川步道 – 步行15分钟"
+    info7: "风景优美的步行桥，可欣赏河滨美景并通往东京天空树。"
+    attraction8: "东京天空树 – 步行20分钟 / 乘火车10分钟"
+    info8: "日本最高的塔，设有观景台、水族馆和购物中心。"
+
+  culture:
+    title: "文化体验"
+    culture1: "现代及复古和服/浴衣租赁（可选发型造型）；非常适合游览浅草寺。"
+    info1: "东京最古老且最受欢迎的寺庙，著名的雷门和五重塔都在这里。"
+    culture2: "Kesa 东京和服租赁 – 步行10分钟"
+    info2: "提供休闲及正式和服，可使用英语。适合在浅草神社街区漫步。"
+    culture3: "茶道体验 – 步行10分钟"
+    info3: "在榻榻米房间学习茶道礼仪，准备抹茶，享受日本点心。"
+    culture4: "和菓子制作体验 – 步行10分钟"
+    info4: "在传统甜点师指导下制作应季的练切点心。"
+    culture5: "折纸 / 书法工作坊 – 步行10分钟"
+    info5: "动手体验日本书法或传统纸艺制作。"
+    culture6: "和服 + 江户切子玻璃工艺体验 (花华 × 创吉) – 步行12分钟"
+    info6: "穿上和服制作江户风格切割玻璃，独特的工艺与文化体验结合。"
+    culture7: "相扑博物馆 & 两国国技馆 – 乘火车20分钟"
+    info7: "相扑文化中心；探索博物馆、体育场及两国的相扑主题街道。"
+    culture8: "相扑早练参观 – 乘火车20分钟"
+    info8: "早晨参观相扑训练馆，深入了解真实相扑生活。"
+
+  facilities:
+    title: "设施"
+    question1: "有洗衣房吗？"
+    answer1: "是的，每间公寓都配有洗衣机和烘干机。"
+    question2: "可以寄存行李吗？"
+    answer2: "可以在入住前和退房后寄存行李。"
+    question3: "有停车场吗？"
+    answer3: "没有私人停车位，但附近有付费停车场可供使用。"
+
+  map:
+    address: "〒111-0035 东京都台东区西浅草3-20-13"
+
+  policies:
+    title: "住宿政策"
+    question1: "可以携带宠物吗？"
+    answer1: "不允许携带宠物。"
+    question2: "可以吸烟吗？"
+    answer2: "酒店为全馆禁烟。"
+    question3: "可以携带儿童入住吗？"
+    answer3: "欢迎儿童入住。"
+
+  reservations:
+    title: "预订与入住"
+    question1: "入住和退房时间是几点？"
+    answer1: "入住时间为15:00以后，退房时间为11:00之前。"
+    question2: "可以申请提前入住或提前退房吗？"
+    answer2: "提前入住需视房间情况而定，如有可能我们将尽量安排；提前退房始终可以。"
+    question3: "可以当天直接到店预订吗？"
+    answer3: "是否接受当天到店预订取决于当日房间情况。"
+    question4: "取消政策是怎样的？"
+    answer4: "预订后3小时内可免费取消，超过时间将收取取消费用。"
+    question5: "支持哪些付款方式？"
+    answer5: "我们接受主要信用卡、现金以及部分数字支付方式。"
+    question6: "需要支付押金吗？"
+    answer6: "不需要支付押金。"
+
+  restaurants:
+    title: "餐厅与咖啡馆"
+    place1: "和风处兔（和風処うさぎ）– 步行9分钟"
+    info1: "氛围轻松的居酒屋，提供时令料理和丰富的清酒选择。"
+    place2: "道草咖啡（カフェみちくさ）– 步行9分钟"
+    info2: "温馨的咖啡馆，提供午餐套餐和轻食，非常适合早午餐或休息小憩。"
+    place3: "Sukemasa Coffee（スケマサコーヒー）– 步行10分钟"
+    info3: "位于浅草后街的安静精品咖啡店，适合观光后享用手冲咖啡或甜点。"
+    place4: "Yoroiya（与ろゐ屋）– 步行11分钟"
+    info4: "经典浅草风味酱油拉面，轻松随意又美味。"
+    place5: "Benitsuru Pancake（红鹤松饼）– 步行12分钟"
+    info5: "以松软的舒芙蕾风松饼闻名，非常适合早餐或悠闲的甜点时光。"
+    place6: "寿司三味 浅草雷门店（すしざんまい）– 步行13分钟"
+    info6: "价格亲民、品质稳定的寿司店，适合想在浅草享用新鲜寿司的游客。"
+
+  amenities:
+    title: "客房与设施"
+    question1: "包含哪些设施？"
+    answer1: >
+      我们提供毛巾、洗发水、沐浴露等洗浴用品。
+      详情请查看%{rooms_link}。
+    question2: "有无线网络吗？"
+    answer2: "是的，酒店全馆提供免费高速 Wi-Fi。"
+    question3: "洗漱用品每天都会补充吗？"
+    answer3: "是的，住宿期间客房清洁会进行补充。"
+
+    links:
+      rooms: "客房"
+
+  shopping:
+    title: "购物街区"
+    place1: "合羽桥道具街（かっぱ橋道具街）– 步行5分钟"
+    info1: "以厨具、日本刀具、陶瓷和食品模型商店闻名的街道。"
+    place2: "里浅草（裏浅草）– 步行6分钟"
+    info2: "拥有精品店、手工艺品和独立咖啡馆的时尚后街。"
+    place3: "六区大道 / 六区通（六区通り）– 步行9分钟"
+    info3: "充满昭和复古风情的购物街，有剧场、小吃摊和老东京魅力。"
+    place4: "传法院通（伝法院通り）– 步行10分钟"
+    info4: "江户风格街道，汇集传统工艺、和果子甜点和复古商店。"
+    place5: "仲见世商店街（仲見世商店街）– 步行12分钟"
+    info5: "日本最古老的商店街之一，出售传统小吃、纪念品和手工艺品。"
+    place6: "新仲见世商店街（新仲見世商店街）– 步行13分钟"
+    info6: "有顶棚的商店街，提供服装、配饰、小吃和休闲餐厅。"
+    place7: "Hoppy街（ホッピー通り）– 步行14分钟"
+    info7: "充满活力的小巷，遍布居酒屋和美食摊，夜晚气氛最佳。"
+
+  aboutus:
+    header: "关于 Morikoya"
+    header1: "发现浅草的隐藏宝地"
+    welcome: "欢迎来到您的避风港"
+    info1: "欢迎来到浅草全新的静谧之所——传统、文化与现代舒适在此完美融合。"
+    info2: "专为注重风格、便利性以及日式魅力的旅客而设计。"
+    info3: "与我们一起体验真实而充满活力、独一无二的东京浅草。"
+
+  payment:
+    complete: "完成支付"
+    summary: "预订摘要"
+    info1: "房间："
+    info2: "办理入住："
+    info3: "退房："
+    info4: "入住晚数："
+    info5: "每晚价格："
+    info6: "总金额："
+    info7: "银行卡信息"
+    info8: "支付 ¥"
+    info9: "您的支付已通过 Stripe 安全加密"
+    info10: "晚"
+    return: "取消并返回房间页面"
+    pay: "立即付款"
+
+  date:
+    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_day_names: [日, 一, 二, 三, 四, 五, 六]
+    formats:
+      year: "%Y年"
+      short: "%-m月%-d日"
+      long: "%Y年%B%d日"
+      long_inverted: "%d日 %b, %Y年"
+      month_year: "%Y年 %B"
+  time:
+    formats:
+      year: "%Y年"
+      short: "%-m月%-d日"
+      long: "%Y年%B%d日"
+      long_inverted: "%d日 %b, %Y年"
+      month_year: "%Y年 %B"
+
+  booking_confirmation:
+    heading: "付款成功！"
+    info1: "您的预订已确认！"
+    info2: "感谢您的付款。"
+    info3: "预订详情"
+    info4: "预订编号："
+    info5: "房间："
+    info6: "入住："
+    info7: "退房："
+    info8: "晚数："
+    info9: "支付总额："
+    info10: "付款状态："
+    info11: "已支付"
+    info12: "前往仪表板"
+
+  moriko:
+    reply: "森子正在思考中…"
+    chat: "要和森子聊天吗？"
+    title: "与森子聊天"
+
+  nav_aboutus:
+    nav1: "交通与到达"
+    nav2: "当地景点"
+    nav3: "餐饮"
+    nav4: "购物街"
+    nav5: "文化体验"
+
+  nav_faq:
+    nav1: "预订"
+    nav2: "客房与设施"
+    nav3: "酒店设施"
+    nav4: "政策"
+    nav5: "交通与位置"
+
+  contact_message:
+    header: "联系我们"
+    header1: "期待您的来信"
+    subtitle: "位置 & 地图"
+    address1: "日本东京都台东区西浅草3-20-13"
+    address2: "台东区，东京，日本"
+    alt: "我们会尽快回复您"
+    send: "发送消息"
+    title: "欢迎回来"
+    title: "欢迎回来"
+    alt: "给我们留言！"
+    full_name: "姓名"
+    email: "邮箱"
+    message: "留言"
+
+  payment_status:
+    paid: "已支付"
+    pending: "待处理"
+    failed: "失败"
+
+  dashboard:
+    info1: "注册时间"
+    info2: "个人资料"
+    info3: "名字"
+    info4: "姓氏"
+    info5: "电子邮件地址"
+    info6: "电话号码"
+    update: "更新资料"
+    note1: "您可以更新您的电子邮件地址"
+    note2: "请包含国家区号"
+    messages: "消息"
+    note3: "暂无消息……"
+    note4: "查看您与Morikoya的联系记录。"
+    browse: "浏览客房"
+    note5: "尚无已确认的预订…"
+    upcoming: "即将到来的"
+    current: "当前"
+    ongoing: "进行中"
+    completed: "已完成"
+    past: "过去"
+    noupcoming: "没有即将到来的预订…"
+    nocurrent: "当前没有入住…"
+    nopast: "没有过去的入住记录…"
+    checkin: "入住"
+    checkout: "退房"
+    billing: "账单记录"
+    transaction_id: "交易编号"
+    room: "房间"
+    issue_date: "开具日期"
+    amount: "金额"
+    billing_status: "状态"
+    receipt: "收据"
+    download: "下载"
+    total: "付款总额："
+    nomoney: "暂无付款记录…"
+    profile_info: "个人资料信息"
+    billing_history: "账单记录"
+
+  devise:
+    confirmation: "重新发送确认邮件"
+
+  password:
+    info: "输入您的邮箱以接收重置说明"
+    change: "更改密码"
+    new: "新密码"
+    new_confirm: "确认新密码"
+    min_length: "最少 %{count} 个字符"
+    forgot: "忘记密码？"
+    reset: "发送重置密码指示"
+    email: "电子邮件"
+
+  signup:
+    header: "加入 Morikoya"
+    header1: "创建账户，开始您的旅程。"
+    title: "注册"
+    email: "电子邮件"
+    first_name: "名字"
+    last_name: "姓氏"
+    min_length: "至少 %{count} 个字符"
+    password: "密码"
+    confirmpass: "确认密码"
+    phone: "电话号码"
+    submit: "注册"
+
+  login:
+    header: "欢迎回来"
+    header1: "请输入您的信息以登录。"
+    title: "登录"
+    email: "邮箱"
+    password: "密码"
+    remember: "保持登录状态"
+    submit: "登录"
+
+  shared:
+    login: "登录"
+    signup: "注册"
+    forgot: "忘记密码？"
+    confirmation: "未收到确认邮件？"
+    unlcok: "未收到解锁邮件？"
+    signin: "使用 %{provider} 登录"
+
+  rooms:
+    descriptiontext: "描述"
+    select: "选择"
+    freeroom: "查看空房"
+    title1: "高级家庭房"
+    title2: "高级房"
+    title3: "标准房"
+    family: "家庭"
+    superior: "高级"
+    standard: "标准"
+    groups: "适用于最多"
+    choice5: "请选择总统套房或组合多个房间。"
+    description:
+      ab: "温馨舒适，提供您需要的基本设施。"
+      c: "空间更宽敞，提供额外舒适与放松环境。"
+    info1: "每晚"
+    size: "房间大小："
+    capacity: "入住人数上限："
+    guestnum: "入住人数"
+    amenities_list: "设施"
+    booking: "预订"
+    duration: "选择入住时长"
+    book: "预订此房间"
+    guests: "入住人数："
+    nights: "入住晚数："
+    numnights:
+      one: "晚"
+      other: "晚"
+    person:
+      one: "人"
+      other: "人"
+    price: "每晚价格："
+    total: "总价格："
+    info2: "为什么选择我们？"
+    info3: "享受我们精心设计的舒适房间。无论是商务出行还是休闲住宿，这里的设施与服务都为您的入住提供便利与舒适。立即预订，享受愉快的住宿体验。"
+    choice1: "为您的团队至少选择两间房！"
+    fully_booked: "抱歉，我们已订满！"
+    choice2: "为您的团队至少选择一间房！"
+    fit: "这间房非常适合您的团队！"
+    choice3: "如果您想分开房间，也可以选择！"
+    choice4: "为您的团队准备两间房！"
+    amenities:
+      twentyfour_hour_checkin: "24小时入住"
+      air_conditioning: "空调"
+      balcony: "阳台"
+      wardrobe: "衣柜"
+      dryer: "烘干机"
+      elevator: "电梯"
+      drying_rack: "晾衣架"
+      hair_dryer: "吹风机"
+      heating: "暖气"
+      hot_water: "热水"
+      in_person_checkin: "当面办理入住"
+      internet: "网络"
+      ironing_board: "熨衣板"
+      iron: "熨斗"
+      linens: "床上用品"
+      mosquito_net: "蚊帐"
+      private_entrance: "独立入口"
+      tv: "电视"
+      towels: "毛巾"
+      washing_machine: "洗衣机"
+      bidet: "坐浴盆"
+      shower: "淋浴"
+      toilet: "厕所"
+      body_soap: "沐浴液"
+      conditioner: "护发素"
+      shampoo: "洗发水"
+      shower_gel: "沐浴露"
+      dining_area: "餐饮区"
+      kitchen_utensils: "厨房用具"
+      coffee_machine: "咖啡机"
+      freezer: "冰柜"
+      kitchen_stove: "炉灶"
+      microwave: "微波炉"
+      refrigerator: "冰箱"
+    sofa_bed:
+      one: "沙发床"
+      other: "沙发床"
+    double_bed:
+      one: "双人床"
+      other: "双人床"
+    bunk_bed:
+      one: "双层床"
+      other: "双层床"
+    semidouble_bed:
+      one: "小双人床"
+      other: "小双人床"
+    single_bed:
+      one: "单人床"
+      other: "单人床"
+
+  faq:
+    header: "常见问题"
+    header1: "您入住所需了解的一切信息"

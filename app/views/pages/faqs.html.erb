@@ -3,18 +3,16 @@
   <div class="faq-hero">
     <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "hero-video" %>
     <div class="hero-overlay">
-      <h1 class="hero-title">Frequently Asked Questions</h1>
-      <p class="hero-subtitle">Everything you need to know for your stay</p>
+      <h1 class="hero-title"><%= t("faq.header") %></h1>
+      <p class="hero-subtitle"><%= t("faq.header1") %></p>
     </div>
   </div>
-
   <!-- Sticky Navigation -->
   <div class="faq-nav-wrapper">
     <div class="container">
       <%= render "pages/navfaq" %>
     </div>
   </div>
-
   <!-- FAQ Content -->
   <div class="container faq-content-wrapper">
     <!--Reservation & Check-in-->
@@ -39,6 +37,3 @@
     </div>
   </div>
 </div>
-<footer>
-  <%= render "shared/footer_rooms" %>
-</footer>

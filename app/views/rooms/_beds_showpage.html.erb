@@ -1,13 +1,13 @@
 <% if room.room_type == "A" %>
-  <span><%= room.sofa_bed %> Sofa Bed</span>
-  <span><%= room.bunk %> Bunk Bed</span>
-  <span><%= room.double%> Double Bed</span>
+  <span><%= room.sofa_bed %> <%= t("rooms.sofa_bed.one") %> </span>
+  <span><%= room.bunk %> <%= t("rooms.bunk_bed.one") %> </span>
+  <span><%= room.double%> <%= t("rooms.double_bed.one") %> </span>
 <% elsif room.room_type == "B" %>
-  <span><%= room.sofa_bed %> Sofa Bed</span>
-  <span><%= room.bunk %> Bunk Bed</span>
-  <span><%= room.semi_double%> Semi Double Bed</span>
+  <span><%= room.sofa_bed %> <%= t("rooms.sofa_bed.one") %> </span>
+  <span><%= room.bunk %> <%= t("rooms.bunk_bed.one") %> </span>
+  <span><%= room.semi_double%> <%= t("rooms.semidouble_bed.one") %></span>
 <% else %>
-  <span><%= room.sofa_bed %> Sofa Bed</span>
-  <span><%= room.single %> Single Bed</span>
-  <span><%= room.double%> Double Bed</span>
+  <span><%= room.sofa_bed %> <%= t("rooms.sofa_bed.one") %> </span>
+  <span><%= room.single %> <%= t("rooms.single_bed.one") %> </span>
+  <span><%= room.double%> <%= t("rooms.double_bed.one") %> </span>
 <% end %>

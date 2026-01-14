@@ -1,45 +1,39 @@
-
 <div class="dashboard-page-wrapper">
   <div class="container py-5">
     <div class="row g-4">
-    <!-- Left Column: User Info, Links, Messages -->
-    <div class="col-lg-4">
-      <div class="d-flex flex-column gap-4">
-        <!-- User Profile Card -->
-        <div class="dashboard-card card">
-          <div class="card-body p-4 text-center">
-            <div class="avatar-circle mb-3 mx-auto">
-              <%= current_user.first_name.first.upcase %>
-            </div>
-            <h4 class="mb-1"><%= current_user.first_name %> <%= current_user.last_name %></h4>
-            <p class="text-muted small mb-3">Member since <%= current_user.created_at.strftime("%B %Y") %></p>
-            
-            <div class="d-grid gap-2">
-              <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#profileModal">
-                <i class="bi bi-person me-2"></i>Profile Info
-              </button>
-              <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#billingModal">
-                <i class="bi bi-receipt me-2"></i>Billing History
-              </button>
+      <!-- Left Column: User Info, Links, Messages -->
+      <div class="col-lg-4">
+        <div class="d-flex flex-column gap-4">
+          <!-- User Profile Card -->
+          <div class="dashboard-card card">
+            <div class="card-body p-4 text-center">
+              <div class="avatar-circle mb-3 mx-auto">
+                <%= current_user.first_name.first.upcase %>
+              </div>
+              <h4 class="mb-1"><%= current_user.first_name %> <%= current_user.last_name %></h4>
+              <p class="text-muted small mb-3"><%= t("dashboard.info1") %> <%= l(current_user.created_at, format: :month_year) %></p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#profileModal">
+                  <i class="bi bi-person me-2"></i><%= t("dashboard.info2") %>
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#billingModal">
+                  <i class="bi bi-receipt me-2"></i><%= t("dashboard.billing") %>
+                </button>
+              </div>
             </div>
           </div>
+          <!-- Messages Card -->
+          <%= render "guests/messages_card", user: current_user %>
         </div>
-
-        <!-- Messages Card -->
-        <%= render "guests/messages_card", user: current_user %>
       </div>
-    </div>
-
-    <!-- Right Column: Bookings -->
-    <div class="col-lg-8">
-       <%= render "guests/bookings_section", user: current_user %>
+      <!-- Right Column: Bookings -->
+      <div class="col-lg-8">
+        <%= render "guests/bookings_section", user: current_user %>
+      </div>
     </div>
   </div>
 </div>
-</div>
-
 <!-- Profile Modal -->
 <%= render "guests/profile_modal", user: current_user %>
 <!-- Billing History Modal -->
 <%= render "guests/billing_modal", user: current_user %>
-

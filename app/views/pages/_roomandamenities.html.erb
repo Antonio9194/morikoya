@@ -1,22 +1,21 @@
 <div class="section-title">
-  <h2>Rooms & Amenities</h2>
+  <h2><%= t("amenities.title") %></h2>
   <div class="divider"></div>
 </div>
-
 <div class="faq-item">
-  <h3>What amenities are included?</h3>
+  <h3><%= t("amenities.question1") %></h3>
   <p>
-    Bathroom amenities including towels, shampoo, body wash, and more are provided.
-    For details, feel free to check our <%= link_to "rooms", rooms_path %>.
+    <%= t(
+        "amenities.answer1",
+        rooms_link: link_to(t("amenities.links.rooms"), rooms_path)
+        ).html_safe %>
   </p>
 </div>
-
 <div class="faq-item">
-  <h3>Is Wi-Fi available?</h3>
-  <p>Yes, free high-speed Wi-Fi is available throughout the hotel.</p>
+  <h3><%= t("amenities.question2") %></h3>
+  <p><%= t("amenities.answer2") %></p>
 </div>
-
 <div class="faq-item">
-  <h3>Are toiletries replenished daily?</h3>
-  <p>Yes, housekeeping will replenish them during your stay.</p>
+  <h3><%= t("amenities.question2") %></h3>
+  <p><%= t("amenities.answer3") %></p>
 </div>

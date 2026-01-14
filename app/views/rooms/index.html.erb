@@ -7,13 +7,13 @@
   <% end %>
   <% if @rooms.empty? %>
     <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center">
-      Sorry, we are booked out for these dates!
+      <%= t("rooms.fully_booked") %>
     </h5>
   <% else %>
     <% if @guest_num.present? && @guest_num > 6 %>
       <h5 class="searchresult text-center mb-5">
         <i class="fa-solid fa-circle-info me-2"></i>
-        For groups of <%= @guest_num %>, please choose the Presidential Suite or combine multiple rooms.
+        <%= t("rooms.groups") %> <%= @guest_num %>, <%= t("rooms.choice5") %>
       </h5>
     <% end %>
     <!-- Section 1: Presidential Suite (Type C) -->
@@ -22,9 +22,9 @@
       <%= render "rooms/rooms_section",
           rooms: rooms_c,
           type: "C",
-          title: "Presidential Suite",
+          title: t("rooms.title1"),
           capacity: 8,
-          description: "Luxury suite with panoramic view, jacuzzi, and extra comfort.",
+          description: t("rooms.description.c"),
           reversed: false
       %>
     <% end %>
@@ -34,9 +34,9 @@
       <%= render "rooms/rooms_section",
           rooms: rooms_b,
           type: "B",
-          title: "Deluxe Rooms (Type B)",
+          title: t("rooms.title2"),
           capacity: 6,
-          description: "A cozy room with all the basics you need.",
+          description: t("rooms.description.ab"),
           reversed: true
       %>
     <% end %>
@@ -46,14 +46,11 @@
       <%= render "rooms/rooms_section",
           rooms: rooms_a,
           type: "A",
-          title: "Standard Rooms (Type A)",
+          title: t("rooms.title3"),
           capacity: 5,
-          description: "A bunk bed, a double bed and a sofa bed, all inside one room.",
+          description: t("rooms.description.ab"),
           reversed: false
       %>
     <% end %>
   <% end %>
 </div>
-<footer>
-  <%= render "shared/footer_rooms" %>
-</footer>

@@ -48,45 +48,54 @@ puts "Created #{User.count} users"
 # --- Create Rooms ---
 6.times do |i|
   Room.create!(
-    name: "Room A-#{i + 1}",
+    name: (301 + i * 100).to_s,
     room_type: 'A',
     description: 'A bunk bed, a double bed and a sofa bed, all inside one room.',
-    price_per_night: 80,
+    price_per_night: 40_000,
     size: 20,
     bunk: 1,
     double: 1,
     sofa_bed: 1,
     capacity: 5,
-    amenities: 'WiFi, Air conditioning, TV, Bathroom'
+    amenities: '24-hour Check-In, Air Conditioning, Balcony, Wardrobe, Dryer, ' \
+             'Elevator, Drying Rack, Hair dryer, Heating, Hot Water, ' \
+             'In person Check-In, Internet, Iron Board, Iron, Linens, Mosquito Net, ' \
+             'Private Entrance, Tv, Towels, Washing Machine'
   )
 end
 
 7.times do |i|
   Room.create!(
-    name: "Room B-#{i + 1}",
+    name: (202 + i * 100).to_s,
     room_type: 'B',
     description: 'A cozy room with all the basics you need.',
-    price_per_night: 80,
+    price_per_night: 40_000,
     size: 20,
     bunk: 1,
     semi_double: 1,
     sofa_bed: 1,
     capacity: 6,
-    amenities: 'WiFi, Air conditioning, TV, Bathroom'
+    amenities: '24-hour Check-In, Air Conditioning, Balcony, Wardrobe, Dryer, ' \
+             'Elevator, Drying Rack, Hair dryer, Heating, Hot Water, ' \
+             'In person Check-In, Internet, Iron Board, Iron, Linens, Mosquito Net, ' \
+             'Private Entrance, Tv, Towels, Washing Machine'
   )
 end
 
 Room.create!(
-  name: 'Presidential Suite',
+  name: '901',
   room_type: 'C',
-  description: 'Luxury suite with panoramic view, jacuzzi, and extra comfort.',
-  price_per_night: 250,
+  description: 'A spacious room offering extra comfort and a bit more room to relax.',
+  price_per_night: 50_000,
   size: 50,
   single: 2,
   double: 2,
   sofa_bed: 1,
   capacity: 8,
-  amenities: 'WiFi, Air conditioning, TV, Jacuzzi, Balcony, Minibar'
+  amenities: '24-hour Check-In, Air Conditioning, Balcony, Wardrobe, Dryer, ' \
+             'Elevator, Drying Rack, Hair dryer, Heating, Hot Water, ' \
+             'In person Check-In, Internet, Iron Board, Iron, Linens, Mosquito Net, ' \
+             'Private Entrance, Tv, Towels, Washing Machine'
 )
 
 puts "Created #{Room.count} rooms"
@@ -145,7 +154,7 @@ puts "Created Antonio's booking in room #{antonio_room.name}"
     end_date   = start_date + rand(2..7).days
 
     overlap = Booking.exists?(
-      ["room_id = ? AND start_date < ? AND end_date > ?", room.id, end_date, start_date]
+      ['room_id = ? AND start_date < ? AND end_date > ?', room.id, end_date, start_date]
     )
 
     next if overlap

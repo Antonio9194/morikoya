@@ -4,15 +4,15 @@ import flatpickr from "flatpickr";
 // Connects to data-controller="datepicker"
 export default class extends Controller {
   static values = {
-    currentBookings: Array
-  }
+    currentBookings: Array,
+  };
 
   connect() {
     console.log(this.element);
 
     const initialDates = this.element.value.split(" - ");
 
-    const now = new Date()
+    const now = new Date();
     this.fpickr = flatpickr(this.element, {
       dateFormat: "Y-m-d",
       altInput: true,
@@ -22,15 +22,16 @@ export default class extends Controller {
       disable: this.currentBookingsValue,
       // To overwrite the default range separator of Flatpickr from " to " -> " - "
       locale: {
-        rangeSeparator: " - "
+        rangeSeparator: " - ",
       },
       // "onChange" is the Flatpickr configuration option, fires every time the user picks or changes dates
       // When passing the function to Flatpickr, it will lose the Stimulus controller's "this" context.
       // "bind(this)"" permanently attaches the correct "this"
-      onChange: this.update.bind(this)
-    })
+      onChange: this.update.bind(this),
+    });
     if (initialDates.length === 2) {
-      this.nightsNum = (new Date(initialDates[1]) - new Date(initialDates[0])) / 86400000;
+      this.nightsNum =
+        (new Date(initialDates[1]) - new Date(initialDates[0])) / 86400000;
       console.log(this.nightsNum);
       // Dispatch initial event
       this.dispatchNightsUpdate();
@@ -42,13 +43,14 @@ export default class extends Controller {
     // dateStr = string in the input (e.g., "2025-01-01 - 2025-01-05")
     // Both the above variables are supplied Flatpickr automatically when it calls the update method
 
-    console.log("Selected Dates:", selectedDates)
-    console.log("Date Range String:", dateStr)
+    console.log("Selected Dates:", selectedDates);
+    console.log("Date Range String:", dateStr);
     const datesArray = dateStr.split(" - ");
 
     // Calculate the num of nights
     if (datesArray.length === 2) {
-      this.nightsNum = (new Date(datesArray[1]) - new Date(datesArray[0])) / 86400000;
+      this.nightsNum =
+        (new Date(datesArray[1]) - new Date(datesArray[0])) / 86400000;
       console.log(this.nightsNum);
       // Dispatch event when dates change
       this.dispatchNightsUpdate();
@@ -69,9 +71,11 @@ export default class extends Controller {
   // This method makes sure when there is a nights-updated event happen in flatpickr, the change will be broadcasted through the DOM tree
   // and get to element where the retrieve-dates controller is mounted on
   dispatchNightsUpdate() {
-    this.element.dispatchEvent(new CustomEvent('nights-updated', {
-      detail: { nights: this.nightsNum },
-      bubbles: true
-    }));
+    this.element.dispatchEvent(
+      new CustomEvent("nights-updated", {
+        detail: { nights: this.nightsNum },
+        bubbles: true,
+      })
+    );
   }
 }

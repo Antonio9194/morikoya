@@ -53,6 +53,7 @@ gem 'money-rails'
 gem 'sassc-rails'
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'stripe'
+gem 'ruby-openai'
 
 group :development, :test do
   gem 'dotenv-rails'

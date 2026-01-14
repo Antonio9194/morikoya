@@ -1,7 +1,7 @@
 <div class="row font-weight-bold mb-2">
-  <div class="col"><strong>Room</strong></div>
-  <div class="col"><strong>Check-In</strong></div>
-  <div class="col"><strong>Guest</strong></div>
+  <div class="col"><strong><%= t("arrivals.room") %></strong></div>
+  <div class="col"><strong><%= t("arrivals.checkin") %></strong></div>
+  <div class="col"><strong><%= t("arrivals.guests") %></strong></div>
 </div>
 <% @arrivals.each do |arrival| %>
   <div class="row arrivals mb-1">

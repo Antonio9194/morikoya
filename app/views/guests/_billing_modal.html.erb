@@ -9,7 +9,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="billingModalLabel">
-          <i class="bi bi-receipt me-2"></i>Billing History
+          <i class="bi bi-receipt me-2"></i>
+          <%= t("dashboard.billing") %>
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -20,12 +21,12 @@
             <table class="table table-hover align-middle">
               <thead class="table-light">
                 <tr>
-                  <th scope="col">Transaction ID</th>
-                  <th scope="col">Room</th>
-                  <th scope="col">Issue Date</th>
-                  <th scope="col">Amount</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Receipt</th>
+                  <th scope="col"><%= t("dashboard.transaction_id") %></th>
+                  <th scope="col"><%= t("dashboard.room") %></th>
+                  <th scope="col"><%= t("dashboard.issue_date") %></th>
+                  <th scope="col"><%= t("dashboard.amount") %></th>
+                  <th scope="col"><%= t("dashboard.billing_status") %></th>
+                  <th scope="col"><%= t("dashboard.receipt") %></th>
                 </tr>
               </thead>
               <tbody>
@@ -40,23 +41,24 @@
                       <strong><%= booking.room.name %></strong>
                       <br>
                       <small class="text-muted">
-                        <%= booking.start_date.strftime("%d %b") %> - <%= booking.end_date.strftime("%d %b, %Y") %>
+                        <%= l(booking.start_date, format: :short) %> - <%= l(booking.end_date, format: :long_inverted) %>
                       </small>
                     </td>
-                    <td><%= booking.created_at.strftime("%d %b, %Y") %></td>
+                    <td><%= l(booking.created_at, format: :long_inverted) %></td>
                     <td>
                       <strong>¥<%= number_with_delimiter(booking.total_price_cents) %></strong>
                     </td>
                     <td>
                       <span class="badge">
                         <i class="bi bi-check-circle me-1"></i>
-                        <%= booking.payment_status.capitalize %>
+                        <%= t("payment_status.#{booking.payment_status}") %>
                       </span>
                     </td>
                     <td>
                       <% if booking.stripe_receipt_url %>
                         <%= link_to booking.stripe_receipt_url, target: "_blank", class: "download btn btn-sm " do %>
-                          <i class="bi bi-download me-1"></i>Download
+                          <i class="bi bi-download me-1"></i>
+                          <%= t("dashboard.download") %>
                         <% end %>
                       <% else %>
                         <span class="text-muted small">N/A</span>
@@ -69,14 +71,14 @@
           </div>
           <div class="mt-4 p-3 bg-light rounded">
             <div class="d-flex justify-content-between align-items-center">
-              <span class="text-muted">Total Payments:</span>
+              <span class="text-muted"><%= t("dashboard.total") %></span>
               <strong class="fs-5">¥<%= number_with_delimiter(paid_bookings.sum(:total_price_cents)) %></strong>
             </div>
           </div>
         <% else %>
           <div class="text-center py-5">
             <i class="bi bi-receipt text-muted mb-3" style="font-size: 3rem;"></i>
-            <p class="text-muted mb-0">No payment history yet...</p>
+            <p class="text-muted mb-0"><%= t("dashboard.nomoney") %></p>
           </div>
         <% end %>
       </div>

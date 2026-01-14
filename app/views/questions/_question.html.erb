@@ -1,0 +1,13 @@
+<div id="<%= dom_id(question) %>" class="question" data-controller="auto-scroll">
+  <%= turbo_stream_from dom_id(question) %>
+  <p class="user-question"><%= question.user_question %></p>
+  <% if question.ai_answer.blank?%>
+    <p class="ai-answer ai-answer-text"><i>
+        <%= t("moriko.reply") %>
+      </i></p>
+  <% else %>
+    <div class="ai-answer">
+      <p class="ai-answer-text my-0" style="white-space: pre-line;"><%= question.ai_answer%></p>
+    </div>
+  <% end %>
+</div>

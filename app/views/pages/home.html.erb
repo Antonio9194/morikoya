@@ -4,24 +4,24 @@
     <div class="text-center mb-4">
       <h1 class="minakoya">MorikoYa</h1>
       <hr class="line-above">
-      <p class="hero-subtitle">Welcome back <%= current_user.first_name %></p>
+      <p class="hero-subtitle"> <%= t("home.welcome_back") %> <%= current_user.first_name %></p>
     </div>
     <!-- Daily summary -->
     <div class="daily-summary" data-controller="admin-dashboard">
       <div class="row header">
         <div class="col">
           <button data-action="click->admin-dashboard#showArrivals">
-            Next Arrivals (<%= @arrivals&.count || 0 %>)
+            <%= t("home.next_arrivals") %> (<%= @arrivals&.count || 0 %>)
           </button>
         </div>
         <div class="col">
           <button data-action="click->admin-dashboard#showDepartures">
-            Next Departures (<%= @departures&.count || 0 %>)
+            <%= t("home.next_departures") %> (<%= @departures&.count || 0 %>)
           </button>
         </div>
         <div class="col">
           <button data-action="click->admin-dashboard#showStayings">
-            Currently Staying (<%= @stayings&.count || 0 %>)
+            <%= t("home.currently_staying") %> (<%= @stayings&.count || 0 %>)
           </button>
         </div>
       </div>
@@ -42,7 +42,7 @@
       <div class="text-center mb-5">
         <h1 class="minakoya">MorikoYa</h1>
         <hr class="line-above">
-        <p class="hero-subtitle">Your Home Away From Home</p>
+        <p class="hero-subtitle"><%= t("home.tagline") %></p>
       </div>
       <%= form_with url: rooms_path, method: :get, class: "form d-flex flex-column", data: { controller: "booking-form guests" } do %>
         <div class="d-flex justify-content-between align-items-center search-bar">
@@ -52,7 +52,7 @@
               <%= image_tag "checkinout.png" %>
             </div>
             <div class="text">
-              <div class="label">Check-In</div>
+              <div class="label"><%= t("home.check_in") %></div>
               <div class="value" data-booking-form-target="checkInValue">
                 <%= params.dig(:search, :check_in) %>
               </div>
@@ -64,7 +64,7 @@
               <%= image_tag "checkinout.png" %>
             </div>
             <div class="text">
-              <div class="label">Check-Out</div>
+              <div class="label"><%= t("home.check_out") %></div>
               <div class="value" data-booking-form-target="checkOutValue">
                 <%= params.dig(:search, :check_out) %>
               </div>
@@ -78,18 +78,19 @@
               <%= image_tag "guests.png" %>
             </div>
             <div class="text">
-              <div class="label">Guests</div>
+              <div class="label"><%= t("home.guests") %></div>
               <div class="value d-none" data-guests-target="guestsValue">
                 <%= params.dig(:search, :guests)%>
               </div>
             </div>
           </div>
           <%= hidden_field_tag :guests, params.dig(:search, :guests), data: {guests_target: "guestsInput"} %>
-          <%= submit_tag "Search", class: "search-btn" %>
+          <%= submit_tag t("home.search"), class: "search-btn" %>
         </div>
         <%= render "calendar" %>
         <!--"guest_num: @guest_num" is here so that there is no "undefined" error when rendering the partial-->
         <%= render "guests", guest_num: @guest_num %>
       <% end %>
     </div>
-  <% end %>
+  </div>
+<% end %>

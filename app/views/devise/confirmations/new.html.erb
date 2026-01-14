@@ -1,14 +1,12 @@
 <div class="auth-page">
   <div class="auth-card">
     <div class="auth-header">
-      <h2>Resend confirmation</h2>
+      <h2><%= t("devise.confirmation") %></h2>
       <p>Enter your email to receive instructions.</p>
     </div>
-
     <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "auth-form" }) do |f| %>
       <%= f.error_notification %>
       <%= f.full_error :confirmation_token %>
-
       <div class="form-inputs mb-4">
         <%= f.input :email,
                     required: true,
@@ -17,14 +15,11 @@
                     input_html: { autocomplete: "email", class: "form-control" },
                     label_html: { class: "form-label" } %>
       </div>
-
       <div class="form-actions">
         <%= f.button :submit, "Resend Instructions", class: "btn auth-btn" %>
       </div>
     <% end %>
-
     <div class="auth-links">
       <%= render "devise/shared/links" %>
     </div>
   </div>
-</div>

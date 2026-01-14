@@ -1,0 +1,470 @@
+ja:
+  home:
+    welcome_back: "ようこそ"
+    next_arrivals: "次の到着"
+    next_departures: "次の出発"
+    currently_staying: "現在滞在中"
+    tagline: "あなたの第二の家"
+    check_in: "チェックイン"
+    check_out: "チェックアウト"
+    guests: "宿泊人数"
+    search: "検索"
+
+  navbar:
+    rooms: "ルーム"
+    contact_us: "お問い合わせ"
+    about_us: "私たちについて"
+    faqs: "よくある質問"
+    login: "ログイン"
+    logout: "ログアウト"
+    dashboard: "ダッシュボード"
+    bookings: "予約"
+
+  access:
+    title: "交通・アクセス"
+    description: "浅草は東京でも屈指の交通利便性を誇り、ホテルから東京市内の観光スポットへのアクセスが簡単です。複数の鉄道、空港への接続、観光船も近くにあり、移動がスムーズで便利です。"
+
+    subway:
+      - station: "浅草駅（つくばエクスプレス – TX線）– 徒歩3分"
+        info: "最寄り駅、秋葉原・北東京へのアクセスが便利"
+      - station: "田原町駅（銀座線）– 徒歩7分"
+        info: "上野、銀座、新橋、赤坂、渋谷へのアクセスが早い"
+      - station: "浅草駅（銀座線）– 徒歩10分"
+        info: "上野、銀座、渋谷への直通アクセス"
+
+    airport:
+      title: "空港アクセス"
+      haneda: "羽田空港 → 浅草：約40〜45分（都営浅草線、乗り換えなしの場合あり）"
+      narita: "成田空港 → 浅草：約60〜70分（京成線 → 都営浅草線、一部直通あり）"
+
+    bus:
+      title: "バス・路線アクセス"
+      info1: "都営バスで上野、東京スカイツリー、東京駅、日本橋まで直通"
+      info2: "地上移動を好むゲストに便利"
+
+    sightseeing:
+      title: "観光オプション"
+      info1: "東京水上バス（隅田川クルーズ）– 徒歩10分"
+      info2: "お台場、浜離宮、日の出桟橋への景観アクセス"
+      info3: "浅草の歴史的な街並みでは人力車も利用可能"
+
+    taxi:
+      title: "タクシー・ライドシェア"
+      info1: "雷門や浅草駅付近にタクシー乗り場あり"
+      info2: "キャッシュレス配車アプリ：GO、Uber、DiDi"
+
+  location:
+    link:
+      map: "地図"
+      access: "アクセス"
+      form: "フォーム"
+    title: "アクセス・所在地"
+    question1: "ホテルへはどのように行けばよいですか？"
+    answer1: >
+      当ホテルは浅草駅および田原町駅の近くに位置しており、地下鉄やバスで簡単にアクセスできます。
+      正確な住所については %{map_link} をご確認いただき、
+      %{access_link} セクションもあわせてご覧ください。
+      詳細なご案内が必要な場合は、こちらの %{contact_link} よりお問い合わせください。
+    question2: "空港送迎はありますか？"
+    answer2: "空港送迎サービスは提供しておりませんが、最適なアクセス方法をご案内いたします。"
+    question3: "近くに駐車場はありますか？"
+    answer3: "敷地内駐車場はございませんが、徒歩圏内に複数の有料駐車場がございます。"
+
+  arrivals:
+    room: "部屋"
+    checkin: "チェックイン"
+    guests: "宿泊人数"
+
+  attractions:
+    title: "周辺観光スポット"
+    description: "当ホテルは、東京を代表する文化的・歴史的な名所の多くへ徒歩圏内でアクセスできる便利な立地にあります。"
+    attraction1: "浅草寺（せんそうじ）– 徒歩8分"
+    info1: "東京最古で最も参拝者の多い寺院。雷門や五重塔で有名です。"
+    attraction2: "仲見世通り – 徒歩9分"
+    info2: "浅草寺へ続く歴史ある参道で、伝統工芸品や昔ながらの和菓子が並びます。"
+    attraction3: "浅草神社 – 徒歩10分"
+    info3: "浅草寺の隣にある由緒ある神社で、三社祭で知られています。"
+    attraction4: "浅草文化観光センター – 徒歩11分"
+    info4: "浅草や東京スカイツリーを一望できる無料の展望デッキがあります。"
+    attraction5: "花やしき – 徒歩12分"
+    info5: "日本最古の遊園地で、レトロな乗り物と家族向けのアトラクションが楽しめます。"
+    attraction6: "隅田公園 – 徒歩13分"
+    info6: "桜の名所として知られる川沿いの公園で、スカイツリーの景色も楽しめます。"
+    attraction7: "隅田川ウォーク – 徒歩15分"
+    info7: "水辺の景色を楽しめる歩行者専用橋で、東京スカイツリーへのアクセスも便利です。"
+    attraction8: "東京スカイツリー – 徒歩20分／電車で約10分"
+    info8: "日本一高いタワーで、展望台、水族館、ショッピング施設があります。"
+
+  culture:
+    title: "文化体験"
+    culture1: "現代風とヴィンテージの着物・浴衣レンタル（ヘアセットオプションあり）、浅草寺散策に最適。"
+    info1: "東京最古で最も訪問者の多い寺院。雷門や五重塔があります。"
+    culture2: "ケサ東京着物レンタル – 徒歩10分"
+    info2: "カジュアル・フォーマル着物あり。英語対応可。浅草の神社巡りに最適。"
+    culture3: "茶道体験 – 徒歩10分"
+    info3: "畳の部屋で茶道の作法を学び、抹茶を点て、日本のお菓子を楽しむ。"
+    culture4: "和菓子作り体験 – 徒歩10分"
+    info4: "伝統菓子職人の指導で季節の練り切りを作る。"
+    culture5: "折り紙・書道体験 – 徒歩10分"
+    info5: "書道や伝統的な紙工芸を実際に体験できるワークショップ。"
+    culture6: "着物＋江戸切子体験 (花華 × 創吉) – 徒歩12分"
+    info6: "着物を着て江戸切子を作るユニークな工芸＆文化体験。"
+    culture7: "相撲博物館・両国国技館 – 電車で20分"
+    info7: "相撲文化の中心地。博物館、スタジアム、両国の相撲テーマ街を見学。"
+    culture8: "相撲部屋 朝稽古見学 – 電車で20分"
+    info8: "早朝の稽古を見学して、本物の相撲の世界を体験。"
+
+  facilities:
+    title: "設備"
+    question1: "ランドリーはありますか？"
+    answer1: "はい、すべてのアパートメントに洗濯乾燥機があります。"
+    question2: "荷物預かりは可能ですか？"
+    answer2: "チェックイン前とチェックアウト後に荷物預かりが可能です。"
+    question3: "駐車場はありますか？"
+    answer3: "敷地内の専用駐車場はありませんが、近隣に有料駐車場があります。"
+
+  map:
+    address: "〒111-0035 東京都台東区西浅草3-20-13"
+
+  policies:
+    title: "ポリシー"
+    question1: "ペットは宿泊できますか？"
+    answer1: "ペットの同伴はできません。"
+    question2: "喫煙は可能ですか？"
+    answer2: "当施設は全館禁煙です。"
+    question3: "子どもは宿泊できますか？"
+    answer3: "お子様のご宿泊も歓迎しております。"
+
+  reservations:
+    title: "ご予約・チェックイン"
+    question1: "チェックインとチェックアウトの時間は何時ですか？"
+    answer1: "チェックインは15:00から、チェックアウトは11:00までです。"
+    question2: "アーリーチェックインやアーリーチェックアウトは可能ですか？"
+    answer2: "アーリーチェックインは空室状況によりますが、可能な場合は対応いたします。アーリーチェックアウトはいつでも可能です。"
+    question3: "当日の飛び込み予約は可能ですか？"
+    answer3: "当日の空室状況により、飛び込み予約も可能です。"
+    question4: "キャンセルポリシーはどうなっていますか？"
+    answer4: "ご予約から3時間以内であれば無料キャンセルが可能です。それ以降はキャンセル料が発生します。"
+    question5: "利用可能な支払い方法は何ですか？"
+    answer5: "主要クレジットカード、現金、および一部のデジタル決済をご利用いただけます。"
+    question6: "デポジットは必要ですか？"
+    answer6: "デポジットは不要です。"
+
+  restaurants:
+    title: "レストラン・カフェ"
+    place1: "和風処うさぎ – 徒歩9分"
+    info1: "季節料理と豊富な日本酒が楽しめる、落ち着いた雰囲気の居酒屋。"
+    place2: "カフェみちくさ – 徒歩9分"
+    info2: "ランチセットや軽食が楽しめる、ブランチや気軽な休憩に最適なカフェ。"
+    place3: "スケマサコーヒー – 徒歩10分"
+    info3: "浅草の裏通りにある静かなスペシャルティコーヒー店。観光後のコーヒーやデザートに最適。"
+    place4: "与ろゐ屋 – 徒歩11分"
+    info4: "浅草名物の醤油ラーメンが楽しめる、気軽で美味しい老舗店。"
+    place5: "紅鶴パンケーキ – 徒歩12分"
+    info5: "ふわふわのスフレ風パンケーキで有名。朝食やゆったりしたティータイムにおすすめ。"
+    place6: "すしざんまい 浅草雷門店 – 徒歩13分"
+    info6: "手頃な価格で安定した美味しさの寿司店。浅草で新鮮な寿司を楽しみたい方に最適。"
+
+  amenities:
+    title: "客室・アメニティ"
+    question1: "どのようなアメニティが含まれていますか？"
+    answer1: >
+      タオル、シャンプー、ボディソープなどのバスアメニティをご用意しております。
+      詳細は%{rooms_link}をご確認ください。
+    question2: "Wi-Fiは利用できますか？"
+    answer2: "はい、館内全域で無料の高速Wi-Fiをご利用いただけます。"
+    question3: "アメニティは毎日補充されますか？"
+    answer3: "はい、ご滞在中はハウスキーピングにより補充されます。"
+
+    links:
+      rooms: "客室"
+
+  shopping:
+    title: "ショッピングストリート"
+    place1: "かっぱ橋道具街 – 徒歩5分"
+    info1: "調理器具、日本の包丁、陶器、食品サンプル店で有名な通り。"
+    place2: "裏浅草 – 徒歩6分"
+    info2: "ブティック、手作り雑貨、個性的なカフェが並ぶトレンドの裏通り。"
+    place3: "六区ブロードウェイ／六区通り – 徒歩9分"
+    info3: "劇場、屋台、昔ながらの雰囲気が残る昭和レトロな商店街。"
+    place4: "伝法院通り – 徒歩10分"
+    info4: "伝統工芸品、和菓子、レトロな店舗が並ぶ江戸風の通り。"
+    place5: "仲見世商店街 – 徒歩12分"
+    info5: "日本最古級の商店街で、伝統的なお菓子やお土産、工芸品が揃います。"
+    place6: "新仲見世商店街 – 徒歩13分"
+    info6: "衣類、アクセサリー、軽食、飲食店が揃うアーケード商店街。"
+    place7: "ホッピー通り – 徒歩14分"
+    info7: "居酒屋や屋台が立ち並ぶ賑やかな通り。夜の雰囲気が特におすすめ。"
+
+  aboutus:
+    header: "モリコヤについて"
+    header1: "浅草の隠れた名所を発見"
+    welcome: "あなたの安らぎの場へようこそ"
+    info1: "伝統・文化・モダンな快適さが融合する、浅草の新しい隠れ家へようこそ。"
+    info2: "スタイル、利便性、そして日本らしい魅力を大切にする旅行者のためにデザインされています。"
+    info3: "本物で活気あふれる、唯一無二の東京・浅草を私たちと一緒に体験してください。"
+
+  payment:
+    complete: "お支払いを完了してください"
+    summary: "予約内容"
+    info1: "部屋："
+    info2: "チェックイン："
+    info3: "チェックアウト："
+    info4: "宿泊数："
+    info5: "1泊あたりの料金："
+    info6: "合計金額："
+    info7: "カード情報"
+    info8: "支払う ¥"
+    info9: "お支払いはStripeにより安全に暗号化されています"
+    info10: "泊"
+    return: "キャンセルして部屋のページに戻る"
+    pay: "今すぐ支払う"
+
+  date:
+    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
+    formats:
+      year: "%Y年"
+      short: "%-m月%-d日"
+      long: "%Y年%B%d日"
+      long_inverted: "%d日 %b, %Y年"
+      month_year: "%Y年 %B"
+  time:
+    formats:
+      year: "%Y年"
+      short: "%-m月%-d日"
+      long: "%Y年%B%d日"
+      long_inverted: "%d日 %b, %Y年"
+      month_year: "%Y年 %B"
+
+  booking_confirmation:
+    heading: "お支払いが完了しました！"
+    info1: "ご予約が確定しました！"
+    info2: "お支払いありがとうございます。"
+    info3: "予約詳細"
+    info4: "予約ID："
+    info5: "部屋："
+    info6: "チェックイン："
+    info7: "チェックアウト："
+    info8: "宿泊数："
+    info9: "支払い総額："
+    info10: "支払い状況："
+    info11: "支払い済み"
+    info12: "ダッシュボードへ"
+
+  moriko:
+    reply: "モリコが考えています…"
+    chat: "モリコと話しますか？"
+    title: "モリコとチャット"
+
+  nav_aboutus:
+    nav1: "交通アクセス"
+    nav2: "周辺の観光スポット"
+    nav3: "ダイニング"
+    nav4: "商店街"
+    nav5: "文化体験"
+
+  nav_faq:
+    nav1: "予約"
+    nav2: "客室とアメニティ"
+    nav3: "館内設備"
+    nav4: "ポリシー"
+    nav5: "アクセス・所在地"
+
+  contact_message:
+    header: "お問い合わせ"
+    header1: "ご連絡をお待ちしております"
+    subtitle: "所在地・地図"
+    address1: "東京都台東区西浅草3-20-13"
+    address2: "台東区、東京、日本"
+    alt: "折り返しご連絡いたします"
+    send: "メッセージを送信"
+    title: "お帰りなさい"
+    title: "お帰りなさい"
+    alt: "メッセージをお送りください！"
+    full_name: "氏名"
+    email: "メールアドレス"
+    message: "メッセージ"
+
+  payment_status:
+    paid: "支払い済み"
+    pending: "保留中"
+    failed: "失敗"
+
+  dashboard:
+    info1: "会員登録日"
+    info2: "プロフィール情報"
+    info3: "名前"
+    info4: "姓"
+    info5: "メールアドレス"
+    info6: "電話番号"
+    update: "プロフィールを更新"
+    note1: "メールアドレスを更新できます"
+    note2: "国番号を含めて入力してください"
+    messages: "メッセージ"
+    note3: "まだメッセージはありません…"
+    note4: "モリコヤとのお問い合わせ履歴を確認できます。"
+    browse: "客室を見る"
+    note5: "まだ確定した予約はありません…"
+    upcoming: "今後の予約"
+    current: "現在"
+    ongoing: "滞在中"
+    completed: "完了"
+    past: "過去"
+    noupcoming: "今後の予約はありません…"
+    nocurrent: "現在の滞在はありません…"
+    nopast: "過去の滞在はありません…"
+    checkin: "チェックイン"
+    checkout: "チェックアウト"
+    billing: "請求履歴"
+    transaction_id: "取引ID"
+    room: "部屋"
+    issue_date: "発行日"
+    amount: "金額"
+    billing_status: "ステータス"
+    receipt: "領収書"
+    download: "ダウンロード"
+    total: "支払い合計："
+    nomoney: "まだ支払い履歴はありません…"
+    profile_info: "プロフィール情報"
+    billing_history: "請求履歴"
+
+  devise:
+    confirmation: "確認メールを再送信"
+
+  password:
+    info: "リセット手順を受け取るためにメールアドレスを入力してください"
+    change: "パスワードを変更する"
+    new: "新しいパスワード"
+    new_confirm: "新しいパスワードを確認"
+    min_length: "%{count}文字以上"
+    forgot: "パスワードをお忘れですか？"
+    reset: "パスワード再設定の案内を送信する"
+    email: "メールアドレス"
+
+  signup:
+    header: "モリコヤに参加"
+    header1: "アカウントを作成して旅を始めましょう。"
+    title: "サインアップ"
+    email: "メールアドレス"
+    first_name: "名前"
+    last_name: "姓"
+    min_length: "%{count}文字以上"
+    password: "パスワード"
+    confirmpass: "パスワード確認"
+    phone: "電話番号"
+    submit: "サインアップ"
+
+  login:
+    header: "お帰りなさい"
+    header1: "サインインするために情報を入力してください。"
+    title: "ログイン"
+    email: "メールアドレス"
+    password: "パスワード"
+    remember: "ログイン状態を保持する"
+    submit: "ログイン"
+
+  shared:
+    login: "ログイン"
+    signup: "サインアップ"
+    forgot: "パスワードをお忘れですか？"
+    confirmation: "確認メールが届かない場合"
+    unlcok: "ロック解除メールが届かない場合"
+    signin: "%{provider}でサインイン"
+
+  rooms:
+    descriptiontext: "説明"
+    select: "選択"
+    freeroom: "空室を見る"
+    title1: "スーペリアファミリールーム"
+    title2: "スーペリアルーム"
+    title3: "スタンダードルーム"
+    family: "ファミリー"
+    superior: "スーペリア"
+    standard: "スタンダード"
+    groups: "グループ最大"
+    choice5: "プレジデンシャルスイート、または複数の部屋をご利用ください。"
+    description:
+      ab: "必要な設備が揃った快適な客室です。"
+      c: "より広く、リラックスできる快適な客室です。"
+    info1: "1泊あたり"
+    size: "サイズ："
+    capacity: "定員："
+    guestnum: "ゲスト"
+    amenities_list: "設備"
+    booking: "予約する"
+    duration: "宿泊期間を指定"
+    book: "この部屋を予約"
+    guests: "ゲスト人数："
+    nights: "宿泊数："
+    numnights:
+      one: "泊"
+      other: "泊"
+    person:
+      one: "人"
+      other: "人"
+    price: "1泊あたりの料金："
+    total: "合計金額："
+    info2: "なぜ私たちを選ぶ？"
+    info3: "快適で便利なお部屋でおくつろぎください。仕事でも休暇でも、滞在を快適にするための設備とサービスをご用意しています。ぜひご予約ください。"
+    choice1: "グループのために少なくとも2部屋を選択してください！"
+    fully_booked: "申し訳ありません、満室です！"
+    choice2: "グループのために少なくとも1部屋を選択してください！"
+    fit: "この部屋はグループにぴったりです！"
+    choice3: "別々の部屋をご希望の場合にどうぞ！"
+    choice4: "グループに2部屋をご用意！"
+    amenities:
+      twentyfour_hour_checkin: "24時間チェックイン"
+      air_conditioning: "エアコン"
+      balcony: "バルコニー"
+      wardrobe: "ワードローブ"
+      dryer: "乾燥機"
+      elevator: "エレベーター"
+      drying_rack: "物干しラック"
+      hair_dryer: "ヘアドライヤー"
+      heating: "暖房"
+      hot_water: "お湯"
+      in_person_checkin: "対面チェックイン"
+      internet: "インターネット"
+      ironing_board: "アイロン台"
+      iron: "アイロン"
+      linens: "寝具"
+      mosquito_net: "蚊帳"
+      private_entrance: "専用入口"
+      tv: "テレビ"
+      towels: "タオル"
+      washing_machine: "洗濯機"
+      bidet: "ビデ"
+      shower: "シャワー"
+      toilet: "トイレ"
+      body_soap: "ボディーソープ"
+      conditioner: "コンディショナー"
+      shampoo: "シャンプー"
+      shower_gel: "シャワージェル"
+      dining_area: "ダイニングエリア"
+      kitchen_utensils: "キッチン用品"
+      coffee_machine: "コーヒーメーカー"
+      freezer: "冷凍庫"
+      kitchen_stove: "コンロ"
+      microwave: "電子レンジ"
+      refrigerator: "冷蔵庫"
+    sofa_bed:
+      one: "ソファベッド"
+      other: "ソファベッド"
+    double_bed:
+      one: "ダブルベッド"
+      other: "ダブルベッド"
+    bunk_bed:
+      one: "二段ベッド"
+      other: "二段ベッド"
+    semidouble_bed:
+      one: "セミダブルベッド"
+      other: "セミダブルベッド"
+    single_bed:
+      one: "シングルベッド"
+      other: "シングルベッド"
+
+  faq:
+    header: "よくある質問"
+    header1: "ご滞在に必要な情報はこちら"

@@ -1,31 +1,467 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  home:
+    welcome_back: "Welcome back"
+    next_arrivals: "Next Arrivals"
+    next_departures: "Next Departures"
+    currently_staying: "Currently Staying"
+    tagline: "Your Home Away From Home"
+    check_in: "Check-In"
+    check_out: "Check-Out"
+    guests: "Guests"
+    search: "Search"
+
+  navbar:
+    rooms: "Rooms"
+    contact_us: "Contact Us"
+    about_us: "About Us"
+    faqs: "FAQs"
+    login: "Login"
+    logout: "Logout"
+    dashboard: "Dashboard"
+    bookings: "Bookings"
+
+  access:
+    title: "Transportation & Access"
+    description: "Asakusa offers some of the best transportation access in Tokyo, making it easy to explore the city from our hotel. With multiple train lines, airport connections, and sightseeing boats nearby, getting around is simple and convenient."
+
+    subway:
+      - station: "Asakusa Station (Tsukuba Express – TX Line) – 3 min walk"
+        info: "Closest station, easy access to Akihabara & North Tokyo"
+      - station: "Tawaramachi Station (Ginza Line) – 7 min walk"
+        info: "Fast access to Ueno, Ginza, Shimbashi, Akasaka, Shibuya"
+      - station: "Asakusa Station (Ginza Line) – 10 min walk"
+        info: "Direct access to Ueno, Ginza, and Shibuya"
+
+    airport:
+      title: "Airport Access"
+      haneda: "Haneda Airport → Asakusa: Approx. 40–45 min (Toei Asakusa Line, often no transfers)"
+      narita: "Narita Airport → Asakusa: Approx. 60–70 min (Keisei Line → Toei Asakusa Line, some through-trains)"
+
+    bus:
+      title: "Bus & Local Transport"
+      info1: "Nearby Toei buses connect directly to Ueno, Tokyo Skytree, Tokyo Station, and Nihonbashi"
+      info2: "Convenient for guests who prefer above-ground travel"
+
+    sightseeing:
+      title: "Sightseeing Options"
+      info1: "Tokyo Water Bus (Sumida River Cruise) – 10 min walk"
+      info2: "Scenic access to Odaiba, Hamarikyu Gardens, and Hinode Pier"
+      info3: "Rickshaw tours available throughout Asakusa’s historic streets"
+
+    taxi:
+      title: "Taxi & Ride Share"
+      info1: "Taxi stands located near Kaminarimon Gate and Asakusa Station"
+      info2: "Cashless ride apps available: GO, Uber, DiDi"
+
+  location:
+    link:
+      map: "map"
+      access: "access"
+      form: "form"
+    title: "Access & Location"
+    question1: "How do I get to the hotel?"
+    answer1: >
+      We are located near Asakusa Station & Tawaramachi Station, with easy access via subway and bus.
+      Please refer to our %{map_link} for the exact address and check the %{access_link} section,
+      or contact us via this %{contact_link} for specific instructions.
+    question2: "Do you offer airport pickup?"
+    answer2: "Airport pickup is not provided, but we can guide you on the best route."
+    question3: "Is parking available nearby?"
+    answer3: "There is no on-site parking, but several paid parking lots are available within walking distance of the hotel."
+
+  arrivals:
+    room: "Room"
+    checkin: "Check-In"
+    guests: "Guests"
+
+  attractions:
+    title: "Local Attractions"
+    description: "Our location offers quick access to some of Tokyo’s most iconic cultural and historic landmarks—all within walking distance."
+    attraction1: "Sensō-ji Temple (浅草寺) – 8 min walk"
+    info1: "Tokyo’s oldest and most visited temple, home to the famous Kaminarimon Gate and Five-Story Pagoda."
+    attraction2: "Nakamise Shopping Street – 9 min walk"
+    info2: "A historic promenade leading to Sensō-ji filled with traditional crafts and classic Japanese street snacks."
+    attraction3: "Asakusa Shrine (浅草神社) – 10 min walk"
+    info3: "A beautifully preserved Shinto shrine next to Sensō-ji, known for the Sanja Matsuri festival."
+    attraction4: "Asakusa Culture Tourist Information Center – 11 min walk"
+    info4: "Offers a free observation deck with panoramic views of Asakusa and Tokyo Skytree."
+    attraction5: "Hanayashiki Amusement Park – 12 min walk"
+    info5: "Japan’s oldest amusement park, offering nostalgic retro rides and family-friendly attractions."
+    attraction6: "Sumida Park – 13 min walk"
+    info6: "A riverside park famous for cherry blossoms and Skytree views along the water."
+    attraction7: "Sumida River Walk – 15 min walk"
+    info7: "A scenic pedestrian bridge offering beautiful waterfront views and access to Tokyo Skytree."
+    attraction8: "Tokyo Skytree – 20 min walk / 10 min by train."
+    info8: "The tallest tower in Japan with observation decks, aquarium, and shopping center."
+
+  culture:
+    title: "Cultural Experiences"
+    culture1: "Modern and vintage kimono/yukata rentals with optional hairstyling; perfect for exploring Sensō-ji."
+    info1: "Tokyo’s oldest and most visited temple, home to the famous Kaminarimon Gate and Five-Story Pagoda."
+    culture2: "Kesa Tokyo Kimono Rental (ケサ東京) – 10 min walk"
+    info2: "Casual and formal kimono options with English support; great for strolling through Asakusa’s shrines."
+    culture3: "Tea Ceremony Experience (茶道体験) – 10 min walk."
+    info3: "Learn traditional tea ceremony etiquette, prepare matcha, and enjoy Japanese sweets in a tatami room."
+    culture4: "Wagashi Sweets Making (和菓子作り体験) – 10 min walk."
+    info4: "Create seasonal nerikiri sweets with guidance from a traditional confectionery teacher."
+    culture5: "Origami / Calligraphy Workshop (折り紙・書道体験) – 10 min walk."
+    info5: "Hands-on experience learning Japanese calligraphy or crafting traditional paper art."
+    culture6: "Kimono + Edo Kiriko Glass Cutting Workshop (花華 × 創吉) – 12 min walk."
+    info6: "Wear a kimono and make your own Edo-style cut glass — a unique craft and culture combination experience."
+    culture7: "Sumo Museum & Ryogoku Kokugikan (相撲博物館・両国国技館) – 20 min by train."
+    info7: "The center of sumo culture; explore the museum, the stadium, and sumo-themed streets in Ryōgoku."
+    culture8: "Sumo Morning Practice Viewing (相撲部屋 朝稽古) – 20 min by train."
+    info8: "Visit a sumo stable during early morning training for an unforgettable look at real sumo life."
+
+  facilities:
+    title: "Facilities"
+    question1: "Do you have a laundry area?"
+    answer1: "Yes, every apartment has a washer-dryer."
+    question2: "Is luggage storage available?"
+    answer2: "Luggage storage is available before check-in and after check-out."
+    question3: "Do you have parking?"
+    answer3: "We do not have private parking, but nearby paid parking options are available."
+
+  map:
+    address: "〒111-0035 Tokyo, Taito-ku, Nishiasakusa 3-20-13"
+
+  policies:
+    title: "Policies"
+    question1: "Are pets allowed?"
+    answer1: "Pets are not allowed."
+    question2: "Is smoking permitted?"
+    answer2: "The hotel is fully non-smoking."
+    question3: "Do you allow children?"
+    answer3: "Children are welcome."
+
+  reservations:
+    title: "Reservation & Check in"
+    question1: "What are the check-in and check-out times?"
+    answer1: "Check-in starts from 15:00 & Check-out is until 11:00."
+    question2: "Can I request early check-in or early check-out?"
+    answer2: "Early check-in depends on availability, if possible we will accomodate it for you, while early check-out is always available."
+    question3: "Do you accept walk-in reservations?"
+    answer3: "Walk-ins are accepted depending on room availability on the same day."
+    question4: "What is your cancellation policy?"
+    answer4: "Free cancellation is available within 3 hours of booking, after that, cancellation fees will apply."
+    question5: "What payment methods do you accept?"
+    answer5: "We accept major credit cards, cash, and selected digital payment methods."
+    question6: "Is there a deposit required?"
+    answer6: "Deposit is not required."
+
+  restaurants:
+    title: "Restaurants & Cafes"
+    place1: "Wafuu-dokoro Usagi (和風処うさぎ) – 9 min walk."
+    info1: "Relaxed izakaya with seasonal dishes and a great selection of sake."
+    place2: "Cafe Michikusa (カフェみちくさ) – 9 min walk."
+    info2: "Cozy café offering lunch sets and light meals; ideal for brunch or a casual coffee break."
+    place3: "Sukemasa Coffee (スケマサコーヒー) – 10 min walk."
+    info3: "Quiet specialty coffee shop near Asakusa’s backstreets — perfect for a relaxed filter coffee or dessert after sightseeing."
+    place4: "Yoroiya (与ろゐ屋) – 11 min walk."
+    info4: "Classic Asakusa-style soy-sauce ramen, casual and delicious."
+    place5: "Benitsuru Pancake (紅鶴パンケーキ) – 12 min walk."
+    info5: "Famous for fluffy, soufflé-style pancakes — great for breakfast or a relaxed treat."
+    place6: "Sushi Zanmai Asakusa Kaminarimon (すしざんまい 浅草雷門店) – 13 min walk."
+    info6: "Affordable, reliable sushi — ideal for visitors wanting fresh sushi near Asakusa."
+
+  amenities:
+    title: "Rooms & Amenities"
+    question1: "What amenities are included?"
+    answer1: >
+      Bathroom amenities including towels, shampoo, body wash, and more are provided.
+      For details, feel free to check our %{rooms_link}.
+    question2: "Is Wi-Fi available?"
+    answer2: "Yes, free high-speed Wi-Fi is available throughout the hotel."
+    question3: "Are toiletries replenished daily?"
+    answer3: "Yes, housekeeping will replenish them during your stay."
+
+    links:
+      rooms: "rooms"
+
+  shopping:
+    title: "Shopping Streets"
+    place1: "Kappabashi Kitchen Town (かっぱ橋道具街) – 5 min walk."
+    info1: "Famous street for kitchenware, Japanese knives, ceramics, and food-sample shops."
+    place2: "Ura-Asakusa (裏浅草) – 6 min walk."
+    info2: "Trendy backstreets with boutiques, handcrafted goods, and indie cafés."
+    place3: "Rokku Broadway / Rokku-dori (六区通り) – 9 min walk."
+    info3: "Retro Showa-style shopping street with theaters, snack stalls, and old-Tokyo charm."
+    place4: "Denpoin Street (伝法院通り) – 10 min walk."
+    info4: "Edo-style street with traditional crafts, wagashi sweets, and retro shops."
+    place5: "Nakamise Shopping Street (仲見世商店街) – 12 min walk."
+    info5: "One of Japan’s oldest shopping streets with traditional snacks, souvenirs, and local crafts."
+    place6: "Shin-Nakamise Street (新仲見世商店街) – 13 min walk."
+    info6: "Covered shopping arcade with clothing, accessories, snacks, and casual eateries."
+    place7: "Hoppy Street (ホッピー通り) – 14 min walk."
+    info7: "Lively alley with izakayas and food stalls — best for nighttime atmosphere."
+
+  aboutus:
+    header: "About Morikoya"
+    header1: "Discover Asakusa's Hidden Gem"
+    welcome: "Welcome to Your Sanctuary"
+    info1: "Welcome to Asakusa’s newest hideaway—where tradition, culture, and modern comfort come together."
+    info2: "Designed for travelers who appreciate style, convenience, and a touch of Japanese charm."
+    info3: "Experience Asakusa with us—authentic, vibrant, and uniquely Tokyo."
+
+  payment:
+    complete: "Complete Your Payment"
+    summary: "Booking Summary"
+    info1: "Room:"
+    info2: "Check-in:"
+    info3: "Check-out:"
+    info4: "Duration:"
+    info5: "Price per night:"
+    info6: "Total Amount:"
+    info7: "Card Information"
+    info8: "Pay ¥"
+    info9: "Your payment is secure and encrypted with Stripe"
+    info10: "Nights"
+    return: "Cancel and return to room"
+    pay: "Pay Now"
+  date:
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+    formats:
+      year: "%Y"
+      short: "%d %b"
+      long: "%B %d, %Y"
+      long_inverted: "%d %b, %Y"
+      month_year: "%B %Y"
+
+  time:
+    formats:
+      year: "%Y"
+      short: "%d %b"
+      long: "%B %d, %Y"
+      long_inverted: "%d %b, %Y"
+      month_year: "%B %Y"
+
+  booking_confirmation:
+    heading: "Payment Successful!"
+    info1: "Your booking is confirmed!"
+    info2: "Thank you for your payment."
+    info3: "Booking Details"
+    info4: "Booking ID:"
+    info5: "Room:"
+    info6: "Check-in:"
+    info7: "Check-out:"
+    info8: "Nights:"
+    info9: "Total Paid:"
+    info10: "Payment Status:"
+    info11: "Paid"
+    info12: "To Dashboard"
+
+  moriko:
+    reply: "Moriko is thinking..."
+    chat: "Do you want to chat with Moriko?"
+    title: "Chat with Moriko"
+
+  nav_aboutus:
+    nav1: "Transportation & Access"
+    nav2: "Local Attractions"
+    nav3: "Dining"
+    nav4: "Shopping"
+    nav5: "Cultural"
+
+  nav_faq:
+    nav1: "Reservations"
+    nav2: "Rooms & amenities"
+    nav3: "Facilities"
+    nav4: "Policies"
+    nav5: "Access & Location"
+
+  contact_message:
+    header: "Contact Us"
+    header1: "We'd love to hear from you"
+    subtitle: "Location & Maps"
+    address1: "3-20-13 Nishiasakusa,"
+    address2: "Taito-ku, Tokyo, Japan"
+    alt: "We will get back to you shortly"
+    send: "Send Message"
+    title: "Welcome back"
+    alt: "Leave us a message!"
+    full_name: "Full Name"
+    email: "Email"
+    message: "Message"
+
+  payment_status:
+    paid: "Paid"
+    pending: "Pending"
+    failed: "Failed"
+
+  dashboard:
+    info1: "Member since"
+    info2: "Profile Information"
+    info3: "First Name"
+    info4: "Last Name"
+    info5: "Email Address"
+    info6: "Phone Number"
+    update: "Update Profile"
+    note1: "You can update your email address"
+    note2: "Include country code for international numbers"
+    messages: "Messages"
+    note3: "No messages yet..."
+    note4: "See your contact history with Morikoya."
+    browse: "Browse Rooms"
+    note5: "No confirmed bookings yet..."
+    upcoming: "Upcoming"
+    current: "Current"
+    ongoing: "Ongoing"
+    completed: "Completed"
+    past: "Past"
+    noupcoming: "No upcoming bookings..."
+    nocurrent: "No current stays..."
+    nopast: "No past stays..."
+    checkin: "Check-in"
+    checkout: "Check-out"
+    billing: "Billing History"
+    transaction_id: "Transaction ID"
+    room: "Room"
+    issue_date: "Issue Date"
+    amount: "Amount"
+    billing_status: "Status"
+    receipt: "Receipt"
+    download: "Download"
+    total: "Total Payments:"
+    nomoney: "No payment history yet..."
+    profile_info: "Profile Info"
+    billing_history: "Billing History"
+
+  devise:
+    confirmation: "Resend confirmation instructions"
+
+  password:
+    info: "Enter your email to receive the reset instructions"
+    change: "Change your password"
+    new: "New password"
+    new_confirm: "Confirm your new password"
+    min_length: "%{count} characters minimum"
+    forgot: "Forgot your password?"
+    reset: "Send me reset password instructions"
+    email: "Email"
+
+  signup:
+    header: "Join Morikoya"
+    header1: "Create an account to start your journey."
+    title: "Sign Up"
+    email: "Email"
+    first_name: "First Name"
+    last_name: "Last Name"
+    min_length: "%{count} characters minimum"
+    password: "Password"
+    confirmpass: "Password Confirmation"
+    phone: "Phone Number"
+    submit: "Sign up"
+
+  login:
+    header: "Welcome Back"
+    header1: "Please enter your details to sign in."
+    title: "Log In"
+    email: "Email"
+    password: "Password"
+    remember: "Remember Me"
+    submit: "Log In"
+
+  shared:
+    login: "Log In"
+    signup: "Sign Up"
+    forgot: "Forgot your password?"
+    confirmation: "Didn't receive confirmation instructions?"
+    unlcok: "Didn't receive unlock instructions?"
+    signin: "Sign in with %{provider}"
+
+  rooms:
+    descriptiontext: "Description"
+    select: "Select"
+    freeroom: "View Available Rooms"
+    title1: "Superior Family Room"
+    title2: "Superior Room"
+    title3: "Standard Rooms"
+    family: "Family"
+    superior: "Superior"
+    standard: "Standard"
+    groups: "For groups of"
+    choice5: "please choose the Presidential Suite or combine multiple rooms."
+    description:
+      ab: "A cozy room with all the basics you need."
+      c: "A spacious room offering extra comfort and a bit more room to relax."
+    info1: "per night"
+    size: "Size:"
+    capacity: "Capacity:"
+    guestnum: "Guests"
+    amenities_list: "Amenities"
+    booking: "Reserve Your Stay"
+    duration: "Specify the booking duration"
+    book: "Book this room"
+    guests: "Number of guests:"
+    nights: "Number of nights:"
+    numnights:
+      one: "Night"
+      other: "Nights"
+    person:
+      one: "Person"
+      other: "People"
+    price: "Price per night:"
+    total: "Total price:"
+    info2: "Why Book With Us?"
+    info3: "Enjoy comfort and convenience in our thoughtfully designed rooms. Whether you’re here for work or relaxation, our amenities and services are arranged to make your stay easy and enjoyable. Book your stay today for a pleasant experience"
+    choice1: "Choose at least two rooms for your group!"
+    fully_booked: "Sorry we are booked out!"
+    choice2: "Choose at least one room for your group!"
+    fit: "This room fits your group perfectly!"
+    choice3: "Just in case you want separated rooms!"
+    choice4: "Two rooms for your group!"
+    amenities:
+      twentyfour_hour_checkin: "24-hour Check-In"
+      air_conditioning: "Air Conditioning"
+      balcony: "Balcony"
+      wardrobe: "Wardrobe"
+      dryer: "Dryer"
+      elevator: "Elevator"
+      drying_rack: "Drying Rack"
+      hair_dryer: "Hair Dryer"
+      heating: "Heating"
+      hot_water: "Hot Water"
+      in_person_checkin: "In-person Check-In"
+      internet: "Internet"
+      ironing_board: "Ironing Board"
+      iron: "Iron"
+      linens: "Linens"
+      mosquito_net: "Mosquito Net"
+      private_entrance: "Private Entrance"
+      tv: "TV"
+      towels: "Towels"
+      washing_machine: "Washing Machine"
+      bidet: "Bidet"
+      shower: "Shower"
+      toilet: "Toilet"
+      body_soap: "Body Soap"
+      conditioner: "Conditioner"
+      shampoo: "Shampoo"
+      shower_gel: "Shower Gel"
+      dining_area: "Dining Area"
+      kitchen_utensils: "Kitchen Utensils"
+      coffee_machine: "Coffee Machine"
+      freezer: "Freezer"
+      kitchen_stove: "Kitchen Stove"
+      microwave: "Microwave"
+      refrigerator: "Refrigerator"
+    sofa_bed:
+      one: "Sofa Bed"
+      other:  "Sofa Beds"
+    double_bed:
+      one: "Double Bed"
+      other: "Double Beds"
+    bunk_bed:
+      one: "Bunk Bed"
+      other: "Bunk Beds"
+    semidouble_bed:
+      one: "Semi Double Bed"
+      other: "Smi Double Bed"
+    single_bed:
+      one: "Single Bed"
+      other: "Single Beds"
+
+  faq:
+    header: "Frequently Asked Questions"
+    header1: "Everything you need to know for your stay"

@@ -5,50 +5,42 @@
       <!-- Success Card -->
       <div class="payment-card card success-card">
         <div class="card-body p-5 text-center">
-             <div class="success-icon mb-4">
-                <i class="fas fa-check-circle"></i>
-             </div>
-             <h2 class="success-title mb-3">Payment Successful</h2>
-             <p class="success-subtitle mb-5 text-muted">Thank you, your booking is confirmed.</p>
-             
-              <!-- Booking Details -->
-              <div class="booking-summary-section text-start">
-                 <h5 class="section-title border-bottom pb-2 mb-4">Booking Details</h5>
-                 
-                 <div class="summary-row">
-                    <span class="label">Booking ID</span>
-                     <span class="value">#<%= @booking.id %></span>
-                 </div>
-                 
-                 <div class="summary-row">
-                    <span class="label">Room</span>
-                     <span class="value"><%= @booking.room.name %></span>
-                 </div>
-                 
-                  <div class="summary-row">
-                    <span class="label">Check-in</span>
-                     <span class="value"><%= @booking.start_date.strftime("%B %d, %Y") %></span>
-                 </div>
-                 
-                  <div class="summary-row">
-                    <span class="label">Check-out</span>
-                     <span class="value"><%= @booking.end_date.strftime("%B %d, %Y") %></span>
-                 </div>
-                 
-                 <div class="summary-row">
-                    <span class="label">Total Paid</span>
-                     <span class="value">¥<%= number_with_delimiter(@booking.total_price_cents) %></span>
-                 </div>
-                 
-                 <div class="summary-row">
-                    <span class="label">Status</span>
-                     <span class="value"><span class="badge-paid">PAID</span></span>
-                 </div>
-              </div>
-              
-              <div class="d-grid gap-2 mt-5">
-                <%= link_to "Return to Dashboard", guest_path(current_user), class: "btn payment-submit-btn" %>
-              </div>
+          <div class="success-icon mb-4">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2 class="success-title mb-3"><%= t("booking_confirmation.heading") %></h2>
+          <p class="success-subtitle mb-5 text-muted"><%= t("booking_confirmation.info1") %></p>
+          <!-- Booking Details -->
+          <div class="booking-summary-section text-start">
+            <h5 class="section-title border-bottom pb-2 mb-4"><%= t("booking_confirmation.info3") %></h5>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info4") %></span>
+              <span class="value">#<%= @booking.id %></span>
+            </div>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info5") %></span>
+              <span class="value"><%= @booking.room.name %></span>
+            </div>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info6") %></span>
+              <span class="value"><%= l(@booking.start_date, format: :long) %></span>
+            </div>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info7") %></span>
+              <span class="value"><%= l(@booking.end_date, format: :long) %></span>
+            </div>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info9") %></span>
+              <span class="value">¥<%= number_with_delimiter(@booking.total_price_cents) %></span>
+            </div>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info10") %></span>
+              <span class="value"><span class="badge-paid"><%= t("booking_confirmation.info11") %></span></span>
+            </div>
+          </div>
+          <div class="d-grid gap-2 mt-5">
+            <%= link_to t("booking_confirmation.info12"), guest_path(current_user), class: "btn payment-submit-btn" %>
+          </div>
         </div>
       </div>
     </div>

@@ -6,9 +6,9 @@
         <%= image_tag "checkinout.png" %>
       </div>
       <div class="text">
-        <div class="label">Check-In</div>
+        <div class="label"><%= t("home.check_in") %></div>
         <div class="value" data-booking-form-target="checkInValue">
-          <%= @check_in&.strftime('%d %b %Y') %>
+          <%= @check_in && l(@check_in, format: :long) %>
         </div>
       </div>
     </div>
@@ -18,9 +18,9 @@
         <%= image_tag "checkinout.png" %>
       </div>
       <div class="text">
-        <div class="label">Check-Out</div>
+        <div class="label"><%= t("home.check_out") %></div>
         <div class="value" data-booking-form-target="checkOutValue">
-          <%= @check_out&.strftime('%d %b %Y') %>
+          <%= @check_out && l(@check_out, format: :long) %>
         </div>
       </div>
     </div>
@@ -32,14 +32,14 @@
         <%= image_tag "guests.png" %>
       </div>
       <div class="text">
-        <div class="label">Guests</div>
+        <div class="label"><%= t("home.guests") %></div>
         <div class="value" data-guests-target="guestsValue">
           <%= @guest_num if @guest_num.present? %>
         </div>
       </div>
     </div>
     <%= hidden_field_tag :guests, params[:guests], data: {guests_target: "guestsInput"} %>
-    <%= submit_tag "Search", class: "search-btn" %>
+    <%= submit_tag t("home.search"), class: "search-btn" %>
   </div>
   <%= render "pages/calendar", pages: @rooms %>
   <%= render "pages/guests", pages: @rooms, guest_num: @guest_num %>
