@@ -1,68 +1,48 @@
 <!-- app/views/bookings/confirmation.html.erb -->
-<div class="container-fluid confirmation-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
+<div class="container my-5 payment-page">
   <div class="row justify-content-center">
-    <div class="col-md-12">
+    <div class="col-md-9 col-lg-7">
       <!-- Success Card -->
-      <div class="paymentsuccess card shadow ">
-        <div class="card-header text-center py-4">
-          <h2 class="mb-0">
-            <i class="fas fa-check-circle fa-2x mb-3"></i>
-            <br>
-            <%= t("booking_confirmation.heading") %>
-            <h2>
+      <div class="payment-card card success-card">
+        <div class="card-body p-5 text-center">
+          <div class="success-icon mb-4">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2 class="success-title mb-3"><%= t("booking_confirmation.heading") %></h2>
+          <p class="success-subtitle mb-5 text-muted"><%= t("booking_confirmation.info1") %></p>
+          <!-- Booking Details -->
+          <div class="booking-summary-section text-start">
+            <h5 class="section-title border-bottom pb-2 mb-4"><%= t("booking_confirmation.info3") %></h5>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info4") %></span>
+              <span class="value">#<%= @booking.id %></span>
             </div>
-            <div class="card-body p-4">
-              <!-- Success Message -->
-              <div class="bookingconfirmed alert-success">
-                <h4>
-                  <%= t("booking_confirmation.info1") %>
-                </h4>
-                <p class="mb-0">
-                  <%= t("booking_confirmation.info2") %>
-                </p>
-              </div>
-              <!-- Booking Details -->
-              <h4 class="mt-4 mb-3"><%= t("booking_confirmation.info3") %></h4>
-              <hr>
-              <div class="row mb-2">
-                <div class="col-6"><strong><%= t("booking_confirmation.info4") %></strong></div>
-                <div class="col-6">#<%= @booking.id %></div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-6"><strong><%= t("booking_confirmation.info5") %></strong></div>
-                <div class="col-6"><%= @booking.room.name %></div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-6"><strong><%= t("booking_confirmation.info6") %></strong></div>
-                <div class="col-6"><%= l(@booking.start_date, format: :long) %></div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-6"><strong><%= t("booking_confirmation.info7") %></strong></div>
-                <div class="col-6"><%= l(@booking.end_date, format: :long) %></div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-6"><strong><%= t("booking_confirmation.info8") %></strong></div>
-                <div class="col-6"><%= @booking.number_of_nights %></div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-6"><strong><%= t("booking_confirmation.info9") %></strong></div>
-                <div class="col-6">
-                  <h6 class="paymenttotal mb-0">¥<%= number_with_delimiter(@booking.total_price_cents) %></h6>
-                </div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-6"><strong><%= t("booking_confirmation.info10") %></strong></div>
-                <div class="col-6">
-                  <span class="badge"><%= t("booking_confirmation.info11") %></span>
-                </div>
-              </div>
-              <hr class="my-4">
-              <!-- Action Buttons -->
-              <div class="d-grid gap-2">
-                <%= link_to t("booking_confirmation.info12"), guest_path(current_user), class: "backtohome btn btn-primary btn-lg" %>
-              </div>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info5") %></span>
+              <span class="value"><%= @booking.room.name %></span>
             </div>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info6") %></span>
+              <span class="value"><%= l(@booking.start_date, format: :long) %></span>
+            </div>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info7") %></span>
+              <span class="value"><%= l(@booking.end_date, format: :long) %></span>
+            </div>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info9") %></span>
+              <span class="value">¥<%= number_with_delimiter(@booking.total_price_cents) %></span>
+            </div>
+            <div class="summary-row">
+              <span class="label"><%= t("booking_confirmation.info10") %></span>
+              <span class="value"><span class="badge-paid"><%= t("booking_confirmation.info11") %></span></span>
+            </div>
+          </div>
+          <div class="d-grid gap-2 mt-5">
+            <%= link_to t("booking_confirmation.info12"), guest_path(current_user), class: "btn payment-submit-btn" %>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

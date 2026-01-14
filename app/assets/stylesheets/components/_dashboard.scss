@@ -1,50 +1,184 @@
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .dashboard-link {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+// Dashboard Styles - Indigo Aesthetic
+
+.dashboard-page-wrapper {
+  font-family: $body-font;
+  color: $sumi-black;
+  background-color: $washi-cream; // Set background color
+  // Subtract navbar height (approx 80-90px) to prevent unnecessary scrollbar
+  min-height: calc(100vh - 90px); 
+  padding-top: 2rem;
+  padding-bottom: 2rem; // Balance spacing
+}
+
+// Common Card Style
+.dashboard-card, .messagescard, .booking-card {
+  border: 1px solid rgba($sumi-black, 0.05) !important; // Subtle border for definition
+  border-radius: 4px !important; // Sharp corners
+  background-color: white !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important; // Much softer, "settled" shadow
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
   }
 }
 
-@media (max-width: 991px) {
-  .user-info-card {
-    display: none;
+// User Profile Section
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  background-color: rgba($moss-green, 0.05); // Lighter background
+  color: $moss-green;
+  font-family: $headers-font;
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; // Keep avatar round
+  border: 1px solid rgba($moss-green, 0.2);
+}
+
+.dashboard-card h4 {
+  font-family: $headers-font;
+  color: $sumi-black !important; // Enforce Sumi Black override
+  margin-top: 1rem;
+}
+
+// Profile Card Buttons
+.dashboard-card {
+  .btn-outline-primary, .btn-outline-secondary {
+    border-radius: 2px !important;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-width: 1px;
+    box-shadow: none !important;
+    
+    &:hover {
+      transform: translateY(-1px);
+    }
+  }
+  
+  .btn-outline-primary {
+    color: $moss-green !important;
+    border-color: $moss-green !important;
+    &:hover {
+      background-color: $moss-green !important;
+      color: white !important;
+    }
+  }
+
+  .btn-outline-secondary {
+    color: rgba($sumi-black, 0.7) !important;
+    border-color: rgba($sumi-black, 0.3) !important;
+    &:hover {
+      background-color: $sumi-black !important;
+      color: white !important;
+      border-color: $sumi-black !important;
+    }
   }
 }
 
-@media (max-width: 767px) {
-  .message-section-expand {
-    display: none;
-  }
-  .dashboard-page-wrapper {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .message-section-toggle {
-    display: none;
-  }
-  .dashboard-page-wrapper {
-    padding-left: 1rem;
-   padding-right: 1rem;
+// Messages Card
+.messagescard {
+  border-radius: 4px !important;
+  
+  .card-title {
+    font-family: $headers-font;
+    color: $sumi-black !important; // Enforce Sumi Black
+    font-weight: 600;
   }
 }
 
-@media (min-width: 1440px) {
-
-  .dashboard-page-wrapper {
-  width: 1340px;
-  margin-left: auto;
-  margin-right: auto;
- }
+.messages-list .message.card {
+  background-color: $washi-cream !important; // Matching the page bg for integrated feel
+  border: 1px solid rgba($moss-green, 0.1) !important;
+  border-radius: 2px !important;
+  box-shadow: none !important; // Flat internal cards
+  
+  p {
+    font-size: 0.95rem;
+    color: $sumi-black;
+  }
+  
+  small {
+    color: rgba($sumi-black, 0.5);
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
 }
 
-@media (min-width: 2560px) {
 
-  .dashboard-page-wrapper {
-  width: 2400px;
-  margin-left: auto;
-  margin-right: auto;
- }
+// Nav Tabs - Clean Pill Style
+.nav-pills {
+  .nav-link {
+    color: rgba($sumi-black, 0.6) !important;
+    font-family: $headers-font;
+    font-weight: 500;
+    padding: 0.6rem 1rem !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: rgba($moss-green, 0.05);
+      color: $moss-green !important;
+    }
+    
+    &.active {
+      background-color: $moss-green !important;
+      color: white !important;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      
+      .badge {
+        background-color: white !important;
+        color: $moss-green !important;
+      }
+    }
+  }
 }
+
+// Booking List Style
+.booking-card {
+  margin-bottom: 1rem;
+  border-left: none !important; // Remove the heavy left border 
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  h5 {
+    font-family: $headers-font;
+    font-weight: 600;
+    color: $sumi-black;
+  }
+  
+  // Responsive Booking Card Layout
+  .booking-dates {
+    // Desktop: Borders on sides
+    @media (min-width: 992px) {
+      border-left: 1px solid rgba($sumi-black, 0.1);
+      border-right: 1px solid rgba($sumi-black, 0.1);
+    }
+    
+    // Mobile: Borders top/bottom or spacing
+    @media (max-width: 991.98px) {
+      border-top: 1px solid rgba($sumi-black, 0.05);
+      border-bottom: 1px solid rgba($sumi-black, 0.05);
+      padding: 1rem 0;
+      margin: 1rem 0;
+    }
+  }
+  
+  .booking-actions {
+    // Mobile alignment handled by utility classes (align-items-start vs align-items-lg-end)
+    // Just ensuring spacing if needed
+    @media (max-width: 991.98px) {
+      padding-top: 0.5rem;
+    }
+  }
+}
+

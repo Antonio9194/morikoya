@@ -1,10 +1,17 @@
 // Define variables for your color scheme
 
-// For example:
-$red: #FD1015;
-$blue: #1E1E1E;
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
+// Japanese Luxury Palette
+$sumi-black: #2c2c2c; // Soft Charcoal for text
+$washi-cream: #f4f1ea; // Warm off-white for backgrounds
+$moss-green: #3a4a38; // Deep Forest Green (Primary Brand)
+$lacquer-red: #8a3324; // Deep Japanese Red (Accent)
+$indigo-blue: #2b3a42; // Deep Blue (Secondary)
+$kintsugi-gold: #c5a059; // Gold
+
+// Semantic Mappings
+$primary: $moss-green;
+$secondary: $lacquer-red;
+$body-bg: $washi-cream;
+$body-color: $sumi-black;
+$light-gray: #e5e5e5;
+$gray: $sumi-black;

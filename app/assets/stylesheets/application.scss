@@ -59,12 +59,12 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-top: 1px solid rgba(212, 33, 61, 0.6);
-  box-shadow: 0 2px 6px rgba(212, 33, 61, 0.25);
+  border-top: 1px solid rgba($lacquer-red, 0.6);
+  box-shadow: 0 2px 6px rgba($lacquer-red, 0.25);
 }
 
 h1 {
-  color: #d4213d !important;
+  color: $lacquer-red !important;
 }
 
 h2,

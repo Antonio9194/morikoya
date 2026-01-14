@@ -85,7 +85,7 @@ end
 Room.create!(
   name: '901',
   room_type: 'C',
-  description: 'Luxury suite with panoramic view, jacuzzi, and extra comfort.',
+  description: 'A spacious room offering extra comfort and a bit more room to relax.',
   price_per_night: 50_000,
   size: 50,
   single: 2,

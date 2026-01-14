@@ -1,0 +1,74 @@
+// Hero Typography
+
+// --- Animations ---
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.minakoya {
+  font-family: $headers-font;
+  color: $washi-cream;
+  font-size: 5rem;
+  font-weight: 400; // Mincho looks better lighter
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.2s;
+
+  @media (max-width: 768px) {
+    font-size: 3rem; // Smaller on mobile
+    letter-spacing: 0.1em;
+  }
+}
+
+.hero-subtitle {
+  font-family: $body-font;
+  color: $washi-cream;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+  }
+}
+
+// 4K Scaling
+@media (min-width: 2560px) {
+  .minakoya {
+    font-size: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+    letter-spacing: 0.3em;
+  }
+
+  .line-above {
+    width: 50%;
+    margin: 2rem auto;
+    border-width: 2px;
+  }
+}
+
+.line-above {
+  border-top: 1px solid $lacquer-red;
+  opacity: 0.8;
+  width: 60%;
+  margin: 1rem auto;
+}

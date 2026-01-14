@@ -1,0 +1,94 @@
+<div class="room-section-indigo <%= 'reversed' if local_assigns[:reversed] %>" data-controller="toggle-section">
+  <div class="section-container">
+    <!-- SPLIT HEADER: Image + Info -->
+    <div class="indigo-split">
+      <!-- IMAGE SIDE (Carousel) -->
+      <div class="indigo-image">
+        <!-- We use the first room's images to represent the type -->
+        <%= render "rooms/carousel", room: rooms.first %>
+      </div>
+      <!-- INFO SIDE -->
+      <div class="indigo-info">
+        <div class="info-content">
+          <div class="type-badge">
+            <% if type == "C" %>
+              <i class="fa-solid fa-crown"></i> <%= t("rooms.family") %>
+            <% elsif type == "B" %>
+              <i class="fa-solid fa-leaf"></i> <%= t("rooms.superior") %>
+            <% else %>
+              <i class="fa-solid fa-bed"></i> <%= t("rooms.standard") %>
+            <% end %>
+          </div>
+          <h2 class="indigo-title"><%= title %></h2>
+          <p class="indigo-desc"><%= description %></p>
+          <div class="indigo-specs">
+            <div class="spec-item">
+              <i class="fa-solid fa-user-group"></i>
+              <span>  <%= capacity %> <%= t("rooms.guestnum") %></span>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-ruler-combined"></i>
+              <span><%= rooms.first.size %> m²</span>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-bed"></i>
+              <span>
+                <% if type == "A" %>
+                  <%= t("rooms.bunk_bed.one") %> + <%= t("rooms.semidouble_bed.one") %> + <%= t("rooms.sofa_bed.one") %>
+                <% elsif type == "B" %>
+                  <%= t("rooms.double_bed.one") %> + <%= t("rooms.bunk_bed.one") %> + <%= t("rooms.sofa_bed.one") %>
+                <% else %>
+                  2 <%= t("rooms.single_bed.other") %> + 2 <%= t("rooms.double_bed.other") %> + <%= t("rooms.sofa_bed.one") %>
+                <% end %>
+              </span>
+            </div>
+          </div>
+          <div class="indigo-amenities">
+            <h5 class="amenities-label"><%= t("rooms.amenities_list") %></h5>
+            <% t("rooms.amenities").each do |key, amenity| %>
+              <%= amenity %>
+            <% end %>
+          </div>
+          <!-- TOGGLE BUTTON -->
+          <button class="btn-indigo-expand" data-action="click->toggle-section#toggle">
+            <span data-toggle-section-target="text"><%= t("rooms.freeroom") %></span>
+            <i class="fa-solid fa-chevron-down" data-toggle-section-target="icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- COLLAPSIBLE ROOM TILES -->
+    <div class="section-content" data-toggle-section-target="content">
+      <div class="room-tiles-grid">
+        <% rooms.each do |room| %>
+          <%= link_to room_path(room, check_in: @check_in, check_out: @check_out, guests: @guest_num), class: "text-decoration-none" do %>
+            <div class="room-tile">
+              <div class="tile-header">
+                <span class="room-number"><%= room.name %></span>
+                <% if type == "C" %>
+                  <span class="badge-luxury"><%= t("rooms.family") %></span>
+                <% end %>
+              </div>
+              <div class="tile-specs-row">
+                <span><i class="fa-solid fa-user-group"></i> <%= room.capacity %></span>
+                <span><i class="fa-solid fa-ruler-combined"></i> <%= room.size %>m²</span>
+                <span><i class="fa-solid fa-bed"></i> <%= room.sofa_bed + (room.double || 0) + (room.single || 0) + (room.bunk || 0) %></span>
+              </div>
+              <div class="tile-body">
+                <div class="tile-price">
+                  <span class="currency">¥</span>
+                  <span class="amount"><%= number_with_delimiter(room.price_per_night) %></span>
+                  <span class="per-night">/ <%= t("rooms.numnights", count: 1 ) %></span>
+                </div>
+                <div class="tile-action">
+                  <span><%= t("rooms.select") %></span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

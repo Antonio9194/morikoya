@@ -198,6 +198,9 @@ ko:
     info7: "이자카야와 포장마차가 늘어선 활기찬 골목으로, 밤 분위기가 특히 좋습니다."
 
   aboutus:
+    header: "모리코야 소개"
+    header1: "아사쿠사의 숨겨진 보석을 발견하세요"
+    welcome: "당신의 안식처에 오신 것을 환영합니다"
     info1: "전통과 문화, 그리고 현대적인 편안함이 어우러진 아사쿠사의 새로운 휴식처에 오신 것을 환영합니다."
     info2: "스타일과 편리함, 일본 특유의 매력을 소중히 여기는 여행자를 위해 디자인되었습니다."
     info3: "진정성 있고 활기찬, 오직 도쿄에서만 느낄 수 있는 아사쿠사를 경험해 보세요."
@@ -216,18 +219,21 @@ ko:
     info9: "결제는 Stripe로 안전하게 암호화됩니다"
     info10: "박"
     return: "취소하고 객실 페이지로 돌아가기"
+    pay: "지금 결제"
 
   date:
     month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
     abbr_month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
     abbr_day_names: [일, 월, 화, 수, 목, 금, 토]
     formats:
+      year: "%Y년"
       short: "%-m월%-d일"
       long: "%Y년%B%d일"
       long_inverted: "%d일 %b, %Y년"
       month_year: "%Y년 %B"
   time:
     formats:
+      year: "%Y년"
       short: "%-m월%-d일"
       long: "%Y년%B%d일"
       long_inverted: "%d일 %b, %Y년"
@@ -256,7 +262,7 @@ ko:
   nav_aboutus:
     nav1: "교통 및 접근"
     nav2: "현지 관광 명소"
-    nav3: "레스토랑 & 카페"
+    nav3: "다이닝"
     nav4: "쇼핑 거리"
     nav5: "문화 체험"
 
@@ -268,6 +274,14 @@ ko:
     nav5: "오시는 길 및 위치"
 
   contact_message:
+    header: "문의하기"
+    header1: "여러분의 의견을 기다립니다"
+    subtitle: "위치 & 지도"
+    address1: "도쿄도 다이토구 니시아사쿠사 3-20-13"
+    address2: "다이토구, 도쿄, 일본"
+    alt: "곧 답변 드리겠습니다"
+    send: "메시지 보내기"
+    title: "환영합니다"
     title: "돌아오신 것을 환영합니다"
     alt: "메시지를 남겨주세요!"
     full_name: "성함"
@@ -321,6 +335,7 @@ ko:
     confirmation: "확인 이메일 재전송"
 
   password:
+    info: "재설정 안내를 받으려면 이메일을 입력하세요"
     change: "비밀번호 변경"
     new: "새 비밀번호"
     new_confirm: "새 비밀번호 확인"
@@ -330,6 +345,8 @@ ko:
     email: "이메일"
 
   signup:
+    header: "모리코야에 가입"
+    header1: "계정을 생성하고 여정을 시작하세요."
     title: "회원가입"
     email: "이메일"
     first_name: "이름"
@@ -341,6 +358,8 @@ ko:
     submit: "가입하기"
 
   login:
+    header: "환영합니다"
+    header1: "로그인하려면 정보를 입력하세요."
     title: "로그인"
     email: "이메일"
     password: "비밀번호"
@@ -356,6 +375,20 @@ ko:
     signin: "%{provider}로 로그인"
 
   rooms:
+    descriptiontext: "설명"
+    select: "선택"
+    freeroom: "객실 확인"
+    title1: "슈페리어 패밀리룸"
+    title2: "슈페리어룸"
+    title3: "스탠다드룸"
+    family: "패밀리"
+    superior: "슈페리어"
+    standard: "스탠다드"
+    groups: "단체 최대"
+    choice5: "프레지덴셜 스위트 또는 여러 객실을 예약해 주세요."
+    description:
+      ab: "기본적인 편의시설이 갖춰진 아늑한 객실입니다."
+      c: "조금 더 넓고 편안하게 쉴 수 있는 객실입니다."
     info1: "1박 기준"
     size: "크기:"
     capacity: "수용 인원:"
@@ -367,6 +400,7 @@ ko:
     guests: "투숙객 수:"
     nights: "숙박 일수:"
     numnights:
+      one: "박"
       other: "박"
     person:
       one: "명"
@@ -431,3 +465,7 @@ ko:
     single_bed:
       one: "싱글 침대"
       other: "싱글 침대"
+
+  faq:
+    header: "자주 묻는 질문"
+    header1: "숙박에 필요한 모든 정보를 확인하세요"

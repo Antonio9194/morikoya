@@ -197,6 +197,9 @@ ja:
     info7: "居酒屋や屋台が立ち並ぶ賑やかな通り。夜の雰囲気が特におすすめ。"
 
   aboutus:
+    header: "モリコヤについて"
+    header1: "浅草の隠れた名所を発見"
+    welcome: "あなたの安らぎの場へようこそ"
     info1: "伝統・文化・モダンな快適さが融合する、浅草の新しい隠れ家へようこそ。"
     info2: "スタイル、利便性、そして日本らしい魅力を大切にする旅行者のためにデザインされています。"
     info3: "本物で活気あふれる、唯一無二の東京・浅草を私たちと一緒に体験してください。"
@@ -215,18 +218,21 @@ ja:
     info9: "お支払いはStripeにより安全に暗号化されています"
     info10: "泊"
     return: "キャンセルして部屋のページに戻る"
+    pay: "今すぐ支払う"
 
   date:
     month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
     formats:
+      year: "%Y年"
       short: "%-m月%-d日"
       long: "%Y年%B%d日"
       long_inverted: "%d日 %b, %Y年"
       month_year: "%Y年 %B"
   time:
     formats:
+      year: "%Y年"
       short: "%-m月%-d日"
       long: "%Y年%B%d日"
       long_inverted: "%d日 %b, %Y年"
@@ -255,7 +261,7 @@ ja:
   nav_aboutus:
     nav1: "交通アクセス"
     nav2: "周辺の観光スポット"
-    nav3: "レストラン＆カフェ"
+    nav3: "ダイニング"
     nav4: "商店街"
     nav5: "文化体験"
 
@@ -267,6 +273,14 @@ ja:
     nav5: "アクセス・所在地"
 
   contact_message:
+    header: "お問い合わせ"
+    header1: "ご連絡をお待ちしております"
+    subtitle: "所在地・地図"
+    address1: "東京都台東区西浅草3-20-13"
+    address2: "台東区、東京、日本"
+    alt: "折り返しご連絡いたします"
+    send: "メッセージを送信"
+    title: "お帰りなさい"
     title: "お帰りなさい"
     alt: "メッセージをお送りください！"
     full_name: "氏名"
@@ -320,6 +334,7 @@ ja:
     confirmation: "確認メールを再送信"
 
   password:
+    info: "リセット手順を受け取るためにメールアドレスを入力してください"
     change: "パスワードを変更する"
     new: "新しいパスワード"
     new_confirm: "新しいパスワードを確認"
@@ -329,6 +344,8 @@ ja:
     email: "メールアドレス"
 
   signup:
+    header: "モリコヤに参加"
+    header1: "アカウントを作成して旅を始めましょう。"
     title: "サインアップ"
     email: "メールアドレス"
     first_name: "名前"
@@ -340,6 +357,8 @@ ja:
     submit: "サインアップ"
 
   login:
+    header: "お帰りなさい"
+    header1: "サインインするために情報を入力してください。"
     title: "ログイン"
     email: "メールアドレス"
     password: "パスワード"
@@ -355,6 +374,20 @@ ja:
     signin: "%{provider}でサインイン"
 
   rooms:
+    descriptiontext: "説明"
+    select: "選択"
+    freeroom: "空室を見る"
+    title1: "スーペリアファミリールーム"
+    title2: "スーペリアルーム"
+    title3: "スタンダードルーム"
+    family: "ファミリー"
+    superior: "スーペリア"
+    standard: "スタンダード"
+    groups: "グループ最大"
+    choice5: "プレジデンシャルスイート、または複数の部屋をご利用ください。"
+    description:
+      ab: "必要な設備が揃った快適な客室です。"
+      c: "より広く、リラックスできる快適な客室です。"
     info1: "1泊あたり"
     size: "サイズ："
     capacity: "定員："
@@ -366,6 +399,7 @@ ja:
     guests: "ゲスト人数："
     nights: "宿泊数："
     numnights:
+      one: "泊"
       other: "泊"
     person:
       one: "人"
@@ -430,3 +464,7 @@ ja:
     single_bed:
       one: "シングルベッド"
       other: "シングルベッド"
+
+  faq:
+    header: "よくある質問"
+    header1: "ご滞在に必要な情報はこちら"

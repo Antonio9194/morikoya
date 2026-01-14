@@ -1,27 +1,35 @@
-<h2><%= t("password.change") %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <%= f.input :reset_password_token, as: :hidden %>
-  <%= f.full_error :reset_password_token %>
-
-  <div class="form-inputs">
-    <%= f.input :password,
-                label: t("password.new"),
-                required: true,
-                autofocus: true,
-                hint: (@minimum_password_length ? t("password.min_length", count: @minimum_password_length) : nil),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                label: t("password.new_confirm"),
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h2><%= t("password.change") %></h2>
+      <p>Create a new strong password.</p>
+    </div>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "auth-form" }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :reset_password_token, as: :hidden %>
+      <%= f.full_error :reset_password_token %>
+      <div class="form-inputs mb-4">
+        <%= f.input :password,
+                    label: t("password.new"),
+                    required: true,
+                    autofocus: true,
+                    hint: (@minimum_password_length ? t("password.min_length", count: @minimum_password_length) : nil),
+                    input_html: { autocomplete: "new-password", class: "form-control" },
+                    label_html: { class: "form-label" } %>
+        <div class="mt-3">
+          <%= f.input :password_confirmation,
+                      label: t("password.new_confirm"),
+                      required: true,
+                      input_html: { autocomplete: "new-password", class: "form-control" },
+                      label_html: { class: "form-label" } %>
+        </div>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, t("password.change"), class: "btn auth-btn" %>
+      </div>
+    <% end %>
+    <div class="auth-links">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, t("password.change") %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

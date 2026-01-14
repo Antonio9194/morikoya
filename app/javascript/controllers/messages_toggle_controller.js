@@ -1,11 +1,16 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="messages-toggle"
 export default class extends Controller {
-  static targets = ["messagesList", "placeholderText", "collapseIcon", "expandIcon"]
+  static targets = [
+    "messagesList",
+    "placeholderText",
+    "collapseIcon",
+    "expandIcon",
+  ];
 
   connect() {
-    console.log("I will toggle messages list display.")
+    console.log("I will toggle messages list display.");
   }
 
   expand() {
@@ -13,7 +18,7 @@ export default class extends Controller {
     this.messagesListTarget.classList.toggle("d-none");
     this.collapseIconTarget.classList.toggle("d-none");
     this.expandIconTarget.classList.toggle("d-none");
-    this.expandIconTarget.style.background = "#E28A96";
+    this.expandIconTarget.style.background = "#8A3324";
     this.expandIconTarget.style.borderColor = "#ffffffff";
   }
 

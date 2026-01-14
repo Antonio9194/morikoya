@@ -81,99 +81,14 @@
   z-index: 1050 !important;
 }
 
-// Bookings sections
-.browserooms {
-  background-color: #E28A96 !important;
-  border: #D4213D;
-  border-radius: 30px !important;
-  padding: 0.6rem !important;
-  white-space: nowrap !important;
-  width: 50%;
-}
-
-.browserooms:hover {
-  background-color: #D4213D !important;
-  color: #FFFFFF !important;
-}
-
-.bookingscard:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
-  border-radius: 10px !important;
-}
- // Avatar
-.rounded-circle {
-  background-color: #E28A96 !important;
-}
-
-.avatarcard {
-  border-radius: 30px !important;
-}
-
-.avatarcard:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
-  border-radius: 30px !important;
-}
-
-.topline:hover {
-  border-color: #D4213D !important;
-}
-
-//User card
-
-.usercard {
-  border-radius: 30px !important;
-}
-
-.usercard:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
-  border-radius: 30px !important;
-}
-
-//Messages card
-
-.messagescard {
-  border-radius: 30px !important;
-}
-.messagescard:hover, .message {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
-  border-radius: 30px !important;
-}
-
-//Upcoming reservations card
-.bookingcard {
-  border-radius: 30px !important;
-}
-
-.bookingcard:hover {
- background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #D4213D !important;
-  border-radius: 30px !important;
-}
-
-
-//Download
-.download {
-  background-color: #E28A96 !important;
-  border: #D4213D;
-  border-radius: 30px !important;
-  padding: 0.6rem !important;
-  white-space: nowrap !important;
-  width: 100%;
-}
-
-.download:hover {
-  background-color: #D4213D !important;
-  color: #FFFFFF !important;
-}
-
-//Reservations status
-.menutabs {
-  border-radius: 30px !important;
-  margin-bottom: 20px !important;
-}
+// Bookings sections - Removed legacy round overrides
+// .browserooms { ... }
+// .bookingscard:hover { ... }
+// .avatarcard { ... }
+// .usercard { ... }
+// .messagescard { ... }
+// .bookingcard { ... }
+// .download { ... }
+// .menutabs { ... }
 
 

@@ -1,45 +1,56 @@
 <div class="container-fluid rooms-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
-  <% if @guest_num.present? && @guest_num > 8 %>
-    <!--Render search dates-->
-    <% if @rooms.count > 1 %>
+  <!-- Search Info & Warnings -->
+  <% if @guest_num.present? %>
+    <div class="d-flex justify-content-center mb-5">
       <%= render "search_info", rooms: @rooms %>
-      <h5 class="searchresult"><%= t("rooms.choice1") %></h5>
-      <%= render "rooms/other_nums", rooms: @rooms %>
-    <% else %>
-      <%= render "search_info", rooms: @rooms %>
-      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3"><%= t("rooms.fully_booked") %></h5>
+    </div>
+  <% end %>
+  <% if @rooms.empty? %>
+    <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center">
+      <%= t("rooms.fully_booked") %>
+    </h5>
+  <% else %>
+    <% if @guest_num.present? && @guest_num > 6 %>
+      <h5 class="searchresult text-center mb-5">
+        <i class="fa-solid fa-circle-info me-2"></i>
+        <%= t("rooms.groups") %> <%= @guest_num %>, <%= t("rooms.choice5") %>
+      </h5>
     <% end %>
-  <% end %>
-  <% if @guest_num.present? && @guest_num == 8 %>
-    <%= render "search_info", rooms: @rooms %>
-    <%= render "rooms/seven_eight", rooms: @rooms %>
-  <% end %>
-  <% if @guest_num.present? && @guest_num == 7 %>
-    <%= render "search_info", rooms: @rooms %>
-    <%= render "rooms/seven_eight", rooms: @rooms %>
-  <% end %>
-  <% if @guest_num.present? && @guest_num == 6 %>
-    <%= render "search_info", rooms: @rooms %>
-    <%= render "rooms/six", rooms: @rooms %>
-  <% end %>
-  <% if @guest_num.present? && @guest_num <= 5 %>
-    <% if @rooms.count > 1 %>
-      <%= render "search_info", rooms: @rooms %>
-      <h5 class="searchresult"><%= t("rooms.choice2") %></h5>
-      <%= render "rooms/other_nums", rooms: @rooms %>
-    <% elsif @rooms.count == 1 %>
-      <%= render "search_info", rooms: @rooms %>
-      <h5 class="searchresult">We only have one room left!</h5>
-      <%= render "rooms/other_nums", rooms: @rooms %>
-    <% else %>
-      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3"><%= t("rooms.fully_booked") %></h5>
+    <!-- Section 1: Presidential Suite (Type C) -->
+    <% rooms_c = @rooms.where(room_type: "C") %>
+    <% if rooms_c.any? %>
+      <%= render "rooms/rooms_section",
+          rooms: rooms_c,
+          type: "C",
+          title: t("rooms.title1"),
+          capacity: 8,
+          description: t("rooms.description.c"),
+          reversed: false
+      %>
     <% end %>
-  <% end %>
-  <% if @guest_num.nil? %>
-    <% unless @rooms.count.zero? %>
-      <%= render "rooms/other_nums", rooms: @rooms %>
-    <% else %>
-      <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3"><%= t("rooms.fully_booked") %></h5>
+    <!-- Section 2: Deluxe Rooms (Type B) -->
+    <% rooms_b = @rooms.where(room_type: "B") %>
+    <% if rooms_b.any? %>
+      <%= render "rooms/rooms_section",
+          rooms: rooms_b,
+          type: "B",
+          title: t("rooms.title2"),
+          capacity: 6,
+          description: t("rooms.description.ab"),
+          reversed: true
+      %>
+    <% end %>
+    <!-- Section 3: Standard Rooms (Type A) -->
+    <% rooms_a = @rooms.where(room_type: "A") %>
+    <% if rooms_a.any? %>
+      <%= render "rooms/rooms_section",
+          rooms: rooms_a,
+          type: "A",
+          title: t("rooms.title3"),
+          capacity: 5,
+          description: t("rooms.description.ab"),
+          reversed: false
+      %>
     <% end %>
   <% end %>
 </div>

@@ -202,6 +202,9 @@ zh-TW:
     info7: "聚集居酒屋與小吃攤的熱鬧街道，夜晚氣氛特別好。"
 
   aboutus:
+    header: "關於 Morikoya"
+    header1: "探索淺草的隱藏寶地"
+    welcome: "歡迎來到您的安息之所"
     info1: "歡迎來到淺草全新的靜謐居所——傳統、文化與現代舒適在此完美結合。"
     info2: "專為重視風格、便利性與日式魅力的旅人所設計。"
     info3: "與我們一同體驗真實、充滿活力且獨一無二的東京淺草。"
@@ -220,18 +223,21 @@ zh-TW:
     info9: "您的付款已透過 Stripe 安全加密"
     info10: "晚"
     return: "取消並返回房間頁面"
+    pay: "立即付款"
 
   date:
     month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     abbr_day_names: [日, 一, 二, 三, 四, 五, 六]
     formats:
+      year: "%Y年"
       short: "%-m月%-d日"
       long: "%Y年%B%d日"
       long_inverted: "%d日 %b, %Y年"
       month_year: "%Y年 %B"
   time:
     formats:
+      year: "%Y年"
       short: "%-m月%-d日"
       long: "%Y年%B%d日"
       long_inverted: "%d日 %b, %Y年"
@@ -260,7 +266,7 @@ zh-TW:
   nav_aboutus:
     nav1: "交通與抵達"
     nav2: "當地景點"
-    nav3: "餐廳與咖啡館"
+    nav3: "餐飲"
     nav4: "購物街"
     nav5: "文化體驗"
 
@@ -272,6 +278,14 @@ zh-TW:
     nav5: "交通與位置"
 
   contact_message:
+    header: "聯絡我們"
+    header1: "我們期待您的來信"
+    subtitle: "地點與地圖"
+    address1: "日本東京都台東區西淺草3-20-13"
+    address2: "台東區，東京，日本"
+    alt: "我們會盡快回覆您"
+    send: "發送訊息"
+    title: "歡迎回來"
     title: "歡迎回來"
     alt: "留下訊息給我們！"
     full_name: "姓名"
@@ -325,6 +339,7 @@ zh-TW:
     confirmation: "重新發送確認郵件"
 
   password:
+    info: "輸入您的電子郵件以接收重置說明"
     change: "更改密碼"
     new: "新密碼"
     new_confirm: "確認新密碼"
@@ -334,6 +349,8 @@ zh-TW:
     email: "電子郵件"
 
   signup:
+    header: "加入 Morikoya"
+    header1: "建立帳戶，開始您的旅程。"
     title: "註冊"
     email: "電子郵件"
     first_name: "名字"
@@ -345,6 +362,8 @@ zh-TW:
     submit: "註冊"
 
   login:
+    header: "歡迎回來"
+    header1: "請輸入您的資訊以登入。"
     title: "登入"
     email: "電子郵件"
     password: "密碼"
@@ -360,6 +379,20 @@ zh-TW:
     signin: "使用 %{provider} 登入"
 
   rooms:
+    descriptiontext: "描述"
+    select: "選擇"
+    freeroom: "查看可用客房"
+    title1: "高級家庭房"
+    title2: "高級客房"
+    title3: "標準客房"
+    family: "家庭"
+    superior: "高級"
+    standard: "標準"
+    groups: "適合最多"
+    choice5: "請選擇總統套房或預訂多間客房。"
+    description:
+      ab: "溫馨舒適，提供您所需的基本設施。"
+      c: "空間更寬敞，提供更舒適的放鬆環境。"
     info1: "每晚"
     size: "房間大小："
     capacity: "入住人數上限："
@@ -371,6 +404,7 @@ zh-TW:
     guests: "入住人數："
     nights: "入住晚數："
     numnights:
+      one: "晚"
       other: "晚"
     person:
       one: "人"
@@ -435,3 +469,7 @@ zh-TW:
     single_bed:
       one: "單人床"
       other: "單人床"
+
+  faq:
+    header: "常見問題"
+    header1: "您入住所需了解的所有資訊"

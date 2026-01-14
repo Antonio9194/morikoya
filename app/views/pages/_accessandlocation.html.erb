@@ -1,33 +1,23 @@
-<h3 class="muted"><%= t("location.title") %></h3>
-<div class="faq-block">
-  <div class="faqquestion" data-action="click->faq#toggle">
-    <h5><%= t("location.question1") %></h5>
-    <h5 class="plus">+</h5>
-  </div>
-  <div class="faqanswer d-none" data-faq-target="answer">
-    <h6>
-      <%= t(
+<div class="section-title">
+  <h2><%= t("location.title") %></h2>
+  <div class="divider"></div>
+</div>
+<div class="faq-item">
+  <h3><%= t("location.question1") %></h3>
+  <p>
+    <%= t(
       "location.answer1",
       map_link: link_to(t("location.link.map"), about_us_path),
       access_link: link_to(t("location.link.access"), about_us_path(anchor: "access")),
       contact_link: link_to(t("location.link.form"), new_contact_message_path)
       ).html_safe %>
-    </h6>
-  </div>
-  <hr>
-  <div class="faqquestion" data-action="click->faq#toggle">
-    <h5><%= t("location.question2") %></h5>
-    <h5 class="plus">+</h5>
-  </div>
-  <div class="faqanswer d-none" data-faq-target="answer">
-    <h6><%= t("location.answer2") %></h6>
-  </div>
-  <hr>
-  <div class="faqquestion" data-action="click->faq#toggle">
-    <h5><%= t("location.question3") %></h5>
-    <h5 class="plus">+</h5>
-  </div>
-  <div class="faqanswer d-none" data-faq-target="answer">
-    <h6><%= t("location.answer3") %></h6>
-  </div>
+  </p>
+</div>
+<div class="faq-item">
+  <h3><%= t("location.question2") %></h3>
+  <p><%= t("location.answer2") %></p>
+</div>
+<div class="faq-item">
+  <h3><%= t("location.question3") %></h3>
+  <p><%= t("location.answer3") %></p>
 </div>

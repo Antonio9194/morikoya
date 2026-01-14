@@ -39,7 +39,7 @@
       </div>
     </div>
     <%= hidden_field_tag :guests, params[:guests], data: {guests_target: "guestsInput"} %>
-    <%= submit_tag "Search", class: "search-btn" %>
+    <%= submit_tag t("home.search"), class: "search-btn" %>
   </div>
   <%= render "pages/calendar", pages: @rooms %>
   <%= render "pages/guests", pages: @rooms, guest_num: @guest_num %>

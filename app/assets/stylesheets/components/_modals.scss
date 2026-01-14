@@ -1,72 +1,133 @@
-// Profile Modal
-#profileModal {
-  .modal-content {
-    background: white;
-    border-radius: 12px;
+// Modal Specific Styles - Indigo Aesthetic
+
+.modal-content {
+  border-radius: 4px !important; // Sharp corners for all modals
+  border: none !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  background-color: $washi-cream !important;
+  font-family: $body-font;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba($moss-green, 0.1) !important;
+  padding: 1.5rem !important;
+
+  .modal-title {
+    font-family: $headers-font;
+    color: $moss-green;
+    font-weight: 600;
   }
+
+  .btn-close {
+    background-size: 0.8rem;
+    opacity: 0.5;
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+}
+
+.modal-body {
+  padding: 1.5rem !important;
+  color: $sumi-black;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba($moss-green, 0.1) !important;
+  padding: 1.5rem !important;
+}
+
+// Form Controls in Modals
+.modal-body {
   .form-control {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 1rem;
-    width: 100%;
-    box-sizing: border-box;
+    background-color: white !important;
+    border: 1px solid rgba($moss-green, 0.2) !important;
+    border-radius: 2px !important;
+    color: $sumi-black !important;
+    font-family: $body-font;
+    padding: 0.75rem 1rem !important;
+
+    &:focus {
+      border-color: $moss-green !important;
+      box-shadow: 0 0 0 2px rgba($moss-green, 0.1) !important;
+    }
   }
 
-  .close {
-    float: right;
-    font-size: 1.5rem;
-    cursor: pointer;
+  .form-label {
+    font-family: $headers-font;
+    color: rgba($sumi-black, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
-
-  .updateprofile {
-  background-color: #E28A96 !important;
-  border: #D4213D;
-  color: #1E1E1E;
-  border-radius: 30px !important;
-  padding: 0.6rem !important;
-  white-space: nowrap !important;
-  width: 100%;
 }
 
-.updateprofile:hover {
-  background-color: #D4213D !important;
-  color: #FFFFFF !important;
-}
-}
+// Start: Billing Modal Specifics //
 
-// Billing History Modal
 #billingModal {
-  .modal-content {
-    background: white;
-    border-radius: 12px;
+  // Table Styling
+  .table {
+    border-color: rgba($moss-green, 0.2) !important;
+
+    thead {
+      th {
+        background-color: rgba($moss-green, 0.1) !important;
+        color: $moss-green !important;
+        font-family: $headers-font;
+        border-bottom: 2px solid rgba($moss-green, 0.3) !important;
+        font-weight: 600;
+        padding: 1rem !important;
+      }
+    }
+
+    tbody {
+      td {
+        padding: 1rem !important;
+        border-bottom: 1px solid rgba($moss-green, 0.1) !important;
+        color: $sumi-black;
+        vertical-align: middle;
+      }
+
+      tr:hover td {
+        background-color: rgba($moss-green, 0.05) !important; // Row hover effect
+      }
+    }
   }
 
-  .close {
-    float: right;
-    font-size: 1.5rem;
-    cursor: pointer;
+  // Status Badge
+  .badge {
+    background-color: rgba($moss-green, 0.15) !important;
+    color: $moss-green !important;
+    border: 1px solid rgba($moss-green, 0.3) !important;
+    border-radius: 4px !important;
+    padding: 0.5em 0.8em !important;
+    font-weight: 600;
+    
+    i {
+      color: $moss-green !important;
+    }
+  }
+
+  // Download Button
+  .download, .btn-sm {
+    background-color: $lacquer-red !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 2px !important;
+    padding: 0.4rem 1rem !important;
+    font-size: 0.85rem !important;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken($lacquer-red, 10%) !important;
+      transform: translateY(-1px);
+    }
+  }
+  
+  // Total Payment Section
+  .bg-light.rounded {
+    background-color: white !important;
+    border: 1px solid rgba($moss-green, 0.2) !important;
+    border-radius: 4px !important; // Override Bootstrap 'rounded'
   }
 }
-
-// Admin Booking Modals
-#deleteBookingModal,
-#bookingModal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  .modal-content {
-    background: white;
-    margin: 100px auto;
-    padding: 20px;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 12px;
-  }
-}
+// End: Billing Modal Specifics //

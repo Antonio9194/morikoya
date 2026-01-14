@@ -1,17 +1,29 @@
-<div class="inner-navigation-aboutus">
-  <div>
-    <%= link_to t("nav_aboutus.nav1"), "#access", class: "nav-access-block" %>
-  </div>
-  <div>
-    <%= link_to t("nav_aboutus.nav2"), "#attractions", class: "nav-attractions-block" %>
-  </div>
-  <div>
-    <%= link_to t("nav_aboutus.nav3"), "#food", class:"nav-food-block" %>
-  </div>
-  <div>
-    <%= link_to t("nav_aboutus.nav4"), "#shopping", class:"nav-shopping-block" %>
-  </div>
-  <div>
-    <%= link_to t("nav_aboutus.nav5"), "#culture", class: "nav-culture-block" %>
-  </div>
-</div>
+<nav class="about-nav">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <%= link_to "#access", class: "nav-link" do %>
+        <i class="fa-solid fa-train-subway me-2"></i><%= t("nav_aboutus.nav1") %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "#attractions", class: "nav-link" do %>
+        <i class="fa-solid fa-camera me-2"></i><%= t("nav_aboutus.nav2") %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "#food", class: "nav-link" do %>
+        <i class="fa-solid fa-utensils me-2"></i><%= t("nav_aboutus.nav3") %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "#shopping", class: "nav-link" do %>
+        <i class="fa-solid fa-bag-shopping me-2"></i><%= t("nav_aboutus.nav4") %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "#culture", class: "nav-link" do %>
+        <i class="fa-solid fa-torii-gate me-2"></i><%= t("nav_aboutus.nav5") %>
+      <% end %>
+    </li>
+  </ul>
+</nav>

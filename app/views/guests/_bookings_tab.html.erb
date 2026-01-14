@@ -3,9 +3,9 @@
      role="tabpanel"
      aria-labelledby="<%= tab_id %>-tab">
   <% if bookings.any? %>
-    <div class="row g-4">
+    <div class="d-flex flex-column gap-3">
       <% bookings.each do |booking| %>
-        <div class="col-12 col-lg-6">
+        <div>
           <%= render "guests/booking_card",
                      booking: booking,
                      border_color: border_color,
@@ -16,11 +16,11 @@
       <% end %>
     </div>
   <% else %>
-    <div class="bookingcard card shadow-sm rounded-4">
+    <div class="dashboard-card card">
       <div class="card-body p-5 text-center">
         <i class="bi bi-<%= empty_icon %> text-muted mb-3" style="font-size: 3rem;"></i>
         <p class="text-muted mb-0"><%= empty_message %></p>
-        <%= link_to t("dashboard.browse"), rooms_path, class: "browserooms btn btn-primary mt-3" if show_browse_button && defined?(rooms_path) %>
+        <%= link_to t("dashboard.browse"), rooms_path, class: "btn btn-outline-primary mt-3" if show_browse_button && defined?(rooms_path) %>
       </div>
     </div>
   <% end %>

@@ -197,6 +197,9 @@ zh-CN:
     info7: "充满活力的小巷，遍布居酒屋和美食摊，夜晚气氛最佳。"
 
   aboutus:
+    header: "关于 Morikoya"
+    header1: "发现浅草的隐藏宝地"
+    welcome: "欢迎来到您的避风港"
     info1: "欢迎来到浅草全新的静谧之所——传统、文化与现代舒适在此完美融合。"
     info2: "专为注重风格、便利性以及日式魅力的旅客而设计。"
     info3: "与我们一起体验真实而充满活力、独一无二的东京浅草。"
@@ -215,18 +218,21 @@ zh-CN:
     info9: "您的支付已通过 Stripe 安全加密"
     info10: "晚"
     return: "取消并返回房间页面"
+    pay: "立即付款"
 
   date:
     month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     abbr_day_names: [日, 一, 二, 三, 四, 五, 六]
     formats:
+      year: "%Y年"
       short: "%-m月%-d日"
       long: "%Y年%B%d日"
       long_inverted: "%d日 %b, %Y年"
       month_year: "%Y年 %B"
   time:
     formats:
+      year: "%Y年"
       short: "%-m月%-d日"
       long: "%Y年%B%d日"
       long_inverted: "%d日 %b, %Y年"
@@ -255,7 +261,7 @@ zh-CN:
   nav_aboutus:
     nav1: "交通与到达"
     nav2: "当地景点"
-    nav3: "餐厅和咖啡馆"
+    nav3: "餐饮"
     nav4: "购物街"
     nav5: "文化体验"
 
@@ -267,6 +273,14 @@ zh-CN:
     nav5: "交通与位置"
 
   contact_message:
+    header: "联系我们"
+    header1: "期待您的来信"
+    subtitle: "位置 & 地图"
+    address1: "日本东京都台东区西浅草3-20-13"
+    address2: "台东区，东京，日本"
+    alt: "我们会尽快回复您"
+    send: "发送消息"
+    title: "欢迎回来"
     title: "欢迎回来"
     alt: "给我们留言！"
     full_name: "姓名"
@@ -320,6 +334,7 @@ zh-CN:
     confirmation: "重新发送确认邮件"
 
   password:
+    info: "输入您的邮箱以接收重置说明"
     change: "更改密码"
     new: "新密码"
     new_confirm: "确认新密码"
@@ -329,6 +344,8 @@ zh-CN:
     email: "电子邮件"
 
   signup:
+    header: "加入 Morikoya"
+    header1: "创建账户，开始您的旅程。"
     title: "注册"
     email: "电子邮件"
     first_name: "名字"
@@ -340,6 +357,8 @@ zh-CN:
     submit: "注册"
 
   login:
+    header: "欢迎回来"
+    header1: "请输入您的信息以登录。"
     title: "登录"
     email: "邮箱"
     password: "密码"
@@ -355,6 +374,20 @@ zh-CN:
     signin: "使用 %{provider} 登录"
 
   rooms:
+    descriptiontext: "描述"
+    select: "选择"
+    freeroom: "查看空房"
+    title1: "高级家庭房"
+    title2: "高级房"
+    title3: "标准房"
+    family: "家庭"
+    superior: "高级"
+    standard: "标准"
+    groups: "适用于最多"
+    choice5: "请选择总统套房或组合多个房间。"
+    description:
+      ab: "温馨舒适，提供您需要的基本设施。"
+      c: "空间更宽敞，提供额外舒适与放松环境。"
     info1: "每晚"
     size: "房间大小："
     capacity: "入住人数上限："
@@ -366,6 +399,7 @@ zh-CN:
     guests: "入住人数："
     nights: "入住晚数："
     numnights:
+      one: "晚"
       other: "晚"
     person:
       one: "人"
@@ -430,3 +464,7 @@ zh-CN:
     single_bed:
       one: "单人床"
       other: "单人床"
+
+  faq:
+    header: "常见问题"
+    header1: "您入住所需了解的一切信息"

@@ -1,55 +1,422 @@
+// Rooms Index Styles
+
 .searchresult {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #E28A96;
-  border: 1px solid #E28A96;
-  color: white !important;
-  border-radius: 30px;
+  background-color: $lacquer-red; // Updated color
+  border: 1px solid $lacquer-red; // Updated color
+  color: $washi-cream !important; // Updated text color
+  border-radius: 4px; // Sharper corners
   margin: 0.8rem 0;
-  padding: 0.6rem;
+  padding: 0.8rem;
   width: 32.2%;
+  font-family: $body-font;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba($lacquer-red, 0.2);
 }
+
+// Room Cards Styling
+.room-card {
+  .card {
+    border-radius: 4px !important; // Override Bootstrap rounded-5
+    border: none; // Remove default border
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important; // Elegant shadow
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba($moss-green, 0.15) !important;
+    }
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .room-name h4 {
+    font-family: $headers-font;
+    color: $moss-green !important;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .room-info {
+    font-family: $body-font;
+    color: $sumi-black;
+
+    p {
+      color: rgba($sumi-black, 0.8) !important;
+    }
+  }
+}
+
+// --- Indigo-Inspired Layout Styles ---
+
+.room-section-indigo {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 4rem 0;
+  background-color: white;
+  border-bottom: 1px solid rgba($moss-green, 0.1);
+
+  &.reversed {
+    background-color: $washi-cream; // Subtle contrast for alternating sections
+
+    .indigo-split {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.section-container {
+  width: 92%;
+  max-width: 1800px; // Wider container for luxury feel
+  margin: 0 auto;
+  padding: 0;
+}
+
+.indigo-split {
+  display: flex;
+  gap: 5rem; // Increased gap for better separation
+  align-items: center;
+  margin-bottom: 2rem;
+
+  @media (max-width: 992px) {
+    flex-direction: column !important; // Stack on mobile
+    gap: 2rem;
+  }
+}
+
+.indigo-image {
+  flex: 1.2; // Give image slightly more space
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); // Deeper shadow
+
+  // Ensure carousel images fit nicely
+  .carousel-item img {
+    height: 550px; // Taller image for better impact
+    object-fit: cover;
+  }
+}
+
+.indigo-info {
+  flex: 0.8; // Text takes slightly less space
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.type-badge {
+  display: inline-block;
+  font-family: $body-font;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $lacquer-red;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.indigo-title {
+  font-family: $headers-font;
+  font-size: 2.5rem;
+  color: $moss-green !important;
+  margin-bottom: 1rem;
+}
+
+.indigo-desc {
+  font-family: $body-font;
+  color: rgba($sumi-black, 0.8) !important;
+  line-height: 1.8; // More breathing room for text
+  margin-bottom: 2rem;
+  max-width: 600px; // Prevent text lines from getting too long
+}
+
+.indigo-specs {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid rgba($moss-green, 0.1);
+  border-bottom: 1px solid rgba($moss-green, 0.1);
+  padding: 1rem 0;
+
+  .spec-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $sumi-black;
+    font-size: 0.9rem;
+
+    i {
+      color: $moss-green;
+    }
+  }
+}
+
+.indigo-amenities {
+  margin-bottom: 2rem;
+
+  .amenities-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $moss-green !important;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+.btn-indigo-expand {
+  background: transparent;
+  border: 1px solid $moss-green;
+  color: $moss-green;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-family: $body-font;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: fit-content;
+
+  &:hover {
+    background: $moss-green;
+    color: white;
+  }
+}
+
+// --- Room Tiles Grid ---
+
+.room-tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba($moss-green, 0.1);
+}
+
+.room-tile {
+  background: white;
+  border: 1px solid rgba($moss-green, 0.1);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba($moss-green, 0.1);
+    border-color: $moss-green;
+
+    .tile-action {
+      color: $lacquer-red;
+      transform: translateX(5px);
+    }
+  }
+}
+
+.tile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .room-number {
+    font-family: $headers-font;
+    font-size: 1.2rem;
+    color: $sumi-black;
+    font-weight: 600;
+  }
+
+  .badge-luxury {
+    background: $lacquer-red;
+    color: white;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+}
+
+.tile-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tile-price {
+  display: flex;
+  align-items: baseline;
+  color: $moss-green;
+
+  .currency {
+    font-size: 0.9rem;
+    margin-right: 2px;
+  }
+  .amount {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: $headers-font;
+  }
+  .per-night {
+    font-size: 0.8rem;
+    color: rgba($sumi-black, 0.6);
+    margin-left: 4px;
+  }
+}
+
+.tile-action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba($sumi-black, 0.5);
+  transition: all 0.3s ease;
+}
+
+.tile-specs-row {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: rgba($sumi-black, 0.6);
+  margin-bottom: 1rem;
+
+  i {
+    color: $moss-green;
+    margin-right: 4px;
+  }
+}
+
+.section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+
+  &.active {
+    // max-height is set by JS
+    padding-bottom: 2rem;
+  }
+}
+
+// --- End New Styles ---
 
 @media (max-width: 1062px) {
   .searchresult {
     font-size: 1.2rem;
+  }
 }
-}
-
 
 @media (max-width: 768px) {
   .searchresult {
     width: 48%;
-}
+  }
 
-.rooms-page-wrapper {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+  .rooms-page-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 @media (max-width: 425px) {
   .searchresult {
     width: 100%;
     font-size: 1rem;
-}
+  }
 }
 
 @media (min-width: 1440px) {
-
   .rooms-page-wrapper {
-  width: 1340px;
-  margin-left: auto;
-  margin-right: auto;
- }
+    width: 92%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (min-width: 2560px) {
-
   .rooms-page-wrapper {
-  width: 2400px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    width: 92%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Scale up Room Cards
+  .room-section-indigo {
+    padding: 6rem 0;
+  }
+
+  .indigo-image .carousel-item img {
+    height: 800px;
+  }
+
+  .type-badge {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .indigo-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .indigo-desc {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin-bottom: 3rem;
+  }
+
+  .indigo-specs {
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+    gap: 4rem;
+
+    .spec-item {
+      font-size: 1.3rem;
+
+      i {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .indigo-amenities {
+    margin-bottom: 3rem;
+
+    .amenities-label {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .btn-indigo-expand {
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+  }
 }

@@ -1,39 +1,51 @@
-<h2><%= t("signup.title") %></h2>
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                label: t("signup.email"),
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                label: t("signup.first_name"),
-                input_html: { autocomplete: "first_name" }%>
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                label: t("signup.last_name"),
-                input_html: { autocomplete: "last_name" }%>
-    <%= f.input :password,
-                required: true,
-                hint: (@minimum_password_length ? t("signup.min_length", count: @minimum_password_length) : nil),
-                label: t("signup.password"),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                label: t("signup.confirmpass"),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :phone_number,
-                required: true,
-                autofocus: true,
-                label: t("signup.phone"),
-                input_html: { autocomplete: "tel" }%>
+<div class="auth-page">
+  <div class="auth-card auth-card-wide">
+    <div class="auth-header">
+      <h2><%= t("signup.header") %></h2>
+      <p><%= t("signup.header1") %></p>
+    </div>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "auth-form" }) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.input :first_name,
+                        required: true,
+                        autofocus: true,
+                        label: t("signup.first_name"),
+                        input_html: { autocomplete: "first_name" }%>
+          </div>
+          <div class="col-md-6">
+            <%= f.input :last_name,
+                        required: true,
+                        label: t("signup.last_name"),
+                        input_html: { autocomplete: "last_name" }%>
+          </div>
+        </div>
+        <%= f.input :email,
+                    required: true,
+                    label: t("signup.email"),
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :phone_number,
+                    required: true,
+                    label: t("signup.phone"),
+                    input_html: { autocomplete: "tel" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: (@minimum_password_length ? t("signup.min_length", count: @minimum_password_length) : nil),
+                    label: t("signup.password"),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    label: t("signup.confirmpass"),
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class="form-actions mt-4">
+        <%= f.button :submit, t("signup.submit"), class: "btn auth-btn" %>
+      </div>
+    <% end %>
+    <div class="auth-links">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-  <div class="form-actions">
-    <%= f.button :submit, t("signup.submit") %>
-  </div>
-<% end %>
-<%= render "devise/shared/links" %>
+</div>

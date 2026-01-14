@@ -1,137 +1,121 @@
-<div class="container-fluid rooms-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
-  <!-- Carousel with room photos -->
-  <div id="roomCarousel" class="carousel slide carousel-fade mb-4 rounded" data-bs-ride="carousel">
-    <div class="carousel-inner rounded-5">
-      <% ["bathtub.jpg", "bedroom.jpg", "toilet.jpg"].each_with_index do |photo, index| %>
-        <div class="carousel-item <%= 'active' if index == 0 %>">
-          <%= image_tag photo, class: "d-block w-100 rounded-5", alt: "Room photo #{index + 1}", style: "height: 400px; object-fit: cover;" %>
-        </div>
-      <% end %>
+<div class="room-show-page">
+  <!-- Hero Section -->
+  <div class="room-hero mb-5">
+    <div id="roomCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <% ["bathtub.jpg", "bedroom.jpg", "toilet.jpg"].each_with_index do |photo, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <%= image_tag photo, class: "d-block w-100 room-hero-image", alt: "Room photo #{index + 1}" %>
+            <div class="carousel-overlay"></div>
+          </div>
+        <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
-  <!-- Room info -->
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="card mb-4 rounded-5 shadow-sm">
-        <div class="card-body">
-          <h2 class="card-title"><%= @room.name %></h2>
-          <div class="row">
-            <div class="col-md-4">
-              <h5 class="text-primary">¥<%= number_with_delimiter(@room.price_per_night) %></h5>
-              <small class="text-muted"><%= t("rooms.info1") %></small>
+  <div class="container rooms-page-wrapper pb-5 px-3 px-md-4">
+    <div class="row g-4 g-lg-5">
+      <!-- Room Details -->
+      <div class="col-lg-7 col-xl-8">
+        <div class="room-header mb-5 border-bottom pb-4">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+            <h1 class="room-title display-4"><%= @room.name %></h1>
+            <div class="room-price-tag text-end">
+              <div class="price display-6">¥<%= number_with_delimiter(@room.price_per_night) %></div>
+              <div class="unit text-muted"><%= t("rooms.info1") %></div>
             </div>
-            <div class="col-md-4">
-              <p class="mb-1"><strong><%= t("rooms.size") %></strong> <%= @room.size %> m²</p>
-              <p class="mb-0"><strong><%= t("rooms.capacity") %></strong> <%= @room.capacity %> <%= t("rooms.guestnum") %></p>
+          </div>
+          <div class="room-specs mt-4 d-flex gap-4 flex-wrap">
+            <div class="spec-item">
+              <i class="fa-solid fa-ruler-combined me-2"></i>
+              <span><%= @room.size %> m²</span>
             </div>
-            <!--Render beds depending on bed types-->
-            <div class="col-md-4">
-              <%= render "rooms/beds_showpage", room: @room %>
+            <div class="spec-item">
+              <i class="fa-solid fa-user-group me-2"></i>
+              <span><%= @room.capacity %> <%= t("rooms.guestnum") %></span>
             </div>
-            <!---->
+            <div class="spec-item">
+              <i class="fa-solid fa-bed me-2"></i>
+              <div class="d-flex flex-wrap gap-3">
+                <%= render "rooms/beds_showpage", room: @room %>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- List of amenities -->
-      <div class="card rounded-5 shadow-sm" style="overflow: hidden">
-        <div class="card-header">
-          <h5 class="mb-0"><%= t("rooms.amenities_list") %></h5>
+        <div class="room-description mb-5">
+          <h3 class="section-label mb-3"><%= t("rooms.descriptiontext") %></h3>
+          <% if @room.room_type == "C" %>
+            <p class="lead text-muted"><%= t("rooms.description.c") %></p>
+          <% else %>
+            <p class="lead text-muted"><%= t("rooms.description.ab") %></p>
+          <% end %>
         </div>
-        <div class="card-body">
-          <div class="row">
+        <hr class="room-divider">
+        <div class="room-amenities mb-5">
+          <h3 class="section-label mb-4"><%= t("rooms.amenities_list") %></h3>
+          <div class="row g-3">
             <% I18n.t("rooms.amenities").each do |key, label| %>
-              <div class="col-md-6 mb-2">
-                <i class="fas fa-check text-success me-2"></i><%= label %>
+              <div class="col-md-6 col-lg-4">
+                <div class="amenity-item">
+                  <i class="fa-solid fa-check me-2"></i>
+                  <%= label %>
+                </div>
               </div>
             <% end %>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Booking calendar + Show searched date range in date input field -->
-    <div class="paymentblock col-lg-4">
-      <div class="card position-sticky rounded-5 shadow-sm h-100" style="top: 20px; overflow: hidden">
-        <div class="card-header">
-          <h5 class="mb-0"><%= t("rooms.booking") %></h5>
-        </div>
-        <div class="card-body">
-          <div class="booking-form">
-            <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room) do |f| %>
-              <%= f.input :start_date,
-                as: :string, label: t("rooms.duration"),
-                input_html: {
-                  class: "chosen-dates",
-                  data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates },
-                  value: [@check_in, @check_out].all? ? "#{@check_in} - #{@check_out}" : "" } %>
-              <%= f.button :submit, t("rooms.book"), class: "btn" %>
-            <% end %>
-          </div>
-          <hr style="height: 2px;">
-          <div class="tentative-booking-info">
-            <!--Guests Num-->
-            <% if @guest_num.present? %>
-              <div class="row guest-num">
-                <div class="title col-8">
-                  <p class="card-text"><%= t("rooms.guests") %></p>
-                </div>
-                <div class="value col-4">
-                  <p class="card-text text-end">
-                    <%= @guest_num %> <%= t("rooms.person", count: @guest_num) %>
-                  </p>
-                </div>
-              </div>
-            <% end %>
-            <!--Nights Num Retrieving using Stimulus Outlet-->
-            <div class="row night-num" data-controller="retrieve-dates" data-retrieve-dates-datepicker-outlet=".chosen-dates">
-              <div class="title col-8">
-                <p class="card-text"><%= t("rooms.nights") %></p>
-              </div>
-              <div class="value col-4">
-                <p class="card-text text-end" data-retrieve-dates-target="nightsNumDestination" data-retrieve-dates-label="<%= t("rooms.numnights", count: 2) %>"></p>
-              </div>
+      <!-- Booking Widget -->
+      <div class="col-lg-5 col-xl-4">
+        <div class="booking-widget-wrapper sticky-top" style="top: 2rem; z-index: 10;">
+          <div class="booking-widget p-4">
+            <h3 class="widget-title mb-4"><%= t("rooms.booking") %></h3>
+            <div class="booking-form">
+              <%= simple_form_for [@room, @booking], method: :post, url: room_bookings_path(@room) do |f| %>
+                <%= f.input :start_date,
+                  as: :string,
+                  label: false,
+                  placeholder: t("rooms.duration"),
+                  input_html: {
+                    class: "chosen-dates form-control-lg mb-3",
+                    data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates },
+                    value: [@check_in, @check_out].all? ? "#{@check_in} - #{@check_out}" : "" } %>
+                <%= f.button :submit, t("rooms.book"), class: "btn btn-lg w-100 btn-primary" %>
+              <% end %>
             </div>
-            <!--Calculate and display Total Price - Retrieving using Stimulus Outlet-->
-            <div data-controller="total-price-display" data-total-price-display-datepicker-outlet=".chosen-dates">
-              <!--Price Per Night-->
-              <div class="row price-per-night">
-                <div class="title col-8">
-                  <p class="card-text"><%= t("rooms.price") %></p>
+            <div class="booking-summary mt-4 pt-4 border-top">
+              <!-- Guests Info -->
+              <% if @guest_num.present? %>
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="text-muted"><%= t("rooms.guests") %></span>
+                  <span class="fw-bold"><%= @guest_num %> <%= t("rooms.person", count: @guest_num) %></span>
                 </div>
-                <div class="value col-4">
-                  <p class="card-text text-end" data-total-price-display-target="pricePerNight">¥<%= number_with_delimiter(@room.price_per_night) %></p>
-                </div>
+              <% end %>
+              <!-- Nights Calculation -->
+              <div class="d-flex justify-content-between mb-2" data-controller="retrieve-dates" data-retrieve-dates-datepicker-outlet=".chosen-dates">
+                <span class="text-muted"><%= t("rooms.nights") %></span>
+                <span class="fw-bold" data-retrieve-dates-target="nightsNumDestination" data-retrieve-dates-label="<%= t('rooms.numnights', count: 2).split.last %>"></span>
               </div>
-              <!--Total Price-->
-              <div class="row total-price">
-                <div class="title col-8">
-                  <p class="card-text"><%= t("rooms.total") %></p>
+              <!-- Price Calculation -->
+              <div data-controller="total-price-display" data-total-price-display-datepicker-outlet=".chosen-dates">
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="text-muted"><%= t("rooms.price") %></span>
+                  <span class="fw-bold" data-total-price-display-target="pricePerNight">¥<%= number_with_delimiter(@room.price_per_night) %></span>
                 </div>
-                <div class="value col-4">
-                  <p class="card-text text-end" data-total-price-display-target="totalPrice"></p>
+                <div class="d-flex justify-content-between mt-3 pt-3 border-top">
+                  <span class="h5 mb-0"><%= t("rooms.total") %></span>
+                  <span class="h5 mb-0 text-primary" data-total-price-display-target="totalPrice">-</span>
                 </div>
               </div>
             </div>
-            <!--End of Calculate and display Total Price-->
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Pitch text -->
-  <div class="row mt-5">
-    <div class="col-12">
-      <div class="card rounded-5 shadow-sm">
-        <div class="card-body text-center">
-          <h2 class="card-title"><%= t("rooms.info2") %></h2>
-          <p class="card-text"><%= t("rooms.info3") %></p>
         </div>
       </div>
     </div>

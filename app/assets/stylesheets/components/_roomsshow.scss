@@ -1,97 +1,361 @@
-.booking-form .btn {
-  background-color: #D4213D;
-  color: #FFFFFF;
-  border-radius: 20px;
-  padding: 0.8rem;
-  white-space: nowrap;
-  width: 100%;
+// Room Details Page Styles
+
+.room-show-page {
+  background-color: $washi-cream;
+  min-height: 100vh;
+  font-family: $body-font;
+  color: $sumi-black;
+  padding-bottom: 4rem;
 }
 
-.booking-form .btn {
-  background-color: #E28A96 !important;
-  border: #D4213D;
-  color: #1E1E1E;
-  border-radius: 30px !important;
-  padding: 0.8rem !important;
-  white-space: nowrap !important;
-  width: 100%;
-}
+// Hero Section
+.room-hero {
+  position: relative;
+  margin-bottom: 4rem !important;
 
-.booking-form .btn:hover {
-  background-color: #D4213D !important;
-  color: #FFFFFF !important;
-}
+  .room-hero-image {
+    height: 75vh;
+    object-fit: cover;
+    width: 100%;
 
-.form-control {
-  border-radius: 30px;
-  padding: 0.8rem;
-}
-
-//Flatpicker range
-
-.startRange, .endRange {
-  background-color: #D4213D !important;
-}
-
-@media (max-width: 768px) {
- .paymentblock {
-  margin-top: 1.4rem;
- }
-}
-
-@media (min-width: 1024px) {
-
-  .page-wrapper {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
- }
-}
-
-@media (min-width: 1440px) {
-
-  .page-wrapper {
-  max-width: 1340px;
-  margin-left: auto;
-  margin-right: auto;
- }
-}
-
-@media (min-width: 2560px) {
-
-  .page-wrapper {
-  max-width: 2400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-  #roomCarousel img {
-    height: 600px;
+    @media (max-width: 768px) {
+      height: 50vh;
+    }
   }
 
-  .card-body {
-    padding: 3rem;
-  }
-
-  .paymentblock .card {
-    top: 50px;
-  }
-
-  .paymentblock .card-body {
-    font-size: 1.1rem;
-  }
-
-  h2.card-title {
-    font-size: 2.2rem;
-  }
-
-  .card-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
+  .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0)
+    );
+    pointer-events: none;
   }
 
   .carousel-control-prev,
   .carousel-control-next {
-    width: 6%;
+    width: 5%;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Typography & Layout
+.room-title {
+  font-family: $headers-font;
+  color: $moss-green;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-label {
+  font-family: $headers-font;
+  color: $moss-green;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba($moss-green, 0.2);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.room-price-tag {
+  .price {
+    font-family: $headers-font;
+    color: $lacquer-red;
+    font-weight: 700;
+  }
+  .unit {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+// Specs & Amenities
+.spec-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: $sumi-black;
+  padding: 0.5rem 0;
+
+  i {
+    color: $moss-green;
+    margin-right: 0.5rem;
+  }
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  padding: 0.5rem 0;
+
+  i {
+    color: $moss-green;
+    width: 24px;
+    text-align: center;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+// Booking Widget
+.booking-widget-wrapper {
+  padding-left: 2rem;
+
+  @media (max-width: 991px) {
+    padding-left: 0;
+    margin-top: 3rem;
+  }
+}
+
+.booking-widget {
+  background: white;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); // Stronger "floating" shadow
+
+  .widget-title {
+    font-family: $headers-font;
+    color: $moss-green;
+    text-align: center;
+    font-size: 1.75rem;
+    border-bottom: 1px solid rgba($moss-green, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.booking-summary {
+  font-size: 0.95rem;
+  color: $sumi-black;
+
+  .h5 {
+    font-family: $headers-font;
+    color: $moss-green;
+  }
+}
+
+// Form Elements
+.booking-form .btn {
+  background-color: $lacquer-red !important;
+  color: $washi-cream !important;
+  border: none;
+  border-radius: 2px !important;
+  padding: 1rem !important;
+  font-family: $body-font;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: darken($lacquer-red, 10%) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba($lacquer-red, 0.3);
+    transform: translateY(-1px);
+  }
+}
+
+.form-control {
+  border-radius: 2px;
+  padding: 1rem;
+  border: 1px solid rgba($moss-green, 0.2);
+  font-family: $body-font;
+  background-color: rgba($washi-cream, 0.3);
+  font-size: 1rem;
+
+  &:focus {
+    border-color: $moss-green;
+    box-shadow: none;
+    background-color: white;
+  }
+
+  &::placeholder {
+    color: rgba($sumi-black, 0.4);
+  }
+}
+
+// Flatpickr Customization
+.flatpickr-calendar {
+  border-radius: 2px !important;
+  box-shadow: 0 10px 30px rgba($moss-green, 0.15) !important;
+  font-family: $body-font !important;
+  border: 1px solid rgba($moss-green, 0.1) !important;
+
+  .flatpickr-months {
+    background: $moss-green;
+    color: white;
+    fill: white;
+    border-radius: 2px 2px 0 0;
+    padding: 0.5rem 0;
+
+    .flatpickr-month {
+      color: white;
+    }
+
+    .flatpickr-current-month {
+      color: white;
+      .numInputWrapper span.arrowUp:after {
+        border-bottom-color: white;
+      }
+      .numInputWrapper span.arrowDown:after {
+        border-top-color: white;
+      }
+    }
+  }
+
+  .flatpickr-weekdays {
+    background: $moss-green;
+
+    .flatpickr-weekday {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover {
+  background-color: $lacquer-red !important;
+  border-color: $lacquer-red !important;
+  color: white;
+}
+
+.flatpickr-day.inRange {
+  background-color: rgba($lacquer-red, 0.1) !important;
+  border-color: transparent !important;
+  box-shadow: -5px 0 0 rgba($lacquer-red, 0.1), 5px 0 0 rgba($lacquer-red, 0.1) !important;
+}
+
+.flatpickr-day.today {
+  border-color: $moss-green !important;
+  &:hover {
+    background-color: $moss-green !important;
+    color: white !important;
+  }
+}
+
+// Large Screens (4K) Scaling
+@media (min-width: 2560px) {
+  // Scale up Hero
+  .room-hero .room-hero-image {
+    height: 800px;
+  }
+
+  // Scale up Typography
+  .room-title {
+    font-size: 4.5rem;
+  }
+
+  .room-price-tag {
+    .price {
+      font-size: 3rem;
+    }
+    .unit {
+      font-size: 1.2rem;
+    }
+  }
+
+  .section-label {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .lead {
+    font-size: 1.5rem;
+  }
+
+  // Scale up Specs & Amenities
+  .spec-item {
+    font-size: 1.4rem;
+    padding: 0.8rem 0;
+
+    i {
+      font-size: 1.4rem;
+    }
+  }
+
+  .amenity-item {
+    font-size: 1.3rem;
+    padding: 0.8rem 0;
+
+    i {
+      width: 32px;
+      font-size: 1.2rem;
+    }
+  }
+
+  // Scale up Booking Widget
+  .booking-widget {
+    padding: 3rem !important;
+
+    .widget-title {
+      font-size: 2.2rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .booking-summary {
+    font-size: 1.2rem;
+    margin-top: 2rem !important;
+    padding-top: 2rem !important;
+  }
+
+  // Scale up Form Elements
+  .form-control {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .booking-form .btn {
+    padding: 1.5rem !important;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+  }
+}
+
+// Divider
+.room-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba($moss-green, 0.3),
+    transparent
+  );
+  margin: 4rem 0;
+  position: relative;
+
+  &::after {
+    content: "♦";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $lacquer-red;
+    background: $washi-cream;
+    padding: 0 10px;
+    font-size: 0.8rem;
   }
 }

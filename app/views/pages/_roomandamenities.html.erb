@@ -1,31 +1,21 @@
-<h3 class="muted"><%= t("amenities.title") %></h3>
-<div class="faq-block">
-  <div class="faqquestion" data-action="click->faq#toggle">
-    <h5><%= t("amenities.question1") %></h5>
-    <h5 class="plus">+</h5>
-  </div>
-  <div class="faqanswer d-none" data-faq-target="answer">
-    <h6>
-      <%= t(
+<div class="section-title">
+  <h2><%= t("amenities.title") %></h2>
+  <div class="divider"></div>
+</div>
+<div class="faq-item">
+  <h3><%= t("amenities.question1") %></h3>
+  <p>
+    <%= t(
         "amenities.answer1",
         rooms_link: link_to(t("amenities.links.rooms"), rooms_path)
         ).html_safe %>
-    </h6>
-  </div>
-  <hr>
-  <div class="faqquestion" data-action="click->faq#toggle">
-    <h5><%= t("amenities.question2") %></h5>
-    <h5 class="plus">+</h5>
-  </div>
-  <div class="faqanswer d-none" data-faq-target="answer">
-    <h6><%= t("amenities.answer2") %></h6>
-  </div>
-  <hr>
-  <div class="faqquestion" data-action="click->faq#toggle">
-    <h5><%= t("amenities.question3") %></h5>
-    <h5 class="plus">+</h5>
-  </div>
-  <div class="faqanswer d-none" data-faq-target="answer">
-    <h6><%= t("amenities.answer3") %></h6>
-  </div>
+  </p>
+</div>
+<div class="faq-item">
+  <h3><%= t("amenities.question2") %></h3>
+  <p><%= t("amenities.answer2") %></p>
+</div>
+<div class="faq-item">
+  <h3><%= t("amenities.question2") %></h3>
+  <p><%= t("amenities.answer3") %></p>
 </div>
