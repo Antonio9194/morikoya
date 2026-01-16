@@ -22,35 +22,44 @@
           <h2 class="indigo-title"><%= title %></h2>
           <p class="indigo-desc"><%= description %></p>
           <div class="indigo-specs">
-            <div class="spec-item">
-              <i class="fa-solid fa-user-group"></i>
-              <span>  <%= capacity %> <%= t("rooms.guestnum") %></span>
+            <!-- Guests & Size Row -->
+            <div class="specs-row text-center mb-3 justify-content-center d-flex gap-4">
+              <div class="spec-item">
+                <i class="fa-solid fa-user-group"></i>
+                <span><%= capacity %> <%= t("rooms.guestnum") %></span>
+              </div>
+              <div class="spec-item">
+                <i class="fa-solid fa-ruler-combined"></i>
+                <span><%= rooms.first.size %> m²</span>
+              </div>
             </div>
-            <div class="spec-item">
-              <i class="fa-solid fa-ruler-combined"></i>
-              <span><%= rooms.first.size %> m²</span>
-            </div>
-            <div class="spec-item">
+            <!-- Beds Row -->
+            <div class="spec-item justify-content-center">
               <i class="fa-solid fa-bed"></i>
               <span>
                 <% if type == "A" %>
-                  <%= t("rooms.bunk_bed.one") %> + <%= t("rooms.semidouble_bed.one") %> + <%= t("rooms.sofa_bed.one") %>
+                  <%= t("rooms.bunk_bed.one") %> &bull; <%= t("rooms.semidouble_bed.one") %> &bull; <%= t("rooms.sofa_bed.one") %>
                 <% elsif type == "B" %>
-                  <%= t("rooms.double_bed.one") %> + <%= t("rooms.bunk_bed.one") %> + <%= t("rooms.sofa_bed.one") %>
+                  <%= t("rooms.double_bed.one") %> &bull; <%= t("rooms.bunk_bed.one") %> &bull; <%= t("rooms.sofa_bed.one") %>
                 <% else %>
-                  2 <%= t("rooms.single_bed.other") %> + 2 <%= t("rooms.double_bed.other") %> + <%= t("rooms.sofa_bed.one") %>
+                  2 <%= t("rooms.single_bed.other") %> &bull; 2 <%= t("rooms.double_bed.other") %> &bull; <%= t("rooms.sofa_bed.one") %>
                 <% end %>
               </span>
             </div>
           </div>
-          <div class="indigo-amenities">
+          <div class="indigo-amenities text-center">
             <h5 class="amenities-label"><%= t("rooms.amenities_list") %></h5>
-            <% t("rooms.amenities").each do |key, amenity| %>
-              <%= amenity %>
-            <% end %>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <% t("rooms.amenities").values.each_with_index do |amenity, index| %>
+                <span><%= amenity %></span>
+                <% unless index == t("rooms.amenities").count - 1 %>
+                  <span class="text-muted">•</span>
+                <% end %>
+              <% end %>
+            </div>
           </div>
           <!-- TOGGLE BUTTON -->
-          <button class="btn-indigo-expand" data-action="click->toggle-section#toggle">
+          <button class="btn-indigo-expand mx-auto" data-action="click->toggle-section#toggle">
             <span data-toggle-section-target="text"><%= t("rooms.freeroom") %></span>
             <i class="fa-solid fa-chevron-down" data-toggle-section-target="icon"></i>
           </button>
