@@ -1,7 +1,7 @@
 <div class="auth-page">
   <div class="auth-card">
     <div class="auth-header">
-      <h2><%= t("devise.confirmation") %></h2>
+      <h2>Resend confirmation</h2>
       <p>Enter your email to receive instructions.</p>
     </div>
     <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "auth-form" }) do |f| %>
@@ -23,3 +23,4 @@
       <%= render "devise/shared/links" %>
     </div>
   </div>
+</div>

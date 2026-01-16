@@ -1,7 +1,7 @@
 <!-- app/views/payments/new.html.erb -->
 <div class="container my-5 payment-page">
   <div class="row justify-content-center">
-    <div class="col-lg-12">
+    <div class="col-lg-8">
       <!-- Payment Card -->
       <div class="payment-card card"
            data-controller="stripe-payment"
@@ -10,7 +10,7 @@
         <!-- Card Header -->
         <div class="card-header payment-header">
           <h3 class="mb-0 text-center">
-            <%= t("payment.complete") %>
+            Complete Your Payment
           </h3>
         </div>
         <!-- Card Body -->
@@ -18,30 +18,30 @@
           <!-- Booking Summary Section -->
           <div class="booking-summary-section mb-5">
             <h5 class="section-title text-center mb-4">
-              <%= t("payment.summary") %>
+              Booking Summary
             </h5>
             <div class="summary-row">
-              <span class="label"><%= t("payment.info1") %></span>
+              <span class="label">Room</span>
               <span class="value"><%= @booking.room.name %></span>
             </div>
             <div class="summary-row">
-              <span class="label"><%= t("payment.info2") %></span>
-              <span class="value"><%= l @booking.start_date, format: :long %></span>
+              <span class="label">Check-in</span>
+              <span class="value"><%= @booking.start_date.strftime("%B %d, %Y") %></span>
             </div>
             <div class="summary-row">
-              <span class="label"><%= t("payment.info3") %></span>
-              <span class="value"><%= l @booking.end_date, format: :long %></span>
+              <span class="label">Check-out</span>
+              <span class="value"><%= @booking.end_date.strftime("%B %d, %Y") %></span>
             </div>
             <div class="summary-row">
-              <span class="label"><%= t("payment.info4") %></span>
-              <span class="value"><%= @booking.number_of_nights %> <%= t("payment.info10") %></span>
+              <span class="label">Duration</span>
+              <span class="value"><%= @booking.number_of_nights %> nights</span>
             </div>
             <div class="summary-row">
-              <span class="label"><%= t("payment.info5") %></span>
+              <span class="label">Price per night</span>
               <span class="value">¥<%= number_with_delimiter(@booking.room.price_per_night) %></span>
             </div>
             <div class="summary-row total-row">
-              <span class="label h5 mb-0"><%= t("payment.info6") %></span>
+              <span class="label h5 mb-0">Total Amount</span>
               <span class="value h4 mb-0 text-danger">¥<%= number_with_delimiter(@booking.total_price_cents) %></span>
             </div>
           </div>
@@ -57,7 +57,7 @@
               <div class="spinner-border spinner-border-sm d-none me-2" role="status" data-stripe-payment-target="spinner">
                 <span class="visually-hidden">Loading...</span>
               </div>
-              <span id="button-text" data-stripe-payment-target="buttonText"><%= t("payment.pay") %></span>
+              <span id="button-text" data-stripe-payment-target="buttonText">Pay Now</span>
             </button>
           </form>
           <!-- Cancel Link -->
@@ -68,7 +68,7 @@
                 turbo_confirm: "Are you sure you want to cancel this booking?"
               },
               class: "text-muted text-decoration-none small" do %>
-              <%= t("payment.return") %>
+              Cancel Booking
             <% end %>
           </div>
         </div>

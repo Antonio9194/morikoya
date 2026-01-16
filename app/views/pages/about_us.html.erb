@@ -3,8 +3,8 @@
   <div class="about-hero">
     <%= video_tag "background.mp4", autoplay: true, loop: true, muted: true, playsinline: true, class: "hero-video" %>
     <div class="hero-overlay">
-      <h1 class="hero-title"><%= t("aboutus.header") %></h1>
-      <p class="hero-subtitle"><%= t("aboutus.header1") %></p>
+      <h1 class="hero-title">About Morikoya</h1>
+      <p class="hero-subtitle">Discover Asakusa's Hidden Gem</p>
     </div>
   </div>
   <!-- Sticky Navigation -->
@@ -20,10 +20,10 @@
         <!-- Text Side -->
         <div class="col-lg-6">
           <div class="intro-text-block">
-            <h2 class="section-title"><%= t("aboutus.welcome") %></h2>
-            <p><%= t("aboutus.info1") %></p>
-            <p><%= t("aboutus.info2") %></p>
-            <p><%= t("aboutus.info3") %></p>
+            <h2 class="section-title">Welcome to Your Sanctuary</h2>
+            <p>Welcome to Asakusa’s newest hideaway—where tradition, culture, and modern comfort come together.</p>
+            <p>Designed for travelers who appreciate style, convenience, and a touch of Japanese charm.</p>
+            <p>Experience Asakusa with us—authentic, vibrant, and uniquely Tokyo.</p>
           </div>
         </div>
         <!-- Map Side -->
@@ -67,3 +67,6 @@
     </div>
   </div>
 </div>
+<footer>
+  <%= render "shared/footer_rooms" %>
+</footer>

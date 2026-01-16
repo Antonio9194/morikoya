@@ -10,16 +10,6 @@
   z-index: -1;
 }
 
-.languages {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 0;
-}
-
 .line-above {
   color: white;
 }
@@ -409,4 +399,3 @@ button {
     padding: 12px;
   }
 }
-

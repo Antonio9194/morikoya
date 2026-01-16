@@ -10,6 +10,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarExternalContent">
       <ul class="navfoot navbar-nav">
+        <!-- Language Dropdown (Mobile) -->
+        <li class="nav-item dropdown pwa-visible">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownLangMobile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <i class="bi bi-globe me-1"></i>
+             <%= I18n.locale.to_s.upcase %>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownLangMobile">
+            <li><%= button_to "English", set_locale_path(locale: :en), method: :post, class: "dropdown-item #{'active' if I18n.locale == :en}" %></li>
+            <li><%= button_to "日本語", set_locale_path(locale: :ja), method: :post, class: "dropdown-item #{'active' if I18n.locale == :ja}" %></li>
+            <li><%= button_to "한국어", set_locale_path(locale: :ko), method: :post, class: "dropdown-item #{'active' if I18n.locale == :ko}" %></li>
+            <li><%= button_to "中文", set_locale_path(locale: "zh-CN"), method: :post, class: "dropdown-item #{'active' if I18n.locale.to_s == 'zh-CN'}" %></li>
+            <li><%= button_to "繁體中文", set_locale_path(locale: "zh-TW"), method: :post, class: "dropdown-item #{'active' if I18n.locale.to_s == 'zh-TW'}" %></li>
+          </ul>
+        </li>
         <!--Navbar content when user is not signed in-->
         <% unless user_signed_in? %>
           <li class="nav-item">
@@ -105,11 +119,29 @@
             <% end %>
           </li>
         <% end %>
-        <!---->
+      <!-- Separator (Desktop) -->
+        <li class="nav-item d-none d-lg-flex align-items-center">
+            <div style="border-left: 1px solid rgba(0,0,0,0.1); height: 20px; margin: 0 10px;"></div>
+        </li>
+        <!-- Language Dropdown (Desktop) -->
+        <li class="nav-item dropdown d-none d-lg-block">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownLang" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <i class="bi bi-globe me-1"></i>
+             <%= I18n.locale.to_s.upcase %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownLang">
+            <li><%= button_to "English", set_locale_path(locale: :en), method: :post, class: "dropdown-item #{'active' if I18n.locale == :en}" %></li>
+            <li><%= button_to "日本語", set_locale_path(locale: :ja), method: :post, class: "dropdown-item #{'active' if I18n.locale == :ja}" %></li>
+            <li><%= button_to "한국어", set_locale_path(locale: :ko), method: :post, class: "dropdown-item #{'active' if I18n.locale == :ko}" %></li>
+            <li><%= button_to "中文", set_locale_path(locale: "zh-CN"), method: :post, class: "dropdown-item #{'active' if I18n.locale.to_s == 'zh-CN'}" %></li>
+            <li><%= button_to "繁體中文", set_locale_path(locale: "zh-TW"), method: :post, class: "dropdown-item #{'active' if I18n.locale.to_s == 'zh-TW'}" %></li>
+          </ul>
+        </li>
       </ul>
     </div>
     <!-- Right: Login / Logout -->
     <ul class="navfoot navbar-nav browser-visible">
+
       <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link d-flex align-items-center" do %>

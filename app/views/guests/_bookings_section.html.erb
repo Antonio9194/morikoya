@@ -19,7 +19,7 @@
                   aria-controls="upcoming"
                   aria-selected="<%= future_bookings.any? ? 'true' : 'false' %>">
             <i class="bi bi-calendar-event me-2"></i>
-            <%= t("dashboard.upcoming") %>
+            Upcoming
             <% if future_bookings.any? %>
               <span class="badge bg-white text-primary ms-2"><%= future_bookings.count %></span>
             <% end %>
@@ -31,13 +31,12 @@
                   data-bs-toggle="tab"
                   data-bs-target="#current"
 
-
               type="button"
               role="tab"
               aria-controls="current"
               aria-selected="<%= ongoing_bookings.any? && future_bookings.empty? ? 'true' : 'false' %>">
             <i class="bi bi-circle-fill text-success me-2" style="font-size: 0.6rem;"></i>
-            <%= t("dashboard.current") %>
+            Current
             <% if ongoing_bookings.any? %>
               <span class="badge ms-2"><%= ongoing_bookings.count %></span>
             <% end %>
@@ -53,7 +52,7 @@
               aria-controls="past"
               aria-selected="<%= past_bookings.any? && ongoing_bookings.empty? && future_bookings.empty? ? 'true' : 'false' %>">
             <i class="bi bi-clock-history me-2"></i>
-            <%= t("dashboard.past") %>
+            Past
             <% if past_bookings.any? %>
               <span class="badge ms-2"><%= past_bookings.count %></span>
             <% end %>
@@ -71,9 +70,9 @@
                border_color: "info",
                badge_color: "info",
                icon: "check-circle",
-               status_text: t("dashboard.upcoming"),
+               status_text: "Upcoming",
                empty_icon: "calendar-event",
-               empty_message: t("dashboard.noupcoming"),
+               empty_message: "No upcoming bookings...",
                show_browse_button: true %>
     <%= render "guests/bookings_tab",
                tab_id: "current",
@@ -82,9 +81,9 @@
                border_color: "success",
                badge_color: "success",
                icon: "check-circle",
-               status_text: t("dashboard.ongoing"),
+               status_text: "Ongoing",
                empty_icon: "circle",
-               empty_message: t("dashboard.nocurrent"),
+               empty_message: "No current stays...",
                show_browse_button: false %>
     <%= render "guests/bookings_tab",
                tab_id: "past",
@@ -93,9 +92,9 @@
                border_color: "light",
                badge_color: "secondary",
                icon: "check2",
-               status_text: t("dashboard.completed"),
+               status_text: "Completed",
                empty_icon: "clock-history",
-               empty_message: t("dashboard.nopast"),
+               empty_message: "No past stays...",
                show_browse_button: false %>
   </div>
 <% else %>
@@ -103,8 +102,8 @@
   <div class="dashboard-card card">
     <div class="card-body p-5 text-center">
       <i class="bi bi-calendar-x text-muted mb-3" style="font-size: 3rem;"></i>
-      <p class="text-muted mb-0"><%= t("dashboard.note5") %></p>
-      <%= link_to t("dashboard.browse"), rooms_path, class: "btn btn-outline-primary mt-3" %>
+      <p class="text-muted mb-0">No confirmed bookings yet...</p>
+      <%= link_to "Find a Room", rooms_path, class: "btn btn-outline-primary mt-3" %>
     </div>
   </div>
 <% end %>

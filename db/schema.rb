@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[7.1].define(version: 2025_12_31_130438) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "btree_gist"
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_31_130438) do
     t.integer "total_price_cents"
     t.index ["room_id"], name: "index_bookings_on_room_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.exclusion_constraint "room_id WITH =, daterange(start_date, end_date, '()'::text) WITH &&", where: "((status)::text <> 'cancelled'::text) AND ((payment_status)::text <> 'refunded'::text)", using: :gist, name: "bookings_no_overlap"
   end
 
   create_table "contact_messages", force: :cascade do |t|
