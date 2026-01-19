@@ -1,20 +1,21 @@
-<div class="container-fluid rooms-page-wrapper" style="margin-top: 3rem; margin-bottom: 2rem">
+<div class="container-fluid rooms-page-wrapper">
   <!-- Search Info & Warnings -->
   <% if @guest_num.present? %>
-    <div class="d-flex justify-content-center mb-5">
+    <div class="rooms-search-container">
       <%= render "search_info", rooms: @rooms %>
     </div>
   <% end %>
   <% if @rooms.empty? %>
-    <h5 class="p-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 text-center">
-      <%= t("rooms.fully_booked") %>
-    </h5>
+    <div class="indigo-alert alert-fully-booked">
+      <i class="fa-solid fa-calendar-xmark mb-2"></i>
+      <h5><%= t("rooms.fully_booked") %></h5>
+    </div>
   <% else %>
     <% if @guest_num.present? && @guest_num > 6 %>
-      <h5 class="searchresult text-center mb-5">
+      <div class="indigo-alert alert-group-size">
         <i class="fa-solid fa-circle-info me-2"></i>
-        <%= t("rooms.groups") %> <%= @guest_num %>, <%= t("rooms.choice5") %>
-      </h5>
+        <span><%= t("rooms.groups") %> <%= @guest_num %>, <%= t("rooms.choice5") %></span>
+      </div>
     <% end %>
     <!-- Section 1: Presidential Suite (Type C) -->
     <% rooms_c = @rooms.where(room_type: "C") %>
