@@ -20,7 +20,7 @@ module ApplicationHelper
     when /coffee/
       "fa-mug-hot"
     when /iron/
-      "fa-bolt" # closest visual to iron or use fontawesome free alternatives
+      "fa-bolt"
     when /wardrobe|clothing/
       "fa-hanger"
     else

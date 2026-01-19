@@ -101,20 +101,20 @@
 .navbar-lewagon {
   .dropdown-toggle {
     cursor: pointer;
-    
-    // Add underline via ::before to avoid conflict with ::after caret
+
+    // Add underline via ::before to avoid conflict with ::after
     &::before {
       content: "";
       position: absolute;
       width: 0;
       height: 2px;
-      bottom: 5px; 
+      bottom: 5px;
       left: 50%;
       transform: translateX(-50%);
       background-color: $lacquer-red;
       transition: width 0.3s ease-in-out;
     }
-    
+
     &:hover::before {
       width: 80%;
     }
@@ -129,17 +129,17 @@
   .dropdown-menu {
     border: none;
     border-radius: 2px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); // Float effect
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     background-color: white;
     padding: 0.5rem 0;
     min-width: 10rem;
-    margin-top: 10px; // Offset
-    
+    margin-top: 10px;
+
     // Mobile specific override
     @media (max-width: 992px) {
       border: none;
       box-shadow: none;
-      background-color: rgba(0,0,0,0.02);
+      background-color: rgba(0, 0, 0, 0.02);
       margin-top: 0;
       padding: 0;
     }
@@ -158,28 +158,29 @@
     font-family: $body-font;
     font-size: 0.95rem;
     color: $sumi-black;
-    padding: 0.7rem 1.5rem; // Good touch target
+    padding: 0.7rem 1.5rem;
     transition: all 0.2s ease;
     border: none;
     background: transparent;
     width: 100%;
     text-align: left;
-    display: block; // Ensure it behaves like a block link
+    display: block;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: rgba($moss-green, 0.08);
       color: $moss-green;
     }
-    
+
     // Active state styling
     &.active {
-       background-color: transparent;
-       color: $lacquer-red; 
-       font-weight: 600;
-       
-       &:hover {
-         background-color: rgba($lacquer-red, 0.05);
-       }
+      background-color: transparent;
+      color: $lacquer-red;
+      font-weight: 600;
+
+      &:hover {
+        background-color: rgba($lacquer-red, 0.05);
+      }
     }
   }
 }
