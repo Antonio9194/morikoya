@@ -1,8 +1,8 @@
 <div class="auth-page">
   <div class="auth-card">
     <div class="auth-header">
-      <h2>Forgot your password?</h2>
-      <p>Enter your email and we'll send you reset instructions.</p>
+      <h2><%= t("password.forgot") %></h2>
+      <p><%= t("password.info") %></p>
     </div>
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "auth-form" }) do |f| %>
       <%= f.error_notification %>
@@ -10,11 +10,12 @@
         <%= f.input :email,
                     required: true,
                     autofocus: true,
+                    label: t("password.email"),
                     input_html: { autocomplete: "email", class: "form-control" },
                     label_html: { class: "form-label" } %>
       </div>
       <div class="form-actions">
-        <%= f.button :submit, "Send Instructions", class: "btn auth-btn" %>
+        <%= f.button :submit, t("password.reset"), class: "btn auth-btn" %>
       </div>
     <% end %>
     <div class="auth-links">

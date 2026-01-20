@@ -1,19 +1,19 @@
 <div class="messagescard card h-100">
   <div class="card-body p-4">
-    <h5 class="card-title mb-4">Messages</h5>
+    <h5 class="card-title mb-4"><%= t("dashboard.messages") %></h5>
     <% if user.contact_messages.any? %>
       <div class="messages-list">
         <% user.contact_messages.each do |message| %>
           <div class="message card mb-3">
             <div class="card-body p-3">
               <p class="mb-0"><%= message.message %></p>
-              <small class="text-muted"><%= message.created_at.strftime("%d %b, %Y") %></small>
+              <small class="text-muted"><%= l(message.created_at, format: :long_inverted) %></small>
             </div>
           </div>
         <% end %>
       </div>
     <% else %>
-      <p class="text-muted text-center py-4">No messages yet...</p>
+      <p class="text-muted text-center py-4"><%= t("dashboard.note3") %></p>
     <% end %>
   </div>
 </div>

@@ -9,14 +9,14 @@
       <div class="col-lg-4 booking-dates mb-3 mb-lg-0">
         <div class="d-flex justify-content-around text-center">
           <div>
-            <small class="text-muted d-block text-uppercase" style="font-size: 0.75rem;">Check-in</small>
-            <span class="fw-bold"><%= booking.start_date.strftime("%d %b") %></span>
-            <small class="text-muted d-block"><%= booking.start_date.year %></small>
+            <small class="text-muted d-block text-uppercase" style="font-size: 0.75rem;"><%= t("dashboard.checkin") %></small>
+            <span class="fw-bold"><%= l(booking.start_date, format: :short) %></span>
+            <small class="text-muted d-block"><%= l(booking.end_date, format: :year) %></small>
           </div>
           <div>
-            <small class="text-muted d-block text-uppercase" style="font-size: 0.75rem;">Check-out</small>
-            <span class="fw-bold"><%= booking.end_date.strftime("%d %b") %></span>
-            <small class="text-muted d-block"><%= booking.end_date.year %></small>
+            <small class="text-muted d-block text-uppercase" style="font-size: 0.75rem;"><%= t("dashboard.checkout") %></small>
+            <span class="fw-bold"><%= l(booking.end_date, format: :short) %></span>
+            <small class="text-muted d-block"><%= l(booking.end_date, format: :year) %></small>
           </div>
         </div>
       </div>
@@ -27,9 +27,9 @@
             <i class="bi bi-<%= icon %> me-1"></i> <%= status_text %>
           </span>
           <% if booking.payment_status == 'paid' %>
-            <span class="badge bg-light text-muted border">Paid</span>
+            <span class="badge bg-light text-muted border"><%= t("payment_status.paid") %></span>
           <% else %>
-            <span class="badge bg-light text-muted border">Unpaid</span>
+            <span class="badge bg-light text-muted border"><%= t("payment_status.failed") %></span>
           <% end %>
         </div>
       </div>
