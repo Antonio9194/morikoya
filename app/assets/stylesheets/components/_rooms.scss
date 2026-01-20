@@ -1,20 +1,89 @@
 // Rooms Index Styles
 
-.searchresult {
+.rooms-page-wrapper {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 992px) {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
+.rooms-search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+
+  // Add definition to the search bar in this context
+  .search-bar {
+    border: 1px solid rgba($moss-green, 0.15);
+    box-shadow: 0 4px 20px rgba($sumi-black, 0.05);
+    background: white;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+
+    @media (max-width: 992px) {
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      background: transparent;
+    }
+  }
+}
+
+// Global Alert Styling
+.indigo-alert {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $lacquer-red; // Updated color
-  border: 1px solid $lacquer-red; // Updated color
-  color: $washi-cream !important; // Updated text color
-  border-radius: 4px; // Sharper corners
-  margin: 0.8rem 0;
-  padding: 0.8rem;
-  width: 32.2%;
+  flex-direction: column;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  border-radius: 4px;
+  text-align: center;
   font-family: $body-font;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  box-shadow: 0 4px 12px rgba($lacquer-red, 0.2);
+
+  h5 {
+    font-family: $headers-font;
+    margin: 0;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+  }
+
+  i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  // Variant: Fully Booked
+  &.alert-fully-booked {
+    background-color: #fff9f0;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    color: #856404;
+
+    i {
+      color: #856404;
+    }
+  }
+
+  // Variant: Group Size Warning (formerly .searchresult)
+  &.alert-group-size {
+    flex-direction: row; // Keep icon and text side-by-side
+    background-color: white;
+    border: 1px solid $lacquer-red;
+    color: $lacquer-red;
+    box-shadow: 0 4px 15px rgba($lacquer-red, 0.1);
+    font-weight: 600;
+
+    i {
+      margin: 0 0.5rem 0 0;
+      font-size: 1.1rem;
+    }
+  }
 }
 
 // Room Cards Styling
@@ -144,18 +213,22 @@
 
 .indigo-specs {
   display: flex;
-  gap: 2rem;
+  flex-direction: column; // Stack rows vertically
+  gap: 1rem;
   margin-bottom: 2rem;
   border-top: 1px solid rgba($moss-green, 0.1);
   border-bottom: 1px solid rgba($moss-green, 0.1);
   padding: 1rem 0;
+  text-align: center; // Ensure content centers
 
+  // Reset inner items to center
   .spec-item {
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
     gap: 0.5rem;
     color: $sumi-black;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 
     i {
       color: $moss-green;

@@ -135,4 +135,11 @@
   .auth-header h2 {
     font-size: 1.6rem; // Slightly smaller header
   }
+
+  // Prevent button text wrapping on small screens
+  .auth-btn {
+    font-size: 0.85rem; 
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
 }

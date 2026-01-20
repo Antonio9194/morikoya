@@ -1,13 +1,34 @@
-<% if room.room_type == "A" %>
-  <span><%= room.sofa_bed %> <%= t("rooms.sofa_bed.one") %> </span>
-  <span><%= room.bunk %> <%= t("rooms.bunk_bed.one") %> </span>
-  <span><%= room.double%> <%= t("rooms.double_bed.one") %> </span>
-<% elsif room.room_type == "B" %>
-  <span><%= room.sofa_bed %> <%= t("rooms.sofa_bed.one") %> </span>
-  <span><%= room.bunk %> <%= t("rooms.bunk_bed.one") %> </span>
-  <span><%= room.semi_double%> <%= t("rooms.semidouble_bed.one") %></span>
-<% else %>
-  <span><%= room.sofa_bed %> <%= t("rooms.sofa_bed.one") %> </span>
-  <span><%= room.single %> <%= t("rooms.single_bed.one") %> </span>
-  <span><%= room.double%> <%= t("rooms.double_bed.one") %> </span>
+<% 
+  beds = []
+  
+  if room.sofa_bed.to_i > 0
+    beds << "#{room.sofa_bed} #{t('rooms.sofa_bed.one')}"
+  end
+
+  if room.bunk.to_i > 0
+    beds << "#{room.bunk} #{t('rooms.bunk_bed.one')}" 
+  end
+
+  if room.double.to_i > 0
+    beds << "#{room.double} #{t('rooms.double_bed.one')}"
+  end
+  
+  if room.single.to_i > 0
+    beds << "#{room.single} #{t('rooms.single_bed.one')}"
+  end
+
+  # Handle semidouble mismatch in variable name (checking schema logic or previous file usage)
+  # Previous file had 'semi_double' inside room_type 'B'. Assuming 'semi_double' is a method on room.
+  if room.respond_to?(:semi_double) && room.semi_double.to_i > 0
+     beds << "#{room.semi_double} #{t('rooms.semidouble_bed.one')}"
+  end
+%>
+
+<% beds.each_with_index do |bed_text, index| %>
+  <span class="d-inline-flex align-items-center">
+    <%= bed_text %>
+    <% unless index == beds.size - 1 %>
+      <span class="text-muted mx-2">&bull;</span>
+    <% end %>
+  </span>
 <% end %>
