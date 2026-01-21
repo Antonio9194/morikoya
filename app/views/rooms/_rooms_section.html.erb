@@ -38,11 +38,11 @@
               <i class="fa-solid fa-bed"></i>
               <span>
                 <% if type == "A" %>
-                  <%= t("rooms.bunk_bed.one") %> &bull; <%= t("rooms.semidouble_bed.one") %> &bull; <%= t("rooms.sofa_bed.one") %>
+                  <%= t("rooms.bunk_bed.one") %> <i class="fa-solid fa-bed mx-2"></i> <%= t("rooms.semidouble_bed.one") %> <i class="fa-solid fa-couch mx-2"></i> <%= t("rooms.sofa_bed.one") %>
                 <% elsif type == "B" %>
-                  <%= t("rooms.double_bed.one") %> &bull; <%= t("rooms.bunk_bed.one") %> &bull; <%= t("rooms.sofa_bed.one") %>
+                  <%= t("rooms.double_bed.one") %> <i class="fa-solid fa-bed mx-2"></i> <%= t("rooms.bunk_bed.one") %> <i class="fa-solid fa-couch mx-2"></i> <%= t("rooms.sofa_bed.one") %>
                 <% else %>
-                  2 <%= t("rooms.single_bed.other") %> &bull; 2 <%= t("rooms.double_bed.other") %> &bull; <%= t("rooms.sofa_bed.one") %>
+                  2 <%= t("rooms.single_bed.other") %> <i class="fa-solid fa-bed mx-2"></i> 2 <%= t("rooms.double_bed.other") %> <i class="fa-solid fa-couch mx-2"></i> <%= t("rooms.sofa_bed.one") %>
                 <% end %>
               </span>
             </div>
