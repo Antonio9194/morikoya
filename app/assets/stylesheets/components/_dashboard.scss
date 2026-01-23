@@ -5,7 +5,7 @@
   color: $sumi-black;
   background-color: $washi-cream; // Set background color
   // Subtract navbar height (approx 80-90px) to prevent unnecessary scrollbar
-  min-height: calc(100vh - 90px); 
+  min-height: calc(100vh - 90px);
   padding-top: 2rem;
   padding-bottom: 2rem; // Balance spacing
 }
@@ -17,7 +17,7 @@
   background-color: white !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important; // Much softer, "settled" shadow
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
@@ -54,12 +54,12 @@
     font-size: 0.9rem;
     border-width: 1px;
     box-shadow: none !important;
-    
+
     &:hover {
       transform: translateY(-1px);
     }
   }
-  
+
   .btn-outline-primary {
     color: $moss-green !important;
     border-color: $moss-green !important;
@@ -83,7 +83,7 @@
 // Messages Card
 .messagescard {
   border-radius: 4px !important;
-  
+
   .card-title {
     font-family: $headers-font;
     color: $sumi-black !important; // Enforce Sumi Black
@@ -96,12 +96,12 @@
   border: 1px solid rgba($moss-green, 0.1) !important;
   border-radius: 2px !important;
   box-shadow: none !important; // Flat internal cards
-  
+
   p {
     font-size: 0.95rem;
     color: $sumi-black;
   }
-  
+
   small {
     color: rgba($sumi-black, 0.5);
     font-size: 0.8rem;
@@ -121,17 +121,17 @@
     padding: 0.6rem 1rem !important;
     border-radius: 4px !important;
     transition: all 0.2s ease;
-    
+
     &:hover {
       background-color: rgba($moss-green, 0.05);
       color: $moss-green !important;
     }
-    
+
     &.active {
       background-color: $moss-green !important;
       color: white !important;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      
+
       .badge {
         background-color: white !important;
         color: $moss-green !important;
@@ -143,19 +143,19 @@
 // Booking List Style
 .booking-card {
   margin-bottom: 1rem;
-  border-left: none !important; // Remove the heavy left border 
+  border-left: none !important; // Remove the heavy left border
   border: 1px solid rgba(0,0,0,0.05) !important;
-  
+
   .card-body {
     padding: 1.5rem;
   }
-  
+
   h5 {
     font-family: $headers-font;
     font-weight: 600;
     color: $sumi-black;
   }
-  
+
   // Responsive Booking Card Layout
   .booking-dates {
     // Desktop: Borders on sides
@@ -163,7 +163,7 @@
       border-left: 1px solid rgba($sumi-black, 0.1);
       border-right: 1px solid rgba($sumi-black, 0.1);
     }
-    
+
     // Mobile: Borders top/bottom or spacing
     @media (max-width: 991.98px) {
       border-top: 1px solid rgba($sumi-black, 0.05);
@@ -172,7 +172,7 @@
       margin: 1rem 0;
     }
   }
-  
+
   .booking-actions {
     // Mobile alignment handled by utility classes (align-items-start vs align-items-lg-end)
     // Just ensuring spacing if needed

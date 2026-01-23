@@ -1,19 +1,22 @@
 <div class="section-title">
-  <h2>Access & Location</h2>
+  <h2><%= t("location.title") %></h2>
   <div class="divider"></div>
 </div>
 <div class="faq-item">
-  <h3>How do I get to the hotel?</h3>
+  <h3><%= t("location.question1") %></h3>
   <p>
-    We are located near Asakusa Station & Tawaramachi Station, with easy access via subway and bus.
-    Please refer to our <%= link_to "map", about_us_path %> for the exact address and check the <%= link_to "access", about_us_path %> section, or contact us via this <%= link_to "form", new_contact_message_path  %> for specific instructions.
+    <%= t("location.answer1",
+     map_link: link_to(t("location.link.map"), about_us_path).html_safe,
+     access_link: link_to(t("location.link.access"), about_us_path).html_safe,
+     contact_link: link_to(t("location.link.form"), new_contact_message_path)).html_safe
+     %>
   </p>
 </div>
 <div class="faq-item">
-  <h3>Do you offer airport pickup?</h3>
-  <p>Airport pickup is not provided, but we can guide you on the best route.</p>
+  <h3><%= t("location.question2") %></h3>
+  <p><%= t("location.answer2") %></p>
 </div>
 <div class="faq-item">
-  <h3>Is parking available nearby?</h3>
-  <p>There is no on-site parking, but several paid parking lots are available within walking distance of the hotel.</p>
+  <h3><%= t("location.question2") %></h3>
+  <p><%= t("location.answer2") %></p>
 </div>

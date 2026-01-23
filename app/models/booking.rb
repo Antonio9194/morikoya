@@ -10,20 +10,20 @@ class Booking < ApplicationRecord
 
   validates :payment_status, inclusion: { in: %w[pending paid failed refunded] }
 
-  validate :start_date_cannot_be_in_the_past, on: :create
-  validate :end_date_cannot_be_in_the_past, on: :create
-  validate :plan_date_cannot_be_reverse
-  validate :no_overlap
+  # validate :start_date_cannot_be_in_the_past, on: :create
+  # validate :end_date_cannot_be_in_the_past, on: :create
+  # validate :plan_date_cannot_be_reverse
+  # validate :no_overlap
 
   # Calculate total price before validation (so it's ready for payment)
   before_validation :calculate_total_price, on: :create
 
   # Scopes for filtering bookings
-  scope :upcoming, -> { where("start_date >= ?", Date.today) }
+  scope :upcoming, -> { where('start_date >= ?', Date.today) }
   scope :confirmed, -> { where(status: 'confirmed') }
-  scope :ongoing, -> { where("start_date <= ? AND end_date >= ?", Date.today, Date.today) }
-  scope :past, -> { where("end_date < ?", Date.today) }
-  scope :future, -> { where("start_date > ?", Date.today) }
+  scope :ongoing, -> { where('start_date <= ? AND end_date >= ?', Date.today, Date.today) }
+  scope :past, -> { where('end_date < ?', Date.today) }
+  scope :future, -> { where('start_date > ?', Date.today) }
 
   def start_date_cannot_be_in_the_past
     return unless start_date.present? && start_date < Date.today
@@ -48,11 +48,11 @@ class Booking < ApplicationRecord
 
     if Booking.where(room_id: room_id)
               .where.not(id: id)
-              .where("start_date < ? AND end_date > ?", end_date, start_date)
+              .where('start_date < ? AND end_date > ?', end_date, start_date)
               .where.not(status: 'cancelled')
               .where.not(payment_status: 'refunded')
               .exists?
-      errors.add(:base, "Selected dates are already booked")
+      errors.add(:base, 'Selected dates are already booked')
     end
   end
 

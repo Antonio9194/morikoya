@@ -21,8 +21,8 @@ module ApplicationHelper
       "fa-mug-hot"
     when /iron/
       "fa-bolt"
-    when /wardrobe|clothing/
-      "fa-hanger"
+    when /wardrobe|clothing|hanger/
+      "fa-shirt" # using fa-shirt as a fallback since fa-hanger might not be in the free set or version
     else
       "fa-check"
     end
