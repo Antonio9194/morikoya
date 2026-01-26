@@ -219,7 +219,7 @@ GEM
       timeout
     net-smtp (0.5.1)
       net-protocol
-    nio4r (2.7.4)
+    nio4r (2.7.5)
     nokogiri (1.18.9-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.9-aarch64-linux-musl)
@@ -257,7 +257,7 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (7.0.2)
+    puma (7.2.0)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.1)
@@ -412,7 +412,7 @@ DEPENDENCIES
   letter_opener
   money-rails
   pg (~> 1.1)
-  puma (>= 5.0)
+  puma (>= 7.2)
   rails (~> 7.1.5, >= 7.1.5.1)
   rubocop (~> 1.81)
   ruby-openai

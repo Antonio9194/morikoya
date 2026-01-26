@@ -12,7 +12,7 @@ gem 'sprockets-rails'
 gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '>= 5.0'
+gem 'puma', '>= 7.2'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails', '~> 1.2.3'
@@ -50,10 +50,10 @@ gem 'devise'
 gem 'font-awesome-sass', '~> 6.1'
 gem 'geocoder'
 gem 'money-rails'
+gem 'ruby-openai'
 gem 'sassc-rails'
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'stripe'
-gem 'ruby-openai'
 
 group :development, :test do
   gem 'dotenv-rails'
