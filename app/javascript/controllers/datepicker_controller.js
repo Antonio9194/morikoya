@@ -75,7 +75,7 @@ export default class extends Controller {
       new CustomEvent("nights-updated", {
         detail: { nights: this.nightsNum },
         bubbles: true,
-      })
+      }),
     );
   }
 }
