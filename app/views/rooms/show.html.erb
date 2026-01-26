@@ -81,7 +81,7 @@
                   placeholder: t("rooms.select"),
                   input_html: {
                     class: "chosen-dates form-control-lg mb-3",
-                    data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates },
+                    data: { controller: "datepicker", datepicker_current_bookings_value: @room.booked_dates, datepicker_locale_value: I18n.locale },
                     value: [@check_in, @check_out].all? ? "#{@check_in} - #{@check_out}" : "" } %>
                 <%= f.button :submit, t("rooms.booking"), class: "btn btn-lg w-100 btn-primary" %>
               <% end %>

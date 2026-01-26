@@ -1,14 +1,27 @@
 import { Controller } from "@hotwired/stimulus";
 import flatpickr from "flatpickr";
 
+import "flatpickr/dist/l10n/ja.js"
+import "flatpickr/dist/l10n/ko.js"
+import "flatpickr/dist/l10n/zh.js"
+import "flatpickr/dist/l10n/zh-tw.js"
+
 // Connects to data-controller="datepicker"
 export default class extends Controller {
   static values = {
     currentBookings: Array,
+    locale: String
   };
 
   connect() {
-    console.log(this.element);
+
+    console.log(this.element, this.localeValue);
+
+    const lookupKey = (this.localeValue === "zh-CN") ? "zh" : this.localeValue;
+    const selectedLocale = flatpickr.l10ns[lookupKey] || "default";
+
+    console.log("Checking flatpickr l10ns:", flatpickr.l10ns)
+    console.log("Selected Locale:", selectedLocale)
 
     const initialDates = this.element.value.split(" - ");
 
@@ -16,12 +29,13 @@ export default class extends Controller {
     this.fpickr = flatpickr(this.element, {
       dateFormat: "Y-m-d",
       altInput: true,
-      altFormat: "d M Y",
+      altFormat: this.defineAltDateFormat(),
       mode: "range",
       minDate: "today",
       disable: this.currentBookingsValue,
       // To overwrite the default range separator of Flatpickr from " to " -> " - "
       locale: {
+        ...selectedLocale,
         rangeSeparator: " - ",
       },
       // "onChange" is the Flatpickr configuration option, fires every time the user picks or changes dates
@@ -77,5 +91,19 @@ export default class extends Controller {
         bubbles: true,
       })
     );
+  }
+
+  defineAltDateFormat() {
+    const locale = this.localeValue;
+
+    if (locale === "ja" || locale === "zh-CN" || locale === "zh-TW") {
+      return "Y年m月d日";
+    }
+    else if (locale === "ko") {
+      return "Y년 m월 d일";
+    }
+    else {
+      return "d M Y";
+    }
   }
 }
