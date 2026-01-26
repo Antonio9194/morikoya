@@ -4,7 +4,6 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/l10n/ja.js"
 import "flatpickr/dist/l10n/ko.js"
 import "flatpickr/dist/l10n/zh.js"
-import "flatpickr/dist/l10n/zh-tw.js"
 
 // Connects to data-controller="datepicker"
 export default class extends Controller {
@@ -17,7 +16,7 @@ export default class extends Controller {
 
     console.log(this.element, this.localeValue);
 
-    const lookupKey = (this.localeValue === "zh-CN") ? "zh" : this.localeValue;
+    const lookupKey = (this.localeValue === "zh-CN" || this.localeValue === "zh-TW") ? "zh" : this.localeValue;
     const selectedLocale = flatpickr.l10ns[lookupKey] || "default";
 
     console.log("Checking flatpickr l10ns:", flatpickr.l10ns)

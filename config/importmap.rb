@@ -14,4 +14,3 @@ pin 'stimulus-flatpickr', to: 'https://ga.jspm.io/npm:stimulus-flatpickr@3.0.0-0
 pin 'flatpickr/dist/l10n/ja.js', to: 'https://unpkg.com/flatpickr@4.6.13/dist/l10n/ja.js'
 pin 'flatpickr/dist/l10n/ko.js', to: 'https://unpkg.com/flatpickr@4.6.13/dist/l10n/ko.js'
 pin 'flatpickr/dist/l10n/zh.js', to: 'https://unpkg.com/flatpickr@4.6.13/dist/l10n/zh.js'
-pin 'flatpickr/dist/l10n/zh-tw.js', to: 'https://unpkg.com/flatpickr@4.6.13/dist/l10n/zh-tw.js'
