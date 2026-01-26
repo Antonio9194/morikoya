@@ -100,76 +100,64 @@ Room.create!(
 
 puts "Created #{Room.count} rooms"
 
-# --- Create Contact Messages ---
-40.times do
-  ContactMessage.create!(
-    name: Faker::Name.name,
-    email: Faker::Internet.unique.email,
-    message: Faker::Lorem.paragraph(sentence_count: 3),
-    user: guests.sample
-  )
-end
+# # --- Create Antonio's Booking ---
+# # Pick a specific room or random
+# antonio_room = Room.all.sample
 
-puts "Created #{ContactMessage.count} contact messages"
+# Booking.create!(
+#   user: guest_antonio,       # This is Antonio upcoming booking
+#   room: antonio_room,
+#   start_date: Date.new(2025, 12, 20),
+#   end_date: Date.new(2025, 12, 25),
+#   status: 'confirmed',
+#   payment_status: 'paid'
+# )
 
-# --- Create Antonio's Booking ---
-# Pick a specific room or random
-antonio_room = Room.all.sample
+# Booking.create!(
+#   user: guest_antonio,       # This is Antonio current booking
+#   room: antonio_room,
+#   start_date: Date.new(2025, 12, 2),
+#   end_date: Date.new(2025, 12, 5),
+#   status: 'confirmed',
+#   payment_status: 'paid'
+# )
 
-Booking.create!(
-  user: guest_antonio,       # This is Antonio upcoming booking
-  room: antonio_room,
-  start_date: Date.new(2025, 12, 20),
-  end_date: Date.new(2025, 12, 25),
-  status: 'confirmed',
-  payment_status: 'paid'
-)
+# Booking.create!(
+#   user: guest_antonio,       # This is Antonio past booking
+#   room: antonio_room,
+#   start_date: Date.new(2025, 11, 2),
+#   end_date: Date.new(2025, 11, 5),
+#   status: 'confirmed',
+#   payment_status: 'paid'
+# )
 
-Booking.create!(
-  user: guest_antonio,       # This is Antonio current booking
-  room: antonio_room,
-  start_date: Date.new(2025, 12, 2),
-  end_date: Date.new(2025, 12, 5),
-  status: 'confirmed',
-  payment_status: 'paid'
-)
+# puts "Created Antonio's booking in room #{antonio_room.name}"
 
-Booking.create!(
-  user: guest_antonio,       # This is Antonio past booking
-  room: antonio_room,
-  start_date: Date.new(2025, 11, 2),
-  end_date: Date.new(2025, 11, 5),
-  status: 'confirmed',
-  payment_status: 'paid'
-)
+# # --- Create 30 Random Bookings ---
+# 30.times do
+#   room = Room.all.sample
 
-puts "Created Antonio's booking in room #{antonio_room.name}"
+#   loop do
+#     start_date = Faker::Date.forward(days: rand(5..30))
+#     end_date   = start_date + rand(2..7).days
 
-# --- Create 30 Random Bookings ---
-30.times do
-  room = Room.all.sample
+#     overlap = Booking.exists?(
+#       ['room_id = ? AND start_date < ? AND end_date > ?', room.id, end_date, start_date]
+#     )
 
-  loop do
-    start_date = Faker::Date.forward(days: rand(5..30))
-    end_date   = start_date + rand(2..7).days
+#     next if overlap
 
-    overlap = Booking.exists?(
-      ['room_id = ? AND start_date < ? AND end_date > ?', room.id, end_date, start_date]
-    )
+#     Booking.create!(
+#       user: guests.sample,
+#       room: room,
+#       start_date: start_date,
+#       end_date: end_date,
+#       status: 'confirmed',
+#       payment_status: 'paid'
+#     )
+#     break
+#   end
+# end
 
-    next if overlap
-
-    Booking.create!(
-      user: guests.sample,
-      room: room,
-      start_date: start_date,
-      end_date: end_date,
-      status: 'confirmed',
-      payment_status: 'paid'
-    )
-    break
-  end
-end
-
-puts "Created #{Booking.count} bookings"
+# puts "Created #{Booking.count} bookings"
 puts 'Done seeding!'
