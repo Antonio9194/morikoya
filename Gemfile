@@ -6,13 +6,13 @@ ruby '3.3.5'
 gem 'rails', '~> 7.1.5', '>= 7.1.5.1'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'faker'
 gem 'sprockets-rails'
-
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '>= 7.2'
+gem 'puma', '>= 5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails', '~> 1.2.3'
@@ -63,7 +63,6 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'faker'
   gem 'letter_opener'
   gem 'web-console'
 
